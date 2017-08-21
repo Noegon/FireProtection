@@ -60,15 +60,13 @@
 		40D89EAD1F40621800B07AB5 /* FireProtection */ = {
 			isa = PBXGroup;
 			children = (
+				40D89ECA1F40673000B07AB5 /* Controller */,
+				40D89EC91F40672A00B07AB5 /* Model */,
+				40D89EC81F40672500B07AB5 /* View */,
 				40D89EB11F40621800B07AB5 /* AppDelegate.h */,
 				40D89EB21F40621800B07AB5 /* AppDelegate.m */,
 				40D89EB41F40621800B07AB5 /* ViewController.h */,
 				40D89EB51F40621800B07AB5 /* ViewController.m */,
-				40D89EB71F40621800B07AB5 /* Main.storyboard */,
-				40D89EBD1F40621800B07AB5 /* Assets.xcassets */,
-				40D89EBF1F40621800B07AB5 /* LaunchScreen.storyboard */,
-				40D89EC21F40621800B07AB5 /* Info.plist */,
-				40D89EBA1F40621800B07AB5 /* FireProtection.xcdatamodeld */,
 				40D89EAE1F40621800B07AB5 /* Supporting Files */,
 			);
 			path = FireProtection;
@@ -77,9 +75,75 @@
 		40D89EAE1F40621800B07AB5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				40D89EB71F40621800B07AB5 /* Main.storyboard */,
+				40D89EBD1F40621800B07AB5 /* Assets.xcassets */,
+				40D89EBF1F40621800B07AB5 /* LaunchScreen.storyboard */,
+				40D89EC21F40621800B07AB5 /* Info.plist */,
 				40D89EAF1F40621800B07AB5 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		40D89EC81F40672500B07AB5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		40D89EC91F40672A00B07AB5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				40D89ECD1F4067E600B07AB5 /* MiddleLayer */,
+				40D89ECC1F4067D900B07AB5 /* ServerSideLayer */,
+				40D89ECB1F4067C500B07AB5 /* StorageLayer */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		40D89ECA1F40673000B07AB5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		40D89ECB1F4067C500B07AB5 /* StorageLayer */ = {
+			isa = PBXGroup;
+			children = (
+				40D89ECF1F40689E00B07AB5 /* Model */,
+				40D89ECE1F40688A00B07AB5 /* Core */,
+				40D89EBA1F40621800B07AB5 /* FireProtection.xcdatamodeld */,
+			);
+			name = StorageLayer;
+			sourceTree = "<group>";
+		};
+		40D89ECC1F4067D900B07AB5 /* ServerSideLayer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ServerSideLayer;
+			sourceTree = "<group>";
+		};
+		40D89ECD1F4067E600B07AB5 /* MiddleLayer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = MiddleLayer;
+			sourceTree = "<group>";
+		};
+		40D89ECE1F40688A00B07AB5 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		40D89ECF1F40689E00B07AB5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
