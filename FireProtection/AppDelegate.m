@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "NGNCoreDataModel.h"
+
+#import "NGNCommonConstants.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +19,24 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+
+//    NSFileManager *manager = [NSFileManager defaultManager];
+//    [manager removeItemAtURL:[NSPersistentContainer defaultDirectoryURL] error:nil];
+    
+    NGNUser *user = [NSEntityDescription insertNewObjectForEntityForName:@"NGNUser"
+                                                  inManagedObjectContext:self.managedObjectContext];
+    user.idx = @(foo4random());
+    user.name = @"Alex";
+    user.password = @"chimal666";
+    
+    [self saveContext];
+    
+    NSError *error = nil;
+    NSArray *users = [self.managedObjectContext executeFetchRequest:[NGNUser fetchRequest] error:&error];
+    if (!error) {
+        NSLog(@"%@", users);
+    }
+    
     return YES;
 }
 
@@ -82,10 +102,14 @@
     return _persistentContainer;
 }
 
+- (NSManagedObjectContext *)managedObjectContext {
+    return self.persistentContainer.viewContext;
+}
+
 #pragma mark - Core Data Saving support
 
 - (void)saveContext {
-    NSManagedObjectContext *context = self.persistentContainer.viewContext;
+    NSManagedObjectContext *context = self.managedObjectContext;
     NSError *error = nil;
     if ([context hasChanges] && ![context save:&error]) {
         // Replace this implementation with code to handle the error appropriately.
@@ -93,6 +117,13 @@
         NSLog(@"Unresolved error %@, %@", error, error.userInfo);
         abort();
     }
+}
+
+#pragma mark - additional helper methods
+
+- (NSURL *)applicationDocumentsDirectory {
+    return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory
+                                                   inDomains:NSUserDomainMask] lastObject];
 }
 
 @end

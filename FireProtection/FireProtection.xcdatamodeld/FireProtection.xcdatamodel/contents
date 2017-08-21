@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16G29" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
-    <entity name="ApertureGroup" representedClassName="ApertureGroup" syncable="YES">
+    <entity name="NGNApertureGroup" representedClassName="NGNApertureGroup" syncable="YES">
         <attribute name="amount" optional="YES" attributeType="Decimal" minValueString="0" defaultValueString="0.0" syncable="YES"/>
         <attribute name="height" optional="YES" attributeType="Double" minValueString="0" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="idx" attributeType="Decimal" syncable="YES"/>
         <attribute name="width" optional="YES" attributeType="Double" minValueString="0" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
-        <relationship name="room" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Room" inverseName="apertureGroups" inverseEntity="Room" syncable="YES"/>
+        <relationship name="room" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="NGNRoom" inverseName="apertureGroups" inverseEntity="NGNRoom" syncable="YES"/>
     </entity>
-    <entity name="FireResistanceRank" representedClassName="FireResistanceRank" syncable="YES" codeGenerationType="class">
+    <entity name="NGNFireResistanceRank" representedClassName="NGNFireResistanceRank" syncable="YES">
         <attribute name="bearingElementR" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
         <attribute name="coveringRE" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
         <attribute name="fermBeanR" attributeType="Decimal" defaultValueString="0" syncable="YES"/>
@@ -18,26 +18,26 @@
         <attribute name="selfBearingElementRE" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
         <attribute name="stairWallREI" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
         <attribute name="stairwayR" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
-        <relationship name="positions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Position" inverseName="fireResistanceRank" inverseEntity="Position" syncable="YES"/>
+        <relationship name="positions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="NGNPosition" inverseName="fireResistanceRank" inverseEntity="NGNPosition" syncable="YES"/>
     </entity>
-    <entity name="FireSafetyCategory" representedClassName="FireSafetyCategory" syncable="YES" codeGenerationType="class">
+    <entity name="NGNFireSafetyCategory" representedClassName="NGNFireSafetyCategory" syncable="YES">
         <attribute name="idx" attributeType="Decimal" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
-        <relationship name="positions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Position" inverseName="fireSafetyCategory" inverseEntity="Position" syncable="YES"/>
-        <relationship name="rooms" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Room" inverseName="fireSafetyCategory" inverseEntity="Room" syncable="YES"/>
+        <relationship name="positions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="NGNPosition" inverseName="fireSafetyCategory" inverseEntity="NGNPosition" syncable="YES"/>
+        <relationship name="rooms" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="NGNRoom" inverseName="fireSafetyCategory" inverseEntity="NGNRoom" syncable="YES"/>
     </entity>
-    <entity name="FunctionalFireSafetyCategory" representedClassName="FunctionalFireSafetyCategory" syncable="YES" codeGenerationType="class">
+    <entity name="NGNFunctionalFireSafetyCategory" representedClassName="NGNFunctionalFireSafetyCategory" syncable="YES">
         <attribute name="idx" attributeType="Decimal" syncable="YES"/>
         <attribute name="info" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
-        <relationship name="positions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Position" inverseName="functionalFireSafetyCategory" inverseEntity="Position" syncable="YES"/>
+        <relationship name="positions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="NGNPosition" inverseName="functionalFireSafetyCategory" inverseEntity="NGNPosition" syncable="YES"/>
     </entity>
-    <entity name="MinimumREIConstructionType" representedClassName="MinimumREIConstructionType" syncable="YES" codeGenerationType="class">
+    <entity name="NGNMinimumREIConstructionType" representedClassName="NGNMinimumREIConstructionType" syncable="YES">
         <attribute name="idx" attributeType="Decimal" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
-        <relationship name="rooms" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Room" inverseName="minimumREIConstructionType" inverseEntity="Room" syncable="YES"/>
+        <relationship name="rooms" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="NGNRoom" inverseName="minimumREIConstructionType" inverseEntity="NGNRoom" syncable="YES"/>
     </entity>
-    <entity name="Position" representedClassName="Position" syncable="YES">
+    <entity name="NGNPosition" representedClassName="NGNPosition" syncable="YES">
         <attribute name="fullSquare" optional="YES" attributeType="Double" minValueString="0" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="idx" attributeType="Decimal" syncable="YES"/>
         <attribute name="info" optional="YES" attributeType="String" defaultValueString="no info" syncable="YES"/>
@@ -45,32 +45,32 @@
         <attribute name="number" optional="YES" attributeType="String" regularExpressionString="\d{1,3}[a-zA-Z]{0,2}" syncable="YES"/>
         <attribute name="structuralVolume" optional="YES" attributeType="Double" minValueString="0" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="usefulSquare" optional="YES" attributeType="Double" minValueString="0" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
-        <relationship name="fireResistanceRank" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FireResistanceRank" inverseName="positions" inverseEntity="FireResistanceRank" syncable="YES"/>
-        <relationship name="fireSafetyCategory" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FireSafetyCategory" inverseName="positions" inverseEntity="FireSafetyCategory" syncable="YES"/>
-        <relationship name="functionalFireSafetyCategory" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FunctionalFireSafetyCategory" inverseName="positions" inverseEntity="FunctionalFireSafetyCategory" syncable="YES"/>
-        <relationship name="project" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Project" inverseName="positions" inverseEntity="Project" syncable="YES"/>
-        <relationship name="rooms" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Room" inverseName="position" inverseEntity="Room" syncable="YES"/>
+        <relationship name="fireResistanceRank" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="NGNFireResistanceRank" inverseName="positions" inverseEntity="NGNFireResistanceRank" syncable="YES"/>
+        <relationship name="fireSafetyCategory" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="NGNFireSafetyCategory" inverseName="positions" inverseEntity="NGNFireSafetyCategory" syncable="YES"/>
+        <relationship name="functionalFireSafetyCategory" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="NGNFunctionalFireSafetyCategory" inverseName="positions" inverseEntity="NGNFunctionalFireSafetyCategory" syncable="YES"/>
+        <relationship name="project" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="NGNProject" inverseName="positions" inverseEntity="NGNProject" syncable="YES"/>
+        <relationship name="rooms" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="NGNRoom" inverseName="position" inverseEntity="NGNRoom" syncable="YES"/>
     </entity>
-    <entity name="Project" representedClassName="Project" syncable="YES">
+    <entity name="NGNProject" representedClassName="NGNProject" syncable="YES">
         <attribute name="idx" attributeType="Decimal" syncable="YES"/>
         <attribute name="info" optional="YES" attributeType="String" defaultValueString="no info" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
         <attribute name="number" attributeType="String" syncable="YES"/>
-        <relationship name="positions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Position" inverseName="project" inverseEntity="Position" syncable="YES"/>
-        <relationship name="user" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="User" inverseName="projects" inverseEntity="User" syncable="YES"/>
+        <relationship name="positions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="NGNPosition" inverseName="project" inverseEntity="NGNPosition" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="NGNUser" inverseName="projects" inverseEntity="NGNUser" syncable="YES"/>
     </entity>
-    <entity name="Room" representedClassName="Room" syncable="YES">
+    <entity name="NGNRoom" representedClassName="NGNRoom" syncable="YES">
         <attribute name="height" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="idx" attributeType="Decimal" syncable="YES"/>
         <attribute name="number" attributeType="String" regularExpressionString="[0-9]{1,3}[a-z]{0,1}" syncable="YES"/>
         <attribute name="square" attributeType="Double" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
-        <relationship name="apertureGroups" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ApertureGroup" inverseName="room" inverseEntity="ApertureGroup" syncable="YES"/>
-        <relationship name="fireSafetyCategory" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FireSafetyCategory" inverseName="rooms" inverseEntity="FireSafetyCategory" syncable="YES"/>
-        <relationship name="minimumREIConstructionType" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MinimumREIConstructionType" inverseName="rooms" inverseEntity="MinimumREIConstructionType" syncable="YES"/>
-        <relationship name="position" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Position" inverseName="rooms" inverseEntity="Position" syncable="YES"/>
-        <relationship name="substancePiles" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SubstancePile" inverseName="room" inverseEntity="SubstancePile" syncable="YES"/>
+        <relationship name="apertureGroups" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="NGNApertureGroup" inverseName="room" inverseEntity="NGNApertureGroup" syncable="YES"/>
+        <relationship name="fireSafetyCategory" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="NGNFireSafetyCategory" inverseName="rooms" inverseEntity="NGNFireSafetyCategory" syncable="YES"/>
+        <relationship name="minimumREIConstructionType" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="NGNMinimumREIConstructionType" inverseName="rooms" inverseEntity="NGNMinimumREIConstructionType" syncable="YES"/>
+        <relationship name="position" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="NGNPosition" inverseName="rooms" inverseEntity="NGNPosition" syncable="YES"/>
+        <relationship name="substancePiles" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="NGNSubstancePile" inverseName="room" inverseEntity="NGNSubstancePile" syncable="YES"/>
     </entity>
-    <entity name="Substance" representedClassName="Substance" syncable="YES">
+    <entity name="NGNSubstance" representedClassName="NGNSubstance" syncable="YES">
         <attribute name="burningRate" optional="YES" attributeType="Double" minValueString="0" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="density" optional="YES" attributeType="Double" minValueString="0" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="flameSpeed" optional="YES" attributeType="Double" minValueString="0" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
@@ -78,41 +78,41 @@
         <attribute name="idx" attributeType="Decimal" syncable="YES"/>
         <attribute name="name" attributeType="String" defaultValueString="substance" syncable="YES"/>
         <attribute name="requiredAirAmount" optional="YES" attributeType="Double" minValueString="0" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
-        <relationship name="substanceSets" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="SubstancePile" inverseName="substance" inverseEntity="SubstancePile" syncable="YES"/>
-        <relationship name="substanceType" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SubstanceType" inverseName="substances" inverseEntity="SubstanceType" syncable="YES"/>
-        <relationship name="user" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="User" inverseName="substances" inverseEntity="User" syncable="YES"/>
+        <relationship name="substanceSets" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="NGNSubstancePile" inverseName="substance" inverseEntity="NGNSubstancePile" syncable="YES"/>
+        <relationship name="substanceType" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="NGNSubstanceType" inverseName="substances" inverseEntity="NGNSubstanceType" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="NGNUser" inverseName="substances" inverseEntity="NGNUser" syncable="YES"/>
     </entity>
-    <entity name="SubstancePile" representedClassName="SubstancePile" syncable="YES">
+    <entity name="NGNSubstancePile" representedClassName="NGNSubstancePile" syncable="YES">
         <attribute name="idx" attributeType="Decimal" syncable="YES"/>
         <attribute name="mass" optional="YES" attributeType="Double" minValueString="0" defaultValueString="1" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="maxPileHeight" optional="YES" attributeType="Double" minValueString="0" defaultValueString="1" usesScalarValueType="NO" syncable="YES"/>
-        <relationship name="room" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Room" inverseName="substancePiles" inverseEntity="Room" syncable="YES"/>
-        <relationship name="substance" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Substance" inverseName="substanceSets" inverseEntity="Substance" syncable="YES"/>
+        <relationship name="room" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="NGNRoom" inverseName="substancePiles" inverseEntity="NGNRoom" syncable="YES"/>
+        <relationship name="substance" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="NGNSubstance" inverseName="substanceSets" inverseEntity="NGNSubstance" syncable="YES"/>
     </entity>
-    <entity name="SubstanceType" representedClassName="SubstanceType" syncable="YES" codeGenerationType="class">
+    <entity name="NGNSubstanceType" representedClassName="NGNSubstanceType" syncable="YES">
         <attribute name="idx" attributeType="Decimal" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
-        <relationship name="substances" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Substance" inverseName="substanceType" inverseEntity="Substance" syncable="YES"/>
+        <relationship name="substances" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="NGNSubstance" inverseName="substanceType" inverseEntity="NGNSubstance" syncable="YES"/>
     </entity>
-    <entity name="User" representedClassName="User" syncable="YES">
+    <entity name="NGNUser" representedClassName="NGNUser" syncable="YES">
         <attribute name="idx" attributeType="Integer 64" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="name" attributeType="String" defaultValueString="Jhon" syncable="YES"/>
         <attribute name="password" attributeType="String" minValueString="6" regularExpressionString="(\d|[a-z]){6,}" syncable="YES"/>
-        <relationship name="projects" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Project" inverseName="user" inverseEntity="Project" syncable="YES"/>
-        <relationship name="substances" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Substance" inverseName="user" inverseEntity="Substance" syncable="YES"/>
+        <relationship name="projects" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="NGNProject" inverseName="user" inverseEntity="NGNProject" syncable="YES"/>
+        <relationship name="substances" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="NGNSubstance" inverseName="user" inverseEntity="NGNSubstance" syncable="YES"/>
     </entity>
     <elements>
-        <element name="ApertureGroup" positionX="-4212" positionY="-2350" width="128" height="118"/>
-        <element name="Position" positionX="-4023" positionY="-2583" width="128" height="223"/>
-        <element name="Project" positionX="-4025" positionY="-2758" width="128" height="133"/>
-        <element name="Room" positionX="-4014" positionY="-2286" width="128" height="178"/>
-        <element name="Substance" positionX="-4394" positionY="-2605" width="128" height="193"/>
-        <element name="SubstancePile" positionX="-4401" positionY="-2296" width="128" height="118"/>
-        <element name="User" positionX="-4212" positionY="-2754" width="128" height="118"/>
-        <element name="FireResistanceRank" positionX="-4212" positionY="-2583" width="128" height="208"/>
-        <element name="FunctionalFireSafetyCategory" positionX="-3827" positionY="-2583" width="128" height="103"/>
-        <element name="FireSafetyCategory" positionX="-3816" positionY="-2394" width="128" height="103"/>
-        <element name="MinimumREIConstructionType" positionX="-3816" positionY="-2194" width="128" height="88"/>
-        <element name="SubstanceType" positionX="-4401" positionY="-2754" width="128" height="88"/>
+        <element name="NGNApertureGroup" positionX="-4212" positionY="-2350" width="128" height="118"/>
+        <element name="NGNPosition" positionX="-4023" positionY="-2583" width="128" height="223"/>
+        <element name="NGNProject" positionX="-4025" positionY="-2758" width="128" height="133"/>
+        <element name="NGNRoom" positionX="-4014" positionY="-2286" width="128" height="178"/>
+        <element name="NGNSubstance" positionX="-4394" positionY="-2605" width="128" height="193"/>
+        <element name="NGNSubstancePile" positionX="-4401" positionY="-2296" width="128" height="118"/>
+        <element name="NGNUser" positionX="-4212" positionY="-2754" width="128" height="118"/>
+        <element name="NGNFireResistanceRank" positionX="-4212" positionY="-2583" width="128" height="208"/>
+        <element name="NGNFunctionalFireSafetyCategory" positionX="-3827" positionY="-2583" width="128" height="103"/>
+        <element name="NGNFireSafetyCategory" positionX="-3816" positionY="-2394" width="128" height="103"/>
+        <element name="NGNMinimumREIConstructionType" positionX="-3816" positionY="-2194" width="128" height="88"/>
+        <element name="NGNSubstanceType" positionX="-4401" positionY="-2754" width="128" height="88"/>
     </elements>
 </model>
