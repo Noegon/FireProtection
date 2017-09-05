@@ -1,0 +1,141 @@
+{
+  "catalog": [
+    {
+      "id": 1,
+      "name": "Xiaomi Redmi 4X 16GB Black",
+      "price": 246,
+      "discount": 0,
+      "avialable": 0,
+      "image": "https://content2.onliner.by/catalog/device/header/242b30b89b7a5fa1928431df242cae1b.jpeg"
+    },
+    {
+      "id": 2,
+      "name": "Apple iPhone 7 32GB Black",
+      "price": 1400,
+      "discount": 10,
+      "avialable": 1,
+      "image": "https://content2.onliner.by/catalog/device/header/f8d7fac0fe59ead77f5199454a6e8c4a.jpeg"
+    },
+    {
+      "id": 3,
+      "name": "Samsung Galaxy S8 Dual SIM 64GB",
+      "price": 1590,
+      "discount": 0,
+      "avialable": 1,
+      "image": "https://content2.onliner.by/catalog/device/header/9e451098ecf194f0d3998eab6015f954.jpeg"
+    },
+    {
+      "id": 4,
+      "name": "Samsung Galaxy S6 32GB",
+      "price": 1005,
+      "discount": 0,
+      "avialable": 1,
+      "image": "https://content2.onliner.by/catalog/device/header/c8c21d4d6d2139554fee107e3d6d8a54.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Samsung Galaxy S6 16GB",
+      "price": 758,
+      "discount": 0,
+      "avialable": 1,
+      "image": "https://content2.onliner.by/catalog/device/header/c8ad1c575429cbf59298348ae4ca42cc.jpg"
+    }
+  ],
+  "profile": [
+    {
+      "id": 1,
+      "address": "NIL",
+      "name": "Noegon",
+      "password": "grendell",
+      "phone": 375257515436
+    }
+  ],
+  "order": [
+    {
+      "id": 1,
+      "orderingDate": "21.07.2017",
+      "state": 3,
+      "user": 1
+    },
+    {
+      "id": 2,
+      "orderingDate": "29.07.2017",
+      "state": 1,
+      "user": 1
+    },
+    {
+      "id": 2021623384,
+      "state": 1,
+      "orderingDate": "07.08.2017",
+      "user": 1
+    },
+    {
+      "id": 1740960969,
+      "state": 0,
+      "orderingDate": "07.08.2017",
+      "user": 1
+    }
+  ],
+  "goodsOrder": [
+    {
+      "id": 5,
+      "good": 1,
+      "order": 1
+    },
+    {
+      "id": 1,
+      "good": 2,
+      "order": 2
+    },
+    {
+      "id": 3,
+      "good": 2,
+      "order": 2
+    },
+    {
+      "id": 1787338816,
+      "good": 2,
+      "order": 2021623384
+    },
+    {
+      "id": 83555714,
+      "good": 4,
+      "order": 2021623384
+    },
+    {
+      "id": 555147462,
+      "good": 5,
+      "order": 2021623384
+    },
+    {
+      "id": 1920700125,
+      "good": 5,
+      "order": 2021623384
+    },
+    {
+      "id": 1910494359,
+      "good": 2,
+      "order": 2021623384
+    },
+    {
+      "id": 110139150,
+      "good": 3,
+      "order": 2021623384
+    },
+    {
+      "id": 1568186884,
+      "good": 4,
+      "order": 1740960969
+    },
+    {
+      "id": 1843431553,
+      "good": 3,
+      "order": 1740960969
+    },
+    {
+      "id": 1838888157,
+      "good": 3,
+      "order": 1740960969
+    }
+  ]
+}

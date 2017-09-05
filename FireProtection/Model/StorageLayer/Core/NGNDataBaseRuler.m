@@ -1,0 +1,102 @@
+//
+//  NGNDataBaseRuler.m
+//  FireProtection
+//
+//  Created by Alex on 19.07.17.
+//  Copyright © 2017 Alex. All rights reserved.
+//
+
+#import "NGNDataBaseRuler.h"
+#import "NGNCommonConstants.h"
+
+@interface NGNDataBaseRuler ()
+
+@property (readwrite, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+@property (readwrite, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
+@property (readwrite, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+
+- (NSPersistentStoreCoordinator *)persistentStoreCoordinatorWithStorageName:(NSString *)storageName;
+
+@end
+
+@implementation NGNDataBaseRuler
+
+#pragma mark - basic logic methods;
++ (instancetype)sharedInstance {
+    static NGNDataBaseRuler *sharedInstance = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sharedInstance = [[self alloc] init];
+    });
+    return sharedInstance;
+}
+
+#pragma mark - core data support methods
+
++ (NSManagedObjectContext *)managedObjectContext {
+    return [[self sharedInstance] managedObjectContext];
+}
+
++ (void)setupCoreDataStackWithStorageName:(NSString *)storageName {
+    NSPersistentStoreCoordinator *coordinator =  [[self sharedInstance] persistentStoreCoordinatorWithStorageName:storageName];
+    if (coordinator != nil) {
+        [[self sharedInstance] setManagedObjectContext:[[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType]];
+        [[[self sharedInstance] managedObjectContext] setPersistentStoreCoordinator:coordinator];
+        [[[self sharedInstance] managedObjectContext] setMergePolicy:NSMergeByPropertyStoreTrumpMergePolicy];
+    }
+}
+
++ (void)saveContext {
+    NSError *error = nil;
+    NSManagedObjectContext *managedObjectContext = [self.sharedInstance managedObjectContext];
+    if([managedObjectContext hasChanges] &&
+       ![managedObjectContext save:&error]){
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        abort();
+    } else {
+        [managedObjectContext refreshAllObjects];
+    }
+}
+
+#pragma mark - core data handle helper methods
+
+- (NSManagedObjectModel *)managedObjectModel {
+    if (_managedObjectModel != nil) {
+        return _managedObjectModel;
+    }
+    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:NGNModelAppName withExtension:@"momd"];
+    _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
+    return _managedObjectModel;
+}
+
+- (NSPersistentStoreCoordinator *)persistentStoreCoordinatorWithStorageName:(NSString *)storageName {
+    if(self.persistentStoreCoordinator) {
+        return self.persistentStoreCoordinator;
+    }
+    if (!storageName) {
+        storageName = NGNModelAppName;
+    }
+    NSString *fullStorageName = [NSString stringWithFormat:@"%@.sqlite", storageName];
+    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:fullStorageName];
+    NSError *error = nil;
+    self.persistentStoreCoordinator =
+        [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:self.managedObjectModel];
+    if(![self.persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType
+                                                  configuration:nil
+                                                            URL:storeURL
+                                                        options:nil
+                                                          error:&error]) {
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        abort();
+    }
+    return self.persistentStoreCoordinator;
+}
+
+#pragma mark - additional helper methods
+
+- (NSURL *)applicationDocumentsDirectory {
+    return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory
+                                                   inDomains:NSUserDomainMask] lastObject];
+}
+
+@end

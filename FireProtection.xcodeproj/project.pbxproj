@@ -39,6 +39,14 @@
 		40E999CF1F5F17F600B6F9F9 /* NGNSubstance+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E999B51F5F17F600B6F9F9 /* NGNSubstance+CoreDataProperties.m */; };
 		40E999D01F5F17F600B6F9F9 /* NGNProject+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E999B71F5F17F600B6F9F9 /* NGNProject+CoreDataClass.m */; };
 		40E999D11F5F17F600B6F9F9 /* NGNProject+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E999B91F5F17F600B6F9F9 /* NGNProject+CoreDataProperties.m */; };
+		40E999D51F5F25EC00B6F9F9 /* NGNDataBaseRuler.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E999D31F5F25EC00B6F9F9 /* NGNDataBaseRuler.m */; };
+		40E999D81F5F261B00B6F9F9 /* NSManagedObject+NGNCRUDAppendix.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E999D71F5F261B00B6F9F9 /* NSManagedObject+NGNCRUDAppendix.m */; };
+		40E999DD1F5F26A500B6F9F9 /* NGNServerSideLayerConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E999D91F5F26A500B6F9F9 /* NGNServerSideLayerConstants.m */; };
+		40E999DE1F5F26A500B6F9F9 /* NGNCoreDataEntitiesNames.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E999DC1F5F26A500B6F9F9 /* NGNCoreDataEntitiesNames.m */; };
+		40E999E41F5F2C6C00B6F9F9 /* NGNAbstractService.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E999E21F5F2C6B00B6F9F9 /* NGNAbstractService.m */; };
+		40E999E51F5F2C6C00B6F9F9 /* NGNBasicService.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E999E31F5F2C6B00B6F9F9 /* NGNBasicService.m */; };
+		40E999EB1F5F405600B6F9F9 /* NGNReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E999E71F5F405600B6F9F9 /* NGNReachability.m */; };
+		40E999EC1F5F405600B6F9F9 /* NGNServerDataLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E999EA1F5F405600B6F9F9 /* NGNServerDataLoader.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -104,6 +112,24 @@
 		40E999B81F5F17F600B6F9F9 /* NGNProject+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NGNProject+CoreDataProperties.h"; sourceTree = "<group>"; };
 		40E999B91F5F17F600B6F9F9 /* NGNProject+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NGNProject+CoreDataProperties.m"; sourceTree = "<group>"; };
 		40E999D21F5F184200B6F9F9 /* NGNCoreDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGNCoreDataModel.h; sourceTree = "<group>"; };
+		40E999D31F5F25EC00B6F9F9 /* NGNDataBaseRuler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NGNDataBaseRuler.m; path = Model/StorageLayer/Core/NGNDataBaseRuler.m; sourceTree = "<group>"; };
+		40E999D41F5F25EC00B6F9F9 /* NGNDataBaseRuler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NGNDataBaseRuler.h; path = Model/StorageLayer/Core/NGNDataBaseRuler.h; sourceTree = "<group>"; };
+		40E999D61F5F261B00B6F9F9 /* NSManagedObject+NGNCRUDAppendix.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "NSManagedObject+NGNCRUDAppendix.h"; path = "Model/StorageLayer/Core/NSManagedObject+NGNCRUDAppendix.h"; sourceTree = "<group>"; };
+		40E999D71F5F261B00B6F9F9 /* NSManagedObject+NGNCRUDAppendix.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "NSManagedObject+NGNCRUDAppendix.m"; path = "Model/StorageLayer/Core/NSManagedObject+NGNCRUDAppendix.m"; sourceTree = "<group>"; };
+		40E999D91F5F26A500B6F9F9 /* NGNServerSideLayerConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NGNServerSideLayerConstants.m; path = Constants/NGNServerSideLayerConstants.m; sourceTree = "<group>"; };
+		40E999DA1F5F26A500B6F9F9 /* NGNCoreDataEntitiesNames.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NGNCoreDataEntitiesNames.h; path = Constants/NGNCoreDataEntitiesNames.h; sourceTree = "<group>"; };
+		40E999DB1F5F26A500B6F9F9 /* NGNServerSideLayerConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NGNServerSideLayerConstants.h; path = Constants/NGNServerSideLayerConstants.h; sourceTree = "<group>"; };
+		40E999DC1F5F26A500B6F9F9 /* NGNCoreDataEntitiesNames.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NGNCoreDataEntitiesNames.m; path = Constants/NGNCoreDataEntitiesNames.m; sourceTree = "<group>"; };
+		40E999E01F5F2C6B00B6F9F9 /* NGNBasicService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NGNBasicService.h; path = Model/ServerSideLayer/Services/NGNBasicService.h; sourceTree = "<group>"; };
+		40E999E11F5F2C6B00B6F9F9 /* NGNAbstractService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NGNAbstractService.h; path = Model/ServerSideLayer/Services/NGNAbstractService.h; sourceTree = "<group>"; };
+		40E999E21F5F2C6B00B6F9F9 /* NGNAbstractService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NGNAbstractService.m; path = Model/ServerSideLayer/Services/NGNAbstractService.m; sourceTree = "<group>"; };
+		40E999E31F5F2C6B00B6F9F9 /* NGNBasicService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NGNBasicService.m; path = Model/ServerSideLayer/Services/NGNBasicService.m; sourceTree = "<group>"; };
+		40E999E61F5F2CDF00B6F9F9 /* NGNServiceProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NGNServiceProtocol.h; path = Model/ServerSideLayer/NGNServiceProtocol.h; sourceTree = "<group>"; };
+		40E999E71F5F405600B6F9F9 /* NGNReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NGNReachability.m; path = Model/MiddleLayer/NGNReachability.m; sourceTree = "<group>"; };
+		40E999E81F5F405600B6F9F9 /* NGNReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NGNReachability.h; path = Model/MiddleLayer/NGNReachability.h; sourceTree = "<group>"; };
+		40E999E91F5F405600B6F9F9 /* NGNServerDataLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NGNServerDataLoader.h; path = Model/MiddleLayer/NGNServerDataLoader.h; sourceTree = "<group>"; };
+		40E999EA1F5F405600B6F9F9 /* NGNServerDataLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NGNServerDataLoader.m; path = Model/MiddleLayer/NGNServerDataLoader.m; sourceTree = "<group>"; };
+		40E999ED1F5F40E600B6F9F9 /* NGNServerLayerServices.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = NGNServerLayerServices.h; path = Model/ServerSideLayer/Services/NGNServerLayerServices.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +146,10 @@
 		404538601F4B9F7300125AC3 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
+				40E999DA1F5F26A500B6F9F9 /* NGNCoreDataEntitiesNames.h */,
+				40E999DC1F5F26A500B6F9F9 /* NGNCoreDataEntitiesNames.m */,
+				40E999DB1F5F26A500B6F9F9 /* NGNServerSideLayerConstants.h */,
+				40E999D91F5F26A500B6F9F9 /* NGNServerSideLayerConstants.m */,
 				404538611F4B9FA600125AC3 /* NGNCommonConstants.h */,
 				404538621F4B9FA600125AC3 /* NGNCommonConstants.m */,
 			);
@@ -206,6 +236,8 @@
 		40D89ECC1F4067D900B07AB5 /* ServerSideLayer */ = {
 			isa = PBXGroup;
 			children = (
+				40E999E61F5F2CDF00B6F9F9 /* NGNServiceProtocol.h */,
+				40E999DF1F5F2C3600B6F9F9 /* Services */,
 			);
 			name = ServerSideLayer;
 			sourceTree = "<group>";
@@ -213,6 +245,10 @@
 		40D89ECD1F4067E600B07AB5 /* MiddleLayer */ = {
 			isa = PBXGroup;
 			children = (
+				40E999E81F5F405600B6F9F9 /* NGNReachability.h */,
+				40E999E71F5F405600B6F9F9 /* NGNReachability.m */,
+				40E999E91F5F405600B6F9F9 /* NGNServerDataLoader.h */,
+				40E999EA1F5F405600B6F9F9 /* NGNServerDataLoader.m */,
 			);
 			name = MiddleLayer;
 			sourceTree = "<group>";
@@ -220,6 +256,10 @@
 		40D89ECE1F40688A00B07AB5 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				40E999D41F5F25EC00B6F9F9 /* NGNDataBaseRuler.h */,
+				40E999D31F5F25EC00B6F9F9 /* NGNDataBaseRuler.m */,
+				40E999D61F5F261B00B6F9F9 /* NSManagedObject+NGNCRUDAppendix.h */,
+				40E999D71F5F261B00B6F9F9 /* NSManagedObject+NGNCRUDAppendix.m */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -280,6 +320,18 @@
 			);
 			name = Model;
 			path = Model/StorageLayer/Model;
+			sourceTree = "<group>";
+		};
+		40E999DF1F5F2C3600B6F9F9 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				40E999ED1F5F40E600B6F9F9 /* NGNServerLayerServices.h */,
+				40E999E11F5F2C6B00B6F9F9 /* NGNAbstractService.h */,
+				40E999E21F5F2C6B00B6F9F9 /* NGNAbstractService.m */,
+				40E999E01F5F2C6B00B6F9F9 /* NGNBasicService.h */,
+				40E999E31F5F2C6B00B6F9F9 /* NGNBasicService.m */,
+			);
+			name = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -357,13 +409,18 @@
 			files = (
 				40E999C61F5F17F600B6F9F9 /* NGNFunctionalFireSafetyCategory+CoreDataClass.m in Sources */,
 				40E999BC1F5F17F600B6F9F9 /* NGNSubstanceType+CoreDataClass.m in Sources */,
+				40E999DE1F5F26A500B6F9F9 /* NGNCoreDataEntitiesNames.m in Sources */,
 				40E999CA1F5F17F600B6F9F9 /* NGNRoom+CoreDataClass.m in Sources */,
+				40E999E51F5F2C6C00B6F9F9 /* NGNBasicService.m in Sources */,
+				40E999EC1F5F405600B6F9F9 /* NGNServerDataLoader.m in Sources */,
 				40E999BF1F5F17F600B6F9F9 /* NGNApertureGroup+CoreDataProperties.m in Sources */,
 				40E999BD1F5F17F600B6F9F9 /* NGNSubstanceType+CoreDataProperties.m in Sources */,
 				40E999C01F5F17F600B6F9F9 /* NGNFireSafetyCategory+CoreDataClass.m in Sources */,
+				40E999E41F5F2C6C00B6F9F9 /* NGNAbstractService.m in Sources */,
 				40E999BE1F5F17F600B6F9F9 /* NGNApertureGroup+CoreDataClass.m in Sources */,
 				40E999C91F5F17F600B6F9F9 /* NGNUser+CoreDataProperties.m in Sources */,
 				40E999C11F5F17F600B6F9F9 /* NGNFireSafetyCategory+CoreDataProperties.m in Sources */,
+				40E999EB1F5F405600B6F9F9 /* NGNReachability.m in Sources */,
 				40E999BA1F5F17F600B6F9F9 /* NGNFireResistanceRank+CoreDataClass.m in Sources */,
 				40E999CC1F5F17F600B6F9F9 /* NGNPosition+CoreDataClass.m in Sources */,
 				40E999891F5F17CF00B6F9F9 /* FireProtection.xcdatamodeld in Sources */,
@@ -372,6 +429,8 @@
 				40D89EB61F40621800B07AB5 /* ViewController.m in Sources */,
 				404538631F4B9FA600125AC3 /* NGNCommonConstants.m in Sources */,
 				40E999CB1F5F17F600B6F9F9 /* NGNRoom+CoreDataProperties.m in Sources */,
+				40E999DD1F5F26A500B6F9F9 /* NGNServerSideLayerConstants.m in Sources */,
+				40E999D81F5F261B00B6F9F9 /* NSManagedObject+NGNCRUDAppendix.m in Sources */,
 				40E999C31F5F17F600B6F9F9 /* NGNMinimumREIConstructionType+CoreDataProperties.m in Sources */,
 				40E999C71F5F17F600B6F9F9 /* NGNFunctionalFireSafetyCategory+CoreDataProperties.m in Sources */,
 				40E999D01F5F17F600B6F9F9 /* NGNProject+CoreDataClass.m in Sources */,
@@ -382,6 +441,7 @@
 				40D89EB31F40621800B07AB5 /* AppDelegate.m in Sources */,
 				40E999D11F5F17F600B6F9F9 /* NGNProject+CoreDataProperties.m in Sources */,
 				40E999BB1F5F17F600B6F9F9 /* NGNFireResistanceRank+CoreDataProperties.m in Sources */,
+				40E999D51F5F25EC00B6F9F9 /* NGNDataBaseRuler.m in Sources */,
 				40D89EB01F40621800B07AB5 /* main.m in Sources */,
 				40E999CF1F5F17F600B6F9F9 /* NGNSubstance+CoreDataProperties.m in Sources */,
 			);
