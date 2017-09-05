@@ -7,90 +7,41 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		404538481F4B9E2900125AC3 /* NGNSubstance+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 404538191F4B9E2900125AC3 /* NGNSubstance+CoreDataClass.m */; };
-		404538491F4B9E2900125AC3 /* NGNSubstance+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 4045381B1F4B9E2900125AC3 /* NGNSubstance+CoreDataProperties.m */; };
-		4045384A1F4B9E2900125AC3 /* NGNMinimumREIConstructionType+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 4045381D1F4B9E2900125AC3 /* NGNMinimumREIConstructionType+CoreDataClass.m */; };
-		4045384B1F4B9E2900125AC3 /* NGNMinimumREIConstructionType+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 4045381F1F4B9E2900125AC3 /* NGNMinimumREIConstructionType+CoreDataProperties.m */; };
-		4045384C1F4B9E2900125AC3 /* NGNUser+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 404538211F4B9E2900125AC3 /* NGNUser+CoreDataClass.m */; };
-		4045384D1F4B9E2900125AC3 /* NGNUser+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 404538231F4B9E2900125AC3 /* NGNUser+CoreDataProperties.m */; };
-		4045384E1F4B9E2900125AC3 /* NGNFireSafetyCategory+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 404538251F4B9E2900125AC3 /* NGNFireSafetyCategory+CoreDataClass.m */; };
-		4045384F1F4B9E2900125AC3 /* NGNFireSafetyCategory+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 404538271F4B9E2900125AC3 /* NGNFireSafetyCategory+CoreDataProperties.m */; };
-		404538501F4B9E2900125AC3 /* NGNRoom+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 404538291F4B9E2900125AC3 /* NGNRoom+CoreDataClass.m */; };
-		404538511F4B9E2900125AC3 /* NGNRoom+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 4045382B1F4B9E2900125AC3 /* NGNRoom+CoreDataProperties.m */; };
-		404538521F4B9E2900125AC3 /* NGNSubstancePile+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 4045382D1F4B9E2900125AC3 /* NGNSubstancePile+CoreDataClass.m */; };
-		404538531F4B9E2900125AC3 /* NGNSubstancePile+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 4045382F1F4B9E2900125AC3 /* NGNSubstancePile+CoreDataProperties.m */; };
-		404538541F4B9E2900125AC3 /* NGNSubstanceType+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 404538311F4B9E2900125AC3 /* NGNSubstanceType+CoreDataClass.m */; };
-		404538551F4B9E2900125AC3 /* NGNSubstanceType+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 404538331F4B9E2900125AC3 /* NGNSubstanceType+CoreDataProperties.m */; };
-		404538561F4B9E2900125AC3 /* NGNApertureGroup+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 404538351F4B9E2900125AC3 /* NGNApertureGroup+CoreDataClass.m */; };
-		404538571F4B9E2900125AC3 /* NGNApertureGroup+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 404538371F4B9E2900125AC3 /* NGNApertureGroup+CoreDataProperties.m */; };
-		404538581F4B9E2900125AC3 /* NGNFireResistanceRank+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 404538391F4B9E2900125AC3 /* NGNFireResistanceRank+CoreDataClass.m */; };
-		404538591F4B9E2900125AC3 /* NGNFireResistanceRank+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 4045383B1F4B9E2900125AC3 /* NGNFireResistanceRank+CoreDataProperties.m */; };
-		4045385A1F4B9E2900125AC3 /* NGNProject+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 4045383D1F4B9E2900125AC3 /* NGNProject+CoreDataClass.m */; };
-		4045385B1F4B9E2900125AC3 /* NGNProject+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 4045383F1F4B9E2900125AC3 /* NGNProject+CoreDataProperties.m */; };
-		4045385C1F4B9E2900125AC3 /* NGNFunctionalFireSafetyCategory+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 404538411F4B9E2900125AC3 /* NGNFunctionalFireSafetyCategory+CoreDataClass.m */; };
-		4045385D1F4B9E2900125AC3 /* NGNFunctionalFireSafetyCategory+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 404538431F4B9E2900125AC3 /* NGNFunctionalFireSafetyCategory+CoreDataProperties.m */; };
-		4045385E1F4B9E2900125AC3 /* NGNPosition+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 404538451F4B9E2900125AC3 /* NGNPosition+CoreDataClass.m */; };
-		4045385F1F4B9E2900125AC3 /* NGNPosition+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 404538471F4B9E2900125AC3 /* NGNPosition+CoreDataProperties.m */; };
 		404538631F4B9FA600125AC3 /* NGNCommonConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 404538621F4B9FA600125AC3 /* NGNCommonConstants.m */; };
 		40D89EB01F40621800B07AB5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 40D89EAF1F40621800B07AB5 /* main.m */; };
 		40D89EB31F40621800B07AB5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 40D89EB21F40621800B07AB5 /* AppDelegate.m */; };
 		40D89EB61F40621800B07AB5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40D89EB51F40621800B07AB5 /* ViewController.m */; };
 		40D89EB91F40621800B07AB5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40D89EB71F40621800B07AB5 /* Main.storyboard */; };
-		40D89EBC1F40621800B07AB5 /* FireProtection.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 40D89EBA1F40621800B07AB5 /* FireProtection.xcdatamodeld */; };
 		40D89EBE1F40621800B07AB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40D89EBD1F40621800B07AB5 /* Assets.xcassets */; };
 		40D89EC11F40621800B07AB5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40D89EBF1F40621800B07AB5 /* LaunchScreen.storyboard */; };
+		40E999891F5F17CF00B6F9F9 /* FireProtection.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 40E999871F5F17CF00B6F9F9 /* FireProtection.xcdatamodeld */; };
+		40E999BA1F5F17F600B6F9F9 /* NGNFireResistanceRank+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E9998B1F5F17F600B6F9F9 /* NGNFireResistanceRank+CoreDataClass.m */; };
+		40E999BB1F5F17F600B6F9F9 /* NGNFireResistanceRank+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E9998D1F5F17F600B6F9F9 /* NGNFireResistanceRank+CoreDataProperties.m */; };
+		40E999BC1F5F17F600B6F9F9 /* NGNSubstanceType+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E9998F1F5F17F600B6F9F9 /* NGNSubstanceType+CoreDataClass.m */; };
+		40E999BD1F5F17F600B6F9F9 /* NGNSubstanceType+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E999911F5F17F600B6F9F9 /* NGNSubstanceType+CoreDataProperties.m */; };
+		40E999BE1F5F17F600B6F9F9 /* NGNApertureGroup+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E999931F5F17F600B6F9F9 /* NGNApertureGroup+CoreDataClass.m */; };
+		40E999BF1F5F17F600B6F9F9 /* NGNApertureGroup+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E999951F5F17F600B6F9F9 /* NGNApertureGroup+CoreDataProperties.m */; };
+		40E999C01F5F17F600B6F9F9 /* NGNFireSafetyCategory+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E999971F5F17F600B6F9F9 /* NGNFireSafetyCategory+CoreDataClass.m */; };
+		40E999C11F5F17F600B6F9F9 /* NGNFireSafetyCategory+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E999991F5F17F600B6F9F9 /* NGNFireSafetyCategory+CoreDataProperties.m */; };
+		40E999C21F5F17F600B6F9F9 /* NGNMinimumREIConstructionType+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E9999B1F5F17F600B6F9F9 /* NGNMinimumREIConstructionType+CoreDataClass.m */; };
+		40E999C31F5F17F600B6F9F9 /* NGNMinimumREIConstructionType+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E9999D1F5F17F600B6F9F9 /* NGNMinimumREIConstructionType+CoreDataProperties.m */; };
+		40E999C41F5F17F600B6F9F9 /* NGNSubstancePile+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E9999F1F5F17F600B6F9F9 /* NGNSubstancePile+CoreDataClass.m */; };
+		40E999C51F5F17F600B6F9F9 /* NGNSubstancePile+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E999A11F5F17F600B6F9F9 /* NGNSubstancePile+CoreDataProperties.m */; };
+		40E999C61F5F17F600B6F9F9 /* NGNFunctionalFireSafetyCategory+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E999A31F5F17F600B6F9F9 /* NGNFunctionalFireSafetyCategory+CoreDataClass.m */; };
+		40E999C71F5F17F600B6F9F9 /* NGNFunctionalFireSafetyCategory+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E999A51F5F17F600B6F9F9 /* NGNFunctionalFireSafetyCategory+CoreDataProperties.m */; };
+		40E999C81F5F17F600B6F9F9 /* NGNUser+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E999A71F5F17F600B6F9F9 /* NGNUser+CoreDataClass.m */; };
+		40E999C91F5F17F600B6F9F9 /* NGNUser+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E999A91F5F17F600B6F9F9 /* NGNUser+CoreDataProperties.m */; };
+		40E999CA1F5F17F600B6F9F9 /* NGNRoom+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E999AB1F5F17F600B6F9F9 /* NGNRoom+CoreDataClass.m */; };
+		40E999CB1F5F17F600B6F9F9 /* NGNRoom+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E999AD1F5F17F600B6F9F9 /* NGNRoom+CoreDataProperties.m */; };
+		40E999CC1F5F17F600B6F9F9 /* NGNPosition+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E999AF1F5F17F600B6F9F9 /* NGNPosition+CoreDataClass.m */; };
+		40E999CD1F5F17F600B6F9F9 /* NGNPosition+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E999B11F5F17F600B6F9F9 /* NGNPosition+CoreDataProperties.m */; };
+		40E999CE1F5F17F600B6F9F9 /* NGNSubstance+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E999B31F5F17F600B6F9F9 /* NGNSubstance+CoreDataClass.m */; };
+		40E999CF1F5F17F600B6F9F9 /* NGNSubstance+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E999B51F5F17F600B6F9F9 /* NGNSubstance+CoreDataProperties.m */; };
+		40E999D01F5F17F600B6F9F9 /* NGNProject+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E999B71F5F17F600B6F9F9 /* NGNProject+CoreDataClass.m */; };
+		40E999D11F5F17F600B6F9F9 /* NGNProject+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E999B91F5F17F600B6F9F9 /* NGNProject+CoreDataProperties.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		404538171F4B99FA00125AC3 /* NGNCoreDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NGNCoreDataModel.h; path = Model/StorageLayer/Core/NGNCoreDataModel.h; sourceTree = "<group>"; };
-		404538181F4B9E2900125AC3 /* NGNSubstance+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NGNSubstance+CoreDataClass.h"; path = "Model/StorageLayer/Core/NGNSubstance+CoreDataClass.h"; sourceTree = "<group>"; };
-		404538191F4B9E2900125AC3 /* NGNSubstance+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NGNSubstance+CoreDataClass.m"; path = "Model/StorageLayer/Core/NGNSubstance+CoreDataClass.m"; sourceTree = "<group>"; };
-		4045381A1F4B9E2900125AC3 /* NGNSubstance+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NGNSubstance+CoreDataProperties.h"; path = "Model/StorageLayer/Core/NGNSubstance+CoreDataProperties.h"; sourceTree = "<group>"; };
-		4045381B1F4B9E2900125AC3 /* NGNSubstance+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NGNSubstance+CoreDataProperties.m"; path = "Model/StorageLayer/Core/NGNSubstance+CoreDataProperties.m"; sourceTree = "<group>"; };
-		4045381C1F4B9E2900125AC3 /* NGNMinimumREIConstructionType+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NGNMinimumREIConstructionType+CoreDataClass.h"; path = "Model/StorageLayer/Core/NGNMinimumREIConstructionType+CoreDataClass.h"; sourceTree = "<group>"; };
-		4045381D1F4B9E2900125AC3 /* NGNMinimumREIConstructionType+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NGNMinimumREIConstructionType+CoreDataClass.m"; path = "Model/StorageLayer/Core/NGNMinimumREIConstructionType+CoreDataClass.m"; sourceTree = "<group>"; };
-		4045381E1F4B9E2900125AC3 /* NGNMinimumREIConstructionType+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NGNMinimumREIConstructionType+CoreDataProperties.h"; path = "Model/StorageLayer/Core/NGNMinimumREIConstructionType+CoreDataProperties.h"; sourceTree = "<group>"; };
-		4045381F1F4B9E2900125AC3 /* NGNMinimumREIConstructionType+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NGNMinimumREIConstructionType+CoreDataProperties.m"; path = "Model/StorageLayer/Core/NGNMinimumREIConstructionType+CoreDataProperties.m"; sourceTree = "<group>"; };
-		404538201F4B9E2900125AC3 /* NGNUser+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NGNUser+CoreDataClass.h"; path = "Model/StorageLayer/Core/NGNUser+CoreDataClass.h"; sourceTree = "<group>"; };
-		404538211F4B9E2900125AC3 /* NGNUser+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NGNUser+CoreDataClass.m"; path = "Model/StorageLayer/Core/NGNUser+CoreDataClass.m"; sourceTree = "<group>"; };
-		404538221F4B9E2900125AC3 /* NGNUser+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NGNUser+CoreDataProperties.h"; path = "Model/StorageLayer/Core/NGNUser+CoreDataProperties.h"; sourceTree = "<group>"; };
-		404538231F4B9E2900125AC3 /* NGNUser+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NGNUser+CoreDataProperties.m"; path = "Model/StorageLayer/Core/NGNUser+CoreDataProperties.m"; sourceTree = "<group>"; };
-		404538241F4B9E2900125AC3 /* NGNFireSafetyCategory+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NGNFireSafetyCategory+CoreDataClass.h"; path = "Model/StorageLayer/Core/NGNFireSafetyCategory+CoreDataClass.h"; sourceTree = "<group>"; };
-		404538251F4B9E2900125AC3 /* NGNFireSafetyCategory+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NGNFireSafetyCategory+CoreDataClass.m"; path = "Model/StorageLayer/Core/NGNFireSafetyCategory+CoreDataClass.m"; sourceTree = "<group>"; };
-		404538261F4B9E2900125AC3 /* NGNFireSafetyCategory+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NGNFireSafetyCategory+CoreDataProperties.h"; path = "Model/StorageLayer/Core/NGNFireSafetyCategory+CoreDataProperties.h"; sourceTree = "<group>"; };
-		404538271F4B9E2900125AC3 /* NGNFireSafetyCategory+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NGNFireSafetyCategory+CoreDataProperties.m"; path = "Model/StorageLayer/Core/NGNFireSafetyCategory+CoreDataProperties.m"; sourceTree = "<group>"; };
-		404538281F4B9E2900125AC3 /* NGNRoom+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NGNRoom+CoreDataClass.h"; path = "Model/StorageLayer/Core/NGNRoom+CoreDataClass.h"; sourceTree = "<group>"; };
-		404538291F4B9E2900125AC3 /* NGNRoom+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NGNRoom+CoreDataClass.m"; path = "Model/StorageLayer/Core/NGNRoom+CoreDataClass.m"; sourceTree = "<group>"; };
-		4045382A1F4B9E2900125AC3 /* NGNRoom+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NGNRoom+CoreDataProperties.h"; path = "Model/StorageLayer/Core/NGNRoom+CoreDataProperties.h"; sourceTree = "<group>"; };
-		4045382B1F4B9E2900125AC3 /* NGNRoom+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NGNRoom+CoreDataProperties.m"; path = "Model/StorageLayer/Core/NGNRoom+CoreDataProperties.m"; sourceTree = "<group>"; };
-		4045382C1F4B9E2900125AC3 /* NGNSubstancePile+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NGNSubstancePile+CoreDataClass.h"; path = "Model/StorageLayer/Core/NGNSubstancePile+CoreDataClass.h"; sourceTree = "<group>"; };
-		4045382D1F4B9E2900125AC3 /* NGNSubstancePile+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NGNSubstancePile+CoreDataClass.m"; path = "Model/StorageLayer/Core/NGNSubstancePile+CoreDataClass.m"; sourceTree = "<group>"; };
-		4045382E1F4B9E2900125AC3 /* NGNSubstancePile+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NGNSubstancePile+CoreDataProperties.h"; path = "Model/StorageLayer/Core/NGNSubstancePile+CoreDataProperties.h"; sourceTree = "<group>"; };
-		4045382F1F4B9E2900125AC3 /* NGNSubstancePile+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NGNSubstancePile+CoreDataProperties.m"; path = "Model/StorageLayer/Core/NGNSubstancePile+CoreDataProperties.m"; sourceTree = "<group>"; };
-		404538301F4B9E2900125AC3 /* NGNSubstanceType+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NGNSubstanceType+CoreDataClass.h"; path = "Model/StorageLayer/Core/NGNSubstanceType+CoreDataClass.h"; sourceTree = "<group>"; };
-		404538311F4B9E2900125AC3 /* NGNSubstanceType+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NGNSubstanceType+CoreDataClass.m"; path = "Model/StorageLayer/Core/NGNSubstanceType+CoreDataClass.m"; sourceTree = "<group>"; };
-		404538321F4B9E2900125AC3 /* NGNSubstanceType+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NGNSubstanceType+CoreDataProperties.h"; path = "Model/StorageLayer/Core/NGNSubstanceType+CoreDataProperties.h"; sourceTree = "<group>"; };
-		404538331F4B9E2900125AC3 /* NGNSubstanceType+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NGNSubstanceType+CoreDataProperties.m"; path = "Model/StorageLayer/Core/NGNSubstanceType+CoreDataProperties.m"; sourceTree = "<group>"; };
-		404538341F4B9E2900125AC3 /* NGNApertureGroup+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NGNApertureGroup+CoreDataClass.h"; path = "Model/StorageLayer/Core/NGNApertureGroup+CoreDataClass.h"; sourceTree = "<group>"; };
-		404538351F4B9E2900125AC3 /* NGNApertureGroup+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NGNApertureGroup+CoreDataClass.m"; path = "Model/StorageLayer/Core/NGNApertureGroup+CoreDataClass.m"; sourceTree = "<group>"; };
-		404538361F4B9E2900125AC3 /* NGNApertureGroup+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NGNApertureGroup+CoreDataProperties.h"; path = "Model/StorageLayer/Core/NGNApertureGroup+CoreDataProperties.h"; sourceTree = "<group>"; };
-		404538371F4B9E2900125AC3 /* NGNApertureGroup+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NGNApertureGroup+CoreDataProperties.m"; path = "Model/StorageLayer/Core/NGNApertureGroup+CoreDataProperties.m"; sourceTree = "<group>"; };
-		404538381F4B9E2900125AC3 /* NGNFireResistanceRank+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NGNFireResistanceRank+CoreDataClass.h"; path = "Model/StorageLayer/Core/NGNFireResistanceRank+CoreDataClass.h"; sourceTree = "<group>"; };
-		404538391F4B9E2900125AC3 /* NGNFireResistanceRank+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NGNFireResistanceRank+CoreDataClass.m"; path = "Model/StorageLayer/Core/NGNFireResistanceRank+CoreDataClass.m"; sourceTree = "<group>"; };
-		4045383A1F4B9E2900125AC3 /* NGNFireResistanceRank+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NGNFireResistanceRank+CoreDataProperties.h"; path = "Model/StorageLayer/Core/NGNFireResistanceRank+CoreDataProperties.h"; sourceTree = "<group>"; };
-		4045383B1F4B9E2900125AC3 /* NGNFireResistanceRank+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NGNFireResistanceRank+CoreDataProperties.m"; path = "Model/StorageLayer/Core/NGNFireResistanceRank+CoreDataProperties.m"; sourceTree = "<group>"; };
-		4045383C1F4B9E2900125AC3 /* NGNProject+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NGNProject+CoreDataClass.h"; path = "Model/StorageLayer/Core/NGNProject+CoreDataClass.h"; sourceTree = "<group>"; };
-		4045383D1F4B9E2900125AC3 /* NGNProject+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NGNProject+CoreDataClass.m"; path = "Model/StorageLayer/Core/NGNProject+CoreDataClass.m"; sourceTree = "<group>"; };
-		4045383E1F4B9E2900125AC3 /* NGNProject+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NGNProject+CoreDataProperties.h"; path = "Model/StorageLayer/Core/NGNProject+CoreDataProperties.h"; sourceTree = "<group>"; };
-		4045383F1F4B9E2900125AC3 /* NGNProject+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NGNProject+CoreDataProperties.m"; path = "Model/StorageLayer/Core/NGNProject+CoreDataProperties.m"; sourceTree = "<group>"; };
-		404538401F4B9E2900125AC3 /* NGNFunctionalFireSafetyCategory+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NGNFunctionalFireSafetyCategory+CoreDataClass.h"; path = "Model/StorageLayer/Core/NGNFunctionalFireSafetyCategory+CoreDataClass.h"; sourceTree = "<group>"; };
-		404538411F4B9E2900125AC3 /* NGNFunctionalFireSafetyCategory+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NGNFunctionalFireSafetyCategory+CoreDataClass.m"; path = "Model/StorageLayer/Core/NGNFunctionalFireSafetyCategory+CoreDataClass.m"; sourceTree = "<group>"; };
-		404538421F4B9E2900125AC3 /* NGNFunctionalFireSafetyCategory+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NGNFunctionalFireSafetyCategory+CoreDataProperties.h"; path = "Model/StorageLayer/Core/NGNFunctionalFireSafetyCategory+CoreDataProperties.h"; sourceTree = "<group>"; };
-		404538431F4B9E2900125AC3 /* NGNFunctionalFireSafetyCategory+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NGNFunctionalFireSafetyCategory+CoreDataProperties.m"; path = "Model/StorageLayer/Core/NGNFunctionalFireSafetyCategory+CoreDataProperties.m"; sourceTree = "<group>"; };
-		404538441F4B9E2900125AC3 /* NGNPosition+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NGNPosition+CoreDataClass.h"; path = "Model/StorageLayer/Core/NGNPosition+CoreDataClass.h"; sourceTree = "<group>"; };
-		404538451F4B9E2900125AC3 /* NGNPosition+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NGNPosition+CoreDataClass.m"; path = "Model/StorageLayer/Core/NGNPosition+CoreDataClass.m"; sourceTree = "<group>"; };
-		404538461F4B9E2900125AC3 /* NGNPosition+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NGNPosition+CoreDataProperties.h"; path = "Model/StorageLayer/Core/NGNPosition+CoreDataProperties.h"; sourceTree = "<group>"; };
-		404538471F4B9E2900125AC3 /* NGNPosition+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NGNPosition+CoreDataProperties.m"; path = "Model/StorageLayer/Core/NGNPosition+CoreDataProperties.m"; sourceTree = "<group>"; };
 		404538611F4B9FA600125AC3 /* NGNCommonConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NGNCommonConstants.h; path = Constants/NGNCommonConstants.h; sourceTree = "<group>"; };
 		404538621F4B9FA600125AC3 /* NGNCommonConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NGNCommonConstants.m; path = Constants/NGNCommonConstants.m; sourceTree = "<group>"; };
 		40D89EAB1F40621800B07AB5 /* FireProtection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FireProtection.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -100,10 +51,59 @@
 		40D89EB41F40621800B07AB5 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		40D89EB51F40621800B07AB5 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		40D89EB81F40621800B07AB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		40D89EBB1F40621800B07AB5 /* FireProtection.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FireProtection.xcdatamodel; sourceTree = "<group>"; };
 		40D89EBD1F40621800B07AB5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		40D89EC01F40621800B07AB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		40D89EC21F40621800B07AB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		40E999881F5F17CF00B6F9F9 /* FireProtection.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FireProtection.xcdatamodel; sourceTree = "<group>"; };
+		40E9998A1F5F17F600B6F9F9 /* NGNFireResistanceRank+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NGNFireResistanceRank+CoreDataClass.h"; sourceTree = "<group>"; };
+		40E9998B1F5F17F600B6F9F9 /* NGNFireResistanceRank+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NGNFireResistanceRank+CoreDataClass.m"; sourceTree = "<group>"; };
+		40E9998C1F5F17F600B6F9F9 /* NGNFireResistanceRank+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NGNFireResistanceRank+CoreDataProperties.h"; sourceTree = "<group>"; };
+		40E9998D1F5F17F600B6F9F9 /* NGNFireResistanceRank+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NGNFireResistanceRank+CoreDataProperties.m"; sourceTree = "<group>"; };
+		40E9998E1F5F17F600B6F9F9 /* NGNSubstanceType+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NGNSubstanceType+CoreDataClass.h"; sourceTree = "<group>"; };
+		40E9998F1F5F17F600B6F9F9 /* NGNSubstanceType+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NGNSubstanceType+CoreDataClass.m"; sourceTree = "<group>"; };
+		40E999901F5F17F600B6F9F9 /* NGNSubstanceType+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NGNSubstanceType+CoreDataProperties.h"; sourceTree = "<group>"; };
+		40E999911F5F17F600B6F9F9 /* NGNSubstanceType+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NGNSubstanceType+CoreDataProperties.m"; sourceTree = "<group>"; };
+		40E999921F5F17F600B6F9F9 /* NGNApertureGroup+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NGNApertureGroup+CoreDataClass.h"; sourceTree = "<group>"; };
+		40E999931F5F17F600B6F9F9 /* NGNApertureGroup+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NGNApertureGroup+CoreDataClass.m"; sourceTree = "<group>"; };
+		40E999941F5F17F600B6F9F9 /* NGNApertureGroup+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NGNApertureGroup+CoreDataProperties.h"; sourceTree = "<group>"; };
+		40E999951F5F17F600B6F9F9 /* NGNApertureGroup+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NGNApertureGroup+CoreDataProperties.m"; sourceTree = "<group>"; };
+		40E999961F5F17F600B6F9F9 /* NGNFireSafetyCategory+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NGNFireSafetyCategory+CoreDataClass.h"; sourceTree = "<group>"; };
+		40E999971F5F17F600B6F9F9 /* NGNFireSafetyCategory+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NGNFireSafetyCategory+CoreDataClass.m"; sourceTree = "<group>"; };
+		40E999981F5F17F600B6F9F9 /* NGNFireSafetyCategory+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NGNFireSafetyCategory+CoreDataProperties.h"; sourceTree = "<group>"; };
+		40E999991F5F17F600B6F9F9 /* NGNFireSafetyCategory+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NGNFireSafetyCategory+CoreDataProperties.m"; sourceTree = "<group>"; };
+		40E9999A1F5F17F600B6F9F9 /* NGNMinimumREIConstructionType+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NGNMinimumREIConstructionType+CoreDataClass.h"; sourceTree = "<group>"; };
+		40E9999B1F5F17F600B6F9F9 /* NGNMinimumREIConstructionType+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NGNMinimumREIConstructionType+CoreDataClass.m"; sourceTree = "<group>"; };
+		40E9999C1F5F17F600B6F9F9 /* NGNMinimumREIConstructionType+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NGNMinimumREIConstructionType+CoreDataProperties.h"; sourceTree = "<group>"; };
+		40E9999D1F5F17F600B6F9F9 /* NGNMinimumREIConstructionType+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NGNMinimumREIConstructionType+CoreDataProperties.m"; sourceTree = "<group>"; };
+		40E9999E1F5F17F600B6F9F9 /* NGNSubstancePile+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NGNSubstancePile+CoreDataClass.h"; sourceTree = "<group>"; };
+		40E9999F1F5F17F600B6F9F9 /* NGNSubstancePile+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NGNSubstancePile+CoreDataClass.m"; sourceTree = "<group>"; };
+		40E999A01F5F17F600B6F9F9 /* NGNSubstancePile+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NGNSubstancePile+CoreDataProperties.h"; sourceTree = "<group>"; };
+		40E999A11F5F17F600B6F9F9 /* NGNSubstancePile+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NGNSubstancePile+CoreDataProperties.m"; sourceTree = "<group>"; };
+		40E999A21F5F17F600B6F9F9 /* NGNFunctionalFireSafetyCategory+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NGNFunctionalFireSafetyCategory+CoreDataClass.h"; sourceTree = "<group>"; };
+		40E999A31F5F17F600B6F9F9 /* NGNFunctionalFireSafetyCategory+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NGNFunctionalFireSafetyCategory+CoreDataClass.m"; sourceTree = "<group>"; };
+		40E999A41F5F17F600B6F9F9 /* NGNFunctionalFireSafetyCategory+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NGNFunctionalFireSafetyCategory+CoreDataProperties.h"; sourceTree = "<group>"; };
+		40E999A51F5F17F600B6F9F9 /* NGNFunctionalFireSafetyCategory+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NGNFunctionalFireSafetyCategory+CoreDataProperties.m"; sourceTree = "<group>"; };
+		40E999A61F5F17F600B6F9F9 /* NGNUser+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NGNUser+CoreDataClass.h"; sourceTree = "<group>"; };
+		40E999A71F5F17F600B6F9F9 /* NGNUser+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NGNUser+CoreDataClass.m"; sourceTree = "<group>"; };
+		40E999A81F5F17F600B6F9F9 /* NGNUser+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NGNUser+CoreDataProperties.h"; sourceTree = "<group>"; };
+		40E999A91F5F17F600B6F9F9 /* NGNUser+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NGNUser+CoreDataProperties.m"; sourceTree = "<group>"; };
+		40E999AA1F5F17F600B6F9F9 /* NGNRoom+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NGNRoom+CoreDataClass.h"; sourceTree = "<group>"; };
+		40E999AB1F5F17F600B6F9F9 /* NGNRoom+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NGNRoom+CoreDataClass.m"; sourceTree = "<group>"; };
+		40E999AC1F5F17F600B6F9F9 /* NGNRoom+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NGNRoom+CoreDataProperties.h"; sourceTree = "<group>"; };
+		40E999AD1F5F17F600B6F9F9 /* NGNRoom+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NGNRoom+CoreDataProperties.m"; sourceTree = "<group>"; };
+		40E999AE1F5F17F600B6F9F9 /* NGNPosition+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NGNPosition+CoreDataClass.h"; sourceTree = "<group>"; };
+		40E999AF1F5F17F600B6F9F9 /* NGNPosition+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NGNPosition+CoreDataClass.m"; sourceTree = "<group>"; };
+		40E999B01F5F17F600B6F9F9 /* NGNPosition+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NGNPosition+CoreDataProperties.h"; sourceTree = "<group>"; };
+		40E999B11F5F17F600B6F9F9 /* NGNPosition+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NGNPosition+CoreDataProperties.m"; sourceTree = "<group>"; };
+		40E999B21F5F17F600B6F9F9 /* NGNSubstance+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NGNSubstance+CoreDataClass.h"; sourceTree = "<group>"; };
+		40E999B31F5F17F600B6F9F9 /* NGNSubstance+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NGNSubstance+CoreDataClass.m"; sourceTree = "<group>"; };
+		40E999B41F5F17F600B6F9F9 /* NGNSubstance+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NGNSubstance+CoreDataProperties.h"; sourceTree = "<group>"; };
+		40E999B51F5F17F600B6F9F9 /* NGNSubstance+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NGNSubstance+CoreDataProperties.m"; sourceTree = "<group>"; };
+		40E999B61F5F17F600B6F9F9 /* NGNProject+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NGNProject+CoreDataClass.h"; sourceTree = "<group>"; };
+		40E999B71F5F17F600B6F9F9 /* NGNProject+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NGNProject+CoreDataClass.m"; sourceTree = "<group>"; };
+		40E999B81F5F17F600B6F9F9 /* NGNProject+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NGNProject+CoreDataProperties.h"; sourceTree = "<group>"; };
+		40E999B91F5F17F600B6F9F9 /* NGNProject+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NGNProject+CoreDataProperties.m"; sourceTree = "<group>"; };
+		40E999D21F5F184200B6F9F9 /* NGNCoreDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGNCoreDataModel.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,56 +220,6 @@
 		40D89ECE1F40688A00B07AB5 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				404538171F4B99FA00125AC3 /* NGNCoreDataModel.h */,
-				404538181F4B9E2900125AC3 /* NGNSubstance+CoreDataClass.h */,
-				404538191F4B9E2900125AC3 /* NGNSubstance+CoreDataClass.m */,
-				4045381A1F4B9E2900125AC3 /* NGNSubstance+CoreDataProperties.h */,
-				4045381B1F4B9E2900125AC3 /* NGNSubstance+CoreDataProperties.m */,
-				4045381C1F4B9E2900125AC3 /* NGNMinimumREIConstructionType+CoreDataClass.h */,
-				4045381D1F4B9E2900125AC3 /* NGNMinimumREIConstructionType+CoreDataClass.m */,
-				4045381E1F4B9E2900125AC3 /* NGNMinimumREIConstructionType+CoreDataProperties.h */,
-				4045381F1F4B9E2900125AC3 /* NGNMinimumREIConstructionType+CoreDataProperties.m */,
-				404538201F4B9E2900125AC3 /* NGNUser+CoreDataClass.h */,
-				404538211F4B9E2900125AC3 /* NGNUser+CoreDataClass.m */,
-				404538221F4B9E2900125AC3 /* NGNUser+CoreDataProperties.h */,
-				404538231F4B9E2900125AC3 /* NGNUser+CoreDataProperties.m */,
-				404538241F4B9E2900125AC3 /* NGNFireSafetyCategory+CoreDataClass.h */,
-				404538251F4B9E2900125AC3 /* NGNFireSafetyCategory+CoreDataClass.m */,
-				404538261F4B9E2900125AC3 /* NGNFireSafetyCategory+CoreDataProperties.h */,
-				404538271F4B9E2900125AC3 /* NGNFireSafetyCategory+CoreDataProperties.m */,
-				404538281F4B9E2900125AC3 /* NGNRoom+CoreDataClass.h */,
-				404538291F4B9E2900125AC3 /* NGNRoom+CoreDataClass.m */,
-				4045382A1F4B9E2900125AC3 /* NGNRoom+CoreDataProperties.h */,
-				4045382B1F4B9E2900125AC3 /* NGNRoom+CoreDataProperties.m */,
-				4045382C1F4B9E2900125AC3 /* NGNSubstancePile+CoreDataClass.h */,
-				4045382D1F4B9E2900125AC3 /* NGNSubstancePile+CoreDataClass.m */,
-				4045382E1F4B9E2900125AC3 /* NGNSubstancePile+CoreDataProperties.h */,
-				4045382F1F4B9E2900125AC3 /* NGNSubstancePile+CoreDataProperties.m */,
-				404538301F4B9E2900125AC3 /* NGNSubstanceType+CoreDataClass.h */,
-				404538311F4B9E2900125AC3 /* NGNSubstanceType+CoreDataClass.m */,
-				404538321F4B9E2900125AC3 /* NGNSubstanceType+CoreDataProperties.h */,
-				404538331F4B9E2900125AC3 /* NGNSubstanceType+CoreDataProperties.m */,
-				404538341F4B9E2900125AC3 /* NGNApertureGroup+CoreDataClass.h */,
-				404538351F4B9E2900125AC3 /* NGNApertureGroup+CoreDataClass.m */,
-				404538361F4B9E2900125AC3 /* NGNApertureGroup+CoreDataProperties.h */,
-				404538371F4B9E2900125AC3 /* NGNApertureGroup+CoreDataProperties.m */,
-				404538381F4B9E2900125AC3 /* NGNFireResistanceRank+CoreDataClass.h */,
-				404538391F4B9E2900125AC3 /* NGNFireResistanceRank+CoreDataClass.m */,
-				4045383A1F4B9E2900125AC3 /* NGNFireResistanceRank+CoreDataProperties.h */,
-				4045383B1F4B9E2900125AC3 /* NGNFireResistanceRank+CoreDataProperties.m */,
-				4045383C1F4B9E2900125AC3 /* NGNProject+CoreDataClass.h */,
-				4045383D1F4B9E2900125AC3 /* NGNProject+CoreDataClass.m */,
-				4045383E1F4B9E2900125AC3 /* NGNProject+CoreDataProperties.h */,
-				4045383F1F4B9E2900125AC3 /* NGNProject+CoreDataProperties.m */,
-				404538401F4B9E2900125AC3 /* NGNFunctionalFireSafetyCategory+CoreDataClass.h */,
-				404538411F4B9E2900125AC3 /* NGNFunctionalFireSafetyCategory+CoreDataClass.m */,
-				404538421F4B9E2900125AC3 /* NGNFunctionalFireSafetyCategory+CoreDataProperties.h */,
-				404538431F4B9E2900125AC3 /* NGNFunctionalFireSafetyCategory+CoreDataProperties.m */,
-				404538441F4B9E2900125AC3 /* NGNPosition+CoreDataClass.h */,
-				404538451F4B9E2900125AC3 /* NGNPosition+CoreDataClass.m */,
-				404538461F4B9E2900125AC3 /* NGNPosition+CoreDataProperties.h */,
-				404538471F4B9E2900125AC3 /* NGNPosition+CoreDataProperties.m */,
-				40D89EBA1F40621800B07AB5 /* FireProtection.xcdatamodeld */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -277,8 +227,59 @@
 		40D89ECF1F40689E00B07AB5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				40E999D21F5F184200B6F9F9 /* NGNCoreDataModel.h */,
+				40E9998A1F5F17F600B6F9F9 /* NGNFireResistanceRank+CoreDataClass.h */,
+				40E9998B1F5F17F600B6F9F9 /* NGNFireResistanceRank+CoreDataClass.m */,
+				40E9998C1F5F17F600B6F9F9 /* NGNFireResistanceRank+CoreDataProperties.h */,
+				40E9998D1F5F17F600B6F9F9 /* NGNFireResistanceRank+CoreDataProperties.m */,
+				40E9998E1F5F17F600B6F9F9 /* NGNSubstanceType+CoreDataClass.h */,
+				40E9998F1F5F17F600B6F9F9 /* NGNSubstanceType+CoreDataClass.m */,
+				40E999901F5F17F600B6F9F9 /* NGNSubstanceType+CoreDataProperties.h */,
+				40E999911F5F17F600B6F9F9 /* NGNSubstanceType+CoreDataProperties.m */,
+				40E999921F5F17F600B6F9F9 /* NGNApertureGroup+CoreDataClass.h */,
+				40E999931F5F17F600B6F9F9 /* NGNApertureGroup+CoreDataClass.m */,
+				40E999941F5F17F600B6F9F9 /* NGNApertureGroup+CoreDataProperties.h */,
+				40E999951F5F17F600B6F9F9 /* NGNApertureGroup+CoreDataProperties.m */,
+				40E999961F5F17F600B6F9F9 /* NGNFireSafetyCategory+CoreDataClass.h */,
+				40E999971F5F17F600B6F9F9 /* NGNFireSafetyCategory+CoreDataClass.m */,
+				40E999981F5F17F600B6F9F9 /* NGNFireSafetyCategory+CoreDataProperties.h */,
+				40E999991F5F17F600B6F9F9 /* NGNFireSafetyCategory+CoreDataProperties.m */,
+				40E9999A1F5F17F600B6F9F9 /* NGNMinimumREIConstructionType+CoreDataClass.h */,
+				40E9999B1F5F17F600B6F9F9 /* NGNMinimumREIConstructionType+CoreDataClass.m */,
+				40E9999C1F5F17F600B6F9F9 /* NGNMinimumREIConstructionType+CoreDataProperties.h */,
+				40E9999D1F5F17F600B6F9F9 /* NGNMinimumREIConstructionType+CoreDataProperties.m */,
+				40E9999E1F5F17F600B6F9F9 /* NGNSubstancePile+CoreDataClass.h */,
+				40E9999F1F5F17F600B6F9F9 /* NGNSubstancePile+CoreDataClass.m */,
+				40E999A01F5F17F600B6F9F9 /* NGNSubstancePile+CoreDataProperties.h */,
+				40E999A11F5F17F600B6F9F9 /* NGNSubstancePile+CoreDataProperties.m */,
+				40E999A21F5F17F600B6F9F9 /* NGNFunctionalFireSafetyCategory+CoreDataClass.h */,
+				40E999A31F5F17F600B6F9F9 /* NGNFunctionalFireSafetyCategory+CoreDataClass.m */,
+				40E999A41F5F17F600B6F9F9 /* NGNFunctionalFireSafetyCategory+CoreDataProperties.h */,
+				40E999A51F5F17F600B6F9F9 /* NGNFunctionalFireSafetyCategory+CoreDataProperties.m */,
+				40E999A61F5F17F600B6F9F9 /* NGNUser+CoreDataClass.h */,
+				40E999A71F5F17F600B6F9F9 /* NGNUser+CoreDataClass.m */,
+				40E999A81F5F17F600B6F9F9 /* NGNUser+CoreDataProperties.h */,
+				40E999A91F5F17F600B6F9F9 /* NGNUser+CoreDataProperties.m */,
+				40E999AA1F5F17F600B6F9F9 /* NGNRoom+CoreDataClass.h */,
+				40E999AB1F5F17F600B6F9F9 /* NGNRoom+CoreDataClass.m */,
+				40E999AC1F5F17F600B6F9F9 /* NGNRoom+CoreDataProperties.h */,
+				40E999AD1F5F17F600B6F9F9 /* NGNRoom+CoreDataProperties.m */,
+				40E999AE1F5F17F600B6F9F9 /* NGNPosition+CoreDataClass.h */,
+				40E999AF1F5F17F600B6F9F9 /* NGNPosition+CoreDataClass.m */,
+				40E999B01F5F17F600B6F9F9 /* NGNPosition+CoreDataProperties.h */,
+				40E999B11F5F17F600B6F9F9 /* NGNPosition+CoreDataProperties.m */,
+				40E999B21F5F17F600B6F9F9 /* NGNSubstance+CoreDataClass.h */,
+				40E999B31F5F17F600B6F9F9 /* NGNSubstance+CoreDataClass.m */,
+				40E999B41F5F17F600B6F9F9 /* NGNSubstance+CoreDataProperties.h */,
+				40E999B51F5F17F600B6F9F9 /* NGNSubstance+CoreDataProperties.m */,
+				40E999B61F5F17F600B6F9F9 /* NGNProject+CoreDataClass.h */,
+				40E999B71F5F17F600B6F9F9 /* NGNProject+CoreDataClass.m */,
+				40E999B81F5F17F600B6F9F9 /* NGNProject+CoreDataProperties.h */,
+				40E999B91F5F17F600B6F9F9 /* NGNProject+CoreDataProperties.m */,
+				40E999871F5F17CF00B6F9F9 /* FireProtection.xcdatamodeld */,
 			);
 			name = Model;
+			path = Model/StorageLayer/Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -308,7 +309,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = NGN;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Alexey Stafeyev";
 				TargetAttributes = {
 					40D89EAA1F40621800B07AB5 = {
@@ -354,35 +355,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				404538531F4B9E2900125AC3 /* NGNSubstancePile+CoreDataProperties.m in Sources */,
-				404538501F4B9E2900125AC3 /* NGNRoom+CoreDataClass.m in Sources */,
-				404538561F4B9E2900125AC3 /* NGNApertureGroup+CoreDataClass.m in Sources */,
-				40D89EBC1F40621800B07AB5 /* FireProtection.xcdatamodeld in Sources */,
-				404538591F4B9E2900125AC3 /* NGNFireResistanceRank+CoreDataProperties.m in Sources */,
+				40E999C61F5F17F600B6F9F9 /* NGNFunctionalFireSafetyCategory+CoreDataClass.m in Sources */,
+				40E999BC1F5F17F600B6F9F9 /* NGNSubstanceType+CoreDataClass.m in Sources */,
+				40E999CA1F5F17F600B6F9F9 /* NGNRoom+CoreDataClass.m in Sources */,
+				40E999BF1F5F17F600B6F9F9 /* NGNApertureGroup+CoreDataProperties.m in Sources */,
+				40E999BD1F5F17F600B6F9F9 /* NGNSubstanceType+CoreDataProperties.m in Sources */,
+				40E999C01F5F17F600B6F9F9 /* NGNFireSafetyCategory+CoreDataClass.m in Sources */,
+				40E999BE1F5F17F600B6F9F9 /* NGNApertureGroup+CoreDataClass.m in Sources */,
+				40E999C91F5F17F600B6F9F9 /* NGNUser+CoreDataProperties.m in Sources */,
+				40E999C11F5F17F600B6F9F9 /* NGNFireSafetyCategory+CoreDataProperties.m in Sources */,
+				40E999BA1F5F17F600B6F9F9 /* NGNFireResistanceRank+CoreDataClass.m in Sources */,
+				40E999CC1F5F17F600B6F9F9 /* NGNPosition+CoreDataClass.m in Sources */,
+				40E999891F5F17CF00B6F9F9 /* FireProtection.xcdatamodeld in Sources */,
+				40E999CE1F5F17F600B6F9F9 /* NGNSubstance+CoreDataClass.m in Sources */,
+				40E999C41F5F17F600B6F9F9 /* NGNSubstancePile+CoreDataClass.m in Sources */,
 				40D89EB61F40621800B07AB5 /* ViewController.m in Sources */,
-				404538491F4B9E2900125AC3 /* NGNSubstance+CoreDataProperties.m in Sources */,
-				4045385B1F4B9E2900125AC3 /* NGNProject+CoreDataProperties.m in Sources */,
-				4045385F1F4B9E2900125AC3 /* NGNPosition+CoreDataProperties.m in Sources */,
-				404538541F4B9E2900125AC3 /* NGNSubstanceType+CoreDataClass.m in Sources */,
-				4045384A1F4B9E2900125AC3 /* NGNMinimumREIConstructionType+CoreDataClass.m in Sources */,
-				4045385D1F4B9E2900125AC3 /* NGNFunctionalFireSafetyCategory+CoreDataProperties.m in Sources */,
-				4045384D1F4B9E2900125AC3 /* NGNUser+CoreDataProperties.m in Sources */,
-				4045384B1F4B9E2900125AC3 /* NGNMinimumREIConstructionType+CoreDataProperties.m in Sources */,
-				4045384C1F4B9E2900125AC3 /* NGNUser+CoreDataClass.m in Sources */,
-				404538551F4B9E2900125AC3 /* NGNSubstanceType+CoreDataProperties.m in Sources */,
-				404538511F4B9E2900125AC3 /* NGNRoom+CoreDataProperties.m in Sources */,
-				4045384F1F4B9E2900125AC3 /* NGNFireSafetyCategory+CoreDataProperties.m in Sources */,
-				4045385A1F4B9E2900125AC3 /* NGNProject+CoreDataClass.m in Sources */,
-				404538481F4B9E2900125AC3 /* NGNSubstance+CoreDataClass.m in Sources */,
 				404538631F4B9FA600125AC3 /* NGNCommonConstants.m in Sources */,
-				404538581F4B9E2900125AC3 /* NGNFireResistanceRank+CoreDataClass.m in Sources */,
+				40E999CB1F5F17F600B6F9F9 /* NGNRoom+CoreDataProperties.m in Sources */,
+				40E999C31F5F17F600B6F9F9 /* NGNMinimumREIConstructionType+CoreDataProperties.m in Sources */,
+				40E999C71F5F17F600B6F9F9 /* NGNFunctionalFireSafetyCategory+CoreDataProperties.m in Sources */,
+				40E999D01F5F17F600B6F9F9 /* NGNProject+CoreDataClass.m in Sources */,
+				40E999C51F5F17F600B6F9F9 /* NGNSubstancePile+CoreDataProperties.m in Sources */,
+				40E999C21F5F17F600B6F9F9 /* NGNMinimumREIConstructionType+CoreDataClass.m in Sources */,
+				40E999CD1F5F17F600B6F9F9 /* NGNPosition+CoreDataProperties.m in Sources */,
+				40E999C81F5F17F600B6F9F9 /* NGNUser+CoreDataClass.m in Sources */,
 				40D89EB31F40621800B07AB5 /* AppDelegate.m in Sources */,
-				404538521F4B9E2900125AC3 /* NGNSubstancePile+CoreDataClass.m in Sources */,
+				40E999D11F5F17F600B6F9F9 /* NGNProject+CoreDataProperties.m in Sources */,
+				40E999BB1F5F17F600B6F9F9 /* NGNFireResistanceRank+CoreDataProperties.m in Sources */,
 				40D89EB01F40621800B07AB5 /* main.m in Sources */,
-				4045384E1F4B9E2900125AC3 /* NGNFireSafetyCategory+CoreDataClass.m in Sources */,
-				4045385C1F4B9E2900125AC3 /* NGNFunctionalFireSafetyCategory+CoreDataClass.m in Sources */,
-				4045385E1F4B9E2900125AC3 /* NGNPosition+CoreDataClass.m in Sources */,
-				404538571F4B9E2900125AC3 /* NGNApertureGroup+CoreDataProperties.m in Sources */,
+				40E999CF1F5F17F600B6F9F9 /* NGNSubstance+CoreDataProperties.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,7 +419,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -426,7 +429,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -466,7 +473,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -474,7 +483,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -548,13 +561,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		40D89EBA1F40621800B07AB5 /* FireProtection.xcdatamodeld */ = {
+		40E999871F5F17CF00B6F9F9 /* FireProtection.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				40D89EBB1F40621800B07AB5 /* FireProtection.xcdatamodel */,
+				40E999881F5F17CF00B6F9F9 /* FireProtection.xcdatamodel */,
 			);
-			currentVersion = 40D89EBB1F40621800B07AB5 /* FireProtection.xcdatamodel */;
-			path = FireProtection.xcdatamodeld;
+			currentVersion = 40E999881F5F17CF00B6F9F9 /* FireProtection.xcdatamodel */;
+			name = FireProtection.xcdatamodeld;
+			path = ../../../FireProtection.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
