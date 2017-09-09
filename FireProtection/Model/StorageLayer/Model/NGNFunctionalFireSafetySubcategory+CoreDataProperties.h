@@ -1,5 +1,5 @@
 //
-//  NGNFireSafetyCategory+CoreDataProperties.h
+//  NGNFunctionalFireSafetySubcategory+CoreDataProperties.h
 //  FireProtection
 //
 //  Created by Alexey Stafeyev on 08.09.17.
@@ -7,29 +7,24 @@
 //
 //
 
-#import "NGNFireSafetyCategory+CoreDataClass.h"
+#import "NGNFunctionalFireSafetySubcategory+CoreDataClass.h"
 
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NGNFireSafetyCategory (CoreDataProperties)
+@interface NGNFunctionalFireSafetySubcategory (CoreDataProperties)
 
-+ (NSFetchRequest<NGNFireSafetyCategory *> *)fetchRequest;
++ (NSFetchRequest<NGNFunctionalFireSafetySubcategory *> *)fetchRequest;
 
 @property (nullable, nonatomic, copy) NSDecimalNumber *idx;
 @property (nullable, nonatomic, copy) NSString *name;
 @property (nullable, nonatomic, copy) NSString *info;
-@property (nullable, nonatomic, retain) NSSet<NGNRoom *> *rooms;
 @property (nullable, nonatomic, retain) NSSet<NGNPosition *> *positions;
+@property (nullable, nonatomic, retain) NGNFunctionalFireSafetyCategory *functionalFireCategory;
 
 @end
 
-@interface NGNFireSafetyCategory (CoreDataGeneratedAccessors)
-
-- (void)addRoomsObject:(NGNRoom *)value;
-- (void)removeRoomsObject:(NGNRoom *)value;
-- (void)addRooms:(NSSet<NGNRoom *> *)values;
-- (void)removeRooms:(NSSet<NGNRoom *> *)values;
+@interface NGNFunctionalFireSafetySubcategory (CoreDataGeneratedAccessors)
 
 - (void)addPositionsObject:(NGNPosition *)value;
 - (void)removePositionsObject:(NGNPosition *)value;

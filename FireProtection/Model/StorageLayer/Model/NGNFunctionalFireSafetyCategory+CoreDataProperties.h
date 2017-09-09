@@ -2,7 +2,7 @@
 //  NGNFunctionalFireSafetyCategory+CoreDataProperties.h
 //  FireProtection
 //
-//  Created by Alexey Stafeyev on 05.09.17.
+//  Created by Alexey Stafeyev on 08.09.17.
 //  Copyright © 2017 Alexey Stafeyev. All rights reserved.
 //
 //
@@ -19,16 +19,16 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, copy) NSDecimalNumber *idx;
 @property (nullable, nonatomic, copy) NSString *info;
 @property (nullable, nonatomic, copy) NSString *name;
-@property (nullable, nonatomic, retain) NSSet<NGNPosition *> *positions;
+@property (nullable, nonatomic, retain) NSSet<NGNFunctionalFireSafetySubcategory *> *functionalFireSubcategories;
 
 @end
 
 @interface NGNFunctionalFireSafetyCategory (CoreDataGeneratedAccessors)
 
-- (void)addPositionsObject:(NGNPosition *)value;
-- (void)removePositionsObject:(NGNPosition *)value;
-- (void)addPositions:(NSSet<NGNPosition *> *)values;
-- (void)removePositions:(NSSet<NGNPosition *> *)values;
+- (void)addFunctionalFireSubategoriesObject:(NGNFunctionalFireSafetySubcategory *)value;
+- (void)removeFunctionalFireSubategoriesObject:(NGNFunctionalFireSafetySubcategory *)value;
+- (void)addFunctionalFireSubategories:(NSSet<NGNFunctionalFireSafetySubcategory *> *)values;
+- (void)removeFunctionalFireSubategories:(NSSet<NGNFunctionalFireSafetySubcategory *> *)values;
 
 @end
 

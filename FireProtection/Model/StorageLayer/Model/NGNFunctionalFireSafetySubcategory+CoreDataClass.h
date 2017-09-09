@@ -1,5 +1,5 @@
 //
-//  NGNUser+CoreDataClass.h
+//  NGNFunctionalFireSafetySubcategory+CoreDataClass.h
 //  FireProtection
 //
 //  Created by Alexey Stafeyev on 08.09.17.
@@ -10,14 +10,14 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class NGNProject, NGNSubstance;
+@class NGNFunctionalFireSafetyCategory, NGNPosition;
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NGNUser : NSManagedObject
+@interface NGNFunctionalFireSafetySubcategory : NSManagedObject
 
 @end
 
 NS_ASSUME_NONNULL_END
 
-#import "NGNUser+CoreDataProperties.h"
+#import "NGNFunctionalFireSafetySubcategory+CoreDataProperties.h"

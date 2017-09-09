@@ -1,13 +1,13 @@
 //
-//  Header.h
+//  NGNCoreDataModel.h
 //  FireProtection
 //
 //  Created by Alexey Stafeyev on 22.08.17.
 //  Copyright © 2017 Alexey Stafeyev. All rights reserved.
 //
 
-#ifndef Header_h
-#define Header_h
+#ifndef NGNCoreDataModel_h
+#define NGNCoreDataModel_h
 
 //basic model
 #import "NGNUser+CoreDataProperties.h"
@@ -21,6 +21,7 @@
 //vocabularies
 #import "NGNFireResistanceRank+CoreDataProperties.h"
 #import "NGNFunctionalFireSafetyCategory+CoreDataProperties.h"
+#import "NGNFunctionalFireSafetySubcategory+CoreDataProperties.h"
 #import "NGNFireSafetyCategory+CoreDataProperties.h"
 #import "NGNSubstanceType+CoreDataProperties.h"
 #import "NGNMinimumREIConstructionType+CoreDataProperties.h"

@@ -2,7 +2,7 @@
 //  NGNPosition+CoreDataProperties.h
 //  FireProtection
 //
-//  Created by Alexey Stafeyev on 05.09.17.
+//  Created by Alexey Stafeyev on 08.09.17.
 //  Copyright © 2017 Alexey Stafeyev. All rights reserved.
 //
 //
@@ -24,10 +24,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, copy) NSNumber *structuralVolume;
 @property (nullable, nonatomic, copy) NSNumber *usefulSquare;
 @property (nullable, nonatomic, retain) NGNFireResistanceRank *fireResistanceRank;
-@property (nullable, nonatomic, retain) NGNFireSafetyCategory *fireSafetyCategory;
-@property (nullable, nonatomic, retain) NGNFunctionalFireSafetyCategory *functionalFireSafetyCategory;
 @property (nullable, nonatomic, retain) NGNProject *project;
 @property (nullable, nonatomic, retain) NSSet<NGNRoom *> *rooms;
+@property (nullable, nonatomic, retain) NGNFunctionalFireSafetySubcategory *functionalFireSubcategory;
+@property (nullable, nonatomic, retain) NGNFireSafetyCategory *fireSafetyCategory;
 
 @end
 

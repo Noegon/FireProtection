@@ -2,7 +2,7 @@
 //  NGNRoom+CoreDataProperties.h
 //  FireProtection
 //
-//  Created by Alexey Stafeyev on 05.09.17.
+//  Created by Alexey Stafeyev on 08.09.17.
 //  Copyright © 2017 Alexey Stafeyev. All rights reserved.
 //
 //
@@ -20,6 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, copy) NSDecimalNumber *idx;
 @property (nullable, nonatomic, copy) NSString *number;
 @property (nullable, nonatomic, copy) NSNumber *square;
+@property (nullable, nonatomic, copy) NSString *name;
 @property (nullable, nonatomic, retain) NSSet<NGNApertureGroup *> *apertureGroups;
 @property (nullable, nonatomic, retain) NGNFireSafetyCategory *fireSafetyCategory;
 @property (nullable, nonatomic, retain) NGNMinimumREIConstructionType *minimumREIConstructionType;
