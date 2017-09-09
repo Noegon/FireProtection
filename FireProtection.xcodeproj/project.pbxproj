@@ -50,9 +50,11 @@
 		40E99A8A1F61EFAD00B6F9F9 /* NGNApertureGroup+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E99A6E1F61EFAD00B6F9F9 /* NGNApertureGroup+CoreDataProperties.m */; };
 		40E99A8B1F61EFAD00B6F9F9 /* NGNFunctionalFireSafetyCategory+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E99A701F61EFAD00B6F9F9 /* NGNFunctionalFireSafetyCategory+CoreDataClass.m */; };
 		40E99A8C1F61EFAD00B6F9F9 /* NGNFunctionalFireSafetyCategory+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E99A721F61EFAD00B6F9F9 /* NGNFunctionalFireSafetyCategory+CoreDataProperties.m */; };
+		7B45A67CDD6E46A72CA46BC8 /* Pods_FireProtection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C212BC601A3CB58A2C23340E /* Pods_FireProtection.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0083F4C360BB0D23DD64D5CA /* Pods-FireProtection.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireProtection.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FireProtection/Pods-FireProtection.debug.xcconfig"; sourceTree = "<group>"; };
 		404538611F4B9FA600125AC3 /* NGNCommonConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NGNCommonConstants.h; path = Constants/NGNCommonConstants.h; sourceTree = "<group>"; };
 		404538621F4B9FA600125AC3 /* NGNCommonConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NGNCommonConstants.m; path = Constants/NGNCommonConstants.m; sourceTree = "<group>"; };
 		40D89EAB1F40621800B07AB5 /* FireProtection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FireProtection.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -138,6 +140,8 @@
 		40E99A701F61EFAD00B6F9F9 /* NGNFunctionalFireSafetyCategory+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NGNFunctionalFireSafetyCategory+CoreDataClass.m"; sourceTree = "<group>"; };
 		40E99A711F61EFAD00B6F9F9 /* NGNFunctionalFireSafetyCategory+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NGNFunctionalFireSafetyCategory+CoreDataProperties.h"; sourceTree = "<group>"; };
 		40E99A721F61EFAD00B6F9F9 /* NGNFunctionalFireSafetyCategory+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NGNFunctionalFireSafetyCategory+CoreDataProperties.m"; sourceTree = "<group>"; };
+		4B75DF3CDA3D549079226694 /* Pods-FireProtection.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireProtection.release.xcconfig"; path = "Pods/Target Support Files/Pods-FireProtection/Pods-FireProtection.release.xcconfig"; sourceTree = "<group>"; };
+		C212BC601A3CB58A2C23340E /* Pods_FireProtection.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FireProtection.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,12 +149,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B45A67CDD6E46A72CA46BC8 /* Pods_FireProtection.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		209DCB0B3D88897248DE0B76 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0083F4C360BB0D23DD64D5CA /* Pods-FireProtection.debug.xcconfig */,
+				4B75DF3CDA3D549079226694 /* Pods-FireProtection.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		404538601F4B9F7300125AC3 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
@@ -169,6 +183,8 @@
 			children = (
 				40D89EAD1F40621800B07AB5 /* FireProtection */,
 				40D89EAC1F40621800B07AB5 /* Products */,
+				209DCB0B3D88897248DE0B76 /* Pods */,
+				4E39C461AB95EF80C0235FB6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -355,6 +371,14 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
+		4E39C461AB95EF80C0235FB6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C212BC601A3CB58A2C23340E /* Pods_FireProtection.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -362,9 +386,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 40D89EC51F40621800B07AB5 /* Build configuration list for PBXNativeTarget "FireProtection" */;
 			buildPhases = (
+				A5927122A1B2888B6450C4AB /* [CP] Check Pods Manifest.lock */,
 				40D89EA71F40621800B07AB5 /* Sources */,
 				40D89EA81F40621800B07AB5 /* Frameworks */,
 				40D89EA91F40621800B07AB5 /* Resources */,
+				41395F6737B6DD405AA9F7D7 /* [CP] Embed Pods Frameworks */,
+				5B0701E9392A98E0D492F13B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -423,6 +450,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		41395F6737B6DD405AA9F7D7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FireProtection/Pods-FireProtection-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5B0701E9392A98E0D492F13B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FireProtection/Pods-FireProtection-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A5927122A1B2888B6450C4AB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		40D89EA71F40621800B07AB5 /* Sources */ = {
@@ -597,6 +672,7 @@
 		};
 		40D89EC61F40621800B07AB5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0083F4C360BB0D23DD64D5CA /* Pods-FireProtection.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 9M22BH66EU;
@@ -610,6 +686,7 @@
 		};
 		40D89EC71F40621800B07AB5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4B75DF3CDA3D549079226694 /* Pods-FireProtection.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 9M22BH66EU;
