@@ -10,7 +10,7 @@
       "covering_re": 30,
       "ferm_bean_r": 30,
       "stairway_wall": 120,
-      "stairway": 60
+      "stairway_r": 60
     },
     {
       "id": 2,
@@ -22,7 +22,7 @@
       "covering_re": 30, 
       "ferm_bean_r": 30, 
       "stairway_wall": 120, 
-      "stairway": 60
+      "stairway_r": 60
     },
     {
       "id": 3,
@@ -34,7 +34,7 @@
       "covering_re": 30,
       "ferm_bean_r": 30,
       "stairway_wall": 90,
-      "stairway": 45
+      "stairway_r": 45
     },
     {
       "id": 4,
@@ -46,7 +46,7 @@
       "covering_re": 15,
       "ferm_bean_r": 15,
       "stairway_wall": 90,
-      "stairway": 45
+      "stairway_r": 45
     },
     {
       "id": 5,
@@ -58,7 +58,7 @@
       "covering_re": 15,
       "ferm_bean_r": 15,
       "stairway_wall": 60,
-      "stairway": 45
+      "stairway_r": 45
     },
     {
       "id": 6,
@@ -70,7 +70,7 @@
       "covering_re": 15,
       "ferm_bean_r": 15,
       "stairway_wall": 45,
-      "stairway": 30
+      "stairway_r": 30
     },
     {
       "id": 7,
@@ -82,7 +82,7 @@
       "covering_re": 0,
       "ferm_bean_r": 0,
       "stairway_wall": 30,
-      "stairway": 15
+      "stairway_r": 15
     },
     {
       "id": 8,
@@ -94,7 +94,7 @@
       "covering_re": 0,
       "ferm_bean_r": 0,
       "stairway_wall": 0,
-      "stairway": 0
+      "stairway_r": 0
     }
   ],
 
@@ -373,13 +373,13 @@
       "id": 1,
       "name": "admin",
       "password": "admin",
-      "registrationDate": "09.07.2017"
+      "registration_date": "09.07.2017"
     },
     {
       "id": 2,
       "name": "Noegon",
       "password": "Chimal666",
-      "registrationDate": "17.07.2017"
+      "registration_date": "17.07.2017"
     }
   ],
 
@@ -399,9 +399,9 @@
       "name": "Main production building",
       "number": "1",
       "info": "no info",
-      "structuralVolume": 4900,
-      "usefulSquare": 650,
-      "fullSquare": 700,
+      "structural_volume": 4900,
+      "useful_square": 650,
+      "full_square": 700,
       "project": 1,
       "functional_fire_safety_subcategory": 19,
       "fire_resistance_rank": 6,
@@ -458,7 +458,6 @@
       "heat_of_combusion": 13.8,
       "flame_speed": 0.067,
       "burning_rate": 0.0393,
-      "info": "Дерево сухое (сосна w=12%)\nПлотность: 500 кг/м3\nКоличество воздуха: 4.6 кг/кг\nТеплота сгооания: 13.8 МДж\nСкорость распространения пламени: 0.067 м/с\nСкорость выгорания: 0.0393 кг/м2*с",
       "user": 0,
       "substance_type": 6
     },
@@ -470,7 +469,6 @@
       "heat_of_combusion": 13.4,
       "flame_speed": 0.005,
       "burning_rate": 0.0393,
-      "info": "Бумага (книги, журналы)\nПлотность: 1000 кг/м3\nКоличество воздуха: 4.6 кг/кг\nТеплота сгооания: 13.4 МДж\nСкорость распространения пламени: 0.005 м/с\nСкорость выгорания: 0.0042 кг/м2*с",
       "user": 0,
       "substance_type": 6
     },
@@ -482,7 +480,6 @@
       "heat_of_combusion": 33.52,
       "flame_speed": 0.02,
       "burning_rate": 0.0112,
-      "info": "Резина\nПлотность: 1500 кг/м3\nКоличество воздуха: 14.95 кг/кг\nТеплота сгооания: 33.52 МДж\nСкорость распространения пламени: 0.02 м/с\nСкорость выгорания: 0.0112 кг/м2*с",
       "user": 0,
       "substance_type": 6
     },
@@ -494,7 +491,6 @@
       "heat_of_combusion": 39.0,
       "flame_speed": 0.05,
       "burning_rate": 0.0144,
-      "info": "Полистирол\nПлотность: 1050 кг/м3\nКоличество воздуха: 14.0 кг/кг\nТеплота сгооания: 39.0 МДж\nСкорость распространения пламени: 0.05 м/с\nСкорость выгорания: 0.0144 кг/м2*с",
       "user": 0,
       "substance_type": 6
     },
@@ -506,7 +502,6 @@
       "heat_of_combusion": 41.87,
       "flame_speed": 0.38,
       "burning_rate": 0.0617,
-      "info": "Бензин\nПлотность: 750 кг/м3\nКоличество воздуха: 14.0 кг/кг\nТеплота сгооания: 41.87 МДж\nСкорость распространения пламени: 0.38 м/с\nСкорость выгорания: 0.0144 кг/м2*с",
       "user": 0,
       "substance_type": 3
     }

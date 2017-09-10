@@ -1,20 +1,25 @@
 //
-//  NGNUser+CoreDataProperties.h
+//  NGNUserMO.h
 //  FireProtection
 //
-//  Created by Alexey Stafeyev on 08.09.17.
+//  Created by Alexey Stafeyev on 10.09.17.
 //  Copyright © 2017 Alexey Stafeyev. All rights reserved.
 //
-//
 
-#import "NGNUser+CoreDataClass.h"
+#import <CoreData/CoreData.h>
 #import "NGNManagedObjectMappingProtocol.h"
+
+@class NGNProject, NGNSubstance;
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NGNUser (CoreDataProperties)
+@interface NGNUserMO : NSManagedObject
 
-+ (NSFetchRequest<NGNUser *> *)fetchRequest;
+@end
+
+@interface NGNUserMO (CoreDataProperties)
+
++ (NSFetchRequest<NGNUserMO *> *)fetchRequest;
 
 @property (nullable, nonatomic, copy) NSNumber *idx;
 @property (nullable, nonatomic, copy) NSString *name;
@@ -24,7 +29,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@interface NGNUser (CoreDataGeneratedAccessors)
+@interface NGNUserMO (CoreDataGeneratedAccessors)
 
 - (void)addProjectsObject:(NGNProject *)value;
 - (void)removeProjectsObject:(NGNProject *)value;
@@ -38,7 +43,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@interface NGNUser (Mapping) <NGNManagedObjectMappingProtocol>
+@interface NGNUserMO (Mapping) <NGNManagedObjectMappingProtocol>
 
 @end
 

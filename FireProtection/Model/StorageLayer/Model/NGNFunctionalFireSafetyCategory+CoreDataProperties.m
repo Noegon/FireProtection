@@ -16,8 +16,22 @@
 }
 
 @dynamic idx;
-@dynamic info;
 @dynamic name;
+@dynamic info;
 @dynamic functionalFireSubcategories;
 
 @end
+
+@implementation NGNFunctionalFireSafetyCategory (Mapping)
+
++ (FEMMapping *)defaultMapping {
+    FEMMapping *mapping = [[FEMMapping alloc] initWithEntityName:[self entity].name];
+    [mapping addAttributesFromArray:@[@"name", @"info"]];
+    [mapping addAttributesFromDictionary:@{@"idx": @"id"}];
+    mapping.primaryKey = @"idx";
+    
+    return mapping;
+}
+
+@end
+

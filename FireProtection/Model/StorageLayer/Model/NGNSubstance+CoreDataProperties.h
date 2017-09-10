@@ -8,6 +8,7 @@
 //
 
 #import "NGNSubstance+CoreDataClass.h"
+#import "NGNManagedObjectMappingProtocol.h"
 
 
 NS_ASSUME_NONNULL_BEGIN
@@ -16,16 +17,22 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSFetchRequest<NGNSubstance *> *)fetchRequest;
 
-@property (nullable, nonatomic, copy) NSNumber *burningRate;
-@property (nullable, nonatomic, copy) NSNumber *density;
-@property (nullable, nonatomic, copy) NSNumber *flameSpeed;
-@property (nullable, nonatomic, copy) NSNumber *heatOfCombusion;
 @property (nullable, nonatomic, copy) NSDecimalNumber *idx;
 @property (nullable, nonatomic, copy) NSString *name;
+@property (nullable, nonatomic, copy) NSNumber *density;
 @property (nonatomic) double requiredAirAmount;
-@property (nullable, nonatomic, retain) NSSet<NGNSubstancePile *> *substanceSets;
+@property (nullable, nonatomic, copy) NSNumber *heatOfCombusion;
+@property (nullable, nonatomic, copy) NSNumber *flameSpeed;
+@property (nullable, nonatomic, copy) NSNumber *burningRate;
 @property (nullable, nonatomic, retain) NGNSubstanceType *substanceType;
 @property (nullable, nonatomic, retain) NGNUser *user;
+@property (nullable, nonatomic, retain) NSSet<NGNSubstancePile *> *substanceSets;
+
+@end
+
+@interface NGNSubstance (AdditionalMethods)
+
+- (NSString *)info;
 
 @end
 
@@ -35,6 +42,10 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)removeSubstanceSetsObject:(NGNSubstancePile *)value;
 - (void)addSubstanceSets:(NSSet<NGNSubstancePile *> *)values;
 - (void)removeSubstanceSets:(NSSet<NGNSubstancePile *> *)values;
+
+@end
+
+@interface NGNSubstance (Mapping) <NGNManagedObjectMappingProtocol>
 
 @end
 

@@ -106,9 +106,10 @@
         <relationship name="substances" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="NGNSubstance" inverseName="substanceType" inverseEntity="NGNSubstance" syncable="YES"/>
     </entity>
     <entity name="NGNUser" representedClassName="NGNUser" syncable="YES">
-        <attribute name="idx" attributeType="Integer 64" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="idx" attributeType="Decimal" syncable="YES"/>
         <attribute name="name" attributeType="String" defaultValueString="Jhon" syncable="YES"/>
         <attribute name="password" attributeType="String" minValueString="6" regularExpressionString="(\d|[a-z]){6,}" syncable="YES"/>
+        <attribute name="registrationDate" attributeType="Date" defaultDateTimeInterval="526749480" usesScalarValueType="NO" syncable="YES"/>
         <relationship name="projects" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="NGNProject" inverseName="user" inverseEntity="NGNProject" syncable="YES"/>
         <relationship name="substances" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="NGNSubstance" inverseName="user" inverseEntity="NGNSubstance" syncable="YES"/>
     </entity>
@@ -117,6 +118,7 @@
         <element name="NGNFireResistanceRank" positionX="-4212" positionY="-2583" width="128" height="208"/>
         <element name="NGNFireSafetyCategory" positionX="-3816" positionY="-2394" width="128" height="118"/>
         <element name="NGNFunctionalFireSafetyCategory" positionX="-3843" positionY="-2691" width="128" height="103"/>
+        <element name="NGNFunctionalFireSafetySubcategory" positionX="-3834" positionY="-2538" width="128" height="118"/>
         <element name="NGNMinimumREIConstructionType" positionX="-3816" positionY="-2194" width="128" height="88"/>
         <element name="NGNPosition" positionX="-4023" positionY="-2583" width="128" height="223"/>
         <element name="NGNProject" positionX="-4025" positionY="-2758" width="128" height="133"/>
@@ -124,7 +126,6 @@
         <element name="NGNSubstance" positionX="-4394" positionY="-2605" width="128" height="193"/>
         <element name="NGNSubstancePile" positionX="-4401" positionY="-2296" width="128" height="133"/>
         <element name="NGNSubstanceType" positionX="-4401" positionY="-2754" width="128" height="103"/>
-        <element name="NGNUser" positionX="-4212" positionY="-2754" width="128" height="118"/>
-        <element name="NGNFunctionalFireSafetySubcategory" positionX="-3834" positionY="-2538" width="128" height="118"/>
+        <element name="NGNUser" positionX="-4212" positionY="-2754" width="128" height="135"/>
     </elements>
 </model>

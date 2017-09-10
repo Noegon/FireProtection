@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@interface NGNDataBaseRuler : NSObject
+@interface NGNDataBaseManager : NSObject
 
 + (NSManagedObjectContext *) managedObjectContext;
 + (void)setupCoreDataStackWithStorageName:(NSString *)storageName;

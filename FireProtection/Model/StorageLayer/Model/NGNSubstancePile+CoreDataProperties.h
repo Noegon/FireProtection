@@ -8,6 +8,7 @@
 //
 
 #import "NGNSubstancePile+CoreDataClass.h"
+#import "NGNManagedObjectMappingProtocol.h"
 
 
 NS_ASSUME_NONNULL_BEGIN
@@ -24,6 +25,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, retain) NGNSubstance *substance;
 
 -(NSNumber *)mass;
+
+@end
+
+@interface NGNSubstancePile (Mapping) <NGNManagedObjectMappingProtocol>
 
 @end
 

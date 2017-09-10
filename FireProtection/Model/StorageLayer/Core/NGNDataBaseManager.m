@@ -6,10 +6,10 @@
 //  Copyright © 2017 Alex. All rights reserved.
 //
 
-#import "NGNDataBaseRuler.h"
+#import "NGNDataBaseManager.h"
 #import "NGNCommonConstants.h"
 
-@interface NGNDataBaseRuler ()
+@interface NGNDataBaseManager ()
 
 @property (readwrite, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (readwrite, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
@@ -19,11 +19,11 @@
 
 @end
 
-@implementation NGNDataBaseRuler
+@implementation NGNDataBaseManager
 
 #pragma mark - basic logic methods;
 + (instancetype)sharedInstance {
-    static NGNDataBaseRuler *sharedInstance = nil;
+    static NGNDataBaseManager *sharedInstance = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         sharedInstance = [[self alloc] init];

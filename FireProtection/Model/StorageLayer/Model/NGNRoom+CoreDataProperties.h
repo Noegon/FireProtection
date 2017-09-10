@@ -8,7 +8,7 @@
 //
 
 #import "NGNRoom+CoreDataClass.h"
-
+#import "NGNManagedObjectMappingProtocol.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -40,6 +40,10 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)removeSubstancePilesObject:(NGNSubstancePile *)value;
 - (void)addSubstancePiles:(NSSet<NGNSubstancePile *> *)values;
 - (void)removeSubstancePiles:(NSSet<NGNSubstancePile *> *)values;
+
+@end
+
+@interface NGNRoom (Mapping) <NGNManagedObjectMappingProtocol>
 
 @end
 

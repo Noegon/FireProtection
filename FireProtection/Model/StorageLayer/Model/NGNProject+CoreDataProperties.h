@@ -8,7 +8,7 @@
 //
 
 #import "NGNProject+CoreDataClass.h"
-
+#import "NGNManagedObjectMappingProtocol.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -31,6 +31,10 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)removePositionsObject:(NGNPosition *)value;
 - (void)addPositions:(NSSet<NGNPosition *> *)values;
 - (void)removePositions:(NSSet<NGNPosition *> *)values;
+
+@end
+
+@interface NGNProject (Mapping) <NGNManagedObjectMappingProtocol>
 
 @end
 

@@ -8,6 +8,7 @@
 //
 
 #import "NGNFireResistanceRank+CoreDataClass.h"
+#import "NGNManagedObjectMappingProtocol.h"
 
 
 NS_ASSUME_NONNULL_BEGIN
@@ -16,14 +17,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSFetchRequest<NGNFireResistanceRank *> *)fetchRequest;
 
-@property (nullable, nonatomic, copy) NSDecimalNumber *bearingElementR;
-@property (nullable, nonatomic, copy) NSDecimalNumber *coveringRE;
-@property (nullable, nonatomic, copy) NSDecimalNumber *fermBeanR;
-@property (nullable, nonatomic, copy) NSDecimalNumber *floorCeilingREI;
 @property (nullable, nonatomic, copy) NSDecimalNumber *idx;
 @property (nullable, nonatomic, copy) NSString *number;
-@property (nullable, nonatomic, copy) NSDecimalNumber *outerNonBearingWallE;
+@property (nullable, nonatomic, copy) NSDecimalNumber *bearingElementR;
 @property (nullable, nonatomic, copy) NSDecimalNumber *selfBearingElementRE;
+@property (nullable, nonatomic, copy) NSDecimalNumber *outerNonBearingWallE;
+@property (nullable, nonatomic, copy) NSDecimalNumber *floorCeilingREI;
+@property (nullable, nonatomic, copy) NSDecimalNumber *coveringRE;
+@property (nullable, nonatomic, copy) NSDecimalNumber *fermBeanR;
 @property (nullable, nonatomic, copy) NSDecimalNumber *stairWallREI;
 @property (nullable, nonatomic, copy) NSDecimalNumber *stairwayR;
 @property (nullable, nonatomic, retain) NSSet<NGNPosition *> *positions;
@@ -36,6 +37,10 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)removePositionsObject:(NGNPosition *)value;
 - (void)addPositions:(NSSet<NGNPosition *> *)values;
 - (void)removePositions:(NSSet<NGNPosition *> *)values;
+
+@end
+
+@interface NGNFireResistanceRank (Mapping) <NGNManagedObjectMappingProtocol>
 
 @end
 

@@ -8,7 +8,7 @@
 //
 
 #import "NGNPosition+CoreDataClass.h"
-
+#import "NGNManagedObjectMappingProtocol.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -37,6 +37,10 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)removeRoomsObject:(NGNRoom *)value;
 - (void)addRooms:(NSSet<NGNRoom *> *)values;
 - (void)removeRooms:(NSSet<NGNRoom *> *)values;
+
+@end
+
+@interface NGNPosition (Mapping) <NGNManagedObjectMappingProtocol>
 
 @end
 

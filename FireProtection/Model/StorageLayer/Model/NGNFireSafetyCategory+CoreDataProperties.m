@@ -22,3 +22,16 @@
 @dynamic positions;
 
 @end
+
+@implementation NGNFireSafetyCategory (Mapping)
+
++ (FEMMapping *)defaultMapping {
+    FEMMapping *mapping = [[FEMMapping alloc] initWithEntityName:[self entity].name];
+    [mapping addAttributesFromArray:@[@"name", @"info"]];
+    [mapping addAttributesFromDictionary:@{@"idx": @"id",}];
+    mapping.primaryKey = @"idx";
+    
+    return mapping;
+}
+
+@end

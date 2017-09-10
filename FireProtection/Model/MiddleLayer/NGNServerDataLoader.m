@@ -9,7 +9,7 @@
 #import "NGNServerDataLoader.h"
 #import "NGNCommonConstants.h"
 #import "NGNCoreDataEntitiesNames.h"
-#import "NGNDataBaseRuler.h"
+#import "NGNDataBaseManager.h"
 #import "NGNCoreDataModel.h"
 #import "NGNServerLayerServices.h"
 #import "NGNReachability.h"

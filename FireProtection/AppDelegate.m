@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import "NGNCoreDataModel.h"
 #import "NGNCommonConstants.h"
-#import "NGNDataBaseRuler.h"
+#import "NGNDataBaseManager.h"
 #import "NGNServerDataLoader.h"
 
 @interface AppDelegate ()
@@ -27,18 +27,18 @@
 //    [manager removeItemAtURL:storeURL error:nil];
     
 #warning test of local storage
-    [NGNDataBaseRuler setupCoreDataStackWithStorageName:NGNModelAppName];
+    [NGNDataBaseManager setupCoreDataStackWithStorageName:NGNModelAppName];
     
     NGNUser *user = [NSEntityDescription insertNewObjectForEntityForName:@"NGNUser"
-                                                  inManagedObjectContext:NGNDataBaseRuler.managedObjectContext];
+                                                  inManagedObjectContext:NGNDataBaseManager.managedObjectContext];
     user.idx = @(foo4random());
     user.name = @"Alex";
     user.password = @"chimal666";
     
-    [NGNDataBaseRuler saveContext];
+    [NGNDataBaseManager saveContext];
     
     NSError *error = nil;
-    NSArray *users = [NGNDataBaseRuler.managedObjectContext executeFetchRequest:[NGNUser fetchRequest] error:&error];
+    NSArray *users = [NGNDataBaseManager.managedObjectContext executeFetchRequest:[NGNUser fetchRequest] error:&error];
     if (!error) {
         NSLog(@"%@", users);
     }
@@ -61,7 +61,7 @@
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
     // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
-    [NGNServerDataLoader loadDataFromServerWithContext:[NGNDataBaseRuler managedObjectContext]];
+    [NGNServerDataLoader loadDataFromServerWithContext:[NGNDataBaseManager managedObjectContext]];
 }
 
 
@@ -73,7 +73,7 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     // Saves changes in the application's managed object context before the application terminates.
-    [NGNDataBaseRuler saveContext];
+    [NGNDataBaseManager saveContext];
 }
 
 #pragma mark - additional helper methods

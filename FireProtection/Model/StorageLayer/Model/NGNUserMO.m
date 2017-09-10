@@ -1,19 +1,22 @@
 //
-//  NGNUser+CoreDataProperties.m
+//  NGNUserMO.m
 //  FireProtection
 //
-//  Created by Alexey Stafeyev on 08.09.17.
+//  Created by Alexey Stafeyev on 10.09.17.
 //  Copyright © 2017 Alexey Stafeyev. All rights reserved.
 //
-//
 
-#import "NGNUser+CoreDataProperties.h"
+#import "NGNUserMO.h"
 #import "NGNCommonConstants.h"
 
-@implementation NGNUser (CoreDataProperties)
+@implementation NGNUserMO
 
-+ (NSFetchRequest<NGNUser *> *)fetchRequest {
-	return [[NSFetchRequest alloc] initWithEntityName:@"NGNUser"];
+@end
+
+@implementation NGNUserMO (CoreDataProperties)
+
++ (NSFetchRequest<NGNUserMO *> *)fetchRequest {
+    return [[NSFetchRequest alloc] initWithEntityName:@"NGNUser"];
 }
 
 @dynamic idx;
@@ -24,7 +27,7 @@
 
 @end
 
-@implementation NGNUser (Mapping)
+@implementation NGNUserMO (Mapping)
 
 + (FEMMapping *)defaultMapping {
     FEMMapping *mapping = [[FEMMapping alloc] initWithEntityName:[self entity].name];
@@ -52,3 +55,4 @@
 }
 
 @end
+

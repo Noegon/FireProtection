@@ -20,3 +20,16 @@
 @dynamic rooms;
 
 @end
+
+@implementation NGNMinimumREIConstructionType (Mapping)
+
++ (FEMMapping *)defaultMapping {
+    FEMMapping *mapping = [[FEMMapping alloc] initWithEntityName:[self entity].name];
+    [mapping addAttributesFromArray:@[@"name"]];
+    [mapping addAttributesFromDictionary:@{@"idx": @"id"}];
+    mapping.primaryKey = @"idx";
+    
+    return mapping;
+}
+
+@end

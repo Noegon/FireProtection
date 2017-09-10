@@ -8,6 +8,7 @@
 //
 
 #import "NGNApertureGroup+CoreDataClass.h"
+#import "NGNManagedObjectMappingProtocol.h"
 
 
 NS_ASSUME_NONNULL_BEGIN
@@ -16,11 +17,15 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSFetchRequest<NGNApertureGroup *> *)fetchRequest;
 
-@property (nullable, nonatomic, copy) NSDecimalNumber *amount;
-@property (nullable, nonatomic, copy) NSNumber *height;
 @property (nullable, nonatomic, copy) NSDecimalNumber *idx;
+@property (nullable, nonatomic, copy) NSNumber *height;
 @property (nullable, nonatomic, copy) NSNumber *width;
+@property (nullable, nonatomic, copy) NSDecimalNumber *amount;
 @property (nullable, nonatomic, retain) NGNRoom *room;
+
+@end
+
+@interface NGNApertureGroup (Mapping) <NGNManagedObjectMappingProtocol>
 
 @end
 

@@ -8,6 +8,7 @@
 //
 
 #import "NGNFunctionalFireSafetyCategory+CoreDataClass.h"
+#import "NGNManagedObjectMappingProtocol.h"
 
 
 NS_ASSUME_NONNULL_BEGIN
@@ -29,6 +30,10 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)removeFunctionalFireSubategoriesObject:(NGNFunctionalFireSafetySubcategory *)value;
 - (void)addFunctionalFireSubategories:(NSSet<NGNFunctionalFireSafetySubcategory *> *)values;
 - (void)removeFunctionalFireSubategories:(NSSet<NGNFunctionalFireSafetySubcategory *> *)values;
+
+@end
+
+@interface NGNFunctionalFireSafetyCategory (Mapping) <NGNManagedObjectMappingProtocol>
 
 @end
 

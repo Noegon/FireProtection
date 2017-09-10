@@ -8,6 +8,7 @@
 //
 
 #import "NGNSubstanceType+CoreDataClass.h"
+#import "NGNManagedObjectMappingProtocol.h"
 
 
 NS_ASSUME_NONNULL_BEGIN
@@ -29,6 +30,10 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)removeSubstancesObject:(NGNSubstance *)value;
 - (void)addSubstances:(NSSet<NGNSubstance *> *)values;
 - (void)removeSubstances:(NSSet<NGNSubstance *> *)values;
+
+@end
+
+@interface NGNSubstanceType (Mapping) <NGNManagedObjectMappingProtocol>
 
 @end
 

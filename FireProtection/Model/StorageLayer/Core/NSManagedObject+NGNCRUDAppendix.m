@@ -7,7 +7,7 @@
 //
 
 #import "NSManagedObject+NGNCRUDAppendix.h"
-#import "NGNDataBaseRuler.h"
+#import "NGNDataBaseManager.h"
 
 @implementation NSManagedObject (NGNCRUDAppendix)
 
@@ -18,7 +18,7 @@
     if (fieldsCompletitionBlock) {
         fieldsCompletitionBlock(object);
     }
-    [NGNDataBaseRuler saveContext];
+    [NGNDataBaseManager saveContext];
     return object;
 }
 
@@ -28,7 +28,7 @@
     if ([entities containsObject:object]) {
         [context deleteObject:object];
     }
-    [NGNDataBaseRuler saveContext];
+    [NGNDataBaseManager saveContext];
 }
 
 + (NSArray *)ngn_allEntitiesInManagedObjectContext:(NSManagedObjectContext *)context {
