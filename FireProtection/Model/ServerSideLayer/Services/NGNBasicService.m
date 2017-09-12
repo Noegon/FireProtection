@@ -9,7 +9,7 @@
 #import "NGNBasicService.h"
 #import "NGNServerSideLayerConstants.h"
 
-typedef void (^BasicCompletitionHandler)(NSData *data, NSURLResponse *response, NSError *error);
+typedef void (^BasicCompletionHandler)(NSData *data, NSURLResponse *response, NSError *error);
 
 @implementation NGNBasicService
 
@@ -24,26 +24,28 @@ typedef void (^BasicCompletitionHandler)(NSData *data, NSURLResponse *response, 
         NSString *stringfiedElement = nil;
         stringfiedElement = ![element isKindOfClass:NSString.class] ? [element stringValue] : element;
         [finalPath appendString:stringfiedElement];
-        if (![stringfiedElement containsString:@"/"]) {
+        if (![stringfiedElement containsString:@"/"] &&
+            ![stringfiedElement isEqualToString:resourcePathElements[0]] &&
+            ![stringfiedElement isEqualToString:resourcePathElements[resourcePathElements.count - 1]]) {
             [finalPath appendString:@"/"];
         }
     }
     return [NSURL URLWithString:finalPath];
 }
 
-- (void)executeCompletitionBlock:(void(^)(id object))completitionBlock object:(id)object {
+- (void)executeCompletionBlock:(void(^)(id object))completionBlock object:(id)object {
     dispatch_async(dispatch_get_main_queue(), ^() {
-        if (completitionBlock) {
-            completitionBlock(object);
+        if (completionBlock) {
+            completionBlock(object);
         }
     });
 }
 
-- (BasicCompletitionHandler)basicHandlerWithCompletitionBlock:(void(^)(id object))completitionBlock
+- (BasicCompletionHandler)basicHandlerWithcompletionBlock:(void(^)(id object))completionBlock
                                                        entity:(id)object {
     return ^void(NSData *data, NSURLResponse *response, NSError *error) {
 #warning handle error case and non 200 states code!!!
-        [self executeCompletitionBlock:completitionBlock object:object];
+        [self executeCompletionBlock:completionBlock object:object];
     };
 }
 
@@ -51,7 +53,7 @@ typedef void (^BasicCompletitionHandler)(NSData *data, NSURLResponse *response, 
                                    HTTPMethod:(NSString * _Nullable)HTTPMethod
                                      HTTPBody:(NSData * _Nullable)HTTPBody
                          HTTPHeadersForFields:(NSDictionary * _Nullable)HTTPHeadersForFields {
-    NSURL *url = [self makeResourceURLWithServerUrl:NGNServerURL
+    NSURL *url = [self makeResourceURLWithServerUrl:kNGNServerURL
                                resourcePathElements:pathElements];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     if (HTTPMethod) {
@@ -70,7 +72,7 @@ typedef void (^BasicCompletitionHandler)(NSData *data, NSURLResponse *response, 
 
 - (NSURLRequest *)makeGETRequestWithPathElements:(NSArray *)pathElements {
     return [self makeRequestWithPathElements:pathElements
-                                  HTTPMethod:NGNHTTPMethodGET
+                                  HTTPMethod:kNGNHTTPMethodGET
                                     HTTPBody:nil
                         HTTPHeadersForFields:nil];
 }
@@ -78,24 +80,24 @@ typedef void (^BasicCompletitionHandler)(NSData *data, NSURLResponse *response, 
 - (NSURLRequest *)makePOSTRequestWithPathElements:(NSArray *)pathElements
                                          HTTPBody:(NSData * _Nullable)HTTPBody {
     return [self makeRequestWithPathElements:pathElements
-                                  HTTPMethod:NGNHTTPMethodPOST
+                                  HTTPMethod:kNGNHTTPMethodPOST
                                     HTTPBody:HTTPBody
-                        HTTPHeadersForFields:@{NGNHTTPHeaderContentType: NGNHTTPDataTypeJSON,
-                                               NGNHTTPHeaderAccept: NGNHTTPDataTypeJSON}];
+                        HTTPHeadersForFields:@{kNGNHTTPHeaderContentType: kNGNHTTPDataTypeJSON,
+                                               kNGNHTTPHeaderAccept: kNGNHTTPDataTypeJSON}];
 }
 
 - (NSURLRequest *)makePUTRequestWithPathElements:(NSArray *)pathElements
                                         HTTPBody:(NSData * _Nullable)HTTPBody {
     return [self makeRequestWithPathElements:pathElements
-                                  HTTPMethod:NGNHTTPMethodPUT
+                                  HTTPMethod:kNGNHTTPMethodPUT
                                     HTTPBody:HTTPBody
-                        HTTPHeadersForFields:@{NGNHTTPHeaderContentType: NGNHTTPDataTypeJSON,
-                                               NGNHTTPHeaderAccept: NGNHTTPDataTypeJSON}];
+                        HTTPHeadersForFields:@{kNGNHTTPHeaderContentType: kNGNHTTPDataTypeJSON,
+                                               kNGNHTTPHeaderAccept: kNGNHTTPDataTypeJSON}];
 }
 
 - (NSURLRequest *)makeDELETERequestWithPathElements:(NSArray *)pathElements {
     return [self makeRequestWithPathElements:pathElements
-                                  HTTPMethod:NGNHTTPMethodDELETE
+                                  HTTPMethod:kNGNHTTPMethodDELETE
                                     HTTPBody:nil
                         HTTPHeadersForFields:nil];
 }
@@ -105,83 +107,83 @@ typedef void (^BasicCompletitionHandler)(NSData *data, NSURLResponse *response, 
 @implementation NGNBasicService(NGNOperationsWithEntities)
 
 - (void)basicSingleEntityOperationWithRequest:(NSURLRequest *)request
-                            entityCompletitionBlock:(void(^)(NSDictionary *entity))entityCompletitionBlock
-                          completitionHandler:(void(^)(NSData *data, NSURLResponse *response, NSError *error))completitionHandler {
+                            entitycompletionBlock:(void(^)(NSDictionary *entity))entitycompletionBlock
+                          completionHandler:(void(^)(NSData *data, NSURLResponse *response, NSError *error))completionHandler {
     NSURLSessionDataTask *singleEntityTask =
-        [[self createUrlSession] dataTaskWithRequest:request completionHandler:completitionHandler];
+        [[self createUrlSession] dataTaskWithRequest:request completionHandler:completionHandler];
     [singleEntityTask resume];
 }
 
 - (void)basicEntitiesOperationWithRequest:(NSURLRequest *)request
-                entitiesCompletitionBlock:(void(^)(NSArray *entities))entitiesCompletitionBlock
-                      completitionHandler:(void(^)(NSData *data, NSURLResponse *response, NSError *error))completitionHandler {
+                entitiescompletionBlock:(void(^)(NSArray *entities))entitiescompletionBlock
+                      completionHandler:(void(^)(NSData *data, NSURLResponse *response, NSError *error))completionHandler {
     NSURLSession *session = [self createUrlSession];
     NSURLSessionDataTask *entitiesTask =
-        [session dataTaskWithRequest:request completionHandler:completitionHandler];
+        [session dataTaskWithRequest:request completionHandler:completionHandler];
     [entitiesTask resume];
 }
 
 - (void)fetchEntitiesWithEntityPathElements:(NSArray *)pathElements
-                          completitionBlock:(void(^)(NSArray *entities))completitionBlock {
+                          completionBlock:(void(^)(NSArray *entities))completionBlock {
     NSURLRequest *request = [self makeGETRequestWithPathElements:pathElements];
     [self basicEntitiesOperationWithRequest:request
-                  entitiesCompletitionBlock:completitionBlock
-                        completitionHandler:
+                  entitiescompletionBlock:completionBlock
+                        completionHandler:
      ^(NSData *data, NSURLResponse *response, NSError *error) {
          NSArray *entities = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
-         [self executeCompletitionBlock:completitionBlock object:entities];
+         [self executeCompletionBlock:completionBlock object:entities];
      }];
 }
 
 - (void)fetchSingleEntityWithEntityPathElements:(NSArray *)pathElements
-                              completitionBlock:(void(^)(NSDictionary *entity))completitionBlock {
+                              completionBlock:(void(^)(NSDictionary *entity))completionBlock {
     NSURLRequest *request = [self makeGETRequestWithPathElements:pathElements];
     [self basicSingleEntityOperationWithRequest:request
-                        entityCompletitionBlock:completitionBlock
-                            completitionHandler:
+                        entitycompletionBlock:completionBlock
+                            completionHandler:
      ^(NSData *data, NSURLResponse *response, NSError *error) {
          NSDictionary *entity = [NSJSONSerialization JSONObjectWithData:data
                                                                 options:NSJSONReadingMutableContainers
                                                                   error:&error];
-         [self executeCompletitionBlock:completitionBlock object:entity];
+         [self executeCompletionBlock:completionBlock object:entity];
      }];
 }
 
 - (void)addEntity:(NSDictionary *)entity
      pathElements:(NSArray *)pathElements
-completitionBlock:(void(^)(NSDictionary *entity))completitionBlock {    
+completionBlock:(void(^)(NSDictionary *entity))completionBlock {
     NSData *bodyData = [NSJSONSerialization dataWithJSONObject:entity
                                                        options:NSJSONWritingPrettyPrinted
                                                          error:nil];
     NSURLRequest *request = [self makePOSTRequestWithPathElements:pathElements
                                                          HTTPBody:bodyData];
     [self basicSingleEntityOperationWithRequest:request
-                        entityCompletitionBlock:completitionBlock
-                            completitionHandler:[self basicHandlerWithCompletitionBlock:completitionBlock
+                        entitycompletionBlock:completionBlock
+                            completionHandler:[self basicHandlerWithcompletionBlock:completionBlock
                                                                                  entity:entity]];
 }
 
 - (void)updateEntity:(NSDictionary *)entity
         pathElements:(NSArray *)pathElements
-   completitionBlock:(void(^)(NSDictionary *entity))completitionBlock {
+   completionBlock:(void(^)(NSDictionary *entity))completionBlock {
     NSData *bodyData = [NSJSONSerialization dataWithJSONObject:entity
                                                        options:NSJSONWritingPrettyPrinted
                                                          error:nil];
     NSURLRequest *request = [self makePUTRequestWithPathElements:pathElements
                                                         HTTPBody:bodyData];
     [self basicSingleEntityOperationWithRequest:request
-                        entityCompletitionBlock:completitionBlock
-                            completitionHandler:[self basicHandlerWithCompletitionBlock:completitionBlock
+                        entitycompletionBlock:completionBlock
+                            completionHandler:[self basicHandlerWithcompletionBlock:completionBlock
                                                                                  entity:entity]];
 }
 
 - (void)deleteEntity:(NSDictionary *)entity
         pathElements:(NSArray *)pathElements
-   completitionBlock:(void(^)(NSDictionary *entity))completitionBlock {
+   completionBlock:(void(^)(NSDictionary *entity))completionBlock {
     NSURLRequest *request = [self makeDELETERequestWithPathElements:pathElements];
     [self basicSingleEntityOperationWithRequest:request
-                        entityCompletitionBlock:completitionBlock
-                            completitionHandler:[self basicHandlerWithCompletitionBlock:completitionBlock
+                        entitycompletionBlock:completionBlock
+                            completionHandler:[self basicHandlerWithcompletionBlock:completionBlock
                                                                                  entity:entity]];
 }
 

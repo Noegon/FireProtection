@@ -13,6 +13,9 @@
 
 @class NGNBasicService;
 
+/**
+ Attention! Class isabstract! dont't try to create instance of class and use it
+ */
 @interface NGNAbstractService : NSObject <NGNServiceProtocol>
 
 @property (strong, nonatomic) NGNBasicService *basicService;

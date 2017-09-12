@@ -9,14 +9,23 @@
 #import <Foundation/Foundation.h>
 
 @protocol NGNServiceProtocol <NSObject>
-@required
-- (void)fetchEntities:(void(^)(NSArray *entity))completitionBlock;
-- (void)fetchEntityById:(NSString *)entytyId
-     completitionBlock:(void(^)(NSDictionary *entity))completitionBlock;
 
 @optional
-- (void)addEntity:(NSDictionary *)entity completitionBlock:(void(^)(NSDictionary *entity))completitionBlock;
-- (void)updateEntity:(NSDictionary *)entity completitionBlock:(void(^)(NSDictionary *entity))completitionBlock;
-- (void)deleteEntity:(NSDictionary *)entity completitionBlock:(void(^)(NSDictionary *entity))completitionBlock;
+- (void)fetchEntities:(void(^)(NSArray *entity))completionBlock;
+
+- (void)fetchEntitiesByParentEntityId:(NSNumber *)parentEntityId
+                      completionBlock:(void(^)(NSArray *entity))completionBlock;
+
+- (void)fetchEntitiesWithAdditionalParameters:(NSDictionary<NSString *, NSString *> *)additionalParameters
+                              completionBlock:(void(^)(NSArray *entities))completionBlock;
+
+- (void)fetchEntityById:(NSNumber *)entityId
+      completionBlock:(void(^)(NSDictionary *entity))completionBlock;
+
+- (void)addEntity:(NSDictionary *)entity completionBlock:(void(^)(NSDictionary *entity))completionBlock;
+
+- (void)updateEntity:(NSDictionary *)entity completionBlock:(void(^)(NSDictionary *entity))completionBlock;
+
+- (void)deleteEntity:(NSDictionary *)entity completionBlock:(void(^)(NSDictionary *entity))completionBlock;
 
 @end

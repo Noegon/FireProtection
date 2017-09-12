@@ -9,5 +9,11 @@
 #ifndef NGNServerLayerServices_h
 #define NGNServerLayerServices_h
 
+#import "NGNAbstractService.h"
+#import "NGNUserService.h"
+#import "NGNProjectService.h"
+#import "NGNPositionService.h"
+#import "NGNRoomService.h"
+#import "NGNApertureGroupService.h"
 
 #endif /* NGNServerLayerServices_h */

@@ -11,7 +11,7 @@
 @interface NSManagedObject (NGNCRUDAppendix)
 
 + (instancetype)ngn_createEntityInManagedObjectContext:(NSManagedObjectContext *)context
-                               fieldsCompletitionBlock:(void(^)(NSManagedObject *object))fieldsCompletitionBlock;
+                               fieldscompletionBlock:(void(^)(NSManagedObject *object))fieldscompletionBlock;
 + (void)ngn_deleteEntityInManagedObjectContext:(NSManagedObjectContext *)context
                                  managedObject:(NSManagedObject *)object;
 + (NSArray *)ngn_allEntitiesInManagedObjectContext:(NSManagedObjectContext *)context;

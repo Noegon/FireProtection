@@ -18,7 +18,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nullable, nonatomic, copy) NSNumber *idx;
 @property (nullable, nonatomic, copy) NSString *name;
-@property (nullable, nonatomic, copy) NSString *password;
 @property (nullable, nonatomic, retain) NSSet<NGNProject *> *projects;
 @property (nullable, nonatomic, retain) NSSet<NGNSubstance *> *substances;
 

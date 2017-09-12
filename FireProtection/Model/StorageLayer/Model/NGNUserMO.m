@@ -38,7 +38,7 @@
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"ru"]];
     [formatter setTimeZone:[NSTimeZone localTimeZone]];
-    [formatter setDateFormat:NGNModelDateFormat];
+    [formatter setDateFormat:kNGNModelDateFormat];
     
     FEMAttribute *registrationDate = [[FEMAttribute alloc] initWithProperty:@"registrationDate" keyPath:@"registration_date" map:^id(id value) {
         if ([value isKindOfClass:[NSString class]]) {

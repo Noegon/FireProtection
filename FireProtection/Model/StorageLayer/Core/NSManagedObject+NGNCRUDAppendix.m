@@ -12,11 +12,11 @@
 @implementation NSManagedObject (NGNCRUDAppendix)
 
 + (instancetype)ngn_createEntityInManagedObjectContext:(NSManagedObjectContext *)context
-                               fieldsCompletitionBlock:(void(^)(NSManagedObject *object))fieldsCompletitionBlock {
+                               fieldscompletionBlock:(void(^)(NSManagedObject *object))fieldscompletionBlock {
     NSManagedObject *object = [NSEntityDescription insertNewObjectForEntityForName:[self entity].name
                                                             inManagedObjectContext:context];
-    if (fieldsCompletitionBlock) {
-        fieldsCompletitionBlock(object);
+    if (fieldscompletionBlock) {
+        fieldscompletionBlock(object);
     }
     [NGNDataBaseManager saveContext];
     return object;

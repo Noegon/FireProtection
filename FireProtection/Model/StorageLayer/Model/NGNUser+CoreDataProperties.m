@@ -18,7 +18,6 @@
 
 @dynamic idx;
 @dynamic name;
-@dynamic password;
 @dynamic projects;
 @dynamic substances;
 
@@ -28,14 +27,14 @@
 
 + (FEMMapping *)defaultMapping {
     FEMMapping *mapping = [[FEMMapping alloc] initWithEntityName:[self entity].name];
-    [mapping addAttributesFromArray:@[@"name", @"password"]];
+    [mapping addAttributesFromArray:@[@"name"]];
     [mapping addAttributesFromDictionary:@{@"idx": @"id"}];
     mapping.primaryKey = @"idx";
     
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"ru"]];
     [formatter setTimeZone:[NSTimeZone localTimeZone]];
-    [formatter setDateFormat:NGNModelDateFormat];
+    [formatter setDateFormat:kNGNModelDateFormat];
     
     FEMAttribute *registrationDate = [[FEMAttribute alloc] initWithProperty:@"registrationDate" keyPath:@"registration_date" map:^id(id value) {
         if ([value isKindOfClass:[NSString class]]) {

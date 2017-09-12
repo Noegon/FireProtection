@@ -10,7 +10,13 @@
 #import "NGNCoreDataModel.h"
 #import "NGNCommonConstants.h"
 #import "NGNDataBaseManager.h"
-#import "NGNServerDataLoader.h"
+#import "NGNServerDataLoadManager.h"
+
+#import "NGNServerLayerServices.h"
+
+#import <CoreData/CoreData.h>
+#import <FastEasyMapping/FastEasyMapping.h>
+#import <SystemConfiguration/SystemConfiguration.h>
 
 @interface AppDelegate ()
 
@@ -27,21 +33,38 @@
 //    [manager removeItemAtURL:storeURL error:nil];
     
 #warning test of local storage
-    [NGNDataBaseManager setupCoreDataStackWithStorageName:NGNModelAppName];
+    [NGNDataBaseManager setupCoreDataStackWithStorageName:kNGNModelAppName];
     
-    NGNUser *user = [NSEntityDescription insertNewObjectForEntityForName:@"NGNUser"
-                                                  inManagedObjectContext:NGNDataBaseManager.managedObjectContext];
-    user.idx = @(foo4random());
-    user.name = @"Alex";
-    user.password = @"chimal666";
+//    NGNUser *user = [NSEntityDescription insertNewObjectForEntityForName:@"NGNUser"
+//                                                  inManagedObjectContext:NGNDataBaseManager.managedObjectContext];
+//    user.idx = @(foo4random());
+//    user.name = @"Alex";
+//    NSString *password = @"chimal666";
+//
+//    [NGNDataBaseManager saveContext];
+//
+//    NSError *error = nil;
+//    NSArray *users = [NGNDataBaseManager.managedObjectContext executeFetchRequest:[NGNUser fetchRequest] error:&error];
+//    if (!error) {
+//        NSLog(@"%@", users);
+//    }
     
-    [NGNDataBaseManager saveContext];
+    NGNUserService *userService = [[NGNUserService alloc] init];
     
-    NSError *error = nil;
-    NSArray *users = [NGNDataBaseManager.managedObjectContext executeFetchRequest:[NGNUser fetchRequest] error:&error];
-    if (!error) {
-        NSLog(@"%@", users);
-    }
+    [userService fetchEntitiesWithAdditionalParameters:@{@"name": @"admin",
+                                                         @"password": @"admin"
+                                                         }
+                                       completionBlock:^(NSArray *entities) {
+        FEMMapping *userMapping = [NGNUser defaultMapping];
+        NSArray *result = [FEMDeserializer collectionFromRepresentation:entities
+                                                                      mapping:userMapping
+                                                                      context:[NGNDataBaseManager managedObjectContext]];
+        if (!result) {
+            NSLog(@"%@", @"user wasn't loaded");
+        } else {
+            NSLog(@"%@", @"user was loaded successfully");
+        }
+    }];
     
     return YES;
 }
@@ -61,7 +84,7 @@
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
     // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
-    [NGNServerDataLoader loadDataFromServerWithContext:[NGNDataBaseManager managedObjectContext]];
+    [NGNServerDataLoadManager loadDataFromServerWithContext:[NGNDataBaseManager managedObjectContext]];
 }
 
 

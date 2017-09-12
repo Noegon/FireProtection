@@ -6,7 +6,7 @@
 //  Copyright © 2017 Alex. All rights reserved.
 //
 
-#import "NGNServerDataLoader.h"
+#import "NGNServerDataLoadManager.h"
 #import "NGNCommonConstants.h"
 #import "NGNCoreDataEntitiesNames.h"
 #import "NGNDataBaseManager.h"
@@ -18,10 +18,10 @@
 //#import <FastEasyMapping/FastEasyMapping.h>
 #import <SystemConfiguration/SystemConfiguration.h>
 
-@implementation NGNServerDataLoader
+@implementation NGNServerDataLoadManager
 
 + (void)loadDataFromServerWithContext:(NSManagedObjectContext *)context {
-//    NGNCatalogService *catalogService = [[NGNCatalogService alloc] init];
+//    NGNProjectService *catalogService = [[NGNProjectService alloc] init];
 //    NGNOrderService *orderService = [[NGNOrderService alloc] init];
 //    NGNGoodsOrderService *goodsOrderService = [[NGNGoodsOrderService alloc] init];
 //    NGNProfileService *profileService = [[NGNProfileService alloc] init];
@@ -36,7 +36,7 @@
 //
 //        dispatch_async(myQueue, ^{
 //
-//            [profileService fetchUserById:@"1" completitionBlock:^(NSDictionary *user) {
+//            [profileService fetchUserById:@"1" completionBlock:^(NSDictionary *user) {
 //                FEMMapping *userMapping = [NGNUser defaultMapping];
 //                NSDictionary *usersResult = [FEMDeserializer objectFromRepresentation:user
 //                                                                              mapping:userMapping

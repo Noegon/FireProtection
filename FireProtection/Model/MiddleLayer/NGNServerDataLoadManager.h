@@ -11,7 +11,7 @@
 @class NGNReachability;
 @class NSManagedObjectContext;
 
-@interface NGNServerDataLoader : NSObject
+@interface NGNServerDataLoadManager : NSObject
 
 @property (strong, nonatomic) NGNReachability* internetReachable;
 @property (strong, nonatomic) NGNReachability* hostReachable;

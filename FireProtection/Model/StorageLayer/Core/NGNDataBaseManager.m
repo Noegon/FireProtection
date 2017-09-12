@@ -64,7 +64,7 @@
     if (_managedObjectModel != nil) {
         return _managedObjectModel;
     }
-    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:NGNModelAppName withExtension:@"momd"];
+    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:kNGNModelAppName withExtension:@"momd"];
     _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
     return _managedObjectModel;
 }
@@ -74,7 +74,7 @@
         return self.persistentStoreCoordinator;
     }
     if (!storageName) {
-        storageName = NGNModelAppName;
+        storageName = kNGNModelAppName;
     }
     NSString *fullStorageName = [NSString stringWithFormat:@"%@.sqlite", storageName];
     NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:fullStorageName];

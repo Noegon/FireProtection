@@ -15,28 +15,28 @@
 - (NSURLSession *)createUrlSession;
 - (NSURL *)makeResourceURLWithServerUrl:(NSString *)servrerURL
                    resourcePathElements:(NSArray<NSString *>*)resourcePathElements;
-- (void)executeCompletitionBlock:(void(^)(id object))completitionBlock object:(id)object;
+- (void)executeCompletionBlock:(void(^)(id object))completionBlock object:(id)object;
 
 @end
 
 @interface NGNBasicService (NGNOperationsWithEntities)
 
 - (void)fetchEntitiesWithEntityPathElements:(NSArray *)pathElements
-                          completitionBlock:(void(^)(NSArray *entities))completitionBlock;
+                          completionBlock:(void(^)(NSArray *entities))completionBlock;
 
 - (void)fetchSingleEntityWithEntityPathElements:(NSArray *)pathElements
-                              completitionBlock:(void(^)(NSDictionary *entity))completitionBlock;
+                              completionBlock:(void(^)(NSDictionary *entity))completionBlock;
 
 - (void)addEntity:(NSDictionary *)entity
      pathElements:(NSArray *)pathElements
-completitionBlock:(void(^)(NSDictionary *entity))completitionBlock;
+completionBlock:(void(^)(NSDictionary *entity))completionBlock;
 
 - (void)updateEntity:(NSDictionary *)entity
         pathElements:(NSArray *)pathElements
-   completitionBlock:(void(^)(NSDictionary *entity))completitionBlock;
+   completionBlock:(void(^)(NSDictionary *entity))completionBlock;
 
 - (void)deleteEntity:(NSDictionary *)entity
         pathElements:(NSArray *)pathElements
-   completitionBlock:(void(^)(NSDictionary *entity))completitionBlock;
+   completionBlock:(void(^)(NSDictionary *entity))completionBlock;
 
 @end
