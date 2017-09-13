@@ -114,18 +114,18 @@
         <relationship name="substances" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="NGNSubstance" inverseName="user" inverseEntity="NGNSubstance" syncable="YES"/>
     </entity>
     <elements>
-        <element name="NGNApertureGroup" positionX="-4212" positionY="-2350" width="128" height="118"/>
-        <element name="NGNFireResistanceRank" positionX="-4212" positionY="-2583" width="128" height="208"/>
-        <element name="NGNFireSafetyCategory" positionX="-3816" positionY="-2394" width="128" height="118"/>
-        <element name="NGNFunctionalFireSafetyCategory" positionX="-3843" positionY="-2691" width="128" height="103"/>
-        <element name="NGNFunctionalFireSafetySubcategory" positionX="-3834" positionY="-2538" width="128" height="118"/>
-        <element name="NGNMinimumREIConstructionType" positionX="-3816" positionY="-2194" width="128" height="88"/>
-        <element name="NGNPosition" positionX="-4023" positionY="-2583" width="128" height="223"/>
-        <element name="NGNProject" positionX="-4025" positionY="-2758" width="128" height="133"/>
-        <element name="NGNRoom" positionX="-4014" positionY="-2286" width="128" height="195"/>
-        <element name="NGNSubstance" positionX="-4394" positionY="-2605" width="128" height="193"/>
-        <element name="NGNSubstancePile" positionX="-4401" positionY="-2296" width="128" height="133"/>
-        <element name="NGNSubstanceType" positionX="-4401" positionY="-2754" width="128" height="103"/>
-        <element name="NGNUser" positionX="-4212" positionY="-2754" width="128" height="135"/>
+        <element name="NGNApertureGroup" positionX="0" positionY="0" width="128" height="120"/>
+        <element name="NGNFireResistanceRank" positionX="0" positionY="0" width="128" height="210"/>
+        <element name="NGNFireSafetyCategory" positionX="0" positionY="0" width="128" height="120"/>
+        <element name="NGNFunctionalFireSafetyCategory" positionX="0" positionY="0" width="128" height="105"/>
+        <element name="NGNFunctionalFireSafetySubcategory" positionX="0" positionY="0" width="128" height="120"/>
+        <element name="NGNMinimumREIConstructionType" positionX="0" positionY="0" width="128" height="90"/>
+        <element name="NGNPosition" positionX="0" positionY="0" width="128" height="225"/>
+        <element name="NGNProject" positionX="0" positionY="0" width="128" height="135"/>
+        <element name="NGNRoom" positionX="0" positionY="0" width="128" height="195"/>
+        <element name="NGNSubstance" positionX="0" positionY="0" width="128" height="195"/>
+        <element name="NGNSubstancePile" positionX="0" positionY="0" width="128" height="135"/>
+        <element name="NGNSubstanceType" positionX="0" positionY="0" width="128" height="105"/>
+        <element name="NGNUser" positionX="0" positionY="0" width="128" height="135"/>
     </elements>
 </model>

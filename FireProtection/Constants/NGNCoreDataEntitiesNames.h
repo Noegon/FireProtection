@@ -7,11 +7,22 @@
 //
 #import <Foundation/Foundation.h>
 
-static NSString *const NGNModelEntityNameGood = @"Good";
-static NSString *const NGNModelEntityNameGoodsOrder = @"GoodsOrder";
-static NSString *const NGNModelEntityNameOrder = @"Order";
-static NSString *const NGNModelEntityNameUser = @"User";
+static NSString *const kNGNModelEntityNameUser = @"NGNUser";
+static NSString *const kNGNModelEntityNameProject = @"NGNProject";
+static NSString *const kNGNModelEntityNamePosition = @"NGNPosition";
+static NSString *const kNGNModelEntityNameRoom = @"NGNRoom";
+static NSString *const kNGNModelEntityNameApertureGroup = @"NGNApertureGroup";
+static NSString *const kNGNModelEntityNameSubstance = @"NGNSubstance";
+static NSString *const kNGNModelEntityNameSubstancePile = @"NGNSubstancePile";
+static NSString *const kNGNModelEntityNameFireResistanceRank = @"NGNFireResistanceRank";
+static NSString *const kNGNModelEntityNameFireSafetyCategory = @"NGNFireSafetyCategory";
+static NSString *const kNGNModelEntityNameFunctionalFireSafetyCategory = @"NGNFunctionalFireSafetyCategory";
+static NSString *const kNGNModelEntityNameFunctionalFireSafetySubcategory = @"NGNFunctionalFireSafetySubcategory";
+static NSString *const kNGNModelEntityNameSubstanceType = @"NGNSubstanceType";
+static NSString *const kNGNModelEntityNameMinimumREIConstructionType = @"NGNMinimumREIConstructionType";
 
 @interface NGNCoreDataEntitiesNames : NSObject
+
+@property (class, strong, nonatomic, readonly) NSArray *vocabularyEntities;
 
 @end

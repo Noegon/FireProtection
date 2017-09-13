@@ -10,4 +10,13 @@
 
 @implementation NGNCoreDataEntitiesNames
 
++ (NSArray *)vocabularyEntities {
+    return @[kNGNModelEntityNameFireResistanceRank,
+             kNGNModelEntityNameFireSafetyCategory,
+             kNGNModelEntityNameFunctionalFireSafetyCategory,
+             kNGNModelEntityNameFunctionalFireSafetySubcategory,
+             kNGNModelEntityNameSubstanceType,
+             kNGNModelEntityNameMinimumREIConstructionType];
+}
+
 @end

@@ -18,32 +18,33 @@
 #define SYSTEM_VERSION_LESS_THAN_OR_EQUAL_TO(v)([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedDescending)
 
 static NSString *const kNGNModelAppName = @"FireProtection";
+static NSString *const kNGNModelClassPrefix = @"NGN";
 static NSString *const kNGNModelDateFormat = @"dd.MM.yyyy";
 
-#pragma mark - controllersIds
-
-static NSString *const kNGNControllerRootController = @"rootController";
-static NSString *const kNGNControllerMenuController = @"menuController";
-static NSString *const kNGNControllerContentController = @"contentController";
-static NSString *const kNGNControllerGoodsController = @"goodsController";
-static NSString *const kNGNControllerCartCapsuleController = @"cartCapsuleController";
-static NSString *const kNGNControllerOrdersController = @"ordersController";
-
-#pragma mark - notifications
-
-static NSString *const kNGNControllerNotificationDataWasLoaded = @"dataWasLoaded";
-static NSString *const kNGNControllerNotificationGoodsWasLoaded = @"goodsWasLoaded";
-static NSString *const kNGNControllerNotificationUserWasLoaded = @"userWasLoaded";
-static NSString *const kNGNControllerNotificationOrdersWasLoaded = @"ordersWasLoaded";
-static NSString *const kNGNControllerNotificationGoodsOrdersWasLoaded = @"goodsOrdersWasLoaded";
-
-#pragma mark - table cells
-
-static NSString *const kNGNControllerOrderCell = @"OrderCell";
-static NSString *const kNGNControllerMenuCell = @"MenuCell";
-static NSString *const kNGNControllerGoodsInListCell = @"GoodsInListCell";
-static NSString *const kNGNControllerAvialableGoodsInCartCell = @"AvialableGoodsInCartCell";
-static NSString *const kNGNControllerNotAvialableGoodsInCartCell = @"NotAvialableGoodsInCartCell";
+//#pragma mark - controllersIds
+//
+//static NSString *const kNGNControllerRootController = @"rootController";
+//static NSString *const kNGNControllerMenuController = @"menuController";
+//static NSString *const kNGNControllerContentController = @"contentController";
+//static NSString *const kNGNControllerGoodsController = @"goodsController";
+//static NSString *const kNGNControllerCartCapsuleController = @"cartCapsuleController";
+//static NSString *const kNGNControllerOrdersController = @"ordersController";
+//
+//#pragma mark - notifications
+//
+//static NSString *const kNGNControllerNotificationDataWasLoaded = @"dataWasLoaded";
+//static NSString *const kNGNControllerNotificationGoodsWasLoaded = @"goodsWasLoaded";
+//static NSString *const kNGNControllerNotificationUserWasLoaded = @"userWasLoaded";
+//static NSString *const kNGNControllerNotificationOrdersWasLoaded = @"ordersWasLoaded";
+//static NSString *const kNGNControllerNotificationGoodsOrdersWasLoaded = @"goodsOrdersWasLoaded";
+//
+//#pragma mark - table cells
+//
+//static NSString *const kNGNControllerOrderCell = @"OrderCell";
+//static NSString *const kNGNControllerMenuCell = @"MenuCell";
+//static NSString *const kNGNControllerGoodsInListCell = @"GoodsInListCell";
+//static NSString *const kNGNControllerAvialableGoodsInCartCell = @"AvialableGoodsInCartCell";
+//static NSString *const kNGNControllerNotAvialableGoodsInCartCell = @"NotAvialableGoodsInCartCell";
 
 #pragma mark - fonts parameters
 static NSString *const kNGNControllerHelveticaLightFont = @"Helvetica-Light";

@@ -39,6 +39,19 @@ static NSString *const kNGNHTTPHeaderContentType = @"Content-type";
 
 static NSString *const kNGNHTTPDataTypeJSON = @"application/json";
 
+#pragma mark - additional symbols
+
+static NSString *const kNGNAdditionalSymbolsEmptyString = @"";
+static NSString *const kNGNAdditionalSymbolsAmpersand = @"&";
+static NSString *const kNGNAdditionalSymbolsSlash = @"/";
+static NSString *const kNGNAdditionalSymbolsEquals = @"=";
+static NSString *const kNGNAdditionalSymbolsQuestionMark = @"?";
+
+#pragma mark - response objects parameters
+
+static NSString *const kNGNResponseObjectsParametersId = @"id";
+static NSString *const kNGNResponseObjectsParametersName = @"name";
+
 @interface NGNServerSideLayerConstants : NSObject
 
 @end

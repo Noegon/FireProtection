@@ -35,19 +35,25 @@
 
 - (void)fetchEntitiesByParentEntityId:(NSNumber *)parentEntityId
                       completionBlock:(void(^)(NSArray *entity))completionBlock {
-    [self fetchEntitiesWithAdditionalParameters:@{[self parentEntity]: parentEntityId.stringValue}
-                                completionBlock:completionBlock];
+    if (![[self parentEntity] isEqualToString:kNGNAdditionalSymbolsEmptyString]) {
+        [self fetchEntitiesWithAdditionalParameters:@{[self parentEntity]: parentEntityId.stringValue}
+                                    completionBlock:completionBlock];
+    } else {
+        @throw ([NSString stringWithFormat:@"(%@) - %@",
+                 self.class,
+                 @"Method (fetchEntitiesByParentEntityId:completionBlock:) not allowed: no parent entity."]);
+    }
 }
 
 - (void)fetchEntitiesWithAdditionalParameters:(NSDictionary<NSString *, NSString *> *)additionalParameters
                               completionBlock:(void(^)(NSArray *entities))completionBlock {
-    NSMutableString *additionalParamsString = [@"?" mutableCopy];
+    NSMutableString *additionalParamsString = [kNGNAdditionalSymbolsQuestionMark mutableCopy];
     for (NSString *key in additionalParameters.allKeys) {
         if (![additionalParameters[key].class isKindOfClass:NSNull.class]) {
             [additionalParamsString appendString:key];
-            [additionalParamsString appendString:@"="];
+            [additionalParamsString appendString:kNGNAdditionalSymbolsEquals];
             [additionalParamsString appendString:additionalParameters[key]];
-            [additionalParamsString appendString:@"&"];
+            [additionalParamsString appendString:kNGNAdditionalSymbolsAmpersand];
         }
     }
     //Cut last ampersand
@@ -73,14 +79,14 @@
 - (void)updateEntity:(NSDictionary *)entity
    completionBlock:(void(^)(NSDictionary *entity))completionBlock {
     [self.basicService updateEntity:entity
-                       pathElements:@[[self entityEndpoint], [entity[@"id"] stringValue]]
+                       pathElements:@[[self entityEndpoint], [entity[kNGNResponseObjectsParametersId] stringValue]]
                     completionBlock:completionBlock];
 }
 
 - (void)deleteEntity:(NSDictionary *)entity
    completionBlock:(void(^)(NSDictionary *entity))completionBlock {
     [self.basicService deleteEntity:entity
-                       pathElements:@[[self entityEndpoint], [entity[@"id"] stringValue]]
+                       pathElements:@[[self entityEndpoint], [entity[kNGNResponseObjectsParametersId] stringValue]]
                     completionBlock:completionBlock];
 }
 

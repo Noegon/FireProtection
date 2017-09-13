@@ -28,12 +28,13 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
 #warning delete datasource for debug
-//    NSFileManager *manager = [NSFileManager defaultManager];
-//    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"FireProtection.sqlite"];
-//    [manager removeItemAtURL:storeURL error:nil];
+    NSFileManager *manager = [NSFileManager defaultManager];
+    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"FireProtection.sqlite"];
+    [manager removeItemAtURL:storeURL error:nil];
     
 #warning test of local storage
     [NGNDataBaseManager setupCoreDataStackWithStorageName:kNGNModelAppName];
+    [NGNServerDataLoadManager loadDataFromServerWithContext:[NGNDataBaseManager managedObjectContext]];
     
 //    NGNUser *user = [NSEntityDescription insertNewObjectForEntityForName:@"NGNUser"
 //                                                  inManagedObjectContext:NGNDataBaseManager.managedObjectContext];
@@ -49,22 +50,22 @@
 //        NSLog(@"%@", users);
 //    }
     
-    NGNUserService *userService = [[NGNUserService alloc] init];
-    
-    [userService fetchEntitiesWithAdditionalParameters:@{@"name": @"admin",
-                                                         @"password": @"admin"
-                                                         }
-                                       completionBlock:^(NSArray *entities) {
-        FEMMapping *userMapping = [NGNUser defaultMapping];
-        NSArray *result = [FEMDeserializer collectionFromRepresentation:entities
-                                                                      mapping:userMapping
-                                                                      context:[NGNDataBaseManager managedObjectContext]];
-        if (!result) {
-            NSLog(@"%@", @"user wasn't loaded");
-        } else {
-            NSLog(@"%@", @"user was loaded successfully");
-        }
-    }];
+//    NGNUserService *userService = [[NGNUserService alloc] init];
+//
+//    [userService fetchEntitiesWithAdditionalParameters:@{@"name": @"admin",
+//                                                         @"password": @"admin"
+//                                                         }
+//                                       completionBlock:^(NSArray *entities) {
+//        FEMMapping *userMapping = [NGNUser defaultMapping];
+//        NSArray *result = [FEMDeserializer collectionFromRepresentation:entities
+//                                                                      mapping:userMapping
+//                                                                      context:[NGNDataBaseManager managedObjectContext]];
+//        if (!result) {
+//            NSLog(@"%@", @"user wasn't loaded");
+//        } else {
+//            NSLog(@"%@", @"user was loaded successfully");
+//        }
+//    }];
     
     return YES;
 }
