@@ -29,10 +29,10 @@ static NSString *const kNGNModelDateFormat = @"dd.MM.yyyy";
 //static NSString *const kNGNControllerGoodsController = @"goodsController";
 //static NSString *const kNGNControllerCartCapsuleController = @"cartCapsuleController";
 //static NSString *const kNGNControllerOrdersController = @"ordersController";
-//
-//#pragma mark - notifications
-//
-//static NSString *const kNGNControllerNotificationDataWasLoaded = @"dataWasLoaded";
+
+#pragma mark - notifications
+
+static NSString *const kNGNControllerNotificationDataWasLoaded = @"dataWasLoaded";
 //static NSString *const kNGNControllerNotificationGoodsWasLoaded = @"goodsWasLoaded";
 //static NSString *const kNGNControllerNotificationUserWasLoaded = @"userWasLoaded";
 //static NSString *const kNGNControllerNotificationOrdersWasLoaded = @"ordersWasLoaded";

@@ -23,6 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, copy) NSString *number;
 @property (nullable, nonatomic, copy) NSNumber *structuralVolume;
 @property (nullable, nonatomic, copy) NSNumber *usefulSquare;
+@property (nullable, nonatomic, retain) NGNUser *user;
 @property (nullable, nonatomic, retain) NGNFireResistanceRank *fireResistanceRank;
 @property (nullable, nonatomic, retain) NGNProject *project;
 @property (nullable, nonatomic, retain) NSSet<NGNRoom *> *rooms;

@@ -10,7 +10,12 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class NGNFireResistanceRank, NGNFireSafetyCategory, NGNFunctionalFireSafetySubcategory, NGNProject, NGNRoom;
+@class NGNFireResistanceRank;
+@class NGNFireSafetyCategory;
+@class NGNFunctionalFireSafetySubcategory;
+@class NGNProject;
+@class NGNRoom;
+@class NGNUser;
 
 NS_ASSUME_NONNULL_BEGIN
 

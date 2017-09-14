@@ -18,8 +18,13 @@
 
 @dynamic idx;
 @dynamic name;
+@dynamic registrationDate;
 @dynamic projects;
+@dynamic positions;
+@dynamic rooms;
+@dynamic apertureGroups;
 @dynamic substances;
+@dynamic substancePiles;
 
 @end
 

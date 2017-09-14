@@ -10,7 +10,7 @@
 
 static NSString *const kNGNUserEndpoint = @"user/";
 static NSString *const kNGNProjectEndpoint = @"project/";
-static NSString *const kNGNPositionEndpoint = @"goodsOrder/";
+static NSString *const kNGNPositionEndpoint = @"position/";
 static NSString *const kNGNRoomEndpoint = @"room/";
 static NSString *const kNGNApertureGroupEndpoint = @"aperture_group/";
 static NSString *const kNGNSubstanceEndpoint = @"substance/";

@@ -10,7 +10,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class NGNRoom, NGNSubstance;
+@class NGNRoom, NGNSubstance, NGNUser;
 
 NS_ASSUME_NONNULL_BEGIN
 

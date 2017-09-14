@@ -10,7 +10,12 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class NGNApertureGroup, NGNFireSafetyCategory, NGNMinimumREIConstructionType, NGNPosition, NGNSubstancePile;
+@class NGNApertureGroup;
+@class NGNFireSafetyCategory;
+@class NGNMinimumREIConstructionType;
+@class NGNPosition;
+@class NGNSubstancePile;
+@class NGNUser;
 
 NS_ASSUME_NONNULL_BEGIN
 

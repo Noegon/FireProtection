@@ -21,10 +21,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, copy) NSString *number;
 @property (nullable, nonatomic, copy) NSNumber *square;
 @property (nullable, nonatomic, copy) NSString *name;
-@property (nullable, nonatomic, retain) NSSet<NGNApertureGroup *> *apertureGroups;
+@property (nullable, nonatomic, retain) NGNUser *user;
 @property (nullable, nonatomic, retain) NGNFireSafetyCategory *fireSafetyCategory;
 @property (nullable, nonatomic, retain) NGNMinimumREIConstructionType *minimumREIConstructionType;
 @property (nullable, nonatomic, retain) NGNPosition *position;
+@property (nullable, nonatomic, retain) NSSet<NGNApertureGroup *> *apertureGroups;
 @property (nullable, nonatomic, retain) NSSet<NGNSubstancePile *> *substancePiles;
 
 @end

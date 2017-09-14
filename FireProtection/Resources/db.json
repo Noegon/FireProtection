@@ -385,7 +385,7 @@
   "project": [
     {
       "id": 1,
-      "name": "OJSC \"Retchitsadrev\"",
+      "name": "ОАО \"Речицадрев\"",
       "number": "001/2017",
       "info": "no info",
       "user": 2
@@ -395,7 +395,7 @@
   "position": [
     {
       "id": 1,
-      "name": "Main production building",
+      "name": "Главный производственный корпус",
       "number": "1",
       "info": "no info",
       "structural_volume": 4900,
@@ -404,30 +404,33 @@
       "project": 1,
       "functional_fire_safety_subcategory": 19,
       "fire_resistance_rank": 6,
-      "fire_safety_category": 6
+      "fire_safety_category": 6,
+      "user": 2
     }
   ],
 
   "room": [
     {
       "id": 1,
-      "name": "Main manufacture",
-      "number": 1,
+      "name": "Главный производственный цех",
+      "number": "1",
       "height": 6,
       "square": 600,
       "position": 1,
       "minimum_rei_construction_type": 1,
-      "fire_safety_category": 6
+      "fire_safety_category": 6,
+      "user": 2
     },
     {
       "id": 2,
-      "name": "Administrative office",
-      "number": 2,
+      "name": "Административное помещение",
+      "number": "2",
       "height": 3,
       "square": 50,
       "position": 1,
       "minimum_rei_construction_type": 1,
-      "fire_safety_category": 6
+      "fire_safety_category": 6,
+      "user": 2
     }
   ],
 
@@ -437,7 +440,8 @@
       "height": 2.5,
       "width": 1.5,
       "amount": 30,
-      "room": 1
+      "room": 1,
+      "user": 2
     },
     {
       "id": 2,
@@ -512,7 +516,8 @@
       "max_pile_height": 3,
       "medium_pile_height": 3,
       "projection_square": 100,
-      "room": 1
+      "room": 1,
+      "user": 2
     },
     {
       "id": 2,
@@ -520,7 +525,8 @@
       "max_pile_height": 0.1,
       "medium_pile_height": 0.1,
       "projection_square": 5,
-      "room": 1
+      "room": 1,
+      "user": 2
     },
     {
       "id": 3,
@@ -528,7 +534,8 @@
       "max_pile_height": 1,
       "medium_pile_height": 1,
       "projection_square": 1,
-      "room": 1
+      "room": 1,
+      "user": 2
     },
     {
       "id": 4,
@@ -536,7 +543,8 @@
       "max_pile_height": 0.1,
       "medium_pile_height": 0.1,
       "projection_square": 0.5,
-      "room": 2
+      "room": 2,
+      "user": 2
     },
     {
       "id": 5,
@@ -544,7 +552,8 @@
       "max_pile_height": 0.1,
       "medium_pile_height": 0.1,
       "projection_square": 0.5,
-      "room": 2
+      "room": 2,
+      "user": 2
     }
   ]
 }

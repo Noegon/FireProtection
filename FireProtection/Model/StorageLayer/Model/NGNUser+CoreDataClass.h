@@ -10,7 +10,12 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class NGNProject, NGNSubstance;
+@class NGNProject;
+@class NGNPosition;
+@class NGNRoom;
+@class NGNApertureGroup;
+@class NGNSubstance;
+@class NGNSubstancePile;
 
 NS_ASSUME_NONNULL_BEGIN
 

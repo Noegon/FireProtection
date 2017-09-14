@@ -24,5 +24,6 @@ static NSString *const kNGNModelEntityNameMinimumREIConstructionType = @"NGNMini
 @interface NGNCoreDataEntitiesNames : NSObject
 
 @property (class, strong, nonatomic, readonly) NSArray *vocabularyEntities;
+@property (class, strong, nonatomic, readonly) NSArray *nonVocabularyEntities;
 
 @end

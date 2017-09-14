@@ -8,8 +8,8 @@
 //
 
 #import "NGNApertureGroup+CoreDataClass.h"
+#import "NGNUser+CoreDataClass.h"
 #import "NGNManagedObjectMappingProtocol.h"
-
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -21,6 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, copy) NSNumber *height;
 @property (nullable, nonatomic, copy) NSNumber *width;
 @property (nullable, nonatomic, copy) NSDecimalNumber *amount;
+@property (nullable, nonatomic, retain) NGNUser *user;
 @property (nullable, nonatomic, retain) NGNRoom *room;
 
 @end

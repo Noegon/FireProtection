@@ -89,7 +89,7 @@
     
     if ([self checkInternetStatus] && [self checkServerStatusWithHostName:kNGNServerURL]) {
 
-        dispatch_semaphore_t mySemaphore = dispatch_semaphore_create(8);
+        dispatch_semaphore_t mySemaphore = dispatch_semaphore_create(2);
 
         dispatch_queue_attr_t myAttribute =
             dispatch_queue_attr_make_with_qos_class(nil,
@@ -115,12 +115,15 @@
 
             dispatch_semaphore_wait(mySemaphore, DISPATCH_TIME_FOREVER);
 
-            //Loading vocabularies
             NSDictionary *propertiesDictionary = [NGNPropertyUtil propertiesOfObject:(NSObject *)manager];
+            
             for (NSString *propertyName in propertiesDictionary.allKeys) {
                 id<NGNServiceProtocol> service = [manager valueForKey:propertyName];
+                
+                //Loading vocabularies
                 if ([self isVocabularyEntityService:service]) {
-                    [service fetchEntities:^(NSArray *entities) {
+                    [service fetchEntities:
+                     ^(NSArray *entities) {
                         FEMMapping *entitiesMapping =
                             [[self entityClassByService:service] defaultMapping];
                         NSArray *result = [FEMDeserializer collectionFromRepresentation:entities
@@ -135,64 +138,63 @@
                         dispatch_semaphore_signal(mySemaphore);
                     }];
                     
+                    dispatch_semaphore_wait(mySemaphore, DISPATCH_TIME_FOREVER);
                 }
                 
-                dispatch_semaphore_wait(mySemaphore, DISPATCH_TIME_FOREVER);
+                //Loading non vocabular entities
+                if (![self isVocabularyEntityService:service]) {
+                    [service fetchEntitiesWithAdditionalParameters:@{@"user": @(2).stringValue}
+                                                   completionBlock:
+                     ^(NSArray *entities) {
+                         FEMMapping *entitiesMapping = [[self entityClassByService:service] defaultMapping];
+                         NSArray *result = [FEMDeserializer collectionFromRepresentation:entities
+                                                                                 mapping:entitiesMapping
+                                                                                 context:context];
+                         if (!result) {
+                             NSLog(@"%@ %@", [self entityClassByService:service], @"wasn't loaded");
+                         } else {
+                             NSLog(@"%@ %@", [self entityClassByService:service], @"was loaded successfully");
+                         }
+                         
+                         dispatch_semaphore_signal(mySemaphore);
+                     }];
+                    
+                    dispatch_semaphore_wait(mySemaphore, DISPATCH_TIME_FOREVER);
+                }
                 
             }
             
-//            [catalogService fetchPhones:^(NSArray *phones) {
-//                FEMMapping *phonesMapping = [NGNGood defaultMapping];
-//                NSArray *phonesResult = [FEMDeserializer collectionFromRepresentation:phones
-//                                                                              mapping:phonesMapping
-//                                                                              context:context];
-//                if (!phonesResult) {
-//                    NSLog(@"%@", @"goods catalog wasn't loaded");
-//                } else {
-//                    NSLog(@"%@", @"goods was loaded successfully");
-//                }
-//                dispatch_semaphore_signal(mySemaphore);
-//            }];
+            //Loading common substances that belong to admin user
+            [manager.substanceService fetchEntitiesWithAdditionalParameters:@{@"user": @(1).stringValue}
+                                                          completionBlock:
+             ^(NSArray *entities) {
+                 FEMMapping *entitiesMapping = [NGNSubstance defaultMapping];
+                 NSArray *result = [FEMDeserializer collectionFromRepresentation:entities
+                                                                         mapping:entitiesMapping
+                                                                         context:context];
+                 
+                 if (!result) {
+                     NSLog(@"Common substances wasn't loaded");
+                 } else {
+                     NSLog(@"Common substances was loaded successfully");
+                 }
+                 
+                 dispatch_semaphore_signal(mySemaphore);
+            }];
+            
+            dispatch_semaphore_wait(mySemaphore, DISPATCH_TIME_FOREVER);
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [NGNDataBaseManager saveContext];
+                dispatch_semaphore_signal(mySemaphore);
+                dispatch_semaphore_signal(mySemaphore);
+            });
 
-//            dispatch_semaphore_wait(mySemaphore, DISPATCH_TIME_FOREVER);
-//
-//            [goodsOrderService fetchGoodsOrders:^(NSArray *goodsOrders) {
-//                FEMMapping *goodsOrderMapping = [NGNGoodsOrder defaultMapping];
-//                NSArray *goodsOrdersResult = [FEMDeserializer collectionFromRepresentation:goodsOrders
-//                                                                                   mapping:goodsOrderMapping
-//                                                                                   context:context];
-//                if (!goodsOrdersResult) {
-//                    NSLog(@"%@", @"goodsOrders wasn't loaded");
-//                } else {
-//                    NSLog(@"%@", @"goodsOrders was loaded successfully");
-//                }
-//                dispatch_semaphore_signal(mySemaphore);
-//            }];
-//
-//            dispatch_semaphore_wait(mySemaphore, DISPATCH_TIME_FOREVER);
-//
-//            [orderService fetchOrders:^(NSArray *orders) {
-//                FEMMapping *orderMapping = [NGNOrder defaultMapping];
-//                NSArray *ordersResult = [FEMDeserializer collectionFromRepresentation:orders
-//                                                                              mapping:orderMapping
-//                                                                              context:context];
-//                if (!ordersResult) {
-//                    NSLog(@"%@", @"ordersResult wasn't loaded");
-//                } else {
-//                    [self checkCartExistingInManagedObjectContext:context];
-//                    NSLog(@"%@", @"orders was loaded successfully");
-//                }
-//                dispatch_semaphore_signal(mySemaphore);
-//            }];
-//
-//            [NGNDataBaseRuler saveContext];
-//
-//
-//            NSNotification *notification =
-//            [NSNotification notificationWithName:NGNControllerNotificationDataWasLoaded
-//                                          object:nil];
-//            [[NSNotificationCenter defaultCenter] postNotification:notification];
-//            NSLog(@"%@", @"server data was loaded successfully");
+            NSNotification *notification =
+                [NSNotification notificationWithName:kNGNControllerNotificationDataWasLoaded
+                                              object:nil];
+            [[NSNotificationCenter defaultCenter] postNotification:notification];
+            NSLog(@"%@", @"server data was loaded successfully");
         });
     }
 }

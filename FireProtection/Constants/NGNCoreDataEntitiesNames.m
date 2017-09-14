@@ -19,4 +19,14 @@
              kNGNModelEntityNameMinimumREIConstructionType];
 }
 
++ (NSArray *)nonVocabularyEntities {
+    return @[kNGNModelEntityNameUser,
+             kNGNModelEntityNameProject,
+             kNGNModelEntityNamePosition,
+             kNGNModelEntityNameRoom,
+             kNGNModelEntityNameApertureGroup,
+             kNGNModelEntityNameSubstance,
+             kNGNModelEntityNameSubstancePile];
+}
+
 @end

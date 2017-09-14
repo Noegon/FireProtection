@@ -14,6 +14,7 @@
 #import "NGNFunctionalFireSafetySubcategory+CoreDataProperties.h"
 #import "NGNProject+CoreDataProperties.h"
 #import "NGNRoom+CoreDataProperties.h"
+#import "NGNUser+CoreDataProperties.h"
 
 @implementation NGNPosition (CoreDataProperties)
 
@@ -28,6 +29,7 @@
 @dynamic structuralVolume;
 @dynamic usefulSquare;
 @dynamic fullSquare;
+@dynamic user;
 @dynamic fireResistanceRank;
 @dynamic functionalFireSubcategory;
 @dynamic fireSafetyCategory;
@@ -68,7 +70,7 @@
     
     //Adding fireSafetyCategory object relationship
     FEMMapping *fireSafetyCategoryMapping =
-    [[FEMMapping alloc] initWithEntityName:[NGNFireSafetyCategory entity].name];
+        [[FEMMapping alloc] initWithEntityName:[NGNFireSafetyCategory entity].name];
     fireSafetyCategoryMapping.primaryKey = @"idx";
     [fireSafetyCategoryMapping addAttributesFromDictionary:@{@"idx": @"fire_safety_category"}];
     
@@ -77,12 +79,19 @@
     
     //Adding project object relationship
     FEMMapping *projectMapping =
-    [[FEMMapping alloc] initWithEntityName:[NGNFireSafetyCategory entity].name];
+        [[FEMMapping alloc] initWithEntityName:[NGNProject entity].name];
     projectMapping.primaryKey = @"idx";
     [projectMapping addAttributesFromDictionary:@{@"idx": @"project"}];
     
     [mapping addRelationshipMapping:projectMapping
                         forProperty:@"project" keyPath:nil];
+    
+    //Adding user object relationship
+    FEMMapping *userMapping = [[FEMMapping alloc] initWithEntityName:[NGNUser entity].name];
+    userMapping.primaryKey = @"idx";
+    [userMapping addAttributesFromDictionary:@{@"idx": @"user"}];
+    
+    [mapping addRelationshipMapping:userMapping forProperty:@"user" keyPath:nil];
     
     return mapping;
 }

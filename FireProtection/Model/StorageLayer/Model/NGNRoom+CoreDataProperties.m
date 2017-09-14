@@ -14,6 +14,7 @@
 #import "NGNMinimumREIConstructionType+CoreDataProperties.h"
 #import "NGNSubstancePile+CoreDataProperties.h"
 #import "NGNPosition+CoreDataProperties.h"
+#import "NGNUser+CoreDataProperties.h"
 
 @implementation NGNRoom (CoreDataProperties)
 
@@ -26,6 +27,7 @@
 @dynamic number;
 @dynamic height;
 @dynamic square;
+@dynamic user;
 @dynamic fireSafetyCategory;
 @dynamic minimumREIConstructionType;
 @dynamic position;
@@ -53,7 +55,7 @@
     
     //Adding minimumREIConstructionType object relationship
     FEMMapping *minimumREIConstructionTypeMapping =
-        [[FEMMapping alloc] initWithEntityName:[NGNFireSafetyCategory entity].name];
+        [[FEMMapping alloc] initWithEntityName:[NGNMinimumREIConstructionType entity].name];
     minimumREIConstructionTypeMapping.primaryKey = @"idx";
     [minimumREIConstructionTypeMapping addAttributesFromDictionary:@{@"idx": @"minimum_rei_construction_type"}];
     
@@ -62,12 +64,19 @@
     
     //Adding position object relationship
     FEMMapping *positionMapping =
-        [[FEMMapping alloc] initWithEntityName:[NGNFireSafetyCategory entity].name];
+        [[FEMMapping alloc] initWithEntityName:[NGNPosition entity].name];
     positionMapping.primaryKey = @"idx";
     [positionMapping addAttributesFromDictionary:@{@"idx": @"position"}];
     
-    [mapping addRelationshipMapping:minimumREIConstructionTypeMapping
+    [mapping addRelationshipMapping:positionMapping
                         forProperty:@"position" keyPath:nil];
+    
+    //Adding user object relationship
+    FEMMapping *userMapping = [[FEMMapping alloc] initWithEntityName:[NGNUser entity].name];
+    userMapping.primaryKey = @"idx";
+    [userMapping addAttributesFromDictionary:@{@"idx": @"user"}];
+    
+    [mapping addRelationshipMapping:userMapping forProperty:@"user" keyPath:nil];
     
     return mapping;
 }

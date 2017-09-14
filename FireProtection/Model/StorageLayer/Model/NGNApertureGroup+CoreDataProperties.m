@@ -9,6 +9,7 @@
 
 #import "NGNApertureGroup+CoreDataProperties.h"
 #import "NGNRoom+CoreDataProperties.h"
+#import "NGNUser+CoreDataProperties.h"
 
 @implementation NGNApertureGroup (CoreDataProperties)
 
@@ -20,6 +21,7 @@
 @dynamic amount;
 @dynamic height;
 @dynamic width;
+@dynamic user;
 @dynamic room;
 
 @end
@@ -40,6 +42,13 @@
     
     [mapping addRelationshipMapping:roomMapping
                         forProperty:@"room" keyPath:nil];
+    
+    //Adding user object relationship
+    FEMMapping *userMapping = [[FEMMapping alloc] initWithEntityName:[NGNUser entity].name];
+    userMapping.primaryKey = @"idx";
+    [userMapping addAttributesFromDictionary:@{@"idx": @"user"}];
+    
+    [mapping addRelationshipMapping:userMapping forProperty:@"user" keyPath:nil];
     
     return mapping;
 }

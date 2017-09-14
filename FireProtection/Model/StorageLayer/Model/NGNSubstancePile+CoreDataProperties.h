@@ -21,6 +21,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, copy) NSNumber *projectionSquare;
 @property (nullable, nonatomic, copy) NSNumber *mediumPileHeight;
 @property (nullable, nonatomic, copy) NSNumber *maxPileHeight;
+@property (nullable, nonatomic, retain) NGNUser *user;
 @property (nullable, nonatomic, retain) NGNRoom *room;
 @property (nullable, nonatomic, retain) NGNSubstance *substance;
 

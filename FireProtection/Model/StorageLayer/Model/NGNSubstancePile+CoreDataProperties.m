@@ -10,7 +10,7 @@
 #import "NGNSubstancePile+CoreDataProperties.h"
 #import "NGNRoom+CoreDataProperties.h"
 #import "NGNSubstance+CoreDataProperties.h"
-
+#import "NGNUser+CoreDataProperties.h"
 
 @implementation NGNSubstancePile (CoreDataProperties)
 
@@ -27,6 +27,7 @@
 @dynamic projectionSquare;
 @dynamic mediumPileHeight;
 @dynamic maxPileHeight;
+@dynamic user;
 @dynamic room;
 @dynamic substance;
 
@@ -45,11 +46,11 @@
     mapping.primaryKey = @"idx";
     
     //Adding substance object relationship
-    FEMMapping *userMapping = [[FEMMapping alloc] initWithEntityName:[NGNSubstance entity].name];
-    userMapping.primaryKey = @"idx";
-    [userMapping addAttributesFromDictionary:@{@"idx": @"substance"}];
+    FEMMapping *substanceMapping = [[FEMMapping alloc] initWithEntityName:[NGNSubstance entity].name];
+    substanceMapping.primaryKey = @"idx";
+    [substanceMapping addAttributesFromDictionary:@{@"idx": @"substance"}];
     
-    [mapping addRelationshipMapping:userMapping forProperty:@"substance" keyPath:nil];
+    [mapping addRelationshipMapping:substanceMapping forProperty:@"substance" keyPath:nil];
     
     //Adding room object relationship
     FEMMapping *roomMapping =
@@ -59,6 +60,13 @@
     
     [mapping addRelationshipMapping:roomMapping
                         forProperty:@"room" keyPath:nil];
+    
+    //Adding user object relationship
+    FEMMapping *userMapping = [[FEMMapping alloc] initWithEntityName:[NGNUser entity].name];
+    userMapping.primaryKey = @"idx";
+    [userMapping addAttributesFromDictionary:@{@"idx": @"user"}];
+    
+    [mapping addRelationshipMapping:userMapping forProperty:@"user" keyPath:nil];
     
     return mapping;
 }
