@@ -51,6 +51,7 @@ static NSString *const kNGNAdditionalSymbolsQuestionMark = @"?";
 
 static NSString *const kNGNResponseObjectsParametersId = @"id";
 static NSString *const kNGNResponseObjectsParametersName = @"name";
+static NSString *const kNGNResponseObjectsParametersUser = @"user";
 
 @interface NGNServerSideLayerConstants : NSObject
 

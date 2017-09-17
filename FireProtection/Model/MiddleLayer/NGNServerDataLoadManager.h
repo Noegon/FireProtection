@@ -16,7 +16,21 @@
 @property (strong, nonatomic) NGNReachability* internetReachable;
 @property (strong, nonatomic) NGNReachability* hostReachable;
 
+/**
+ Method for primary loading necessary data from server
+ */
 + (void)loadDataFromServerWithContext:(NSManagedObjectContext *)context;
+
+/**
+ Method for deletion data that belongs to current user from server
+ */
++ (void)deleteDataFromServerWithContext:(NSManagedObjectContext *)context;
+
+/**
+ Method for upload data that belongs to current user to server server
+ (use with deleteDataFromServerWithContext: method to renew data on server after working offline)
+ */
++ (void)uploadDataToServerWithContext:(NSManagedObjectContext *)context;
 
 #pragma mark - networking
 

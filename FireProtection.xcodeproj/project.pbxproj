@@ -104,7 +104,7 @@
 		40E999E11F5F2C6B00B6F9F9 /* NGNAbstractService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NGNAbstractService.h; path = Model/ServerSideLayer/Services/NGNAbstractService.h; sourceTree = "<group>"; };
 		40E999E21F5F2C6B00B6F9F9 /* NGNAbstractService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NGNAbstractService.m; path = Model/ServerSideLayer/Services/NGNAbstractService.m; sourceTree = "<group>"; };
 		40E999E31F5F2C6B00B6F9F9 /* NGNBasicService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NGNBasicService.m; path = Model/ServerSideLayer/Services/NGNBasicService.m; sourceTree = "<group>"; };
-		40E999E61F5F2CDF00B6F9F9 /* NGNServiceProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NGNServiceProtocol.h; path = Model/ServerSideLayer/NGNServiceProtocol.h; sourceTree = "<group>"; };
+		40E999E61F5F2CDF00B6F9F9 /* NGNServiceProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NGNServiceProtocol.h; path = Model/ServerSideLayer/Services/NGNServiceProtocol.h; sourceTree = "<group>"; };
 		40E999E71F5F405600B6F9F9 /* NGNReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NGNReachability.m; path = Model/MiddleLayer/NGNReachability.m; sourceTree = "<group>"; };
 		40E999E81F5F405600B6F9F9 /* NGNReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NGNReachability.h; path = Model/MiddleLayer/NGNReachability.h; sourceTree = "<group>"; };
 		40E999E91F5F405600B6F9F9 /* NGNServerDataLoadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NGNServerDataLoadManager.h; path = Model/MiddleLayer/NGNServerDataLoadManager.h; sourceTree = "<group>"; };
@@ -329,7 +329,6 @@
 		40D89ECC1F4067D900B07AB5 /* ServerSideLayer */ = {
 			isa = PBXGroup;
 			children = (
-				40E999E61F5F2CDF00B6F9F9 /* NGNServiceProtocol.h */,
 				40E99AA41F6881D600B6F9F9 /* NGNEntitiesParamsManager.h */,
 				40E99AA51F6881D600B6F9F9 /* NGNEntitiesParamsManager.m */,
 				40E999DF1F5F2C3600B6F9F9 /* Services */,
@@ -430,6 +429,7 @@
 			isa = PBXGroup;
 			children = (
 				40E999ED1F5F40E600B6F9F9 /* NGNServerLayerServices.h */,
+				40E999E61F5F2CDF00B6F9F9 /* NGNServiceProtocol.h */,
 				40E999E11F5F2C6B00B6F9F9 /* NGNAbstractService.h */,
 				40E999E21F5F2C6B00B6F9F9 /* NGNAbstractService.m */,
 				40E999E01F5F2C6B00B6F9F9 /* NGNBasicService.h */,

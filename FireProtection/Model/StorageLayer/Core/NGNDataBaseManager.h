@@ -11,7 +11,7 @@
 
 @interface NGNDataBaseManager : NSObject
 
-+ (NSManagedObjectContext *) managedObjectContext;
++ (NSManagedObjectContext *)managedObjectContext;
 + (void)setupCoreDataStackWithStorageName:(NSString *)storageName;
 + (void)saveContext;
 

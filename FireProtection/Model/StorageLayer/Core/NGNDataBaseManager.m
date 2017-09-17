@@ -49,8 +49,7 @@
 + (void)saveContext {
     NSError *error = nil;
     NSManagedObjectContext *managedObjectContext = [self.sharedInstance managedObjectContext];
-    if([managedObjectContext hasChanges] &&
-       ![managedObjectContext save:&error]){
+    if([managedObjectContext hasChanges] && ![managedObjectContext save:&error]){
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         abort();
     } else {

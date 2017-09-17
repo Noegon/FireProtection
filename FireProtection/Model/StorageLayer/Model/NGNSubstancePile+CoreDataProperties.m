@@ -38,10 +38,9 @@
 + (FEMMapping *)defaultMapping {
     FEMMapping *mapping = [[FEMMapping alloc] initWithEntityName:[self entity].name];
     [mapping addAttributesFromDictionary:@{@"idx": @"id",
-                                           @"requiredAirAmount": @"required_air_amount",
-                                           @"heatOfCombusion": @"heat_of_combusion",
-                                           @"flameSpeed": @"flame_speed",
-                                           @"burningRate": @"burning_rate"
+                                           @"maxPileHeight": @"max_pile_height",
+                                           @"mediumPileHeight": @"medium_pile_height",
+                                           @"projectionSquare": @"projection_square"
                                            }];
     mapping.primaryKey = @"idx";
     

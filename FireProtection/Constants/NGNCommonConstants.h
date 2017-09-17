@@ -32,7 +32,10 @@ static NSString *const kNGNModelDateFormat = @"dd.MM.yyyy";
 
 #pragma mark - notifications
 
-static NSString *const kNGNControllerNotificationDataWasLoaded = @"dataWasLoaded";
+static NSString *const kNGNControllerNotificationDataWasLoaded = @"dataWasLoadedNotification";
+static NSString *const kNGNControllerNotificationServerDataWasUploadedToServer = @"dataWasUploadedToServerNotification";
+static NSString *const kNGNControllerNotificationDataWasDeletedFromServer = @"dataWasDeletedFromServerNotification";
+static NSString *const kNGNControllerNotificationServerUnreacable = @"serverUnreachableNotification";
 //static NSString *const kNGNControllerNotificationGoodsWasLoaded = @"goodsWasLoaded";
 //static NSString *const kNGNControllerNotificationUserWasLoaded = @"userWasLoaded";
 //static NSString *const kNGNControllerNotificationOrdersWasLoaded = @"ordersWasLoaded";

@@ -1,5 +1,5 @@
 {
-  "fire_resistance_rank":[
+  "fire_resistance_rank": [
     {
       "id": 1,
       "number": "I",
@@ -15,20 +15,20 @@
     {
       "id": 2,
       "number": "II",
-      "bearing_element_r": 120, 
-      "self_bearing_element_re": 60, 
-      "outer_non_bearing_wall_e": 30, 
-      "floor_ceiling_rei": 60, 
-      "covering_re": 30, 
-      "ferm_bean_r": 30, 
-      "stairway_wall": 120, 
+      "bearing_element_r": 120,
+      "self_bearing_element_re": 60,
+      "outer_non_bearing_wall_e": 30,
+      "floor_ceiling_rei": 60,
+      "covering_re": 30,
+      "ferm_bean_r": 30,
+      "stairway_wall": 120,
       "stairway_r": 60
     },
     {
       "id": 3,
       "number": "III",
-      "bearing_element_r": 90, 
-      "self_bearing_element_re": 60, 
+      "bearing_element_r": 90,
+      "self_bearing_element_re": 60,
       "outer_non_bearing_wall_e": 30,
       "floor_ceiling_rei": 60,
       "covering_re": 30,
@@ -97,8 +97,7 @@
       "stairway_r": 0
     }
   ],
-
-  "fire_safety_category":[
+  "fire_safety_category": [
     {
       "id": 1,
       "name": "А",
@@ -145,7 +144,6 @@
       "info": "Негорючие вещества и материалы в холодном состоянии, горючие и трудногорючие вещества и материалы в таком количестве, что удельная пожарная нагрузка на участке их размещения в помещении не превышает 100 МДж/м2, а пожарная нагрузка в пределах помещения – 1000 МДж"
     }
   ],
-
   "functional_fire_safety_category": [
     {
       "id": 1,
@@ -178,14 +176,12 @@
       "info": "сооружения гражданской обороны"
     }
   ],
-
   "functional_fire_safety_subcategory": [
     {
       "id": 1,
       "name": "Ф1.1",
       "functional_fire_category": 1,
       "info": "дошкольные учреждения, дома престарелых и инвалидов, больницы, спальные корпуса школ-интернатов и детских учреждений, детские дома, диспансеры"
-
     },
     {
       "id": 2,
@@ -320,7 +316,6 @@
       "info": "сооружения гражданской обороны"
     }
   ],
-
   "minimum_rei_construction_type": [
     {
       "id": 1,
@@ -331,7 +326,6 @@
       "name": "горизонтальный элемент"
     }
   ],
-
   "substance_type": [
     {
       "id": 1,
@@ -364,10 +358,7 @@
       "info": "Твёрдое горючее вещество"
     }
   ],
-
-
-  
-  "user":[
+  "user": [
     {
       "id": 1,
       "name": "admin",
@@ -381,77 +372,73 @@
       "registration_date": "17.07.2017"
     }
   ],
-
   "project": [
     {
-      "id": 1,
-      "name": "ОАО \"Речицадрев\"",
       "number": "001/2017",
       "info": "no info",
+      "id": 1,
+      "name": "ОАО \"Речицадрев\"",
       "user": 2
     }
   ],
-
   "position": [
     {
-      "id": 1,
-      "name": "Главный производственный корпус",
-      "number": "1",
-      "info": "no info",
-      "structural_volume": 4900,
-      "useful_square": 650,
-      "full_square": 700,
-      "project": 1,
       "functional_fire_safety_subcategory": 19,
-      "fire_resistance_rank": 6,
+      "id": 1,
+      "structural_volume": 4900,
+      "name": "Главный производственный корпус",
+      "project": 1,
       "fire_safety_category": 6,
-      "user": 2
+      "number": "1",
+      "full_square": 700,
+      "info": "no info",
+      "user": 2,
+      "useful_square": 650,
+      "fire_resistance_rank": 6
     }
   ],
-
   "room": [
     {
-      "id": 1,
-      "name": "Главный производственный цех",
       "number": "1",
-      "height": 6,
-      "square": 600,
       "position": 1,
-      "minimum_rei_construction_type": 1,
+      "height": 6,
+      "id": 1,
+      "square": 600,
       "fire_safety_category": 6,
+      "minimum_rei_construction_type": 1,
+      "name": "Главный производственный цех",
       "user": 2
     },
     {
-      "id": 2,
-      "name": "Административное помещение",
       "number": "2",
-      "height": 3,
-      "square": 50,
       "position": 1,
-      "minimum_rei_construction_type": 1,
+      "height": 3,
+      "id": 2,
+      "square": 50,
       "fire_safety_category": 6,
+      "minimum_rei_construction_type": 1,
+      "name": "Административное помещение",
       "user": 2
     }
   ],
-
   "aperture_group": [
     {
-      "id": 1,
-      "height": 2.5,
-      "width": 1.5,
       "amount": 30,
+      "id": 1,
       "room": 1,
+      "width": 1.5,
+      "height": 2.5,
       "user": 2
     },
     {
-      "id": 2,
-      "height": 2.5,
-      "width": 1.5,
       "amount": 3,
-      "room": 2
+      "id": 2,
+      "room": 2,
+      "width": 1.5,
+      "height": 2.5,
+      "user": 2
     }
   ],
-
   "substance": [
     {
       "id": 1,
@@ -490,8 +477,8 @@
       "id": 4,
       "name": "Полистирол",
       "density": 1050,
-      "required_air_amount": 14.0,
-      "heat_of_combusion": 39.0,
+      "required_air_amount": 14,
+      "heat_of_combusion": 39,
       "flame_speed": 0.05,
       "burning_rate": 0.0144,
       "user": 0,
@@ -501,7 +488,7 @@
       "id": 5,
       "name": "Бензин",
       "density": 750,
-      "required_air_amount": 14.0,
+      "required_air_amount": 14,
       "heat_of_combusion": 41.87,
       "flame_speed": 0.38,
       "burning_rate": 0.0617,
@@ -511,48 +498,48 @@
   ],
   "substance_pile": [
     {
-      "id": 1,
-      "substance": 1,
-      "max_pile_height": 3,
-      "medium_pile_height": 3,
-      "projection_square": 100,
       "room": 1,
-      "user": 2
-    },
-    {
+      "medium_pile_height": 0.1,
       "id": 2,
-      "substance": 3,
       "max_pile_height": 0.1,
-      "medium_pile_height": 0.1,
       "projection_square": 5,
-      "room": 1,
-      "user": 2
-    },
-    {
-      "id": 3,
-      "substance": 4,
-      "max_pile_height": 1,
-      "medium_pile_height": 1,
-      "projection_square": 1,
-      "room": 1,
-      "user": 2
-    },
-    {
-      "id": 4,
       "substance": 3,
-      "max_pile_height": 0.1,
-      "medium_pile_height": 0.1,
-      "projection_square": 0.5,
-      "room": 2,
       "user": 2
     },
     {
-      "id": 5,
-      "substance": 4,
-      "max_pile_height": 0.1,
-      "medium_pile_height": 0.1,
-      "projection_square": 0.5,
+      "room": 1,
+      "medium_pile_height": 3,
+      "id": 1,
+      "max_pile_height": 3,
+      "projection_square": 100,
+      "substance": 1,
+      "user": 2
+    },
+    {
       "room": 2,
+      "medium_pile_height": 0.1,
+      "id": 5,
+      "max_pile_height": 0.1,
+      "projection_square": 0.5,
+      "substance": 4,
+      "user": 2
+    },
+    {
+      "room": 1,
+      "medium_pile_height": 1,
+      "id": 3,
+      "max_pile_height": 1,
+      "projection_square": 1,
+      "substance": 4,
+      "user": 2
+    },
+    {
+      "room": 2,
+      "medium_pile_height": 0.1,
+      "id": 4,
+      "max_pile_height": 0.1,
+      "projection_square": 0.5,
+      "substance": 3,
       "user": 2
     }
   ]

@@ -28,13 +28,13 @@
     return [NGNEntitiesParamsManager parentEntityByEntityService:self];
 }
 
-- (void)fetchEntities:(void(^)(NSArray *entity))completionBlock {
+- (void)fetchEntities:(void(^)(NSArray *entity, NSError *error))completionBlock {
     [self.basicService fetchEntitiesWithEntityPathElements:@[[self entityEndpoint]]
                                            completionBlock:completionBlock];
 }
 
 - (void)fetchEntitiesByParentEntityId:(NSNumber *)parentEntityId
-                      completionBlock:(void(^)(NSArray *entity))completionBlock {
+                      completionBlock:(void(^)(NSArray *entity, NSError *error))completionBlock {
     if (![[self parentEntity] isEqualToString:kNGNAdditionalSymbolsEmptyString]) {
         [self fetchEntitiesWithAdditionalParameters:@{[self parentEntity]: parentEntityId.stringValue}
                                     completionBlock:completionBlock];
@@ -46,7 +46,7 @@
 }
 
 - (void)fetchEntitiesWithAdditionalParameters:(NSDictionary<NSString *, NSString *> *)additionalParameters
-                              completionBlock:(void(^)(NSArray *entities))completionBlock {
+                              completionBlock:(void(^)(NSArray *entities, NSError *error))completionBlock {
     NSMutableString *additionalParamsString = [kNGNAdditionalSymbolsQuestionMark mutableCopy];
     for (NSString *key in additionalParameters.allKeys) {
         if (![additionalParameters[key].class isKindOfClass:NSNull.class]) {
@@ -64,29 +64,42 @@
 }
 
 - (void)fetchEntityById:(NSNumber *)entityId
-        completionBlock:(void(^)(NSDictionary *entity))completionBlock {
+        completionBlock:(void(^)(NSDictionary *entity, NSError *error))completionBlock {
     [self.basicService fetchSingleEntityWithEntityPathElements:@[[self entityEndpoint], entityId.stringValue]
                                                completionBlock:completionBlock];
 }
 
 - (void)addEntity:(NSDictionary *)entity
-  completionBlock:(void(^)(NSDictionary *entity))completionBlock {
+  completionBlock:(void(^)(NSDictionary *entity, NSError *error))completionBlock {
     [self.basicService addEntity:entity
                     pathElements:@[[self entityEndpoint]]
                  completionBlock:completionBlock];
 }
 
 - (void)updateEntity:(NSDictionary *)entity
-   completionBlock:(void(^)(NSDictionary *entity))completionBlock {
+   completionBlock:(void(^)(NSDictionary *entity, NSError *error))completionBlock {
     [self.basicService updateEntity:entity
                        pathElements:@[[self entityEndpoint], [entity[kNGNResponseObjectsParametersId] stringValue]]
                     completionBlock:completionBlock];
 }
 
 - (void)deleteEntity:(NSDictionary *)entity
-   completionBlock:(void(^)(NSDictionary *entity))completionBlock {
+   completionBlock:(void(^)(NSDictionary *entity, NSError *error))completionBlock {
     [self.basicService deleteEntity:entity
                        pathElements:@[[self entityEndpoint], [entity[kNGNResponseObjectsParametersId] stringValue]]
+                    completionBlock:completionBlock];
+}
+
+/**
+ Method delets all entities of current type that belongs to user with current Id
+ */
+- (void)deleteEntities:(NSArray *)entities
+     withParameterName:(NSString *)parameterName
+           parameterValue:(NSString *)parameterValue
+       completionBlock:(void(^)(NSArray *entities, NSError *error))completionBlock {
+    [self.basicService deleteEntities:entities
+                       pathElements:@[[self entityEndpoint],
+                                      [NSString stringWithFormat:@"?%@=%@", parameterName, parameterValue]]
                     completionBlock:completionBlock];
 }
 
