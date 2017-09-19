@@ -93,6 +93,29 @@
 }
 
 - (void)performServerCheckRequestWithCompetionHandler:(void (^)(void))comletionHandler {
+    
+//    NGNServerDataLoadManager *manager = self;
+//
+//    [manager servicePropertiesInitialization];
+//
+//    dispatch_group_t group = dispatch_group_create();
+//
+//    dispatch_queue_attr_t attribute = dispatch_queue_attr_make_with_qos_class(DISPATCH_QUEUE_CONCURRENT,
+//                                                                              QOS_CLASS_USER_INITIATED,
+//                                                                              DISPATCH_QUEUE_PRIORITY_HIGH);
+//    dispatch_queue_t queue = dispatch_queue_create("com.noegon.fireProtection.dataMaintenanceQueue", attribute);
+//
+//    NSDictionary *propertiesDictionary = [NGNPropertyUtil propertiesOfObject:(NSObject *)manager];
+//
+//    NSMutableArray *serviceArray = [[NSMutableArray alloc] init];
+//
+//    for (NSString *propertyName in propertiesDictionary.allKeys) {
+//        id<NGNServiceProtocol> service = [manager valueForKey:propertyName];
+//        if ([manager isNonVocabularyEntityService:service]) {
+//            [serviceArray addObject:service];
+//        }
+//    }
+    
     if ([NGNServerDataLoadManager checkInternetStatus] &&
         [NGNServerDataLoadManager checkServerStatusWithHostName:kNGNServerURL]) {
         NSURLRequest *checkServerRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:kNGNServerURL]];
@@ -115,70 +138,78 @@
 }
 
 + (void)deleteDataFromServerWithContext:(NSManagedObjectContext *)context {
+    
     NGNServerDataLoadManager *manager = [self sharedInstance];
     
     [manager servicePropertiesInitialization];
     
-    dispatch_semaphore_t mySemaphore = dispatch_semaphore_create(2);
+    dispatch_group_t group = dispatch_group_create();
     
-    dispatch_queue_attr_t myAttribute = dispatch_queue_attr_make_with_qos_class(DISPATCH_QUEUE_CONCURRENT,
+    dispatch_queue_attr_t attribute = dispatch_queue_attr_make_with_qos_class(DISPATCH_QUEUE_CONCURRENT,
                                                                                 QOS_CLASS_USER_INITIATED,
                                                                                 DISPATCH_QUEUE_PRIORITY_HIGH);
-    dispatch_queue_t dataDeleteQueue = dispatch_queue_create("com.noegon.fireProtection.dataDeleteQueue", myAttribute);
+    dispatch_queue_t queue = dispatch_queue_create("com.noegon.fireProtection.dataMaintenanceQueue", attribute);
     
     [manager performServerCheckRequestWithCompetionHandler:
      ^{
-         dispatch_async(dataDeleteQueue, ^{
+         dispatch_async(queue, ^{
+             
              NSDictionary *propertiesDictionary = [NGNPropertyUtil propertiesOfObject:(NSObject *)manager];
+             
+             NSMutableArray *serviceArray = [[NSMutableArray alloc] init];
              
              for (NSString *propertyName in propertiesDictionary.allKeys) {
                  id<NGNServiceProtocol> service = [manager valueForKey:propertyName];
-                 
-                 //Deletion of non vocabular entities belongs to current user
-                 //Fetching non vocabulary entities that belongs to current user
                  if ([manager isNonVocabularyEntityService:service]) {
-                     [service fetchEntitiesWithAdditionalParameters:@{@"user": @(2).stringValue}
-                                                    completionBlock:
-                      ^(NSArray *entities, NSError *error) {
-                          
-                          if (!error) {
-                              
-                              for (NSDictionary *entity in entities) {
-                                  [service deleteEntity:entity completionBlock:
-                                   ^(NSDictionary *entity, NSError *error) {
-                                       if (error) {
-                                           NSLog(@"%@ name: \"%@\" %@", service.class, entity[@"name"], @"wasn't deleted");
-                                       } else {
-                                           NSLog(@"%@ name: \"%@\" %@", service.class, entity[@"name"], @"was deleted successfully");
-                                       }
-                                       
-                                   }];
-                                  
-                              }
-                              
-                          }
-                          
-                          dispatch_semaphore_signal(mySemaphore);
-                      }];
-                     
-                     dispatch_semaphore_wait(mySemaphore, DISPATCH_TIME_FOREVER);
+                     [serviceArray addObject:service];
                  }
              }
              
-             dispatch_async(dispatch_get_main_queue(), ^{
-                 dispatch_semaphore_signal(mySemaphore);
-                 dispatch_semaphore_signal(mySemaphore);
-             });
+             for (id<NGNServiceProtocol> service in serviceArray) {
+                 NSLog(@"%@ handling...", service.class);
+                 
+                 //Deletion of non vocabular entities belongs to current user
+                 //Fetching non vocabulary entities that belongs to current user
+                 dispatch_group_enter(group);
+                 
+                 [service fetchEntitiesWithAdditionalParameters:@{@"user": @(2).stringValue}
+                                                completionBlock:
+                  ^(NSArray *entities, NSError *error) {
+                      if (!error) {
+                          [self deleteGroupOfEntities:entities service:service];
+                          NSLog(@"%@ entities were deleted", service.class);
+                      } else {
+                          NSLog(@"%@ entities weren't deleted", service.class);
+                      }
+                      dispatch_group_leave(group);
+                  }];
+                 
+             }
+             dispatch_group_wait(group, DISPATCH_TIME_FOREVER);
              
              NSNotification *notification =
-                 [NSNotification notificationWithName:kNGNControllerNotificationDataWasDeletedFromServer
-                                               object:nil];
+             [NSNotification notificationWithName:kNGNControllerNotificationDataWasDeletedFromServer
+                                           object:nil];
              [[NSNotificationCenter defaultCenter] postNotification:notification];
              NSLog(@"%@", @"server data was deleted from server successfully");
+             
          });
-         
      }];
+}
 
+//This method is a stub because of insufficient server API
++ (void)deleteGroupOfEntities:(NSArray *)entities service:(id<NGNServiceProtocol>)service {
+    
+    for (NSDictionary *entity in entities) {
+        [service deleteEntity:entity completionBlock:
+         ^(NSDictionary *entity, NSError *error) {
+            if (error) {
+                NSLog(@"%@ id: \"%@\" %@", service.class, entity[@"id"], @"wasn't deleted");
+            } else {
+                NSLog(@"%@ id: \"%@\" %@", service.class, entity[@"id"], @"was deleted successfully");
+            }
+        }];
+    }
 }
 
 + (void)uploadDataToServerWithContext:(NSManagedObjectContext *)context {
@@ -230,9 +261,6 @@
                      }
                  }
              }
-//             dispatch_async(dispatch_get_main_queue(), ^{
-//                 dispatch_semaphore_signal(mySemaphore);
-//             });
              
              NSNotification *notification =
                  [NSNotification notificationWithName:kNGNControllerNotificationServerDataWasUploadedToServer
@@ -248,16 +276,16 @@
     
     [manager servicePropertiesInitialization];
     
-    dispatch_semaphore_t mySemaphore = dispatch_semaphore_create(2);
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(2);
     
-    dispatch_queue_attr_t myAttribute = dispatch_queue_attr_make_with_qos_class(DISPATCH_QUEUE_CONCURRENT,
+    dispatch_queue_attr_t attribute = dispatch_queue_attr_make_with_qos_class(DISPATCH_QUEUE_CONCURRENT,
                                                                                 QOS_CLASS_USER_INITIATED,
                                                                                 DISPATCH_QUEUE_PRIORITY_HIGH);
-    dispatch_queue_t dataLoadQueue = dispatch_queue_create("com.noegon.fireProtection.dataLoadQueue", myAttribute);
+    dispatch_queue_t queue = dispatch_queue_create("com.noegon.fireProtection.dataLoadQueue", attribute);
     
     [manager performServerCheckRequestWithCompetionHandler:
      ^{
-         dispatch_async(dataLoadQueue, ^{
+         dispatch_async(queue, ^{
              NGNUserService *userService = [NGNUserService new];
              [userService fetchEntityById:@1 completionBlock:^(NSDictionary *entity, NSError *error) {
                  FEMMapping *userMapping = [NGNUser defaultMapping];
@@ -270,10 +298,10 @@
                      NSLog(@"%@", @"admin user was loaded successfully");
                  }
                  
-                 dispatch_semaphore_signal(mySemaphore);
+                 dispatch_semaphore_signal(semaphore);
              }];
              
-             dispatch_semaphore_wait(mySemaphore, DISPATCH_TIME_FOREVER);
+             dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
              
              NSDictionary *propertiesDictionary = [NGNPropertyUtil propertiesOfObject:(NSObject *)manager];
              
@@ -297,10 +325,10 @@
                               NSLog(@"%@ %@", [manager entityClassByService:service], @"was loaded successfully");
                           }
                           
-                          dispatch_semaphore_signal(mySemaphore);
+                          dispatch_semaphore_signal(semaphore);
                       }];
                      
-                     dispatch_semaphore_wait(mySemaphore, DISPATCH_TIME_FOREVER);
+                     dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
                  }
                  
                  //Loading non vocabular entities
@@ -319,10 +347,10 @@
                               NSLog(@"%@ %@", [manager entityClassByService:service], @"was loaded successfully");
                           }
                           
-                          dispatch_semaphore_signal(mySemaphore);
+                          dispatch_semaphore_signal(semaphore);
                       }];
                      
-                     dispatch_semaphore_wait(mySemaphore, DISPATCH_TIME_FOREVER);
+                     dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
                  }
                  
              }
@@ -341,20 +369,20 @@
                       NSLog(@"Common substances was loaded successfully");
                   }
                   
-                  dispatch_semaphore_signal(mySemaphore);
+                  dispatch_semaphore_signal(semaphore);
               }];
              
-             dispatch_semaphore_wait(mySemaphore, DISPATCH_TIME_FOREVER);
+             dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
              
              dispatch_async(dispatch_get_main_queue(), ^{
                  [NGNDataBaseManager saveContext];
-                 dispatch_semaphore_signal(mySemaphore);
-                 dispatch_semaphore_signal(mySemaphore);
+                 dispatch_semaphore_signal(semaphore);
+                 dispatch_semaphore_signal(semaphore);
              });
              
              NSNotification *notification =
-             [NSNotification notificationWithName:kNGNControllerNotificationDataWasLoaded
-                                           object:nil];
+                 [NSNotification notificationWithName:kNGNControllerNotificationDataWasLoaded
+                                               object:nil];
              [[NSNotificationCenter defaultCenter] postNotification:notification];
              NSLog(@"%@", @"server data was loaded successfully");
          });
