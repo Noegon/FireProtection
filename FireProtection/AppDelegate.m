@@ -29,18 +29,18 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
 #warning delete datasource for debug
-//    NSFileManager *manager = [NSFileManager defaultManager];
-//    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"FireProtection.sqlite"];
-//    [manager removeItemAtURL:storeURL error:nil];
+    NSFileManager *manager = [NSFileManager defaultManager];
+    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"FireProtection.sqlite"];
+    [manager removeItemAtURL:storeURL error:nil];
     
 #warning test of local storage
     [NGNDataBaseManager setupCoreDataStackWithStorageName:kNGNModelAppName];
     
 //    [NGNServerDataLoadManager loadDataFromServerWithContext:[NGNDataBaseManager managedObjectContext]];
     
-    [NGNServerDataLoadManager deleteDataFromServerWithContext:[NGNDataBaseManager managedObjectContext]];
+//    [NGNServerDataLoadManager deleteDataFromServerWithContext:[NGNDataBaseManager managedObjectContext]];
     
-//    [NGNServerDataLoadManager uploadDataToServerWithContext:[NGNDataBaseManager managedObjectContext]];
+    [NGNServerDataLoadManager uploadDataToServerWithContext:[NGNDataBaseManager managedObjectContext]];
     
     return YES;
 }
