@@ -46,7 +46,7 @@ typedef void (^ServerTaskCompletionBlock)(dispatch_group_t group,
 
 @implementation NGNServerDataLoadManager
 
-#pragma mark - basic logic methods;
+#pragma mark - basic logic methods
 + (instancetype)sharedInstance {
     static NGNServerDataLoadManager *sharedInstance = nil;
     static dispatch_once_t onceToken;
@@ -131,30 +131,49 @@ typedef void (^ServerTaskCompletionBlock)(dispatch_group_t group,
     
     if ([NGNServerDataLoadManager checkInternetStatus] &&
         [NGNServerDataLoadManager checkServerStatusWithHostName:kNGNServerURL]) {
-        NSURLRequest *checkServerRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:kNGNServerURL]];
-        NSURLSessionTask *checkServerReachabilityTask =
-        [[NSURLSession sharedSession] dataTaskWithRequest:checkServerRequest
-                                        completionHandler:
-         ^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-             if (!error) {
-                 dispatch_async(queue, ^{
-                     comletionHandler(group, semaphore, queue, nonVocabularyServiceArray, vocabularyServiceArray);
-                 });
-             } else {
-                 NSNotification *notification =
-                 [NSNotification notificationWithName:kNGNControllerNotificationServerUnreacable
-                                               object:nil];
-                 [[NSNotificationCenter defaultCenter] postNotification:notification];
-                 NSLog(@"Server is unreachable!\n%@", error.userInfo);
-             }
-         }];
-        [checkServerReachabilityTask resume];
+        
+        [NGNServerDataLoadManager pingServerWithCompletionHandler:^{
+            dispatch_async(queue, ^{
+                comletionHandler(group, semaphore, queue, nonVocabularyServiceArray, vocabularyServiceArray);
+            });
+        }];
     }
+}
+
+#pragma mark - manager public API methods
++ (void)pingServerWithCompletionHandler:(void (^ _Nullable)(void))completionHandler {
+    
+    __block BOOL isServerReachable = YES;
+    
+    NSURLRequest *checkServerRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:kNGNServerURL]];
+    
+    NSURLSessionTask *checkServerReachabilityTask =
+    [[NSURLSession sharedSession] dataTaskWithRequest:checkServerRequest
+                                    completionHandler:
+     ^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+         if (!error) {
+             if (completionHandler) {
+                 completionHandler();
+             }
+             NSLog(@"Ping successful! Server is reachable!");
+         } else {
+             isServerReachable = NO;
+             NSLog(@"Server is unreachable!\n%@", error.userInfo);
+         }
+         
+         [[NSNotificationCenter defaultCenter] postNotificationName:kNGNControllerNotificationServerReachabilityStatusChanged
+                                                             object:nil
+                                                           userInfo:@{kNGNModelSessionServerReachableParameter: @(isServerReachable)}];
+     }];
+    
+    [checkServerReachabilityTask resume];
 }
 
 + (void)deleteDataFromServerWithContext:(NSManagedObjectContext *)context {
     
     NGNServerDataLoadManager *manager = [self sharedInstance];
+    
+    __block BOOL isDeletionSuccessful = YES;
     
     [manager performServerCheckRequestWithSemaphoreThreads:1 competionHandler:
      ^(dispatch_group_t group, dispatch_semaphore_t semaphore, dispatch_queue_t queue,
@@ -167,6 +186,10 @@ typedef void (^ServerTaskCompletionBlock)(dispatch_group_t group,
          for (id<NGNServiceProtocol> service in nonVocabularyServiceArray) {
              NSLog(@"%@ handling... (prepare to delete entities)", service.class);
              
+             if (!isDeletionSuccessful) {
+                 break;
+             }
+             
              dispatch_group_enter(group);
              
              [service fetchEntitiesWithAdditionalParameters:@{@"user": @(2).stringValue}
@@ -177,6 +200,8 @@ typedef void (^ServerTaskCompletionBlock)(dispatch_group_t group,
                       for (int i = 0; i < entities.count; i++) {
                           [mappingServices addObject:service];
                       }
+                  } else {
+                      isDeletionSuccessful = NO;
                   }
                   dispatch_group_leave(group);
               }];
@@ -188,6 +213,10 @@ typedef void (^ServerTaskCompletionBlock)(dispatch_group_t group,
          //Fetching non vocabulary entities that belongs to current user
          for (NSInteger i = 0; i < entitiesToDelete.count; i++) {
              
+             if (!isDeletionSuccessful) {
+                 break;
+             }
+             
              dispatch_group_enter(group);
              
              NSDictionary *entity = entitiesToDelete[i];
@@ -196,6 +225,7 @@ typedef void (^ServerTaskCompletionBlock)(dispatch_group_t group,
              [service deleteEntity:entity completionBlock:
               ^(NSDictionary *entity, NSError *error) {
                  if (error) {
+                     isDeletionSuccessful = NO;
                      NSLog(@"%@ id: \"%@\" %@", service.class, entity[@"id"], @"wasn't deleted");
                  } else {
                      NSLog(@"%@ id: \"%@\" %@", service.class, entity[@"id"], @"was deleted successfully");
@@ -206,93 +236,85 @@ typedef void (^ServerTaskCompletionBlock)(dispatch_group_t group,
          
          dispatch_group_wait(group, DISPATCH_TIME_FOREVER);
          
-         NSNotification *notification =
-             [NSNotification notificationWithName:kNGNControllerNotificationDataWasDeletedFromServer
-                                           object:nil];
-         [[NSNotificationCenter defaultCenter] postNotification:notification];
-         NSLog(@"%@", @"server data was deleted from server successfully");
+         [[NSNotificationCenter defaultCenter] postNotificationName:kNGNApplicationNotificationDataWasDeletedFromServerStatus
+                                                             object:nil
+                                                           userInfo:@{kNGNModelSessionDataDeletedParameter: @(isDeletionSuccessful)}];
+         if (isDeletionSuccessful) {
+             NSLog(@"%@", @"server data was deleted from server successfully");
+         } else {
+             NSLog(@"%@", @"an error was occured while data deletion. Data wasn't deleted completely");
+         }
      }];
 }
-
-//This method is a stub because of insufficient server API
-//+ (void)deleteGroupOfEntities:(NSArray *)entities service:(id<NGNServiceProtocol>)service {
-//
-//    dispatch_group_t group = dispatch_group_create();
-//
-//
-//    for (NSDictionary *entity in entities) {
-//
-//        dispatch_group_enter(group);
-//
-//            [service deleteEntity:entity completionBlock:
-//             ^(NSDictionary *entity, NSError *error) {
-//                 if (error) {
-//                     NSLog(@"%@ id: \"%@\" %@", service.class, entity[@"id"], @"wasn't deleted");
-//                 } else {
-//                     NSLog(@"%@ id: \"%@\" %@", service.class, entity[@"id"], @"was deleted successfully");
-//                 }
-//                                  dispatch_group_leave(group);
-//             }];
-//    }
-//    dispatch_group_wait(group, DISPATCH_TIME_FOREVER);
-//}
 
 + (void)uploadDataToServerWithContext:(NSManagedObjectContext *)context {
     
     NGNServerDataLoadManager *manager = [self sharedInstance];
     
+    __block BOOL isUploadSuccessful = YES;
+    
     [manager performServerCheckRequestWithSemaphoreThreads:1 competionHandler:
      ^(dispatch_group_t group, dispatch_semaphore_t semaphore, dispatch_queue_t queue,
        NSArray *nonVocabularyServiceArray, NSArray *vocabularyServiceArray) {
          
-//         dispatch_group_async(group, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
-             for (id<NGNServiceProtocol> service in nonVocabularyServiceArray) {
-                 NSLog(@"%@ handling... (prepare to upload entities)", service.class);
-                 
-                 NSFetchRequest *fetchRequest = [[manager entityClassByService:service] performSelector:@selector(fetchRequest)];
-                 
-                 NSError *error = nil;
-                 NSArray *managedObjectsArray = [[NGNDataBaseManager managedObjectContext] executeFetchRequest:fetchRequest error:&error];
-                 
-                 if (!error) {
-                     
-                     FEMMapping *objectMapping = [[manager entityClassByService:service] performSelector:@selector(defaultMapping)];
-                     
-                     for (NSManagedObject *object in managedObjectsArray) {
-                         
-                         dispatch_group_enter(group);
-                         
-                         __weak id<NGNServiceProtocol> weakService = service;
-                         
-                         NSDictionary *entityAsDictionary = [FEMSerializer serializeObject:object usingMapping:objectMapping];
-                         [service addEntity:entityAsDictionary completionBlock:^(NSDictionary *order, NSError *error) {
-                             if (error) {
-                                 NSLog(@"%@ name: \"%@\" %@", weakService.class, entityAsDictionary[@"name"], @"wasn't uploaded");
-                             } else {
-                                 NSLog(@"%@ name: \"%@\" %@", weakService.class, entityAsDictionary[@"name"], @"was uploaded successfully");
-                             }
-                             dispatch_group_leave(group);
-                         }];
-                         
-                     }
-                 }
+         for (id<NGNServiceProtocol> service in nonVocabularyServiceArray) {
+             NSLog(@"%@ handling... (prepare to upload entities)", service.class);
+             
+             if (!isUploadSuccessful) {
+                 break;
              }
+             
+             NSFetchRequest *fetchRequest = [[manager entityClassByService:service] performSelector:@selector(fetchRequest)];
+             
+             NSError *error = nil;
+             NSArray *managedObjectsArray = [[NGNDataBaseManager managedObjectContext] executeFetchRequest:fetchRequest error:&error];
+             
+             if (!error) {
+                 
+                 FEMMapping *objectMapping = [[manager entityClassByService:service] performSelector:@selector(defaultMapping)];
+                 
+                 for (NSManagedObject *object in managedObjectsArray) {
+                     
+                     dispatch_group_enter(group);
+                     
+                     __weak id<NGNServiceProtocol> weakService = service;
+                     
+                     NSDictionary *entityAsDictionary = [FEMSerializer serializeObject:object usingMapping:objectMapping];
+                     [service addEntity:entityAsDictionary completionBlock:^(NSDictionary *order, NSError *error) {
+                         if (error) {
+                             isUploadSuccessful = NO;
+                             NSLog(@"%@ name: \"%@\" %@", weakService.class, entityAsDictionary[@"name"], @"wasn't uploaded");
+                         } else {
+                             NSLog(@"%@ name: \"%@\" %@", weakService.class, entityAsDictionary[@"name"], @"was uploaded successfully");
+                         }
+                         dispatch_group_leave(group);
+                     }];
+                     
+                 }
+             } else {
+                 isUploadSuccessful = NO;
+                 break;
+             }
+         }
          dispatch_group_wait(group, DISPATCH_TIME_FOREVER);
-//         });
-         
-         dispatch_group_wait(group, DISPATCH_TIME_FOREVER);
-         
-         NSNotification *notification =
-         [NSNotification notificationWithName:kNGNControllerNotificationServerDataWasUploadedToServer
-                                       object:nil];
-         [[NSNotificationCenter defaultCenter] postNotification:notification];
-         NSLog(@"%@", @"server data was uploaded to server successfully");
+
+         [[NSNotificationCenter defaultCenter] postNotificationName:kNGNApplicationNotificationDataWasUploadedToServerStatus
+                                                             object:nil
+                                                           userInfo:@{kNGNModelSessionDataUploadedParameter: @(isUploadSuccessful)}];
+         if (isUploadSuccessful) {
+             NSLog(@"%@", @"server data was uploaded to server successfully");
+         } else {
+             NSLog(@"%@", @"an error was occured while data upload. Data wasn't uploaded completely");
+         }
+
      }];
 }
 
 + (void)loadDataFromServerWithContext:(NSManagedObjectContext *)context {
     
     NGNServerDataLoadManager *manager = [self sharedInstance];
+    
+    __block BOOL isLoadSuccessful = YES;
     
     [manager performServerCheckRequestWithSemaphoreThreads:1 competionHandler:
      ^(dispatch_group_t group, dispatch_semaphore_t semaphore, dispatch_queue_t queue,
@@ -307,6 +329,7 @@ typedef void (^ServerTaskCompletionBlock)(dispatch_group_t group,
                                                                            mapping:userMapping
                                                                            context:context];
              if (!usersResult) {
+                 isLoadSuccessful = NO;
                  NSLog(@"%@", @"admin user wasn't loaded");
              } else {
                  NSLog(@"%@", @"admin user was loaded successfully");
@@ -320,6 +343,10 @@ typedef void (^ServerTaskCompletionBlock)(dispatch_group_t group,
          //Loading vocabularies
          for (id<NGNServiceProtocol> service in vocabularyServiceArray) {
              
+             if (!isLoadSuccessful) {
+                 break;
+             }
+             
              dispatch_group_enter(group);
              
              [service fetchEntities:
@@ -332,6 +359,7 @@ typedef void (^ServerTaskCompletionBlock)(dispatch_group_t group,
                                                                      context:context];
                   }
                   if (!result) {
+                      isLoadSuccessful = NO;
                       NSLog(@"%@ %@", [manager entityClassByService:service], @"vocabulary wasn't loaded");
                   } else {
                       NSLog(@"%@ %@", [manager entityClassByService:service], @"vocabulary was loaded successfully");
@@ -345,6 +373,10 @@ typedef void (^ServerTaskCompletionBlock)(dispatch_group_t group,
          
          //Loading non vocabular entities
          for (id<NGNServiceProtocol> service in nonVocabularyServiceArray) {
+             
+             if (!isLoadSuccessful) {
+                 break;
+             }
              
              dispatch_group_enter(group);
              
@@ -360,6 +392,7 @@ typedef void (^ServerTaskCompletionBlock)(dispatch_group_t group,
                   }
                   
                   if (!result) {
+                      isLoadSuccessful = NO;
                       NSLog(@"%@ %@", [manager entityClassByService:service], @"wasn't loaded");
                   } else {
                       NSLog(@"%@ %@", [manager entityClassByService:service], @"was loaded successfully");
@@ -383,6 +416,7 @@ typedef void (^ServerTaskCompletionBlock)(dispatch_group_t group,
                                                                       mapping:entitiesMapping
                                                                       context:context];
               if (!result) {
+                  isLoadSuccessful = NO;
                   NSLog(@"Common substances wasn't loaded");
               } else {
                   NSLog(@"Common substances was loaded successfully");
@@ -397,11 +431,14 @@ typedef void (^ServerTaskCompletionBlock)(dispatch_group_t group,
              [NGNDataBaseManager saveContext];
          });
          
-         NSNotification *notification =
-         [NSNotification notificationWithName:kNGNControllerNotificationDataWasLoaded
-                                       object:nil];
-         [[NSNotificationCenter defaultCenter] postNotification:notification];
-         NSLog(@"%@", @"server data was loaded successfully");
+         [[NSNotificationCenter defaultCenter] postNotificationName:kNGNApplicationNotificationDataWasLoadedStatus
+                                                             object:nil
+                                                           userInfo:@{kNGNModelSessionDataLoadedParameter: @(isLoadSuccessful)}];
+         if (isLoadSuccessful) {
+             NSLog(@"%@", @"server data was loaded from server successfully");
+         } else {
+             NSLog(@"%@", @"an error was occured while data load. Data wasn't loaded completely");
+         }
          
      }];
 }

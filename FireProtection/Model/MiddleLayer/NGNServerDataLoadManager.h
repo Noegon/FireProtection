@@ -11,10 +11,14 @@
 @class NGNReachability;
 @class NSManagedObjectContext;
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface NGNServerDataLoadManager : NSObject
 
 @property (strong, nonatomic) NGNReachability* internetReachable;
 @property (strong, nonatomic) NGNReachability* hostReachable;
+
++ (void)pingServerWithCompletionHandler:(void (^ _Nullable)(void))completionHandler;
 
 /**
  Method for primary loading necessary data from server
@@ -41,3 +45,5 @@
 + (BOOL)checkInternetStatus;
 
 @end
+
+NS_ASSUME_NONNULL_END

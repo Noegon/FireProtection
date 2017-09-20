@@ -11,6 +11,7 @@
 #import "NGNCommonConstants.h"
 #import "NGNDataBaseManager.h"
 #import "NGNServerDataLoadManager.h"
+#import "NGNApplicationStateManager.h"
 
 #import "NGNServerLayerServices.h"
 #import "NSManagedObject+NGNCRUDAppendix.h"
@@ -21,26 +22,31 @@
 
 @interface AppDelegate ()
 
+@property (nonatomic, retain) NGNServerDataLoadManager *serverDataLoadManager;
+@property (nonatomic, retain) NGNApplicationStateManager *applicationStateManager;
+
 @end
 
 @implementation AppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    self.applicationStateManager = [NGNApplicationStateManager sharedInstance];
 
 #warning delete datasource for debug
-    NSFileManager *manager = [NSFileManager defaultManager];
-    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"FireProtection.sqlite"];
-    [manager removeItemAtURL:storeURL error:nil];
+//    NSFileManager *manager = [NSFileManager defaultManager];
+//    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"FireProtection.sqlite"];
+//    [manager removeItemAtURL:storeURL error:nil];
     
 #warning test of local storage
-    [NGNDataBaseManager setupCoreDataStackWithStorageName:kNGNModelAppName];
+    [NGNDataBaseManager setupCoreDataStackWithStorageName:kNGNApplicationAppName];
     
 //    [NGNServerDataLoadManager loadDataFromServerWithContext:[NGNDataBaseManager managedObjectContext]];
     
 //    [NGNServerDataLoadManager deleteDataFromServerWithContext:[NGNDataBaseManager managedObjectContext]];
     
-    [NGNServerDataLoadManager uploadDataToServerWithContext:[NGNDataBaseManager managedObjectContext]];
+//    [NGNServerDataLoadManager uploadDataToServerWithContext:[NGNDataBaseManager managedObjectContext]];
     
     return YES;
 }
