@@ -33,7 +33,25 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     self.applicationStateManager = [NGNApplicationStateManager sharedInstance];
-
+    
+    [[NSNotificationCenter defaultCenter] addObserverForName:kNGNApplicationNotificationDataWasLoadedStatus
+                                                      object:nil
+                                                       queue:[NSOperationQueue mainQueue]
+                                                  usingBlock:
+     ^(NSNotification *note){
+         NSDictionary *dataLoadStatus = [self.applicationStateManager applicationParameterWithKey: kNGNApplicationNotificationDataWasLoadedStatus];
+         NSNumber *state = dataLoadStatus[kNGNModelSessionDataLoadedParameter];
+     }];
+    
+    [[NSNotificationCenter defaultCenter] addObserverForName:kNGNApplicationNotificationServerReachabilityStatus
+                                                      object:nil
+                                                       queue:[NSOperationQueue mainQueue]
+                                                  usingBlock:
+     ^(NSNotification *note){
+         NSDictionary *serverStatus = [self.applicationStateManager applicationParameterWithKey: kNGNApplicationNotificationServerReachabilityStatus];
+         NSNumber *state = serverStatus[kNGNModelSessionServerReachableParameter];
+     }];
+    
 #warning delete datasource for debug
 //    NSFileManager *manager = [NSFileManager defaultManager];
 //    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"FireProtection.sqlite"];
@@ -42,7 +60,9 @@
 #warning test of local storage
     [NGNDataBaseManager setupCoreDataStackWithStorageName:kNGNApplicationAppName];
     
-//    [NGNServerDataLoadManager loadDataFromServerWithContext:[NGNDataBaseManager managedObjectContext]];
+    [NGNServerDataLoadManager loadDataFromServerWithContext:[NGNDataBaseManager managedObjectContext]];
+    
+    
     
 //    [NGNServerDataLoadManager deleteDataFromServerWithContext:[NGNDataBaseManager managedObjectContext]];
     
@@ -79,6 +99,7 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     // Saves changes in the application's managed object context before the application terminates.
     [NGNDataBaseManager saveContext];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 #pragma mark - additional helper methods

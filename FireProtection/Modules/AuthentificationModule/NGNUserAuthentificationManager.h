@@ -10,4 +10,6 @@
 
 @interface NGNUserAuthentificationManager : NSObject
 
++ (instancetype)sharedInstance;
+
 @end

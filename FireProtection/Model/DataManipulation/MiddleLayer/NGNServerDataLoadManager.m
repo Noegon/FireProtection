@@ -161,7 +161,7 @@ typedef void (^ServerTaskCompletionBlock)(dispatch_group_t group,
              NSLog(@"Server is unreachable!\n%@", error.userInfo);
          }
          
-         [[NSNotificationCenter defaultCenter] postNotificationName:kNGNControllerNotificationServerReachabilityStatusChanged
+         [[NSNotificationCenter defaultCenter] postNotificationName:kNGNApplicationNotificationServerReachabilityStatus
                                                              object:nil
                                                            userInfo:@{kNGNModelSessionServerReachableParameter: @(isServerReachable)}];
      }];
