@@ -21,20 +21,25 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)pingServerWithCompletionHandler:(void (^ _Nullable)(void))completionHandler;
 
 /**
- Method for primary loading necessary data from server
+ Method for primary loading common necessary data from server
  */
-+ (void)loadDataFromServerWithContext:(NSManagedObjectContext *)context;
++ (void)loadCommonDataFromServerWithContext:(NSManagedObjectContext *)context;
+
+/**
+ Method for loading current user data from server
+ */
++ (void)loadDataFromServerWithContext:(NSManagedObjectContext *)context userId:(NSNumber *)userId;
 
 /**
  Method for deletion data that belongs to current user from server
  */
-+ (void)deleteDataFromServerWithContext:(NSManagedObjectContext *)context;
++ (void)deleteDataFromServerWithContext:(NSManagedObjectContext *)context userId:(NSNumber *)userId;
 
 /**
  Method for upload data that belongs to current user to server server
  (use with deleteDataFromServerWithContext: method to renew data on server after working offline)
  */
-+ (void)uploadDataToServerWithContext:(NSManagedObjectContext *)context;
++ (void)uploadDataToServerWithContext:(NSManagedObjectContext *)context userId:(NSNumber *)userId;
 
 #pragma mark - networking
 

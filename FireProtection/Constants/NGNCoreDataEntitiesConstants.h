@@ -1,5 +1,5 @@
 //
-//  NGNCoreDataEntitiesNames.h
+//  NGNCoreDataEntitiesConstants.h
 //  FireProtection
 //
 //  Created by Alexey Stafeyev on 22.07.17.
@@ -21,7 +21,12 @@ static NSString *const kNGNModelEntityNameFunctionalFireSafetySubcategory = @"NG
 static NSString *const kNGNModelEntityNameSubstanceType = @"NGNSubstanceType";
 static NSString *const kNGNModelEntityNameMinimumREIConstructionType = @"NGNMinimumREIConstructionType";
 
-@interface NGNCoreDataEntitiesNames : NSObject
+//one uppercase letter, one lowercase letter, any special symbols(0 or more), no whitespaces, minimum 6 symbols, max - 10
+static NSString *const kNGNModelEntityUserPasswordRegex = @"^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]*)(?=/S+$).{6,10}$";
+//any letters and digits, no special symbols, no whitespaces, minimum 6 symbols, max - 10
+static NSString *const kNGNModelEntityUserLoginRegex = @"^(?=.*[0-9])(?=.*[a-zA-z])(?!.*[@#$%^&+=.()!?])(?=/S+$).{6,10}$";
+
+@interface NGNCoreDataEntitiesConstants : NSObject
 
 @property (class, strong, nonatomic, readonly) NSArray *vocabularyEntities;
 @property (class, strong, nonatomic, readonly) NSArray *nonVocabularyEntities;

@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "NGNCoreDataModel.h"
 #import "NGNCommonConstants.h"
+#import "NGNStoryboardConstants.h"
 #import "NGNDataBaseManager.h"
 #import "NGNServerDataLoadManager.h"
 #import "NGNApplicationStateManager.h"
@@ -20,36 +21,131 @@
 #import <FastEasyMapping/FastEasyMapping.h>
 #import <SystemConfiguration/SystemConfiguration.h>
 
+static BOOL initialLaunch = YES;
+static NSNumber *userId = nil;
+
 @interface AppDelegate ()
 
-@property (nonatomic, retain) NGNServerDataLoadManager *serverDataLoadManager;
-@property (nonatomic, retain) NGNApplicationStateManager *applicationStateManager;
+@property (nonatomic, strong) NGNServerDataLoadManager *serverDataLoadManager;
+@property (nonatomic, strong) NGNApplicationStateManager *applicationStateManager;
+@property (nonatomic, strong) UITabBarController *rootTabBarController;
 
 @end
 
 @implementation AppDelegate
 
+- (void)startAppInOnlineMode:(BOOL)isAppOnline {
+    
+    //check if user saved last session to not tot login again
+    NSDictionary *userSavedStatus = [self.applicationStateManager applicationParameterWithKey: kNGNModelSessionUserPasswordSavedParameter];
+    NSNumber *userSaved = nil;
+    
+    if (!userSavedStatus) {
+        userSaved = @(NO);
+        NSData *data = [NSKeyedArchiver archivedDataWithRootObject:@{kNGNModelSessionUserPasswordSavedParameter: @(NO)}];
+        [[NSUserDefaults standardUserDefaults] setObject:data forKey:kNGNModelSessionUserPasswordSavedParameter];
+    } else {
+        userSaved = userSavedStatus[kNGNModelSessionUserPasswordSavedParameter];
+    }
+    
+    if (isAppOnline) {
+        if (!userSaved.boolValue) {
+            [self launchAppInAnonimousMode:YES];
+        } else {
+            //check last launch delete data status to understand if last launch successful
+            NSDictionary *lastsessionDeleteStatus =
+                [self.applicationStateManager applicationParameterWithKey: kNGNModelSessionDataDeletedParameter];
+            NSNumber *deleteSuccessful = lastsessionDeleteStatus[kNGNModelSessionDataDeletedParameter];
+            
+            //check last launch upload data status to understand if last launch successful
+            NSDictionary *lastsessionUploadStatus =
+                [self.applicationStateManager applicationParameterWithKey: kNGNModelSessionDataUploadedParameter];
+            NSNumber *uploadSuccessful = lastsessionUploadStatus[kNGNModelSessionDataUploadedParameter];
+            
+            //fetching of userId of last saved user
+            userId = @(-1);
+            NSFetchRequest *request = NGNUser.fetchRequest;
+            request.predicate =[NSPredicate predicateWithFormat:@"self.idx != 1"];
+            NSError *error = nil;
+            NSArray *users = [[NGNDataBaseManager managedObjectContext] executeFetchRequest:request error:&error];
+            if (!error && users.count > 0) {
+                userId = ((NGNUser *)users[0]).idx;
+            }
+            
+            if (!deleteSuccessful.boolValue || !uploadSuccessful.boolValue) {
+                [NGNServerDataLoadManager deleteDataFromServerWithContext:[NGNDataBaseManager managedObjectContext] userId:userId];
+            }
+        }
+    } else {
+        if (!userSaved.boolValue) {
+            [self launchAppInAnonimousMode:YES];
+        }
+    }
+}
+
+- (void)launchAppInAnonimousMode:(BOOL)appShouldBeLaunchedInAnonimousMode {
+    if (appShouldBeLaunchedInAnonimousMode) {
+        self.rootTabBarController.selectedIndex = 1;
+        [[[[self.rootTabBarController tabBar]items]objectAtIndex:0]setEnabled:FALSE];
+    }
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+    self.rootTabBarController = (UITabBarController*)self.window.rootViewController;
+    
     self.applicationStateManager = [NGNApplicationStateManager sharedInstance];
     
-    [[NSNotificationCenter defaultCenter] addObserverForName:kNGNApplicationNotificationDataWasLoadedStatus
+    [[NSNotificationCenter defaultCenter] addObserverForName:kNGNApplicationNotificationCommonDataWasLoaded
                                                       object:nil
                                                        queue:[NSOperationQueue mainQueue]
                                                   usingBlock:
-     ^(NSNotification *note){
-         NSDictionary *dataLoadStatus = [self.applicationStateManager applicationParameterWithKey: kNGNApplicationNotificationDataWasLoadedStatus];
-         NSNumber *state = dataLoadStatus[kNGNModelSessionDataLoadedParameter];
+     ^(NSNotification *note) {
+         NSDictionary *dataLoadStatus = [self.applicationStateManager applicationParameterWithKey: kNGNApplicationNotificationCommonDataWasLoaded];
+         NSNumber *commonDataState = dataLoadStatus[kNGNModelSessionCommonDataLoadedParameter];
+         if (commonDataState.boolValue) {
+             [self startAppInOnlineMode:YES];
+         } else {
+             NSLog(@"%@", @"Application cannot be loaded!");
+#warning - change abort with another behavior!!!
+             abort();
+         }
      }];
     
-    [[NSNotificationCenter defaultCenter] addObserverForName:kNGNApplicationNotificationServerReachabilityStatus
+    [[NSNotificationCenter defaultCenter] addObserverForName:kNGNApplicationNotificationDataWasDeletedFromServer
                                                       object:nil
                                                        queue:[NSOperationQueue mainQueue]
                                                   usingBlock:
-     ^(NSNotification *note){
-         NSDictionary *serverStatus = [self.applicationStateManager applicationParameterWithKey: kNGNApplicationNotificationServerReachabilityStatus];
-         NSNumber *state = serverStatus[kNGNModelSessionServerReachableParameter];
+     ^(NSNotification *note) {
+         NSDictionary *dataDeleteStatus = [self.applicationStateManager applicationParameterWithKey: kNGNApplicationNotificationDataWasDeletedFromServer];
+         NSNumber *deleteDataState = dataDeleteStatus[kNGNModelSessionDataDeletedParameter];
+         if (deleteDataState.boolValue) {
+             [NGNServerDataLoadManager uploadDataToServerWithContext:[NGNDataBaseManager managedObjectContext] userId:userId];
+         } else {
+             NSLog(@"%@", @"Data wasn't deleted from server! Data won't be uploaded!");
+         }
+     }];
+    
+    [[NSNotificationCenter defaultCenter] addObserverForName:kNGNApplicationNotificationServerReachability
+                                                      object:nil
+                                                       queue:[NSOperationQueue mainQueue]
+                                                  usingBlock:
+     ^(NSNotification *note) {
+         if (initialLaunch) {
+             //check server status - reachable/unreachable to perform main apploading logic
+             NSDictionary *serverStatus =
+                 [self.applicationStateManager applicationParameterWithKey: kNGNModelSessionServerReachableParameter];
+             NSNumber *serverReachable = serverStatus[kNGNModelSessionServerReachableParameter];
+             
+             if (serverReachable.boolValue) {
+                 //if server is reachable download latest common data: vocabularies, etc...
+                 initialLaunch = NO;
+                 [NGNServerDataLoadManager loadCommonDataFromServerWithContext:[NGNDataBaseManager managedObjectContext]];
+             } else {
+                 [self startAppInOnlineMode:NO];
+             }
+             initialLaunch = NO;
+         }
      }];
     
 #warning delete datasource for debug
@@ -60,9 +156,9 @@
 #warning test of local storage
     [NGNDataBaseManager setupCoreDataStackWithStorageName:kNGNApplicationAppName];
     
-    [NGNServerDataLoadManager loadDataFromServerWithContext:[NGNDataBaseManager managedObjectContext]];
+    [NGNServerDataLoadManager pingServerWithCompletionHandler:^{}];
     
-    
+//    [NGNServerDataLoadManager loadDataFromServerWithContext:[NGNDataBaseManager managedObjectContext]];
     
 //    [NGNServerDataLoadManager deleteDataFromServerWithContext:[NGNDataBaseManager managedObjectContext]];
     
@@ -86,7 +182,6 @@
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
     // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
-    [NGNServerDataLoadManager loadDataFromServerWithContext:[NGNDataBaseManager managedObjectContext]];
 }
 
 

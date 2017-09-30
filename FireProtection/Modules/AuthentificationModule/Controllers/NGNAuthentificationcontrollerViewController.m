@@ -17,6 +17,7 @@
 - (IBAction)registerButtonTapped:(UIButton *)sender;
 - (IBAction)approveButtonTapped:(UIButton *)sender;
 - (IBAction)rememberPasswordSwitchValueChanged:(UISwitch *)sender;
+- (IBAction)exitLoginButtonTapped:(UIBarButtonItem *)sender;
 
 @end
 
@@ -56,6 +57,10 @@
 }
 
 - (IBAction)rememberPasswordSwitchValueChanged:(UISwitch *)sender {
+}
+
+- (IBAction)exitLoginButtonTapped:(UIBarButtonItem *)sender {
+    [self dismissViewControllerAnimated:YES completion:^{}];
 }
 
 @end

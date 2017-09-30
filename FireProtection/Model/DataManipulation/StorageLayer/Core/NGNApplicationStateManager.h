@@ -10,6 +10,8 @@
 
 @interface NGNApplicationStateManager : NSObject
 
+@property (strong, nonatomic) NSNumber *currentSessionUserId;
+
 + (instancetype)sharedInstance;
 
 - (NSDictionary *)applicationParameterWithKey:(NSString *)key;

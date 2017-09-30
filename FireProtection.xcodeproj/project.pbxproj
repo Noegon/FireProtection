@@ -9,12 +9,16 @@
 /* Begin PBXBuildFile section */
 		400D97BB1F74694F003C5CCE /* NGNAuthentificationcontrollerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 400D97BA1F74694F003C5CCE /* NGNAuthentificationcontrollerViewController.m */; };
 		401777331F75B5070061BEEF /* NGNRegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 401777321F75B5070061BEEF /* NGNRegistrationViewController.m */; };
+		401777361F75C6BA0061BEEF /* NGNRegexMatchUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 401777351F75C6BA0061BEEF /* NGNRegexMatchUtil.m */; };
+		401777391F76E39A0061BEEF /* NGNProjectsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 401777381F76E39A0061BEEF /* NGNProjectsTableViewController.m */; };
+		4017773D1F76E40D0061BEEF /* NGNVocabulariesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4017773C1F76E40D0061BEEF /* NGNVocabulariesTableViewController.m */; };
 		404538631F4B9FA600125AC3 /* NGNCommonConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 404538621F4B9FA600125AC3 /* NGNCommonConstants.m */; };
 		40863F0B1F752F550032077C /* Authentification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40863F0A1F752F550032077C /* Authentification.storyboard */; };
 		40A618C71F69AAA30075AE38 /* NGNUserAuthentificationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 40A618C61F69AAA30075AE38 /* NGNUserAuthentificationManager.m */; };
 		40A618CB1F69B8FE0075AE38 /* NGNPropertyUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 40A618CA1F69B8FE0075AE38 /* NGNPropertyUtil.m */; };
 		40A9A2FD1F726D7800B3876C /* NGNApplicationStateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 40A9A2FC1F726D7800B3876C /* NGNApplicationStateManager.m */; };
 		40A9A36B1F74063200B3876C /* FireProtection.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 40A9A3691F74063100B3876C /* FireProtection.xcdatamodeld */; };
+		40D03F0A1F7AF2C600271DC5 /* NGNStoryboardConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 40D03F091F7AF2C600271DC5 /* NGNStoryboardConstants.m */; };
 		40D89EB01F40621800B07AB5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 40D89EAF1F40621800B07AB5 /* main.m */; };
 		40D89EB31F40621800B07AB5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 40D89EB21F40621800B07AB5 /* AppDelegate.m */; };
 		40D89EB61F40621800B07AB5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40D89EB51F40621800B07AB5 /* ViewController.m */; };
@@ -24,7 +28,7 @@
 		40E999D51F5F25EC00B6F9F9 /* NGNDataBaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E999D31F5F25EC00B6F9F9 /* NGNDataBaseManager.m */; };
 		40E999D81F5F261B00B6F9F9 /* NSManagedObject+NGNCRUDAppendix.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E999D71F5F261B00B6F9F9 /* NSManagedObject+NGNCRUDAppendix.m */; };
 		40E999DD1F5F26A500B6F9F9 /* NGNServerSideLayerConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E999D91F5F26A500B6F9F9 /* NGNServerSideLayerConstants.m */; };
-		40E999DE1F5F26A500B6F9F9 /* NGNCoreDataEntitiesNames.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E999DC1F5F26A500B6F9F9 /* NGNCoreDataEntitiesNames.m */; };
+		40E999DE1F5F26A500B6F9F9 /* NGNCoreDataEntitiesConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E999DC1F5F26A500B6F9F9 /* NGNCoreDataEntitiesConstants.m */; };
 		40E999E41F5F2C6C00B6F9F9 /* NGNAbstractService.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E999E21F5F2C6B00B6F9F9 /* NGNAbstractService.m */; };
 		40E999E51F5F2C6C00B6F9F9 /* NGNBasicService.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E999E31F5F2C6B00B6F9F9 /* NGNBasicService.m */; };
 		40E999EB1F5F405600B6F9F9 /* NGNReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E999E71F5F405600B6F9F9 /* NGNReachability.m */; };
@@ -82,6 +86,12 @@
 		400D97BA1F74694F003C5CCE /* NGNAuthentificationcontrollerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NGNAuthentificationcontrollerViewController.m; sourceTree = "<group>"; };
 		401777311F75B5070061BEEF /* NGNRegistrationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NGNRegistrationViewController.h; sourceTree = "<group>"; };
 		401777321F75B5070061BEEF /* NGNRegistrationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NGNRegistrationViewController.m; sourceTree = "<group>"; };
+		401777341F75C6BA0061BEEF /* NGNRegexMatchUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = NGNRegexMatchUtil.h; path = Utils/NGNRegexMatchUtil.h; sourceTree = "<group>"; };
+		401777351F75C6BA0061BEEF /* NGNRegexMatchUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = NGNRegexMatchUtil.m; path = Utils/NGNRegexMatchUtil.m; sourceTree = "<group>"; };
+		401777371F76E39A0061BEEF /* NGNProjectsTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = NGNProjectsTableViewController.h; path = Controller/BasicControllers/NGNProjectsTableViewController.h; sourceTree = "<group>"; };
+		401777381F76E39A0061BEEF /* NGNProjectsTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = NGNProjectsTableViewController.m; path = Controller/BasicControllers/NGNProjectsTableViewController.m; sourceTree = "<group>"; };
+		4017773B1F76E40D0061BEEF /* NGNVocabulariesTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = NGNVocabulariesTableViewController.h; path = Controller/BasicControllers/NGNVocabulariesTableViewController.h; sourceTree = "<group>"; };
+		4017773C1F76E40D0061BEEF /* NGNVocabulariesTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = NGNVocabulariesTableViewController.m; path = Controller/BasicControllers/NGNVocabulariesTableViewController.m; sourceTree = "<group>"; };
 		404538611F4B9FA600125AC3 /* NGNCommonConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NGNCommonConstants.h; path = Constants/NGNCommonConstants.h; sourceTree = "<group>"; };
 		404538621F4B9FA600125AC3 /* NGNCommonConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NGNCommonConstants.m; path = Constants/NGNCommonConstants.m; sourceTree = "<group>"; };
 		40863F0A1F752F550032077C /* Authentification.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Authentification.storyboard; path = FireProtection/Modules/AuthentificationModule/Authentification.storyboard; sourceTree = SOURCE_ROOT; };
@@ -92,6 +102,8 @@
 		40A9A2FB1F726D7800B3876C /* NGNApplicationStateManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NGNApplicationStateManager.h; sourceTree = "<group>"; };
 		40A9A2FC1F726D7800B3876C /* NGNApplicationStateManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NGNApplicationStateManager.m; sourceTree = "<group>"; };
 		40A9A36A1F74063100B3876C /* FireProtection.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FireProtection.xcdatamodel; sourceTree = "<group>"; };
+		40D03F081F7AF2C600271DC5 /* NGNStoryboardConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = NGNStoryboardConstants.h; path = Constants/NGNStoryboardConstants.h; sourceTree = "<group>"; };
+		40D03F091F7AF2C600271DC5 /* NGNStoryboardConstants.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = NGNStoryboardConstants.m; path = Constants/NGNStoryboardConstants.m; sourceTree = "<group>"; };
 		40D89EAB1F40621800B07AB5 /* FireProtection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FireProtection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40D89EAF1F40621800B07AB5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		40D89EB11F40621800B07AB5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -108,9 +120,9 @@
 		40E999D61F5F261B00B6F9F9 /* NSManagedObject+NGNCRUDAppendix.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+NGNCRUDAppendix.h"; sourceTree = "<group>"; };
 		40E999D71F5F261B00B6F9F9 /* NSManagedObject+NGNCRUDAppendix.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+NGNCRUDAppendix.m"; sourceTree = "<group>"; };
 		40E999D91F5F26A500B6F9F9 /* NGNServerSideLayerConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NGNServerSideLayerConstants.m; path = Constants/NGNServerSideLayerConstants.m; sourceTree = "<group>"; };
-		40E999DA1F5F26A500B6F9F9 /* NGNCoreDataEntitiesNames.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NGNCoreDataEntitiesNames.h; path = Constants/NGNCoreDataEntitiesNames.h; sourceTree = "<group>"; };
+		40E999DA1F5F26A500B6F9F9 /* NGNCoreDataEntitiesConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NGNCoreDataEntitiesConstants.h; path = Constants/NGNCoreDataEntitiesConstants.h; sourceTree = "<group>"; };
 		40E999DB1F5F26A500B6F9F9 /* NGNServerSideLayerConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NGNServerSideLayerConstants.h; path = Constants/NGNServerSideLayerConstants.h; sourceTree = "<group>"; };
-		40E999DC1F5F26A500B6F9F9 /* NGNCoreDataEntitiesNames.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NGNCoreDataEntitiesNames.m; path = Constants/NGNCoreDataEntitiesNames.m; sourceTree = "<group>"; };
+		40E999DC1F5F26A500B6F9F9 /* NGNCoreDataEntitiesConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NGNCoreDataEntitiesConstants.m; path = Constants/NGNCoreDataEntitiesConstants.m; sourceTree = "<group>"; };
 		40E999E01F5F2C6B00B6F9F9 /* NGNBasicService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NGNBasicService.h; path = Services/NGNBasicService.h; sourceTree = "<group>"; };
 		40E999E11F5F2C6B00B6F9F9 /* NGNAbstractService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NGNAbstractService.h; path = Services/NGNAbstractService.h; sourceTree = "<group>"; };
 		40E999E21F5F2C6B00B6F9F9 /* NGNAbstractService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NGNAbstractService.m; path = Services/NGNAbstractService.m; sourceTree = "<group>"; };
@@ -272,11 +284,24 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		4017773A1F76E3A10061BEEF /* BasicControllers */ = {
+			isa = PBXGroup;
+			children = (
+				401777371F76E39A0061BEEF /* NGNProjectsTableViewController.h */,
+				401777381F76E39A0061BEEF /* NGNProjectsTableViewController.m */,
+				4017773B1F76E40D0061BEEF /* NGNVocabulariesTableViewController.h */,
+				4017773C1F76E40D0061BEEF /* NGNVocabulariesTableViewController.m */,
+			);
+			name = BasicControllers;
+			sourceTree = "<group>";
+		};
 		404538601F4B9F7300125AC3 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
-				40E999DA1F5F26A500B6F9F9 /* NGNCoreDataEntitiesNames.h */,
-				40E999DC1F5F26A500B6F9F9 /* NGNCoreDataEntitiesNames.m */,
+				40D03F081F7AF2C600271DC5 /* NGNStoryboardConstants.h */,
+				40D03F091F7AF2C600271DC5 /* NGNStoryboardConstants.m */,
+				40E999DA1F5F26A500B6F9F9 /* NGNCoreDataEntitiesConstants.h */,
+				40E999DC1F5F26A500B6F9F9 /* NGNCoreDataEntitiesConstants.m */,
 				40E999DB1F5F26A500B6F9F9 /* NGNServerSideLayerConstants.h */,
 				40E999D91F5F26A500B6F9F9 /* NGNServerSideLayerConstants.m */,
 				404538611F4B9FA600125AC3 /* NGNCommonConstants.h */,
@@ -290,6 +315,8 @@
 			children = (
 				40A618C91F69B8FE0075AE38 /* NGNPropertyUtil.h */,
 				40A618CA1F69B8FE0075AE38 /* NGNPropertyUtil.m */,
+				401777341F75C6BA0061BEEF /* NGNRegexMatchUtil.h */,
+				401777351F75C6BA0061BEEF /* NGNRegexMatchUtil.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -374,6 +401,7 @@
 		40D89ECA1F40673000B07AB5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				4017773A1F76E3A10061BEEF /* BasicControllers */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -671,10 +699,11 @@
 				40E99A8B1F61EFAD00B6F9F9 /* NGNFunctionalFireSafetyCategory+CoreDataClass.m in Sources */,
 				40E99A811F61EFAD00B6F9F9 /* NGNSubstancePile+CoreDataClass.m in Sources */,
 				40E99A991F6724A200B6F9F9 /* NGNUserService.m in Sources */,
-				40E999DE1F5F26A500B6F9F9 /* NGNCoreDataEntitiesNames.m in Sources */,
+				40E999DE1F5F26A500B6F9F9 /* NGNCoreDataEntitiesConstants.m in Sources */,
 				40E99A7E1F61EFAD00B6F9F9 /* NGNSubstance+CoreDataProperties.m in Sources */,
 				40E99A941F65C14600B6F9F9 /* NGNUserMO.m in Sources */,
 				40E99AB21F69995C00B6F9F9 /* NGNFireSafetyCategoryService.m in Sources */,
+				40D03F0A1F7AF2C600271DC5 /* NGNStoryboardConstants.m in Sources */,
 				40E99A7C1F61EFAD00B6F9F9 /* NGNSubstanceType+CoreDataProperties.m in Sources */,
 				40E99A841F61EFAD00B6F9F9 /* NGNMinimumREIConstructionType+CoreDataProperties.m in Sources */,
 				40E99A801F61EFAD00B6F9F9 /* NGNFireResistanceRank+CoreDataProperties.m in Sources */,
@@ -686,6 +715,7 @@
 				40E99A821F61EFAD00B6F9F9 /* NGNSubstancePile+CoreDataProperties.m in Sources */,
 				40E99A7B1F61EFAD00B6F9F9 /* NGNSubstanceType+CoreDataClass.m in Sources */,
 				40A618CB1F69B8FE0075AE38 /* NGNPropertyUtil.m in Sources */,
+				401777361F75C6BA0061BEEF /* NGNRegexMatchUtil.m in Sources */,
 				40E99A861F61EFAD00B6F9F9 /* NGNUser+CoreDataProperties.m in Sources */,
 				40E99A751F61EFAD00B6F9F9 /* NGNPosition+CoreDataClass.m in Sources */,
 				40E99A771F61EFAD00B6F9F9 /* NGNProject+CoreDataClass.m in Sources */,
@@ -697,6 +727,7 @@
 				40A9A2FD1F726D7800B3876C /* NGNApplicationStateManager.m in Sources */,
 				40E99AA01F67306A00B6F9F9 /* NGNRoomService.m in Sources */,
 				400D97BB1F74694F003C5CCE /* NGNAuthentificationcontrollerViewController.m in Sources */,
+				4017773D1F76E40D0061BEEF /* NGNVocabulariesTableViewController.m in Sources */,
 				40E99A7A1F61EFAD00B6F9F9 /* NGNFireSafetyCategory+CoreDataProperties.m in Sources */,
 				40E99A731F61EFAD00B6F9F9 /* NGNRoom+CoreDataClass.m in Sources */,
 				40E99A871F61EFAD00B6F9F9 /* NGNFunctionalFireSafetySubcategory+CoreDataClass.m in Sources */,
@@ -723,6 +754,7 @@
 				40E99AB51F699AE600B6F9F9 /* NGNFunctionalFireSafetyCategoryService.m in Sources */,
 				40D89EB01F40621800B07AB5 /* main.m in Sources */,
 				40E99A7D1F61EFAD00B6F9F9 /* NGNSubstance+CoreDataClass.m in Sources */,
+				401777391F76E39A0061BEEF /* NGNProjectsTableViewController.m in Sources */,
 				40E99A881F61EFAD00B6F9F9 /* NGNFunctionalFireSafetySubcategory+CoreDataProperties.m in Sources */,
 				40E99A791F61EFAD00B6F9F9 /* NGNFireSafetyCategory+CoreDataClass.m in Sources */,
 				401777331F75B5070061BEEF /* NGNRegistrationViewController.m in Sources */,

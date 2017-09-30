@@ -31,7 +31,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="login" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lp5-Zk-YnH">
+                                    <textField opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="login" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lp5-Zk-YnH">
                                         <rect key="frame" x="0.0" y="40" width="240" height="40"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <constraints>
@@ -160,7 +160,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nQZ-yr-ZET"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Log in" id="of1-n8-DkY"/>
+                    <navigationItem key="navigationItem" title="Log in" id="of1-n8-DkY">
+                        <barButtonItem key="rightBarButtonItem" title="Exit login" id="Sde-ho-SQE">
+                            <connections>
+                                <action selector="exitLoginButtonTapped:" destination="lDc-dn-h4R" id="AjY-VT-lzV"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="loginTextField" destination="Lp5-Zk-YnH" id="SZn-TQ-Tlx"/>
                         <outlet property="passwordTextField" destination="amZ-5D-a6R" id="rkb-cU-bVn"/>
@@ -227,7 +233,7 @@
                                             <action selector="passwordValueChanged:" destination="ppy-c6-QNu" eventType="valueChanged" id="UoQ-9b-I98"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="login" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jQk-l0-Zl2">
+                                    <textField opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="login" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jQk-l0-Zl2">
                                         <rect key="frame" x="0.0" y="40" width="240" height="40"/>
                                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <constraints>
@@ -264,7 +270,7 @@
                                         <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="repeat password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c5g-JZ-gh3">
+                                    <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="repeat password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c5g-JZ-gh3">
                                         <rect key="frame" x="0.0" y="200" width="240" height="40"/>
                                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>

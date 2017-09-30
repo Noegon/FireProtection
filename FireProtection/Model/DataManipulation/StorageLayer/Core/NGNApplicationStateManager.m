@@ -10,20 +10,22 @@
 #import "NGNCommonConstants.h"
 
 typedef NS_ENUM(NSInteger, NGNApplicationNotificationName) {
-    NGNApplicationNotificationDataWasLoadedStatus = 0,
+    NGNApplicationNotificationCommonDataWasLoadedStatus = 0,
+    NGNApplicationNotificationDataWasLoadedStatus,
     NGNApplicationNotificationDataWasUploadedToServerStatus,
     NGNApplicationNotificationDataWasDeletedFromServerStatus,
     NGNApplicationNotificationServerReachabilityStatus
 };
 
-static const NSUInteger NGNNotificationsCount = 4;
+static const NSUInteger NGNNotificationsCount = 5;
 
 // fine descision for enum and string values binding
 static NSString *const NGNStringApplicationNotificationName[] = {
-    [NGNApplicationNotificationDataWasLoadedStatus] = kNGNApplicationNotificationDataWasLoadedStatus,
-    [NGNApplicationNotificationDataWasUploadedToServerStatus] = kNGNApplicationNotificationDataWasUploadedToServerStatus,
-    [NGNApplicationNotificationDataWasDeletedFromServerStatus] = kNGNApplicationNotificationDataWasDeletedFromServerStatus,
-    [NGNApplicationNotificationServerReachabilityStatus] = kNGNApplicationNotificationServerReachabilityStatus
+    [NGNApplicationNotificationCommonDataWasLoadedStatus] = kNGNApplicationNotificationCommonDataWasLoaded,
+    [NGNApplicationNotificationDataWasLoadedStatus] = kNGNApplicationNotificationDataWasLoaded,
+    [NGNApplicationNotificationDataWasUploadedToServerStatus] = kNGNApplicationNotificationDataWasUploadedToServer,
+    [NGNApplicationNotificationDataWasDeletedFromServerStatus] = kNGNApplicationNotificationDataWasDeletedFromServer,
+    [NGNApplicationNotificationServerReachabilityStatus] = kNGNApplicationNotificationServerReachability
 };
 
 @interface NGNApplicationStateManager()
@@ -61,9 +63,20 @@ static NSString *const NGNStringApplicationNotificationName[] = {
 
 #pragma mark - main logic methods
 
+- (NSNumber *)currentSessionUserId {
+    if (!_currentSessionUserId.boolValue) {
+        _currentSessionUserId = @(-1);
+    }
+    return _currentSessionUserId;
+}
+
+- (void)renewApplicationParameter:(NSDictionary *)parameter Name:(NSString *)name {
+    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:parameter];
+    [[NSUserDefaults standardUserDefaults] setObject:data forKey:name];
+}
+
 - (void)renewApplicationParameterWithNotofication:(NSNotification *)notification {
-    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:notification.userInfo];
-    [[NSUserDefaults standardUserDefaults] setObject:data forKey:notification.name];
+    [self renewApplicationParameter:notification.userInfo Name:notification.name];
 }
 
 - (NSDictionary *)applicationParameterWithKey:(NSString *)key {

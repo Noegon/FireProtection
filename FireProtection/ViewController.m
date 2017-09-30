@@ -24,7 +24,7 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(testDataDidLoad)
-                                                 name:kNGNApplicationNotificationDataWasLoadedStatus
+                                                 name:kNGNApplicationNotificationDataWasLoaded
                                                object:nil];
 }
 

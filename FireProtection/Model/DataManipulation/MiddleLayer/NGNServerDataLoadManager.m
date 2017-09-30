@@ -8,7 +8,7 @@
 
 #import "NGNServerDataLoadManager.h"
 #import "NGNCommonConstants.h"
-#import "NGNCoreDataEntitiesNames.h"
+#import "NGNCoreDataEntitiesConstants.h"
 #import "NGNDataBaseManager.h"
 #import "NGNCoreDataModel.h"
 #import "NGNServerLayerServices.h"
@@ -70,7 +70,7 @@ typedef void (^ServerTaskCompletionBlock)(dispatch_group_t group,
 - (BOOL)isVocabularyEntityService:(id<NGNServiceProtocol>)service {
     const char *classname = class_getName(service.class);
     NSString *serviceClassName = [NSString stringWithUTF8String:classname];
-    for (NSString *name in NGNCoreDataEntitiesNames.vocabularyEntities) {
+    for (NSString *name in NGNCoreDataEntitiesConstants.vocabularyEntities) {
         if ([serviceClassName isEqualToString:[NSString stringWithFormat:@"%@Service", name]]) {
             return YES;
         }
@@ -81,7 +81,7 @@ typedef void (^ServerTaskCompletionBlock)(dispatch_group_t group,
 - (BOOL)isNonVocabularyEntityService:(id<NGNServiceProtocol>)service {
     const char *classname = class_getName(service.class);
     NSString *serviceClassName = [NSString stringWithUTF8String:classname];
-    for (NSString *name in NGNCoreDataEntitiesNames.nonVocabularyEntities) {
+    for (NSString *name in NGNCoreDataEntitiesConstants.nonVocabularyEntities) {
         if ([serviceClassName isEqualToString:[NSString stringWithFormat:@"%@Service", name]]) {
             return YES;
         }
@@ -161,7 +161,7 @@ typedef void (^ServerTaskCompletionBlock)(dispatch_group_t group,
              NSLog(@"Server is unreachable!\n%@", error.userInfo);
          }
          
-         [[NSNotificationCenter defaultCenter] postNotificationName:kNGNApplicationNotificationServerReachabilityStatus
+         [[NSNotificationCenter defaultCenter] postNotificationName:kNGNApplicationNotificationServerReachability
                                                              object:nil
                                                            userInfo:@{kNGNModelSessionServerReachableParameter: @(isServerReachable)}];
      }];
@@ -169,7 +169,7 @@ typedef void (^ServerTaskCompletionBlock)(dispatch_group_t group,
     [checkServerReachabilityTask resume];
 }
 
-+ (void)deleteDataFromServerWithContext:(NSManagedObjectContext *)context {
++ (void)deleteDataFromServerWithContext:(NSManagedObjectContext *)context userId:(NSNumber *)userId {
     
     NGNServerDataLoadManager *manager = [self sharedInstance];
     
@@ -192,7 +192,7 @@ typedef void (^ServerTaskCompletionBlock)(dispatch_group_t group,
              
              dispatch_group_enter(group);
              
-             [service fetchEntitiesWithAdditionalParameters:@{@"user": @(2).stringValue}
+             [service fetchEntitiesWithAdditionalParameters:@{@"user": userId.stringValue}
                                             completionBlock:
               ^(NSArray *entities, NSError *error) {
                   if (!error) {
@@ -236,7 +236,7 @@ typedef void (^ServerTaskCompletionBlock)(dispatch_group_t group,
          
          dispatch_group_wait(group, DISPATCH_TIME_FOREVER);
          
-         [[NSNotificationCenter defaultCenter] postNotificationName:kNGNApplicationNotificationDataWasDeletedFromServerStatus
+         [[NSNotificationCenter defaultCenter] postNotificationName:kNGNApplicationNotificationDataWasDeletedFromServer
                                                              object:nil
                                                            userInfo:@{kNGNModelSessionDataDeletedParameter: @(isDeletionSuccessful)}];
          if (isDeletionSuccessful) {
@@ -247,7 +247,7 @@ typedef void (^ServerTaskCompletionBlock)(dispatch_group_t group,
      }];
 }
 
-+ (void)uploadDataToServerWithContext:(NSManagedObjectContext *)context {
++ (void)uploadDataToServerWithContext:(NSManagedObjectContext *)context userId:(NSNumber *)userId {
     
     NGNServerDataLoadManager *manager = [self sharedInstance];
     
@@ -265,6 +265,7 @@ typedef void (^ServerTaskCompletionBlock)(dispatch_group_t group,
              }
              
              NSFetchRequest *fetchRequest = [[manager entityClassByService:service] performSelector:@selector(fetchRequest)];
+             [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"self.idx == %@", userId.stringValue]];
              
              NSError *error = nil;
              NSArray *managedObjectsArray = [[NGNDataBaseManager managedObjectContext] executeFetchRequest:fetchRequest error:&error];
@@ -298,7 +299,7 @@ typedef void (^ServerTaskCompletionBlock)(dispatch_group_t group,
          }
          dispatch_group_wait(group, DISPATCH_TIME_FOREVER);
 
-         [[NSNotificationCenter defaultCenter] postNotificationName:kNGNApplicationNotificationDataWasUploadedToServerStatus
+         [[NSNotificationCenter defaultCenter] postNotificationName:kNGNApplicationNotificationDataWasUploadedToServer
                                                              object:nil
                                                            userInfo:@{kNGNModelSessionDataUploadedParameter: @(isUploadSuccessful)}];
          if (isUploadSuccessful) {
@@ -310,7 +311,11 @@ typedef void (^ServerTaskCompletionBlock)(dispatch_group_t group,
      }];
 }
 
-+ (void)loadDataFromServerWithContext:(NSManagedObjectContext *)context {
++ (void)completelyRenewDataOnServerWithContext:(NSManagedObjectContext *)context userId:(NSNumber *)userId {
+    //TODO: make single method to renew data on server
+}
+
++ (void)loadCommonDataFromServerWithContext:(NSManagedObjectContext *)context {
     
     NGNServerDataLoadManager *manager = [self sharedInstance];
     
@@ -319,7 +324,7 @@ typedef void (^ServerTaskCompletionBlock)(dispatch_group_t group,
     [manager performServerCheckRequestWithSemaphoreThreads:1 competionHandler:
      ^(dispatch_group_t group, dispatch_semaphore_t semaphore, dispatch_queue_t queue,
        NSArray *nonVocabularyServiceArray, NSArray *vocabularyServiceArray) {
-
+         
          dispatch_group_enter(group);
          
          NGNUserService *userService = [NGNUserService new];
@@ -371,39 +376,6 @@ typedef void (^ServerTaskCompletionBlock)(dispatch_group_t group,
          }
          dispatch_group_wait(group, DISPATCH_TIME_FOREVER);
          
-         //Loading non vocabular entities
-         for (id<NGNServiceProtocol> service in nonVocabularyServiceArray) {
-             
-             if (!isLoadSuccessful) {
-                 break;
-             }
-             
-             dispatch_group_enter(group);
-             
-             [service fetchEntitiesWithAdditionalParameters:@{@"user": @(2).stringValue}
-                                            completionBlock:
-              ^(NSArray *entities, NSError *error) {
-                  NSArray *result = nil;
-                  if (!error) {
-                      FEMMapping *entitiesMapping = [[manager entityClassByService:service] defaultMapping];
-                      result = [FEMDeserializer collectionFromRepresentation:entities
-                                                                     mapping:entitiesMapping
-                                                                     context:context];
-                  }
-                  
-                  if (!result) {
-                      isLoadSuccessful = NO;
-                      NSLog(@"%@ %@", [manager entityClassByService:service], @"wasn't loaded");
-                  } else {
-                      NSLog(@"%@ %@", [manager entityClassByService:service], @"was loaded successfully");
-                  }
-                  
-                  dispatch_group_leave(group);
-              }];
-             
-         }
-         dispatch_group_wait(group, DISPATCH_TIME_FOREVER);
-             
          //Loading common substances that belong to admin user
          
          dispatch_group_enter(group);
@@ -431,13 +403,71 @@ typedef void (^ServerTaskCompletionBlock)(dispatch_group_t group,
              [NGNDataBaseManager saveContext];
          });
          
-         [[NSNotificationCenter defaultCenter] postNotificationName:kNGNApplicationNotificationDataWasLoadedStatus
+         [[NSNotificationCenter defaultCenter] postNotificationName:kNGNApplicationNotificationCommonDataWasLoaded
+                                                             object:nil
+                                                           userInfo:@{kNGNModelSessionCommonDataLoadedParameter: @(isLoadSuccessful)}];
+         if (isLoadSuccessful) {
+             NSLog(@"%@", @"common server data was loaded from server successfully");
+         } else {
+             NSLog(@"%@", @"an error was occured while common data load. Common data wasn't loaded completely");
+         }
+     }];
+}
+
++ (void)loadDataFromServerWithContext:(NSManagedObjectContext *)context userId:(NSNumber *)userId {
+    
+    NGNServerDataLoadManager *manager = [self sharedInstance];
+    
+    __block BOOL isLoadSuccessful = YES;
+    
+    [manager performServerCheckRequestWithSemaphoreThreads:1 competionHandler:
+     ^(dispatch_group_t group, dispatch_semaphore_t semaphore, dispatch_queue_t queue,
+       NSArray *nonVocabularyServiceArray, NSArray *vocabularyServiceArray) {
+         
+         //Loading non vocabular entities
+         for (id<NGNServiceProtocol> service in nonVocabularyServiceArray) {
+             
+             if (!isLoadSuccessful) {
+                 break;
+             }
+             
+             dispatch_group_enter(group);
+             
+             [service fetchEntitiesWithAdditionalParameters:@{@"user": userId.stringValue}
+                                            completionBlock:
+              ^(NSArray *entities, NSError *error) {
+                  NSArray *result = nil;
+                  if (!error) {
+                      FEMMapping *entitiesMapping = [[manager entityClassByService:service] defaultMapping];
+                      result = [FEMDeserializer collectionFromRepresentation:entities
+                                                                     mapping:entitiesMapping
+                                                                     context:context];
+                  }
+                  
+                  if (!result) {
+                      isLoadSuccessful = NO;
+                      NSLog(@"%@ %@", [manager entityClassByService:service], @"wasn't loaded");
+                  } else {
+                      NSLog(@"%@ %@", [manager entityClassByService:service], @"was loaded successfully");
+                  }
+                  
+                  dispatch_group_leave(group);
+              }];
+             
+         }
+         dispatch_group_wait(group, DISPATCH_TIME_FOREVER);
+         
+         dispatch_async(dispatch_get_main_queue(), ^{
+             [NGNDataBaseManager saveContext];
+         });
+         
+         [[NSNotificationCenter defaultCenter] postNotificationName:kNGNApplicationNotificationDataWasLoaded
                                                              object:nil
                                                            userInfo:@{kNGNModelSessionDataLoadedParameter: @(isLoadSuccessful)}];
          if (isLoadSuccessful) {
-             NSLog(@"%@", @"server data was loaded from server successfully");
+             NSLog(@"server data for user id: %ld was loaded from server successfully", userId.integerValue);
          } else {
-             NSLog(@"%@", @"an error was occured while data load. Data wasn't loaded completely");
+             NSLog(@"an error was occured while data for user id: %ld load. Data wasn't loaded completely", userId.integerValue);
          }
          
      }];

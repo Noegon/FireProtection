@@ -32,10 +32,11 @@ static NSString *const kNGNApplicationDateFormat = @"dd.MM.yyyy";
 
 #pragma mark - notifications
 
-static NSString *const kNGNApplicationNotificationDataWasLoadedStatus = @"dataLoadedFromServerStatus";
-static NSString *const kNGNApplicationNotificationDataWasUploadedToServerStatus = @"dataUploadedToServerStatus";
-static NSString *const kNGNApplicationNotificationDataWasDeletedFromServerStatus = @"dataDeletedFromServerStatus";
-static NSString *const kNGNApplicationNotificationServerReachabilityStatus = @"serverReachable";
+static NSString *const kNGNApplicationNotificationDataWasLoaded = @"dataLoadedFromServerStatus";
+static NSString *const kNGNApplicationNotificationCommonDataWasLoaded = @"commonDataLoadedFromServerStatus";
+static NSString *const kNGNApplicationNotificationDataWasUploadedToServer = @"dataUploadedToServerStatus";
+static NSString *const kNGNApplicationNotificationDataWasDeletedFromServer = @"dataDeletedFromServerStatus";
+static NSString *const kNGNApplicationNotificationServerReachability = @"serverReachableStatus";
 //static NSString *const kNGNControllerNotificationGoodsWasLoaded = @"goodsWasLoaded";
 //static NSString *const kNGNControllerNotificationUserWasLoaded = @"userWasLoaded";
 //static NSString *const kNGNControllerNotificationOrdersWasLoaded = @"ordersWasLoaded";
@@ -54,12 +55,13 @@ static NSString *const kNGNControllerHelveticaLightFont = @"Helvetica-Light";
 static NSInteger const kNGNControllerMenuFontHeight = 30;
 
 #pragma mark - application state parameters
-static NSString *const kNGNModelSessionServerReachableParameter = @"sessionServerReachable"; //YES/NO with NSNumber wrapper
-static NSString *const kNGNModelSessionUserIdParameter = @"sessionUserId"; //id of user that last logged in from device
-static NSString *const kNGNModelSessionDataLoadedParameter = @"sessionDataLoaded"; //is data loaded from server in current session
-static NSString *const kNGNModelSessionDataDeletedParameter = @"sessionDataDeleted"; //is data deleted from server in current session
-static NSString *const kNGNModelSessionDataUploadedParameter = @"sessionDataUploaded"; //is data deleted from server in current session
-static NSString *const kNGNModelSessionUserPasswordSavedParameter = @"sessionUserPasswordSaved"; //was user password saved to skip authorization
+static NSString *const kNGNModelSessionServerReachableParameter = @"serverReachableStatus"; //YES/NO with NSNumber wrapper
+static NSString *const kNGNModelSessionUserIdParameter = @"userId"; //id of user that last logged in from device - NSNumber
+static NSString *const kNGNModelSessionDataLoadedParameter = @"dataLoadedFromServerStatus"; //is data loaded from server in current session - BOOL incapsulated in NSNumber
+static NSString *const kNGNModelSessionCommonDataLoadedParameter = @"commonDataLoadedFromServerStatus"; //is common data loaded from server in current session - BOOL incapsulated in NSNumber
+static NSString *const kNGNModelSessionDataDeletedParameter = @"dataDeletedFromServerStatus"; //is data deleted from server in current session - BOOL incapsulated in NSNumber
+static NSString *const kNGNModelSessionDataUploadedParameter = @"dataUploadedToServerStatus"; //is data deleted from server in current session - BOOL incapsulated in NSNumber
+static NSString *const kNGNModelSessionUserPasswordSavedParameter = @"isUserPasswordSaved"; //was user password saved to skip authorization - BOOL incapsulated in NSNumber
 
 @interface NGNCommonConstants : NSObject
 
