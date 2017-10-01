@@ -38,14 +38,10 @@ static NSNumber *userId = nil;
     
     //check if user saved last session to not tot login again
     NSDictionary *userSavedStatus = [self.applicationStateManager applicationParameterWithKey: kNGNModelSessionUserPasswordSavedParameter];
-    NSNumber *userSaved = nil;
+    NSNumber *userSaved = userSavedStatus[kNGNModelSessionUserPasswordSavedParameter];
     
     if (!userSavedStatus) {
         userSaved = @(NO);
-        NSData *data = [NSKeyedArchiver archivedDataWithRootObject:@{kNGNModelSessionUserPasswordSavedParameter: @(NO)}];
-        [[NSUserDefaults standardUserDefaults] setObject:data forKey:kNGNModelSessionUserPasswordSavedParameter];
-    } else {
-        userSaved = userSavedStatus[kNGNModelSessionUserPasswordSavedParameter];
     }
     
     if (isAppOnline) {
@@ -56,16 +52,22 @@ static NSNumber *userId = nil;
             NSDictionary *lastsessionDeleteStatus =
                 [self.applicationStateManager applicationParameterWithKey: kNGNModelSessionDataDeletedParameter];
             NSNumber *deleteSuccessful = lastsessionDeleteStatus[kNGNModelSessionDataDeletedParameter];
+            if (!deleteSuccessful) {
+                deleteSuccessful = @(NO);
+            }
             
             //check last launch upload data status to understand if last launch successful
             NSDictionary *lastsessionUploadStatus =
                 [self.applicationStateManager applicationParameterWithKey: kNGNModelSessionDataUploadedParameter];
             NSNumber *uploadSuccessful = lastsessionUploadStatus[kNGNModelSessionDataUploadedParameter];
+            if (!uploadSuccessful) {
+                uploadSuccessful = @(NO);
+            }
             
             //fetching of userId of last saved user
             userId = @(-1);
             NSFetchRequest *request = NGNUser.fetchRequest;
-            request.predicate =[NSPredicate predicateWithFormat:@"self.idx != 1"];
+            request.predicate = [NSPredicate predicateWithFormat:@"self.idx != 1"];
             NSError *error = nil;
             NSArray *users = [[NGNDataBaseManager managedObjectContext] executeFetchRequest:request error:&error];
             if (!error && users.count > 0) {
@@ -111,7 +113,7 @@ static NSNumber *userId = nil;
              abort();
          }
      }];
-    
+
     [[NSNotificationCenter defaultCenter] addObserverForName:kNGNApplicationNotificationDataWasDeletedFromServer
                                                       object:nil
                                                        queue:[NSOperationQueue mainQueue]
@@ -125,7 +127,7 @@ static NSNumber *userId = nil;
              NSLog(@"%@", @"Data wasn't deleted from server! Data won't be uploaded!");
          }
      }];
-    
+
     [[NSNotificationCenter defaultCenter] addObserverForName:kNGNApplicationNotificationServerReachability
                                                       object:nil
                                                        queue:[NSOperationQueue mainQueue]
@@ -136,7 +138,7 @@ static NSNumber *userId = nil;
              NSDictionary *serverStatus =
                  [self.applicationStateManager applicationParameterWithKey: kNGNModelSessionServerReachableParameter];
              NSNumber *serverReachable = serverStatus[kNGNModelSessionServerReachableParameter];
-             
+
              if (serverReachable.boolValue) {
                  //if server is reachable download latest common data: vocabularies, etc...
                  initialLaunch = NO;
@@ -156,13 +158,21 @@ static NSNumber *userId = nil;
 #warning test of local storage
     [NGNDataBaseManager setupCoreDataStackWithStorageName:kNGNApplicationAppName];
     
+    NSData *userSavedData = [NSKeyedArchiver archivedDataWithRootObject:@{kNGNModelSessionUserPasswordSavedParameter: @(YES)}];
+    [[NSUserDefaults standardUserDefaults] setObject:userSavedData forKey:kNGNModelSessionUserPasswordSavedParameter];
+#warning test of local storage
+    NSData *uploadData = [NSKeyedArchiver archivedDataWithRootObject:@{kNGNModelSessionDataUploadedParameter: @(NO)}];
+    [[NSUserDefaults standardUserDefaults] setObject:uploadData forKey:kNGNModelSessionDataUploadedParameter];
+    
     [NGNServerDataLoadManager pingServerWithCompletionHandler:^{}];
     
-//    [NGNServerDataLoadManager loadDataFromServerWithContext:[NGNDataBaseManager managedObjectContext]];
+//    [NGNServerDataLoadManager loadCommonDataFromServerWithContext:[NGNDataBaseManager managedObjectContext]];
     
-//    [NGNServerDataLoadManager deleteDataFromServerWithContext:[NGNDataBaseManager managedObjectContext]];
+//    [NGNServerDataLoadManager loadDataFromServerWithContext:[NGNDataBaseManager managedObjectContext] userId:@(2)];
     
-//    [NGNServerDataLoadManager uploadDataToServerWithContext:[NGNDataBaseManager managedObjectContext]];
+//    [NGNServerDataLoadManager deleteDataFromServerWithContext:[NGNDataBaseManager managedObjectContext] userId:@(2)];
+    
+//    [NGNServerDataLoadManager uploadDataToServerWithContext:[NGNDataBaseManager managedObjectContext] userId:@(2)];
     
     return YES;
 }

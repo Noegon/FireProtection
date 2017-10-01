@@ -265,7 +265,7 @@ typedef void (^ServerTaskCompletionBlock)(dispatch_group_t group,
              }
              
              NSFetchRequest *fetchRequest = [[manager entityClassByService:service] performSelector:@selector(fetchRequest)];
-             [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"self.idx == %@", userId.stringValue]];
+             [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"self.user == %ld", userId.integerValue]];
              
              NSError *error = nil;
              NSArray *managedObjectsArray = [[NGNDataBaseManager managedObjectContext] executeFetchRequest:fetchRequest error:&error];
@@ -281,7 +281,7 @@ typedef void (^ServerTaskCompletionBlock)(dispatch_group_t group,
                      __weak id<NGNServiceProtocol> weakService = service;
                      
                      NSDictionary *entityAsDictionary = [FEMSerializer serializeObject:object usingMapping:objectMapping];
-                     [service addEntity:entityAsDictionary completionBlock:^(NSDictionary *order, NSError *error) {
+                     [service addEntity:entityAsDictionary completionBlock:^(NSDictionary *entity, NSError *error) {
                          if (error) {
                              isUploadSuccessful = NO;
                              NSLog(@"%@ name: \"%@\" %@", weakService.class, entityAsDictionary[@"name"], @"wasn't uploaded");
