@@ -11,6 +11,7 @@
 #import "NGNCoreDataEntitiesConstants.h"
 #import "NGNDataBaseManager.h"
 #import "NGNCoreDataModel.h"
+#import "NGNApplicationStateManager.h"
 #import "NGNServerLayerServices.h"
 #import "NGNReachability.h"
 #import "NGNPropertyUtil.h"
@@ -161,9 +162,7 @@ typedef void (^ServerTaskCompletionBlock)(dispatch_group_t group,
              NSLog(@"Server is unreachable!\n%@", error.userInfo);
          }
          
-         [[NSNotificationCenter defaultCenter] postNotificationName:kNGNApplicationNotificationServerReachability
-                                                             object:nil
-                                                           userInfo:@{kNGNModelSessionServerReachableParameter: @(isServerReachable)}];
+         [NGNApplicationStateManager sharedInstance].serverReachable = isServerReachable;
      }];
     
     [checkServerReachabilityTask resume];
@@ -236,9 +235,8 @@ typedef void (^ServerTaskCompletionBlock)(dispatch_group_t group,
          
          dispatch_group_wait(group, DISPATCH_TIME_FOREVER);
          
-         [[NSNotificationCenter defaultCenter] postNotificationName:kNGNApplicationNotificationDataWasDeletedFromServer
-                                                             object:nil
-                                                           userInfo:@{kNGNModelSessionDataDeletedParameter: @(isDeletionSuccessful)}];
+         [NGNApplicationStateManager sharedInstance].dataDeleted = isDeletionSuccessful;
+         
          if (isDeletionSuccessful) {
              NSLog(@"%@", @"server data was deleted from server successfully");
          } else {
@@ -299,20 +297,15 @@ typedef void (^ServerTaskCompletionBlock)(dispatch_group_t group,
          }
          dispatch_group_wait(group, DISPATCH_TIME_FOREVER);
 
-         [[NSNotificationCenter defaultCenter] postNotificationName:kNGNApplicationNotificationDataWasUploadedToServer
-                                                             object:nil
-                                                           userInfo:@{kNGNModelSessionDataUploadedParameter: @(isUploadSuccessful)}];
+         [NGNApplicationStateManager sharedInstance].dataUploaded = isUploadSuccessful;
+         
          if (isUploadSuccessful) {
-             NSLog(@"%@", @"server data was uploaded to server successfully");
+             NSLog(@"%@", @"data was uploaded to server successfully");
          } else {
              NSLog(@"%@", @"an error was occured while data upload. Data wasn't uploaded completely");
          }
 
      }];
-}
-
-+ (void)completelyRenewDataOnServerWithContext:(NSManagedObjectContext *)context userId:(NSNumber *)userId {
-    //TODO: make single method to renew data on server
 }
 
 + (void)loadCommonDataFromServerWithContext:(NSManagedObjectContext *)context {
@@ -403,9 +396,8 @@ typedef void (^ServerTaskCompletionBlock)(dispatch_group_t group,
              [NGNDataBaseManager saveContext];
          });
          
-         [[NSNotificationCenter defaultCenter] postNotificationName:kNGNApplicationNotificationCommonDataWasLoaded
-                                                             object:nil
-                                                           userInfo:@{kNGNModelSessionCommonDataLoadedParameter: @(isLoadSuccessful)}];
+         [NGNApplicationStateManager sharedInstance].commonDataLoaded = isLoadSuccessful;
+         
          if (isLoadSuccessful) {
              NSLog(@"%@", @"common server data was loaded from server successfully");
          } else {
@@ -461,9 +453,8 @@ typedef void (^ServerTaskCompletionBlock)(dispatch_group_t group,
              [NGNDataBaseManager saveContext];
          });
          
-         [[NSNotificationCenter defaultCenter] postNotificationName:kNGNApplicationNotificationDataWasLoaded
-                                                             object:nil
-                                                           userInfo:@{kNGNModelSessionDataLoadedParameter: @(isLoadSuccessful)}];
+         [NGNApplicationStateManager sharedInstance].dataLoaded = isLoadSuccessful;
+         
          if (isLoadSuccessful) {
              NSLog(@"server data for user id: %ld was loaded from server successfully", userId.integerValue);
          } else {

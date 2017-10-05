@@ -7,8 +7,11 @@
 //
 
 #import "NGNVocabulariesTableViewController.h"
+#import "NGNApplicationStateManager.h"
 
 @interface NGNVocabulariesTableViewController ()
+
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *loginButton;
 
 @end
 
@@ -24,9 +27,10 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)viewWillAppear:(BOOL)animated {
+    if ([NGNApplicationStateManager sharedInstance].isUserAuthorized) {
+        self.navigationItem.rightBarButtonItem = nil;
+    }
 }
 
 #pragma mark - Table view data source

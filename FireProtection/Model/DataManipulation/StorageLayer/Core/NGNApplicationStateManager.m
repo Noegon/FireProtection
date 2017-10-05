@@ -46,13 +46,13 @@ static NSString *const NGNStringApplicationNotificationName[] = {
 
 - (instancetype)init {
     if (self = [super init]) {
-        //notification tells that server reachability state was changed
-        for (NSUInteger i = 0; i < NGNNotificationsCount; i++) {
-            [[NSNotificationCenter defaultCenter] addObserver:self
-                                                     selector:@selector(renewApplicationParameterWithNotofication:)
-                                                         name:NGNStringApplicationNotificationName[i]
-                                                       object:nil];
-        }
+//        //notification tells that server reachability state was changed
+//        for (NSUInteger i = 0; i < NGNNotificationsCount; i++) {
+//            [[NSNotificationCenter defaultCenter] addObserver:self
+//                                                     selector:@selector(renewApplicationParameterWithNotofication:)
+//                                                         name:NGNStringApplicationNotificationName[i]
+//                                                       object:nil];
+//        }
     }
     return self;
 }
@@ -63,11 +63,9 @@ static NSString *const NGNStringApplicationNotificationName[] = {
 
 #pragma mark - main logic methods
 
-- (NSNumber *)currentSessionUserId {
-    if (!_currentSessionUserId.boolValue) {
-        _currentSessionUserId = @(-1);
-    }
-    return _currentSessionUserId;
+- (NSDictionary *)applicationParameterWithKey:(NSString *)key {
+    NSData *data = [[NSUserDefaults standardUserDefaults] objectForKey:key];
+    return [NSKeyedUnarchiver unarchiveObjectWithData:data];
 }
 
 - (void)renewApplicationParameter:(NSDictionary *)parameter Name:(NSString *)name {
@@ -79,9 +77,141 @@ static NSString *const NGNStringApplicationNotificationName[] = {
     [self renewApplicationParameter:notification.userInfo Name:notification.name];
 }
 
-- (NSDictionary *)applicationParameterWithKey:(NSString *)key {
-    NSData *data = [[NSUserDefaults standardUserDefaults] objectForKey:key];
-    return [NSKeyedUnarchiver unarchiveObjectWithData:data];
+#pragma mark - accessors
+
+- (NSNumber *)currentSessionUserId {
+    if (!_currentSessionUserId.boolValue) {
+        _currentSessionUserId = @(-1);
+    }
+    return _currentSessionUserId;
+}
+
+- (NSNumber *)lastSessionUserId {
+    NSDictionary *userId = [self applicationParameterWithKey:kNGNModelSessionUserIdParameter];
+    if (!userId) {
+        return @(-1);
+    }
+    return ((NSNumber *)userId[kNGNModelSessionUserIdParameter]);
+}
+
+- (void)setLastSessionUserId:(NSNumber *)lastSessionUserId {
+    NSDictionary *authorizedParams = @{kNGNModelSessionUserIdParameter:lastSessionUserId};
+    [self renewApplicationParameter:authorizedParams Name:kNGNModelSessionUserIdParameter];
+}
+
+- (BOOL)isUserAuthorized {
+    NSDictionary *authorized = [self applicationParameterWithKey:kNGNModelSessionIsUserAuthorized];
+    if (!authorized) {
+        return NO;
+    }
+    return ((NSNumber *)authorized[kNGNModelSessionIsUserAuthorized]).boolValue;
+}
+
+- (void)setUserAuthorized:(BOOL)userAuthorized {
+    NSDictionary *authorizedParams = @{kNGNModelSessionIsUserAuthorized: @(userAuthorized)};
+    [self renewApplicationParameter:authorizedParams Name:kNGNModelSessionIsUserAuthorized];
+    if (userAuthorized) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:kNGNApplicationNotificationUserLoggedIn
+                                                            object:nil
+                                                          userInfo:authorizedParams];
+    } else {
+        [[NSNotificationCenter defaultCenter] postNotificationName:kNGNApplicationNotificationUserLoggedOut
+                                                            object:nil
+                                                          userInfo:authorizedParams];
+    }
+}
+
+- (BOOL)isUserSessionSaved {
+    NSDictionary *sessionSaved = [self applicationParameterWithKey:kNGNModelSessionIsUserSessionSaved];
+    if (!sessionSaved) {
+        return NO;
+    }
+    return ((NSNumber *)sessionSaved[kNGNModelSessionIsUserSessionSaved]).boolValue;
+}
+
+- (void)setUserSessionSaved:(BOOL)userSessionSaved {
+    NSDictionary *asessionSavedParams = @{kNGNModelSessionIsUserSessionSaved: @(userSessionSaved)};
+    [self renewApplicationParameter:asessionSavedParams Name:kNGNModelSessionIsUserSessionSaved];
+}
+
+- (BOOL)isCommonDataLoaded {
+    NSDictionary *dataLoaded = [self applicationParameterWithKey:kNGNModelSessionCommonDataLoadedParameter];
+    if (!dataLoaded) {
+        return NO;
+    }
+    return ((NSNumber *)dataLoaded[kNGNModelSessionCommonDataLoadedParameter]).boolValue;
+}
+
+- (void)setCommonDataLoaded:(BOOL)commonDataLoaded {
+    NSDictionary *dataLoadedParams = @{kNGNModelSessionCommonDataLoadedParameter: @(commonDataLoaded)};
+    [self renewApplicationParameter:dataLoadedParams Name:kNGNModelSessionCommonDataLoadedParameter];
+    [[NSNotificationCenter defaultCenter] postNotificationName:kNGNApplicationNotificationCommonDataWasLoaded
+                                                        object:nil
+                                                      userInfo:dataLoadedParams];
+}
+
+- (BOOL)isDataLoaded {
+    NSDictionary *dataLoaded = [self applicationParameterWithKey:kNGNModelSessionDataLoadedParameter];
+    if (!dataLoaded) {
+        return NO;
+    }
+    return ((NSNumber *)dataLoaded[kNGNModelSessionDataLoadedParameter]).boolValue;
+}
+
+- (void)setDataLoaded:(BOOL)dataLoaded {
+    NSDictionary *dataLoadedParams = @{kNGNModelSessionCommonDataLoadedParameter: @(dataLoaded)};
+    [self renewApplicationParameter:dataLoadedParams Name:kNGNModelSessionDataLoadedParameter];
+    [[NSNotificationCenter defaultCenter] postNotificationName:kNGNApplicationNotificationDataWasLoaded
+                                                        object:nil
+                                                      userInfo:dataLoadedParams];
+}
+
+- (BOOL)isDataUploaded {
+    NSDictionary *dataUploaded = [self applicationParameterWithKey:kNGNModelSessionDataUploadedParameter];
+    if (!dataUploaded) {
+        return NO;
+    }
+    return ((NSNumber *)dataUploaded[kNGNModelSessionDataUploadedParameter]).boolValue;
+}
+
+- (void)setDataUploaded:(BOOL)dataUploaded {
+    NSDictionary *dataUploadedParams = @{kNGNModelSessionDataUploadedParameter: @(dataUploaded)};
+    [self renewApplicationParameter:dataUploadedParams Name:kNGNModelSessionDataUploadedParameter];
+    [[NSNotificationCenter defaultCenter] postNotificationName:kNGNApplicationNotificationDataWasUploadedToServer
+                                                        object:nil
+                                                      userInfo:dataUploadedParams];
+}
+
+- (BOOL)isDataDeleted {
+    NSDictionary *dataDeleted = [self applicationParameterWithKey:kNGNModelSessionDataDeletedParameter];
+    if (!dataDeleted) {
+        return NO;
+    }
+    return ((NSNumber *)dataDeleted[kNGNModelSessionDataDeletedParameter]).boolValue;
+}
+
+- (void)setDataDeleted:(BOOL)dataDeleted {
+    NSDictionary *dataDeletedParams = @{kNGNModelSessionDataDeletedParameter: @(dataDeleted)};
+    [self renewApplicationParameter:dataDeletedParams Name:kNGNModelSessionDataDeletedParameter];
+    [[NSNotificationCenter defaultCenter] postNotificationName:kNGNApplicationNotificationDataWasDeletedFromServer
+                                                        object:nil
+                                                      userInfo:dataDeletedParams];
+}
+
+- (BOOL)isServerReachable {
+    NSDictionary *serverReachable = [self applicationParameterWithKey:kNGNModelSessionServerReachableParameter];
+    if (!serverReachable) {
+        return NO;
+    }
+    return ((NSNumber *)serverReachable[kNGNModelSessionServerReachableParameter]).boolValue;
+}
+
+- (void)setServerReachable:(BOOL)serverReachable {
+    NSDictionary *serverReachableParams = @{kNGNModelSessionServerReachableParameter: @(serverReachable)};
+    [self renewApplicationParameter:serverReachableParams Name:kNGNModelSessionServerReachableParameter];
+    [[NSNotificationCenter defaultCenter] postNotificationName:kNGNApplicationNotificationServerReachability
+                                                        object:nil
+                                                      userInfo:serverReachableParams];
 }
 
 @end

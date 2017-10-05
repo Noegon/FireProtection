@@ -47,14 +47,16 @@
 }
 
 + (void)saveContext {
-    NSError *error = nil;
+    __block NSError *error = nil;
     NSManagedObjectContext *managedObjectContext = [self.sharedInstance managedObjectContext];
-    if([managedObjectContext hasChanges] && ![managedObjectContext save:&error]){
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-        abort();
-    } else {
-        [managedObjectContext refreshAllObjects];
-    }
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+        if([managedObjectContext hasChanges] && ![managedObjectContext save:&error]){
+            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+            abort();
+        } else {
+            [managedObjectContext refreshAllObjects];
+        }
+    });
 }
 
 #pragma mark - core data handle helper methods

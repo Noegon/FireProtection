@@ -7,16 +7,21 @@
 //
 
 #import "NGNAuthentificationcontrollerViewController.h"
+#import "NGNUserAuthentificationManager.h"
+#import "NGNApplicationStateManager.h"
 
 @interface NGNAuthentificationcontrollerViewController ()
 
 @property (strong, nonatomic) IBOutlet UITextField *loginTextField;
 @property (strong, nonatomic) IBOutlet UITextField *passwordTextField;
+@property (strong, nonatomic) IBOutlet UIButton *approoveButton;
+@property (strong, nonatomic) IBOutlet UISwitch *rememberUserSessionSwitch;
+
+@property (strong, nonatomic) NGNUserAuthentificationManager *manager;
 
 - (IBAction)forgotPasswordButtonTapped:(UIButton *)sender;
 - (IBAction)registerButtonTapped:(UIButton *)sender;
 - (IBAction)approveButtonTapped:(UIButton *)sender;
-- (IBAction)rememberPasswordSwitchValueChanged:(UISwitch *)sender;
 - (IBAction)exitLoginButtonTapped:(UIBarButtonItem *)sender;
 
 @end
@@ -25,14 +30,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.manager = [NGNUserAuthentificationManager sharedInstance];
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 
 #pragma mark - Navigation
 
@@ -48,15 +48,20 @@
 
 
 - (IBAction)forgotPasswordButtonTapped:(UIButton *)sender {
+    //stub: segue performing
 }
 
 - (IBAction)registerButtonTapped:(UIButton *)sender {
+    //stub: segue performing
 }
 
 - (IBAction)approveButtonTapped:(UIButton *)sender {
-}
-
-- (IBAction)rememberPasswordSwitchValueChanged:(UISwitch *)sender {
+    self.manager.login = self.loginTextField.text;
+    self.manager.primaryPassword = self.passwordTextField.text;
+    self.manager.shouldSaveUserSession = self.rememberUserSessionSwitch.isOn;
+    [self.manager logInUserWithCompletionHandler:^{
+        [self dismissViewControllerAnimated:YES completion:^{}];
+    }];
 }
 
 - (IBAction)exitLoginButtonTapped:(UIBarButtonItem *)sender {

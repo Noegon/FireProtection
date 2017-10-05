@@ -24,8 +24,6 @@
       didChangeRepeatedPassword:(NSString *)repeatedPassword
         passwordIsCorrectResult:(BOOL)result;
 
-- (void)logInUser;
-
 @end
 
 @interface NGNUserAuthentificationManager : NSObject
@@ -35,7 +33,12 @@
 @property (strong, nonatomic) NSString *primaryPassword;
 @property (strong, nonatomic) NSString *repeatedPassword;
 @property (strong, nonatomic) NSString *login;
+@property (assign, nonatomic) BOOL shouldSaveUserSession;
 
 + (instancetype)sharedInstance;
+
+- (void)logInUserWithCompletionHandler:(void (^)(void))completionHandler;
+
+- (void)logOutUserWithCompletionHandler:(void (^)(void))completionHandler;
 
 @end

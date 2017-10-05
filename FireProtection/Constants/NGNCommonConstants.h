@@ -37,6 +37,9 @@ static NSString *const kNGNApplicationNotificationCommonDataWasLoaded = @"common
 static NSString *const kNGNApplicationNotificationDataWasUploadedToServer = @"dataUploadedToServerStatus";
 static NSString *const kNGNApplicationNotificationDataWasDeletedFromServer = @"dataDeletedFromServerStatus";
 static NSString *const kNGNApplicationNotificationServerReachability = @"serverReachableStatus";
+static NSString *const kNGNApplicationNotificationUserLoggedIn = @"userLoggedIn";
+static NSString *const kNGNApplicationNotificationUserLoggedOut = @"userLoggedOut";
+
 //static NSString *const kNGNControllerNotificationGoodsWasLoaded = @"goodsWasLoaded";
 //static NSString *const kNGNControllerNotificationUserWasLoaded = @"userWasLoaded";
 //static NSString *const kNGNControllerNotificationOrdersWasLoaded = @"ordersWasLoaded";
@@ -61,7 +64,8 @@ static NSString *const kNGNModelSessionDataLoadedParameter = @"dataLoadedFromSer
 static NSString *const kNGNModelSessionCommonDataLoadedParameter = @"commonDataLoadedFromServerStatus"; //is common data loaded from server in current session - BOOL incapsulated in NSNumber
 static NSString *const kNGNModelSessionDataDeletedParameter = @"dataDeletedFromServerStatus"; //is data deleted from server in current session - BOOL incapsulated in NSNumber
 static NSString *const kNGNModelSessionDataUploadedParameter = @"dataUploadedToServerStatus"; //is data deleted from server in current session - BOOL incapsulated in NSNumber
-static NSString *const kNGNModelSessionUserPasswordSavedParameter = @"isUserPasswordSaved"; //was user password saved to skip authorization - BOOL incapsulated in NSNumber
+static NSString *const kNGNModelSessionIsUserAuthorized = @"isUserAuthorized"; //is application in full mode
+static NSString *const kNGNModelSessionIsUserSessionSaved = @"isUserSessionSaved"; //is user session saved to launch without login/password entring in future
 
 @interface NGNCommonConstants : NSObject
 

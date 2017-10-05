@@ -28,7 +28,7 @@
                                             <constraint firstAttribute="height" constant="40" id="Ygv-GV-f6g"/>
                                         </constraints>
                                         <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="login" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lp5-Zk-YnH">
@@ -38,7 +38,7 @@
                                             <constraint firstAttribute="height" constant="40" id="NIV-OO-f9Y"/>
                                         </constraints>
                                         <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t34-l1-aRs">
@@ -59,7 +59,7 @@
                                         <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remember password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WaE-nG-sIC">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remember user" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WaE-nG-sIC">
                                         <rect key="frame" x="0.0" y="175" width="180" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="180" id="Uo1-7T-Uuw"/>
@@ -73,9 +73,6 @@
                                         <rect key="frame" x="191" y="169" width="51" height="31"/>
                                         <color key="onTintColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="thumbTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <connections>
-                                            <action selector="rememberPasswordSwitchValueChanged:" destination="lDc-dn-h4R" eventType="valueChanged" id="kMe-N4-jXj"/>
-                                        </connections>
                                     </switch>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -168,8 +165,10 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="approoveButton" destination="c1W-53-tBF" id="XBr-CH-A0p"/>
                         <outlet property="loginTextField" destination="Lp5-Zk-YnH" id="SZn-TQ-Tlx"/>
                         <outlet property="passwordTextField" destination="amZ-5D-a6R" id="rkb-cU-bVn"/>
+                        <outlet property="rememberUserSessionSwitch" destination="qOo-UN-AWI" id="URc-VM-gMY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q5Y-iY-QQO" userLabel="First Responder" sceneMemberID="firstResponder"/>
