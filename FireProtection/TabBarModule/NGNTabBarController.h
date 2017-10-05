@@ -7,8 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SlideNavigationController.h"
 
-@interface NGNTabBarController : UITabBarController <SlideNavigationControllerDelegate>
+@interface NGNTabBarController : UITabBarController
 
 @end

@@ -37,7 +37,7 @@
     [mapping addAttributesFromDictionary:@{@"idx": @"id",
                                            @"bearingElementR": @"bearing_element_r",
                                            @"selfBearingElementRE": @"self_bearing_element_re",
-                                           @"outerNonBearingWallE": @"outer_non_bearing_wallE",
+                                           @"outerNonBearingWallE": @"outer_non_bearing_wall_e",
                                            @"floorCeilingREI": @"floor_ceiling_rei",
                                            @"coveringRE": @"covering_re",
                                            @"fermBeanR": @"ferm_bean_r",

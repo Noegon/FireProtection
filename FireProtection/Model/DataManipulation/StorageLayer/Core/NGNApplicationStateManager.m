@@ -44,19 +44,6 @@ static NSString *const NGNStringApplicationNotificationName[] = {
     return sharedInstance;
 }
 
-- (instancetype)init {
-    if (self = [super init]) {
-//        //notification tells that server reachability state was changed
-//        for (NSUInteger i = 0; i < NGNNotificationsCount; i++) {
-//            [[NSNotificationCenter defaultCenter] addObserver:self
-//                                                     selector:@selector(renewApplicationParameterWithNotofication:)
-//                                                         name:NGNStringApplicationNotificationName[i]
-//                                                       object:nil];
-//        }
-    }
-    return self;
-}
-
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }

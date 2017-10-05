@@ -121,7 +121,7 @@ static NSInteger const kNGNinfoPropertiesAmount = 5;
     [mapping addRelationshipMapping:userMapping forProperty:@"user" keyPath:nil];
     
     //Adding substanceType object relationship
-    FEMMapping *substanceTypeMapping = [[FEMMapping alloc] initWithEntityName:[NGNUser entity].name];
+    FEMMapping *substanceTypeMapping = [[FEMMapping alloc] initWithEntityName:[NGNSubstanceType entity].name];
     substanceTypeMapping.primaryKey = @"idx";
     [substanceTypeMapping addAttributesFromDictionary:@{@"idx": @"substance_type"}];
     

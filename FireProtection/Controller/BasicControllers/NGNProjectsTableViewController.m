@@ -7,12 +7,10 @@
 //
 
 #import "NGNProjectsTableViewController.h"
-#import "SlideNavigationController.h"
 #import "NGNApplicationStateManager.h"
+#import "NGNTabBarManager.h"
 
 @interface NGNProjectsTableViewController ()
-
-@property (strong, nonatomic) IBOutlet UIBarButtonItem *menuButton;
 
 @end
 
@@ -26,17 +24,6 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
-    self.menuButton.target = [SlideNavigationController sharedInstance];
-    self.menuButton.action = @selector(toggleLeftMenu);
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    if (![NGNApplicationStateManager sharedInstance].userAuthorized) {
-        self.navigationItem.leftBarButtonItem = nil;
-    } else {
-        self.navigationItem.leftBarButtonItem = self.menuButton;
-    }
 }
 
 #pragma mark - Table view data source

@@ -31,7 +31,6 @@
 
 - (instancetype)init {
     if (self = [super init]) {
-        [SlideNavigationController sharedInstance].enableShadow = YES;
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(userLoggedIn:)
                                                      name:kNGNApplicationNotificationUserLoggedIn
@@ -59,14 +58,12 @@
 }
 
 - (void)userLoggedIn:(NSNotification *)notification {
-    [SlideNavigationController sharedInstance].enableSwipeGesture = YES;
     UITabBarItem *rootItem = self.tabBarController.tabBar.items[0];
     rootItem.enabled = YES;
     self.tabBarController.selectedIndex = 0;
 }
 
 - (void)userLoggedOut:(NSNotification *)notification {
-    [SlideNavigationController sharedInstance].enableSwipeGesture = NO;
     UITabBarItem *rootItem = self.tabBarController.tabBar.items[0];
     rootItem.enabled = NO;
     self.tabBarController.selectedIndex = 1;

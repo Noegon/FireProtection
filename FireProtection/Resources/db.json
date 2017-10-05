@@ -9,7 +9,7 @@
       "floor_ceiling_rei": 90,
       "covering_re": 30,
       "ferm_bean_r": 30,
-      "stairway_wall": 120,
+      "stair_wall_rei": 120,
       "stairway_r": 60
     },
     {
@@ -21,7 +21,7 @@
       "floor_ceiling_rei": 60,
       "covering_re": 30,
       "ferm_bean_r": 30,
-      "stairway_wall": 120,
+      "stair_wall_rei": 120,
       "stairway_r": 60
     },
     {
@@ -33,7 +33,7 @@
       "floor_ceiling_rei": 60,
       "covering_re": 30,
       "ferm_bean_r": 30,
-      "stairway_wall": 90,
+      "stair_wall_rei": 90,
       "stairway_r": 45
     },
     {
@@ -45,7 +45,7 @@
       "floor_ceiling_rei": 45,
       "covering_re": 15,
       "ferm_bean_r": 15,
-      "stairway_wall": 90,
+      "stair_wall_rei": 90,
       "stairway_r": 45
     },
     {
@@ -57,7 +57,7 @@
       "floor_ceiling_rei": 45,
       "covering_re": 15,
       "ferm_bean_r": 15,
-      "stairway_wall": 60,
+      "stair_wall_rei": 60,
       "stairway_r": 45
     },
     {
@@ -69,7 +69,7 @@
       "floor_ceiling_rei": 30,
       "covering_re": 15,
       "ferm_bean_r": 15,
-      "stairway_wall": 45,
+      "stair_wall_rei": 45,
       "stairway_r": 30
     },
     {
@@ -81,7 +81,7 @@
       "floor_ceiling_rei": 15,
       "covering_re": 0,
       "ferm_bean_r": 0,
-      "stairway_wall": 30,
+      "stair_wall_rei": 30,
       "stairway_r": 15
     },
     {
@@ -93,7 +93,7 @@
       "floor_ceiling_rei": 0,
       "covering_re": 0,
       "ferm_bean_r": 0,
-      "stairway_wall": 0,
+      "stair_wall_rei": 0,
       "stairway_r": 0
     }
   ],
@@ -448,7 +448,7 @@
       "heat_of_combusion": 13.8,
       "flame_speed": 0.067,
       "burning_rate": 0.0393,
-      "user": 0,
+      "user": 1,
       "substance_type": 6
     },
     {
@@ -459,7 +459,7 @@
       "heat_of_combusion": 13.4,
       "flame_speed": 0.005,
       "burning_rate": 0.0393,
-      "user": 0,
+      "user": 1,
       "substance_type": 6
     },
     {
@@ -470,7 +470,7 @@
       "heat_of_combusion": 33.52,
       "flame_speed": 0.02,
       "burning_rate": 0.0112,
-      "user": 0,
+      "user": 1,
       "substance_type": 6
     },
     {
@@ -481,7 +481,7 @@
       "heat_of_combusion": 39,
       "flame_speed": 0.05,
       "burning_rate": 0.0144,
-      "user": 0,
+      "user": 1,
       "substance_type": 6
     },
     {
@@ -492,7 +492,7 @@
       "heat_of_combusion": 41.87,
       "flame_speed": 0.38,
       "burning_rate": 0.0617,
-      "user": 0,
+      "user": 1,
       "substance_type": 3
     }
   ],

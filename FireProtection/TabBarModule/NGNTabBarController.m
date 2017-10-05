@@ -20,13 +20,6 @@
 
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    if (![NGNApplicationStateManager sharedInstance].isUserAuthorized) {
-        self.selectedIndex = 1;
-        self.tabBar.items[0].enabled = NO;
-    }
-}
-
 /*
 #pragma mark - Navigation
 
@@ -37,14 +30,6 @@
 }
 */
 
-#pragma mark - SlideNavigationController Methods
 
-- (BOOL)slideNavigationControllerShouldDisplayLeftMenu {
-    return YES;
-}
-
-- (BOOL)slideNavigationControllerShouldDisplayRightMenu {
-    return NO;
-}
 
 @end

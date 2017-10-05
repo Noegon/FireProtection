@@ -16,9 +16,6 @@
 #import "NGNApplicationEnterExitManager.h"
 #import "NGNTabBarManager.h"
 
-#import "SlideNavigationController.h"
-#import "LeftMenuViewController.h"
-
 #import "NGNServerLayerServices.h"
 #import "NSManagedObject+NGNCRUDAppendix.h"
 
@@ -55,13 +52,6 @@
     
     self.startEndManager = [NGNApplicationEnterExitManager sharedInstance];
     self.tabBarManager = [NGNTabBarManager sharedInstance];
-    
-    //Switch on and prepare side menu
-    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
-    
-    LeftMenuViewController *leftMenu = (LeftMenuViewController *)[mainStoryboard
-                                                                  instantiateViewControllerWithIdentifier: @"LeftMenuViewControllerID"];
-    [SlideNavigationController sharedInstance].leftMenu = leftMenu;
     
     [NGNServerDataLoadManager pingServerWithCompletionHandler:^{}];
     
