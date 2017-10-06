@@ -17,15 +17,23 @@ static NSString *const kNGNStoryboardNameAuthentification = @"Authentification";
 static NSString *const kNGNStoryboardSegueAuthentification = @"authentificationSegue";
 static NSString *const kNGNStoryboardSegueFireResistanceRankDetail = @"fireResistanceRankDetailSegue";
 static NSString *const kNGNStoryboardSegueFireSafetyCategoryDetail = @"fireSafetyCategoryDetailSegue";
+static NSString *const kNGNStoryboardSegueSubstanceTypeDetail = @"substanceTypeDetailSegue";
+static NSString *const kNGNStoryboardSegueSubstanceDetail = @"substanceDetailSegue";
+static NSString *const kNGNStoryboardSegueAddNewSubstance = @"addNewSubstanceSegue";
+
 #pragma mark - controller id's
 //Main storyboard
 static NSString *const kNGNStoryboardMainFireResistanceRankControllerID = @"fireResistanceRankControllerID";
 static NSString *const kNGNStoryboardMainFireResistanceRankDetailControllerID = @"fireResistanceRankDetailControllerID";
 static NSString *const kNGNStoryboardMainFireSafetyCategoryControllerID = @"fireSafetyCategoryControllerID";
 static NSString *const kNGNStoryboardMainFireSafetyCategoryDetailControllerID = @"fireSafetyCategoryDetailControllerID";
-static NSString *const kNGNStoryboardMainFireSafetySubcategoryControllerID = @"fireSafetySubcategoryControllerID";
+//static NSString *const kNGNStoryboardMainFireSafetySubcategoryControllerID = @"fireSafetySubcategoryControllerID";
+//static NSString *const kNGNStoryboardMainFireSafetySubcategoryDetailControllerID = @"fireSafetySubcategoryDetailControllerID";
 static NSString *const kNGNStoryboardMainSubstanceTypeControllerID = @"substanceTypeControllerID";
+static NSString *const kNGNStoryboardMainSubstanceTypeDetailControllerID = @"substanceTypeDetailControllerID";
 static NSString *const kNGNStoryboardMainSubstanceControllerID = @"substanceControllerID";
+static NSString *const kNGNStoryboardMainSubstanceDetailControllerID = @"substanceDetailControllerID";
+static NSString *const kNGNStoryboardMainSettingsControllerId = @"settingsControllerID";
 
 //Authentification storyboard
 

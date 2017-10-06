@@ -50,8 +50,7 @@
 
 - (NGNTabBarController *)tabBarController {
     if (!_tabBarController) {
-        UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
-        _tabBarController = [mainStoryboard instantiateViewControllerWithIdentifier: @"rootTabBarControllerID"];
+        _tabBarController = (NGNTabBarController *)[UIApplication sharedApplication].windows[0].rootViewController;
     }
 
     return _tabBarController;
@@ -59,13 +58,17 @@
 
 - (void)userLoggedIn:(NSNotification *)notification {
     UITabBarItem *rootItem = self.tabBarController.tabBar.items[0];
+    UITabBarItem *menuItem = self.tabBarController.tabBar.items[3];
     rootItem.enabled = YES;
+    menuItem.enabled = YES;
     self.tabBarController.selectedIndex = 0;
 }
 
 - (void)userLoggedOut:(NSNotification *)notification {
     UITabBarItem *rootItem = self.tabBarController.tabBar.items[0];
+    UITabBarItem *menuItem = self.tabBarController.tabBar.items[3];
     rootItem.enabled = NO;
+    menuItem.enabled = NO;
     self.tabBarController.selectedIndex = 1;
 }
 

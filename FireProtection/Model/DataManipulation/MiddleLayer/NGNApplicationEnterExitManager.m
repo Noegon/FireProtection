@@ -23,6 +23,7 @@
 @interface NGNApplicationEnterExitManager ()
 
 @property (assign, nonatomic, getter=isAppInStartMode) BOOL appInStartMode;
+@property (strong, nonatomic) UITabBarController *rootTabBarController;
 
 @end
 
@@ -107,7 +108,8 @@
     if (isAppOnline) {
         
         //check if user saved last session to not login again
-        if (![NGNApplicationStateManager sharedInstance].isUserSessionSaved) {
+        if (![NGNApplicationStateManager sharedInstance].isUserSessionSaved &&
+            ![NGNApplicationStateManager sharedInstance].isUserAuthorized) {
             [self launchAppInAnonimousMode];
         } else {
             //if session was saved, current user id would be the same as it was at last launch
@@ -124,11 +126,18 @@
     }
 }
 
+- (UITabBarController *)rootTabBarController {
+    return (UITabBarController *)[UIApplication sharedApplication].windows[0].rootViewController;
+}
+
 - (void)launchAppInAnonimousMode {
+    
 //    self.rootTabBarController.selectedIndex = 1;
 //    [[[self.rootTabBarController tabBar]items]objectAtIndex:0].enabled = NO;
+//    [[[self.rootTabBarController tabBar]items]objectAtIndex:3].enabled = NO;
     [NGNTabBarManager sharedInstance].tabBarController.selectedIndex = 1;
-    ((UITabBarItem *)((UITabBar *)[NGNTabBarManager sharedInstance].tabBarController.tabBar).items[0]).enabled = NO;
+    [NGNTabBarManager sharedInstance].tabBarController.tabBar.items[0].enabled = NO;
+    [NGNTabBarManager sharedInstance].tabBarController.tabBar.items[3].enabled = NO;
 }
 
 

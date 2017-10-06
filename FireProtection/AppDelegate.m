@@ -43,12 +43,18 @@
     [NGNDataBaseManager setupCoreDataStackWithStorageName:kNGNApplicationAppName];
     
 #warning user data loading test
-//    [NGNApplicationStateManager sharedInstance].userSessionSaved = NO;
-//    [NGNApplicationStateManager sharedInstance].userAuthorized = NO;
+    NSDictionary *sessionSavedParams = @{kNGNModelSessionIsUserSessionSaved: @(NO)};
+    NSData *sessionData = [NSKeyedArchiver archivedDataWithRootObject:sessionSavedParams];
+    [[NSUserDefaults standardUserDefaults] setObject:sessionData forKey:kNGNModelSessionIsUserSessionSaved];
+    
+    NSDictionary *authorizedParams = @{kNGNModelSessionIsUserAuthorized: @(NO)};
+    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:authorizedParams];
+    [[NSUserDefaults standardUserDefaults] setObject:data forKey:kNGNModelSessionIsUserAuthorized];
+    
 //    [NGNApplicationStateManager sharedInstance].dataUploaded = NO;
 //    [NGNApplicationStateManager sharedInstance].dataDeleted = NO;
-//    [NGNApplicationStateManager sharedInstance].lastSessionUserId = @(-1);
-//    [NGNApplicationStateManager sharedInstance].currentSessionUserId = @(-1);
+    [NGNApplicationStateManager sharedInstance].lastSessionUserId = @(-1);
+    [NGNApplicationStateManager sharedInstance].currentSessionUserId = @(-1);
     
     self.startEndManager = [NGNApplicationEnterExitManager sharedInstance];
     self.tabBarManager = [NGNTabBarManager sharedInstance];
@@ -76,6 +82,7 @@
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    [NGNDataBaseManager saveContext];
 }
 
 

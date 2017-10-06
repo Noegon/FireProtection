@@ -20,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, copy) NSDecimalNumber *idx;
 @property (nullable, nonatomic, copy) NSString *name;
 @property (nullable, nonatomic, copy) NSNumber *density;
-@property (nonatomic) double requiredAirAmount;
+@property (nullable, nonatomic, copy) NSNumber *requiredAirAmount;
 @property (nullable, nonatomic, copy) NSNumber *heatOfCombusion;
 @property (nullable, nonatomic, copy) NSNumber *flameSpeed;
 @property (nullable, nonatomic, copy) NSNumber *burningRate;

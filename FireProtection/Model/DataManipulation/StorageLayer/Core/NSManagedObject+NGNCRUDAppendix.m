@@ -17,8 +17,8 @@
                                                             inManagedObjectContext:context];
     if (fieldscompletionBlock) {
         fieldscompletionBlock(object);
+        [NGNDataBaseManager saveContext];
     }
-    [NGNDataBaseManager saveContext];
     return object;
 }
 

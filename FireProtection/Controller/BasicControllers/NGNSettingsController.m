@@ -1,40 +1,55 @@
 //
-//  NGNVocabulariesTableViewController.m
+//  NGNSettingsController.m
 //  FireProtection
 //
-//  Created by Alexey Stafeyev on 23.09.17.
+//  Created by Alexey Stafeyev on 06.10.17.
 //  Copyright © 2017 Alexey Stafeyev. All rights reserved.
 //
 
-#import "NGNVocabulariesTableViewController.h"
-#import "NGNApplicationStateManager.h"
+#import "NGNSettingsController.h"
+#import "NGNApplicationEnterExitManager.h"
 
-@interface NGNVocabulariesTableViewController ()
-
-@property (strong, nonatomic) IBOutlet UIBarButtonItem *loginButton;
+@interface NGNSettingsController ()
 
 @end
 
-@implementation NGNVocabulariesTableViewController
+@implementation NGNSettingsController
 
--(void)viewWillAppear:(BOOL)animated {
-    if ([NGNApplicationStateManager sharedInstance].isUserAuthorized) {
-        self.navigationItem.rightBarButtonItem = nil;
-    } else {
-        self.navigationItem.rightBarButtonItem = self.loginButton;
-    }
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    // Uncomment the following line to preserve selection between presentations.
+    // self.clearsSelectionOnViewWillAppear = NO;
+    
+    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
     return 4;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    switch (indexPath.row) {
+        case 2:
+            NSLog(@"%@", @"User signed out");
+            [[NGNApplicationEnterExitManager sharedInstance] launchExitApplicationPreparations];
+            break;
+        case 3:
+            NSLog(@"%@", @"Application exit");
+            [[NGNApplicationEnterExitManager sharedInstance] launchExitApplicationPreparations];
+            exit(1);
+            break;
+        default:
+            NSLog(@"%@", @"Actionn doesn't handle yet");
+            break;
+    }
 }
 
 /*

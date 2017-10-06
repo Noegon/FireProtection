@@ -89,7 +89,7 @@
         <attribute name="heatOfCombusion" optional="YES" attributeType="Double" minValueString="0" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="idx" attributeType="Decimal" syncable="YES"/>
         <attribute name="name" attributeType="String" defaultValueString="substance" syncable="YES"/>
-        <attribute name="requiredAirAmount" optional="YES" attributeType="Double" minValueString="0" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="requiredAirAmount" optional="YES" attributeType="Double" minValueString="0" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
         <relationship name="substanceSets" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="NGNSubstancePile" inverseName="substance" inverseEntity="NGNSubstancePile" syncable="YES"/>
         <relationship name="substanceType" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="NGNSubstanceType" inverseName="substances" inverseEntity="NGNSubstanceType" syncable="YES"/>
         <relationship name="user" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="NGNUser" inverseName="substances" inverseEntity="NGNUser" syncable="YES"/>

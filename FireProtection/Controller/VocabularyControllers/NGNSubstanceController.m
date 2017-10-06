@@ -8,17 +8,29 @@
 
 #import "NGNSubstanceController.h"
 #import "NGNDataBaseManager.h"
-#import "NGNCommonConstants.h"
 #import "NGNCoreDataModel.h"
 #import "NGNApplicationStateManager.h"
+#import "NGNSubstanceDetailController.h"
+
+#import "NGNCommonConstants.h"
+#import "NGNStoryboardConstants.h"
 
 @interface NGNSubstanceController ()
+
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *addButton;
 
 @property (strong, nonatomic) NSFetchedResultsController<NGNSubstance *> *fetchedResultsController;
 
 @end
 
 @implementation NGNSubstanceController
+
+- (void)viewWillAppear:(BOOL)animated {
+    if (![NGNApplicationStateManager sharedInstance].isUserAuthorized) {
+        self.addButton.enabled = NO;
+    }
+    [self.tableView reloadData];
+}
 
 #pragma mark - Table view data source
 
@@ -74,6 +86,21 @@
     
     _fetchedResultsController = aFetchedResultsController;
     return _fetchedResultsController;
+}
+
+#pragma mark - Navigation
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    UIViewController *destinationController = [segue destinationViewController];
+    if ([segue.identifier isEqualToString:kNGNStoryboardSegueSubstanceDetail]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:((UITableViewCell *)sender)];
+        NGNSubstance *substance = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        ((NGNSubstanceDetailController *)destinationController).substance = substance;
+    }
+    if ([segue.identifier isEqualToString:kNGNStoryboardSegueAddNewSubstance]) {
+        ((NGNSubstanceDetailController *)destinationController).substance = nil;
+        ((NGNSubstanceDetailController *)destinationController).navigationItem.title = @"Add substance";
+    }
 }
 
 @end

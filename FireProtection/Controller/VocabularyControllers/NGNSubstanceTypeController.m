@@ -8,8 +8,11 @@
 
 #import "NGNSubstanceTypeController.h"
 #import "NGNDataBaseManager.h"
-#import "NGNCommonConstants.h"
 #import "NGNCoreDataModel.h"
+#import "NGNSubstanceTypeDetailController.h"
+
+#import "NGNCommonConstants.h"
+#import "NGNStoryboardConstants.h"
 
 @interface NGNSubstanceTypeController ()
 
@@ -70,6 +73,17 @@
     
     _fetchedResultsController = aFetchedResultsController;
     return _fetchedResultsController;
+}
+
+#pragma mark - Navigation
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    UIViewController *destinationController = [segue destinationViewController];
+    if ([segue.identifier isEqualToString:kNGNStoryboardSegueSubstanceTypeDetail]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:((UITableViewCell *)sender)];
+        NGNSubstanceType *substanceType = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        ((NGNSubstanceTypeDetailController *)destinationController).substanceType = substanceType;
+    }
 }
 
 @end

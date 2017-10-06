@@ -25,6 +25,8 @@
 -(void)viewWillAppear:(BOOL)animated {
     if ([NGNApplicationStateManager sharedInstance].isUserAuthorized) {
         self.navigationItem.rightBarButtonItem = nil;
+    } else {
+        self.navigationItem.rightBarButtonItem = self.loginButton;
     }
 }
 
