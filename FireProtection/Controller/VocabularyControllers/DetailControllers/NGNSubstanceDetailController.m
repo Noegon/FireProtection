@@ -115,7 +115,7 @@
             ((NGNSubstance *)substance).heatOfCombusion = @([weakSelf.heatOfCombusionTextField.text doubleValue]);
             ((NGNSubstance *)substance).flameSpeed = @([weakSelf.flameSpeedTextField.text doubleValue]);
             ((NGNSubstance *)substance).burningRate = @([weakSelf.burningRateTextField.text doubleValue]);
-            
+            ((NGNSubstance *)substance).substanceType = currentSubstanceType;
             NSFetchRequest *request = [NGNUser fetchRequest];
             request.predicate = [NSPredicate predicateWithFormat:@"self.idx == %@",
                                  [NGNApplicationStateManager sharedInstance].currentSessionUserId];
@@ -124,17 +124,24 @@
             if (!error && result.count > 0) {
                 NGNUser *currentUser = result[0];
                 ((NGNSubstance *)substance).user = currentUser;
+//                [currentUser addSubstancesObject:(NGNSubstance *)substance];
             } else {
                 ((NGNSubstance *)substance).user = nil;
             }
-            ((NGNSubstance *)substance).substanceType = currentSubstanceType;
         }];
+    } else {
+        if (currentSubstanceType) {
+            self.substance.name = self.nameTextField.text;
+            self.substance.density = @([self.densityTextField.text doubleValue]);
+            self.substance.requiredAirAmount = @([self.requiredAirAmountTextField.text doubleValue]);
+            self.substance.heatOfCombusion = @([self.heatOfCombusionTextField.text doubleValue]);
+            self.substance.flameSpeed = @([self.flameSpeedTextField.text doubleValue]);
+            self.substance.burningRate = @([self.burningRateTextField.text doubleValue]);
+            self.substance.substanceType = currentSubstanceType;
+            [NGNDataBaseManager saveContext];
+        }
     }
-    if (currentSubstanceType) {
-        self.substance.substanceType = currentSubstanceType;
-        [NGNDataBaseManager saveContext];
-        [self.navigationController popViewControllerAnimated:YES];
-    }
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark - picker view data source

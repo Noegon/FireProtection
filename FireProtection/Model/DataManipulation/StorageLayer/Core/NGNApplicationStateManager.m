@@ -146,7 +146,7 @@ static NSString *const NGNStringApplicationNotificationName[] = {
 }
 
 - (void)setDataLoaded:(BOOL)dataLoaded {
-    NSDictionary *dataLoadedParams = @{kNGNModelSessionCommonDataLoadedParameter: @(dataLoaded)};
+    NSDictionary *dataLoadedParams = @{kNGNModelSessionDataLoadedParameter: @(dataLoaded)};
     [self renewApplicationParameter:dataLoadedParams Name:kNGNModelSessionDataLoadedParameter];
     [[NSNotificationCenter defaultCenter] postNotificationName:kNGNApplicationNotificationDataWasLoaded
                                                         object:nil

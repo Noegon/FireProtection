@@ -17,6 +17,7 @@
 #import "NGNDataBaseManager.h"
 #import "NGNApplicationStateManager.h"
 #import "NGNCommonConstants.h"
+#import "NGNServerSideLayerConstants.h"
 
 @interface NGNUserAuthentificationManager()
 
@@ -77,6 +78,24 @@
                      [NGNApplicationStateManager sharedInstance].userSessionSaved = self.shouldSaveUserSession;
                  } else {
                      NSLog(@"%@", @"Data wasn't uploaded to server! User could not be authorized!");
+                 }
+             }
+         }];
+        
+        [[NSNotificationCenter defaultCenter] addObserverForName:kNGNApplicationNotificationDataWasLoaded
+                                                          object:nil
+                                                           queue:[NSOperationQueue mainQueue]
+                                                      usingBlock:
+         ^(NSNotification *note) {
+             if (self.isAuthentificationInProgress) {
+                 self.authentificationInProgress = NO;
+                 //check if data was deleted last time
+                 if ([NGNApplicationStateManager sharedInstance].dataLoaded) {
+                     [NGNApplicationStateManager sharedInstance].currentSessionUserId = self.fetchedUserId;
+                     [NGNApplicationStateManager sharedInstance].userAuthorized = YES;
+                     [NGNApplicationStateManager sharedInstance].userSessionSaved = self.shouldSaveUserSession;
+                 } else {
+                     NSLog(@"%@", @"Data wasn't loaded from server! User could not be authorized!");
                  }
              }
          }];
@@ -141,39 +160,73 @@
                                             completionBlock:
           ^(NSArray *entities, NSError *error) {
               if (!error) {
-                  FEMMapping *userMapping = [NGNUser defaultMapping];
-                  NSArray *usersResult = [FEMDeserializer collectionFromRepresentation:entities
-                                                                               mapping:userMapping
-                                                                               context:[NGNDataBaseManager managedObjectContext]];
-                  if (usersResult.count == 0) {
-                      NSLog(@"%@", @"user wasn't loaded. There's no such user");
-                  } else {
-                      NGNUser *currentUser = usersResult[0];
-                      weakSelf.fetchedUserId = currentUser.idx;
-                      NSLog(@"user with id: %ld was loaded successfully", weakSelf.fetchedUserId.integerValue);
-                      
-                      dispatch_async(dispatch_get_main_queue(), ^{
+                  if (entities.count != 0) {
+                      NSDictionary *user = entities[0];
+                      NSNumber *userId = user[kNGNResponseObjectsParametersId];
+                      NSFetchRequest *request = [NGNUser fetchRequest];
+                      request.predicate = [NSPredicate predicateWithFormat:@"self.idx == %@", userId];
+                      NSError *error = nil;
+                      NSArray *localUsers = [[NGNDataBaseManager managedObjectContext] executeFetchRequest:request error:&error];
+                      if (!error && localUsers.count == 0) {
+                          FEMMapping *userMapping = [NGNUser defaultMapping];
+                          NSArray *usersResult = [FEMDeserializer collectionFromRepresentation:entities
+                                                                                       mapping:userMapping
+                                                                                       context:[NGNDataBaseManager managedObjectContext]];
+                          [NGNDataBaseManager saveContext];
                           
+                          if (usersResult.count == 0) {
+                              NSLog(@"%@", @"user wasn't loaded. There's no such user");
+                          } else {
+                              NGNUser *currentUser = usersResult[0];
+                              weakSelf.fetchedUserId = currentUser.idx;
+                              NSLog(@"user with id: %ld was loaded successfully", weakSelf.fetchedUserId.integerValue);
+                              
+                              dispatch_async(dispatch_get_main_queue(), ^{
+                                  weakSelf.authentificationInProgress = YES;
+                                  [NGNServerDataLoadManager loadDataFromServerWithContext:[NGNDataBaseManager managedObjectContext]
+                                                                                   userId:userId];
+                                  if (completionHandler) {
+                                      completionHandler();
+                                  }
+                              });
+                          }
+                      } else {
+                          FEMMapping *userMapping = [NGNUser defaultMapping];
+                          NSArray *usersResult = [FEMDeserializer collectionFromRepresentation:entities
+                                                                                       mapping:userMapping
+                                                                                       context:[NGNDataBaseManager managedObjectContext]];
+                          [NGNDataBaseManager saveContext];
+                          if (usersResult.count == 0) {
+                              NSLog(@"%@", @"user wasn't loaded. There's no such user");
+                          } else {
+                              NGNUser *currentUser = usersResult[0];
+                              weakSelf.fetchedUserId = currentUser.idx;
+                              NSLog(@"user with id: %ld was loaded successfully", weakSelf.fetchedUserId.integerValue);
+                              
+                              dispatch_async(dispatch_get_main_queue(), ^{
+                                  
 #warning test of data upload (previous launch error imitation)
-//                          [[NGNApplicationStateManager sharedInstance] setValue:@(NO) forKey:@"dataUploaded"];
-                          
-                          weakSelf.authentificationInProgress = YES;
-                          
-                          //if session was saved, current user id would be the same as it was at last launch
-                          [NGNApplicationStateManager sharedInstance].currentSessionUserId = weakSelf.fetchedUserId;
-                          
-                          //if last launch wasn't successful, we should to renew last user data before change user
-                          if (![[NGNApplicationEnterExitManager sharedInstance] launchAppDataRenewProcess]) {
-                              self.authentificationInProgress = NO;
-                              [NGNApplicationStateManager sharedInstance].currentSessionUserId = self.fetchedUserId;
-                              [NGNApplicationStateManager sharedInstance].userAuthorized = YES;
-                              [NGNApplicationStateManager sharedInstance].userSessionSaved = self.shouldSaveUserSession;
+                                  //                          [[NGNApplicationStateManager sharedInstance] setValue:@(NO) forKey:@"dataUploaded"];
+                                  
+                                  weakSelf.authentificationInProgress = YES;
+                                  
+                                  //if session was saved, current user id would be the same as it was at last launch
+                                  [NGNApplicationStateManager sharedInstance].currentSessionUserId = weakSelf.fetchedUserId;
+                                  
+                                  //if last launch wasn't successful, we should to renew last user data before change user
+                                  if (![[NGNApplicationEnterExitManager sharedInstance] launchAppDataRenewProcess]) {
+                                      self.authentificationInProgress = NO;
+                                      [NGNApplicationStateManager sharedInstance].currentSessionUserId = self.fetchedUserId;
+                                      [NGNApplicationStateManager sharedInstance].userAuthorized = YES;
+                                      [NGNApplicationStateManager sharedInstance].userSessionSaved = self.shouldSaveUserSession;
+                                  }
+                                  
+                                  if (completionHandler) {
+                                      completionHandler();
+                                  }
+                              });
                           }
-                          
-                          if (completionHandler) {
-                              completionHandler();
-                          }
-                      });
+                      }
                   }
               } else {
                   NSLog(@"Error occured! Error: %@", error.userInfo);

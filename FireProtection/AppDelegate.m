@@ -51,8 +51,10 @@
     NSData *data = [NSKeyedArchiver archivedDataWithRootObject:authorizedParams];
     [[NSUserDefaults standardUserDefaults] setObject:data forKey:kNGNModelSessionIsUserAuthorized];
     
-//    [NGNApplicationStateManager sharedInstance].dataUploaded = NO;
-//    [NGNApplicationStateManager sharedInstance].dataDeleted = NO;
+    NSDictionary *uploadedParams = @{kNGNModelSessionDataUploadedParameter: @(NO)};
+    NSData *uploadData = [NSKeyedArchiver archivedDataWithRootObject:uploadedParams];
+    [[NSUserDefaults standardUserDefaults] setObject:uploadData forKey:kNGNModelSessionDataUploadedParameter];
+    
     [NGNApplicationStateManager sharedInstance].lastSessionUserId = @(-1);
     [NGNApplicationStateManager sharedInstance].currentSessionUserId = @(-1);
     
