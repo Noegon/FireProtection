@@ -31,7 +31,7 @@
     if (![NGNApplicationStateManager sharedInstance].isUserAuthorized) {
         self.addButton.enabled = NO;
     }
-    [self.tableView reloadData];
+//    [self.tableView reloadData];
 }
 
 #pragma mark - Table view data source
@@ -45,6 +45,13 @@
     id <NSFetchedResultsSectionInfo> sectionInfo = [self.fetchedResultsController sections][section];
     NSInteger numOfRows = [sectionInfo numberOfObjects];
     return numOfRows;
+}
+
+-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    if (section == 0) {
+        return @"Common substances";
+    }
+    return @"User substances";
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -67,21 +74,16 @@
 -(NSArray *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     UITableViewRowAction *deleteAction =
-    [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal
-                                       title:@"Delete"
-                                     handler:
+        [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal
+                                           title:@"Delete"
+                                         handler:
      ^(UITableViewRowAction *action, NSIndexPath *indexPath) {
          
          NGNSubstance *substance = [self.fetchedResultsController objectAtIndexPath:indexPath];
          if (substance.user.idx.integerValue ==
              [NGNApplicationStateManager sharedInstance].currentSessionUserId.integerValue) {
-             NGNSubstanceService *service = [[NGNSubstanceService alloc] init];
-             FEMMapping *substanceMapping = [NGNSubstance defaultMapping];
-             NSDictionary *substanceAsDictionary = [FEMSerializer serializeObject:substance usingMapping:substanceMapping];
-             [service deleteEntity:substanceAsDictionary completionBlock:^(NSDictionary *substance, NSError *error){}];
              
-             [NGNSubstance ngn_deleteEntityInManagedObjectContext:[NGNDataBaseManager managedObjectContext]
-                                                    managedObject:substance];
+             [self tableView:self.tableView commitEditingStyle:UITableViewCellEditingStyleDelete forRowAtIndexPath:indexPath];
          } else {
              NSLog(@"%@", @"User haven't enough rights to delete this item");
          }
@@ -92,15 +94,9 @@
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
-        [context deleteObject:[self.fetchedResultsController objectAtIndexPath:indexPath]];
-        
-        NSError *error = nil;
-        if (![context save:&error]) {
-            NSLog(@"Unresolved error %@, %@", error, error.userInfo);
-            abort();
-        }
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        NGNSubstance *substance = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        [NGNSubstance ngn_deleteEntityInManagedObjectContext:[NGNDataBaseManager managedObjectContext]
+                                               managedObject:substance];
     }
 }
 
@@ -127,11 +123,13 @@
     // Edit the section name key path and cache name if appropriate.
     // nil for section name key path means "no sections".
     NSFetchedResultsController<NGNSubstance *> *aFetchedResultsController =
-    [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
-                                        managedObjectContext:[NGNDataBaseManager managedObjectContext]
-                                          sectionNameKeyPath:nil
-                                                   cacheName:nil];
+        [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
+                                            managedObjectContext:[NGNDataBaseManager managedObjectContext]
+                                              sectionNameKeyPath:@"user.idx"
+                                                       cacheName:nil];
+    
     aFetchedResultsController.delegate = self;
+    
     
     NSError *error = nil;
     if (![aFetchedResultsController performFetch:&error]) {
@@ -161,6 +159,7 @@
             break;
             
         default:
+            [self.tableView reloadData];
             return;
     }
 }
@@ -180,6 +179,7 @@
             break;
             
         case NSFetchedResultsChangeUpdate:
+            [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
             break;
             
         case NSFetchedResultsChangeMove:

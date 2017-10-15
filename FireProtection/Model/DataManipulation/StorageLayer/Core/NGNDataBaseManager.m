@@ -54,7 +54,9 @@
             NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
             abort();
         } else {
-            [managedObjectContext refreshAllObjects];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [managedObjectContext refreshAllObjects];
+            });
         }
     });
 }

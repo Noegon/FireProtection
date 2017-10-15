@@ -26,7 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, copy) NSNumber *burningRate;
 @property (nullable, nonatomic, retain) NGNSubstanceType *substanceType;
 @property (nullable, nonatomic, retain) NGNUser *user;
-@property (nullable, nonatomic, retain) NSSet<NGNSubstancePile *> *substanceSets;
+@property (nullable, nonatomic, retain) NSSet<NGNSubstancePile *> *substancePiles;
 
 @end
 
@@ -38,10 +38,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NGNSubstance (CoreDataGeneratedAccessors)
 
-- (void)addSubstanceSetsObject:(NGNSubstancePile *)value;
-- (void)removeSubstanceSetsObject:(NGNSubstancePile *)value;
-- (void)addSubstanceSets:(NSSet<NGNSubstancePile *> *)values;
-- (void)removeSubstanceSets:(NSSet<NGNSubstancePile *> *)values;
+- (void)addSubstancePilesObject:(NGNSubstancePile *)value;
+- (void)removeSubstancePilesObject:(NGNSubstancePile *)value;
+- (void)addSubstancePiles:(NSSet<NGNSubstancePile *> *)values;
+- (void)removeSubstancePiles:(NSSet<NGNSubstancePile *> *)values;
 
 @end
 

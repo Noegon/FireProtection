@@ -107,27 +107,32 @@
         self.substanceTypes[[self.substanceTypePickerView selectedRowInComponent:0]];
     if (!self.substance) {
         __weak NGNSubstanceDetailController *weakSelf = self;
-        self.substance = [NGNSubstance ngn_createEntityInManagedObjectContext:[NGNDataBaseManager managedObjectContext] fieldscompletionBlock:^(NSManagedObject *substance){
-            ((NGNSubstance *)substance).idx = (NSDecimalNumber *)@(foo4random());
-            ((NGNSubstance *)substance).name = weakSelf.nameTextField.text;
-            ((NGNSubstance *)substance).density = @([weakSelf.densityTextField.text doubleValue]);
-            ((NGNSubstance *)substance).requiredAirAmount = @([weakSelf.requiredAirAmountTextField.text doubleValue]);
-            ((NGNSubstance *)substance).heatOfCombusion = @([weakSelf.heatOfCombusionTextField.text doubleValue]);
-            ((NGNSubstance *)substance).flameSpeed = @([weakSelf.flameSpeedTextField.text doubleValue]);
-            ((NGNSubstance *)substance).burningRate = @([weakSelf.burningRateTextField.text doubleValue]);
-            ((NGNSubstance *)substance).substanceType = currentSubstanceType;
-            NSFetchRequest *request = [NGNUser fetchRequest];
-            request.predicate = [NSPredicate predicateWithFormat:@"self.idx == %@",
-                                 [NGNApplicationStateManager sharedInstance].currentSessionUserId];
-            NSError *error = nil;
-            NSArray *result = [[NGNDataBaseManager managedObjectContext] executeFetchRequest:request error:&error];
-            if (!error && result.count > 0) {
-                NGNUser *currentUser = result[0];
-                ((NGNSubstance *)substance).user = currentUser;
-//                [currentUser addSubstancesObject:(NGNSubstance *)substance];
-            } else {
-                ((NGNSubstance *)substance).user = nil;
-            }
+        self.substance =
+            [NGNSubstance ngn_createEntityInManagedObjectContext:[NGNDataBaseManager managedObjectContext]
+                                           fieldscompletionBlock:
+             ^(NSManagedObject *substance) {
+                 ((NGNSubstance *)substance).idx = (NSDecimalNumber *)@(foo4random());
+                 ((NGNSubstance *)substance).name = weakSelf.nameTextField.text;
+                 ((NGNSubstance *)substance).density = @([weakSelf.densityTextField.text doubleValue]);
+                 ((NGNSubstance *)substance).requiredAirAmount = @([weakSelf.requiredAirAmountTextField.text doubleValue]);
+                 ((NGNSubstance *)substance).heatOfCombusion = @([weakSelf.heatOfCombusionTextField.text doubleValue]);
+                 ((NGNSubstance *)substance).flameSpeed = @([weakSelf.flameSpeedTextField.text doubleValue]);
+                 ((NGNSubstance *)substance).burningRate = @([weakSelf.burningRateTextField.text doubleValue]);
+                 ((NGNSubstance *)substance).substanceType = currentSubstanceType;
+                 NSFetchRequest *request = [NGNUser fetchRequest];
+                 request.predicate = [NSPredicate predicateWithFormat:@"self.idx == %@",
+                                      [NGNApplicationStateManager sharedInstance].currentSessionUserId];
+                 NSError *error = nil;
+                 NSArray *result = [[NGNDataBaseManager managedObjectContext] executeFetchRequest:request error:&error];
+                 if (!error && result.count > 0) {
+                     NGNUser *currentUser = result[0];
+                     ((NGNSubstance *)substance).user = currentUser;
+                     //                [currentUser addSubstancesObject:(NGNSubstance *)substance];
+                 } else {
+                     ((NGNSubstance *)substance).user = nil;
+                 }
+//                 [NGNDataBaseManager saveContext];
+                 [self.navigationController popViewControllerAnimated:YES];
         }];
     } else {
         if (currentSubstanceType) {
@@ -140,8 +145,8 @@
             self.substance.substanceType = currentSubstanceType;
             [NGNDataBaseManager saveContext];
         }
+        [self.navigationController popViewControllerAnimated:YES];
     }
-    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark - picker view data source

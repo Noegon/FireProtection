@@ -70,6 +70,7 @@
     rootItem.enabled = NO;
     menuItem.enabled = NO;
     self.tabBarController.selectedIndex = 1;
+    [[[(UINavigationController *)self.tabBarController.selectedViewController visibleViewController] navigationController] popToRootViewControllerAnimated:YES];
 }
 
 @end

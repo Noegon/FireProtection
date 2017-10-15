@@ -8,6 +8,7 @@
 
 #import "NGNSettingsController.h"
 #import "NGNApplicationEnterExitManager.h"
+#import "NGNDataBaseManager.h"
 
 @interface NGNSettingsController ()
 
@@ -28,73 +29,33 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 4;
+    return 2;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    switch (indexPath.row) {
-        case 2:
-            NSLog(@"%@", @"User signed out");
-            [[NGNApplicationEnterExitManager sharedInstance] launchExitApplicationPreparations];
-            break;
-        case 3:
-            NSLog(@"%@", @"Application exit");
-            [[NGNApplicationEnterExitManager sharedInstance] launchExitApplicationPreparations];
-            exit(1);
-            break;
-        default:
-            NSLog(@"%@", @"Actionn doesn't handle yet");
-            break;
+    if (indexPath.section == 1) {
+        switch (indexPath.row) {
+            case 0:
+                NSLog(@"%@", @"User signed out");
+                [NGNDataBaseManager saveContext];
+                [[NGNApplicationEnterExitManager sharedInstance] launchExitApplicationPreparations];
+                break;
+            case 1:
+                NSLog(@"%@", @"Application exit");
+                [NGNDataBaseManager saveContext];
+                [[NGNApplicationEnterExitManager sharedInstance] launchExitApplicationPreparations];
+                exit(1);
+                break;
+            default:
+                NSLog(@"%@", @"Action doesn't handle yet");
+                break;
+        }
     }
 }
-
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
-}
-*/
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 /*
 #pragma mark - Navigation

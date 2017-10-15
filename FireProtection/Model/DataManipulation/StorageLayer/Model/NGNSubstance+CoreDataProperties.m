@@ -69,7 +69,7 @@ static NSInteger const kNGNinfoPropertiesAmount = 5;
 @dynamic burningRate;
 @dynamic user;
 @dynamic substanceType;
-@dynamic substanceSets;
+@dynamic substancePiles;
 
 @end
 

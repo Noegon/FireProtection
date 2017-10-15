@@ -215,10 +215,9 @@
                                   
                                   //if last launch wasn't successful, we should to renew last user data before change user
                                   if (![[NGNApplicationEnterExitManager sharedInstance] launchAppDataRenewProcess]) {
-                                      self.authentificationInProgress = NO;
-                                      [NGNApplicationStateManager sharedInstance].currentSessionUserId = self.fetchedUserId;
+                                      weakSelf.authentificationInProgress = NO;
                                       [NGNApplicationStateManager sharedInstance].userAuthorized = YES;
-                                      [NGNApplicationStateManager sharedInstance].userSessionSaved = self.shouldSaveUserSession;
+                                      [NGNApplicationStateManager sharedInstance].userSessionSaved = weakSelf.shouldSaveUserSession;
                                   }
                                   
                                   if (completionHandler) {

@@ -35,6 +35,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
+#warning clear user defaults for debug
+//    [self resetDefaults];
+
 #warning delete datasource for debug
 //    NSFileManager *manager = [NSFileManager defaultManager];
 //    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"FireProtection.sqlite"];
@@ -43,20 +46,20 @@
     [NGNDataBaseManager setupCoreDataStackWithStorageName:kNGNApplicationAppName];
     
 #warning user data loading test
-    NSDictionary *sessionSavedParams = @{kNGNModelSessionIsUserSessionSaved: @(NO)};
-    NSData *sessionData = [NSKeyedArchiver archivedDataWithRootObject:sessionSavedParams];
-    [[NSUserDefaults standardUserDefaults] setObject:sessionData forKey:kNGNModelSessionIsUserSessionSaved];
-    
-    NSDictionary *authorizedParams = @{kNGNModelSessionIsUserAuthorized: @(NO)};
-    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:authorizedParams];
-    [[NSUserDefaults standardUserDefaults] setObject:data forKey:kNGNModelSessionIsUserAuthorized];
-    
-    NSDictionary *uploadedParams = @{kNGNModelSessionDataUploadedParameter: @(NO)};
-    NSData *uploadData = [NSKeyedArchiver archivedDataWithRootObject:uploadedParams];
-    [[NSUserDefaults standardUserDefaults] setObject:uploadData forKey:kNGNModelSessionDataUploadedParameter];
-    
-    [NGNApplicationStateManager sharedInstance].lastSessionUserId = @(-1);
-    [NGNApplicationStateManager sharedInstance].currentSessionUserId = @(-1);
+//    NSDictionary *sessionSavedParams = @{kNGNModelSessionIsUserSessionSaved: @(NO)};
+//    NSData *sessionData = [NSKeyedArchiver archivedDataWithRootObject:sessionSavedParams];
+//    [[NSUserDefaults standardUserDefaults] setObject:sessionData forKey:kNGNModelSessionIsUserSessionSaved];
+//
+//    NSDictionary *authorizedParams = @{kNGNModelSessionIsUserAuthorized: @(NO)};
+//    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:authorizedParams];
+//    [[NSUserDefaults standardUserDefaults] setObject:data forKey:kNGNModelSessionIsUserAuthorized];
+//
+//    NSDictionary *uploadedParams = @{kNGNModelSessionDataUploadedParameter: @(NO)};
+//    NSData *uploadData = [NSKeyedArchiver archivedDataWithRootObject:uploadedParams];
+//    [[NSUserDefaults standardUserDefaults] setObject:uploadData forKey:kNGNModelSessionDataUploadedParameter];
+//
+//    [NGNApplicationStateManager sharedInstance].lastSessionUserId = @(-1);
+//    [NGNApplicationStateManager sharedInstance].currentSessionUserId = @(-1);
     
     self.startEndManager = [NGNApplicationEnterExitManager sharedInstance];
     self.tabBarManager = [NGNTabBarManager sharedInstance];
@@ -85,6 +88,11 @@
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
     [NGNDataBaseManager saveContext];
+    NSSet *registeredObjects = [NGNDataBaseManager managedObjectContext].registeredObjects;
+    NSSet *insertedObjects = [NGNDataBaseManager managedObjectContext].insertedObjects;
+    NSSet *deletedObjects = [NGNDataBaseManager managedObjectContext].deletedObjects;
+    NSSet *updatedObjects = [NGNDataBaseManager managedObjectContext].updatedObjects;
+    [self applicationWillTerminate:application];
 }
 
 
@@ -110,6 +118,15 @@
 - (NSURL *)applicationDocumentsDirectory {
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory
                                                    inDomains:NSUserDomainMask] lastObject];
+}
+
+- (void)resetDefaults {
+    NSUserDefaults * defs = [NSUserDefaults standardUserDefaults];
+    NSDictionary * dict = [defs dictionaryRepresentation];
+    for (id key in dict) {
+        [defs removeObjectForKey:key];
+    }
+    [defs synchronize];
 }
 
 @end

@@ -108,8 +108,8 @@
     if (isAppOnline) {
         
         //check if user saved last session to not login again
-        if (![NGNApplicationStateManager sharedInstance].isUserSessionSaved &&
-            ![NGNApplicationStateManager sharedInstance].isUserAuthorized) {
+        if ((![NGNApplicationStateManager sharedInstance].isUserSessionSaved &&
+            ![NGNApplicationStateManager sharedInstance].isUserAuthorized)) {
             [self launchAppInAnonimousMode];
         } else {
             //if session was saved, current user id would be the same as it was at last launch
@@ -131,10 +131,6 @@
 }
 
 - (void)launchAppInAnonimousMode {
-    
-//    self.rootTabBarController.selectedIndex = 1;
-//    [[[self.rootTabBarController tabBar]items]objectAtIndex:0].enabled = NO;
-//    [[[self.rootTabBarController tabBar]items]objectAtIndex:3].enabled = NO;
     [NGNTabBarManager sharedInstance].tabBarController.selectedIndex = 1;
     [NGNTabBarManager sharedInstance].tabBarController.tabBar.items[0].enabled = NO;
     [NGNTabBarManager sharedInstance].tabBarController.tabBar.items[3].enabled = NO;
@@ -154,14 +150,19 @@
 }
 
 - (void)launchExitApplicationPreparations {
-    if (![NGNApplicationStateManager sharedInstance].userSessionSaved) {
-        [NGNApplicationStateManager sharedInstance].userAuthorized = NO;
-    }
-    //before we exit our app we should upload data on server
-    [self launchAppDataRenewProcess];
     //before we exit our app we should save last loginned user id
     [NGNApplicationStateManager sharedInstance].lastSessionUserId =
         [NGNApplicationStateManager sharedInstance].currentSessionUserId;
+    
+    if (![NGNApplicationStateManager sharedInstance].userSessionSaved) {
+        [NGNApplicationStateManager sharedInstance].userAuthorized = NO;
+    }
+    //Telling system that data wasn't uploaded
+    NSDictionary *uploadedParams = @{kNGNModelSessionDataUploadedParameter: @(NO)};
+    NSData *uploadData = [NSKeyedArchiver archivedDataWithRootObject:uploadedParams];
+    [[NSUserDefaults standardUserDefaults] setObject:uploadData forKey:kNGNModelSessionDataUploadedParameter];
+    //before we exit our app we should upload data on server
+    [self launchAppDataRenewProcess];
 }
 
 
