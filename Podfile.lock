@@ -1,0 +1,15 @@
+PODS:
+  - FastEasyMapping (1.2.2)
+  - REFrostedViewController (2.4.8)
+
+DEPENDENCIES:
+  - FastEasyMapping
+  - REFrostedViewController
+
+SPEC CHECKSUMS:
+  FastEasyMapping: cc13aa6608aeb171bc0ea895876434a7328a153a
+  REFrostedViewController: a893b4979ba1f200c547aef9ff4c3fd5a18f5923
+
+PODFILE CHECKSUM: 0e3ce5257bfb04e25f7ca29c674aed219285296e
+
+COCOAPODS: 1.2.1

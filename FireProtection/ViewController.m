@@ -7,8 +7,13 @@
 //
 
 #import "ViewController.h"
+#import "NGNCoreDataModel.h"
+#import "NGNDataBaseManager.h"
+#import "NGNCommonConstants.h"
 
 @interface ViewController ()
+
+@property (strong, nonatomic) NSNotification *dataLoadedNotification;
 
 @end
 
@@ -16,14 +21,27 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(testDataDidLoad)
+                                                 name:kNGNApplicationNotificationDataWasLoaded
+                                               object:nil];
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
+-(void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)testDataDidLoad {
+    NSManagedObjectContext *context = [NGNDataBaseManager managedObjectContext];
+    NSError *error = nil;
+    NSArray<NGNRoom *> *rooms = [context executeFetchRequest:[NGNRoom fetchRequest] error:&error];
+    NSArray<NGNUser *> *users = [context executeFetchRequest:[NGNUser fetchRequest] error:&error];
+}
 
 @end

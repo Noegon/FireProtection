@@ -1,0 +1,628 @@
+{
+  "fire_resistance_rank": [
+    {
+      "id": 1,
+      "number": "I",
+      "bearing_element_r": 120,
+      "self_bearing_element_re": 90,
+      "outer_non_bearing_wall_e": 60,
+      "floor_ceiling_rei": 90,
+      "covering_re": 30,
+      "ferm_bean_r": 30,
+      "stair_wall_rei": 120,
+      "stairway_r": 60
+    },
+    {
+      "id": 2,
+      "number": "II",
+      "bearing_element_r": 120,
+      "self_bearing_element_re": 60,
+      "outer_non_bearing_wall_e": 30,
+      "floor_ceiling_rei": 60,
+      "covering_re": 30,
+      "ferm_bean_r": 30,
+      "stair_wall_rei": 120,
+      "stairway_r": 60
+    },
+    {
+      "id": 3,
+      "number": "III",
+      "bearing_element_r": 90,
+      "self_bearing_element_re": 60,
+      "outer_non_bearing_wall_e": 30,
+      "floor_ceiling_rei": 60,
+      "covering_re": 30,
+      "ferm_bean_r": 30,
+      "stair_wall_rei": 90,
+      "stairway_r": 45
+    },
+    {
+      "id": 4,
+      "number": "IV",
+      "bearing_element_r": 60,
+      "self_bearing_element_re": 45,
+      "outer_non_bearing_wall_e": 30,
+      "floor_ceiling_rei": 45,
+      "covering_re": 15,
+      "ferm_bean_r": 15,
+      "stair_wall_rei": 90,
+      "stairway_r": 45
+    },
+    {
+      "id": 5,
+      "number": "V",
+      "bearing_element_r": 45,
+      "self_bearing_element_re": 30,
+      "outer_non_bearing_wall_e": 15,
+      "floor_ceiling_rei": 45,
+      "covering_re": 15,
+      "ferm_bean_r": 15,
+      "stair_wall_rei": 60,
+      "stairway_r": 45
+    },
+    {
+      "id": 6,
+      "number": "VI",
+      "bearing_element_r": 30,
+      "self_bearing_element_re": 15,
+      "outer_non_bearing_wall_e": 15,
+      "floor_ceiling_rei": 30,
+      "covering_re": 15,
+      "ferm_bean_r": 15,
+      "stair_wall_rei": 45,
+      "stairway_r": 30
+    },
+    {
+      "id": 7,
+      "number": "VII",
+      "bearing_element_r": 15,
+      "self_bearing_element_re": 15,
+      "outer_non_bearing_wall_e": 15,
+      "floor_ceiling_rei": 15,
+      "covering_re": 0,
+      "ferm_bean_r": 0,
+      "stair_wall_rei": 30,
+      "stairway_r": 15
+    },
+    {
+      "id": 8,
+      "number": "VIII",
+      "bearing_element_r": 0,
+      "self_bearing_element_re": 0,
+      "outer_non_bearing_wall_e": 0,
+      "floor_ceiling_rei": 0,
+      "covering_re": 0,
+      "ferm_bean_r": 0,
+      "stair_wall_rei": 0,
+      "stairway_r": 0
+    }
+  ],
+  "fire_safety_category": [
+    {
+      "id": 1,
+      "name": "А",
+      "minimum_specific_fire_load": 0,
+      "maximum_specific_fore_load": 0,
+      "info": "Горючие газы (далее – ГГ), легковоспламеняющиеся жидкости (далее – ЛВЖ) с температурой вспышки не более 28 °С в таком количестве, что могут образовывать взрывоопасные парогазовоздушные смеси, при воспламенении которых развивается расчетное избыточное давление взрыва в помещении, превышающее 5 кПа. Вещества и материалы, способные взрываться и гореть при взаимодействии с водой, кислородом воздуха или друг с другом в таком количестве, что расчетное избыточное давление взрыва в помещении превышает 5 кПа"
+    },
+    {
+      "id": 2,
+      "name": "Б",
+      "minimum_specific_fire_load": 0,
+      "maximum_specific_fore_load": 0,
+      "info": "Горючие пыли или волокна, ЛВЖ с температурой вспышки более 28 °С, горючие жидкости (далее – ГЖ) в таком количестве, что могут образовывать взрывоопасные пыле- или паровоздушные смеси, при воспламенении которых развивается расчетное избыточное давление взрыва в помещении, превышающее 5 кПa"
+    },
+    {
+      "id": 3,
+      "name": "В1",
+      "minimum_specific_fire_load": 2201,
+      "maximum_specific_fore_load": 999999999999,
+      "info": "ГГ, ЛВЖ, ГЖ и трудногорючие жидкости, твердые горючие и трудногорючие вещества и материалы (в том числе пыли и волокна), вещества и материалы, способные при взаимодействии с водой, кислородом воздуха или друг с другом взрываться и гореть, при условии, что помещения, в которых они имеются в наличии или обращаются, не относятся к категории А или Б"
+    },
+    {
+      "id": 4,
+      "name": "В2",
+      "minimum_specific_fire_load": 1401,
+      "maximum_specific_fore_load": 2200,
+      "info": "ГГ, ЛВЖ, ГЖ и трудногорючие жидкости, твердые горючие и трудногорючие вещества и материалы (в том числе пыли и волокна), вещества и материалы, способные при взаимодействии с водой, кислородом воздуха или друг с другом взрываться и гореть, при условии, что помещения, в которых они имеются в наличии или обращаются, не относятся к категории А или Б"
+    },
+    {
+      "id": 5,
+      "name": "В3",
+      "minimum_specific_fire_load": 201,
+      "maximum_specific_fore_load": 1400,
+      "info": "ГГ, ЛВЖ, ГЖ и трудногорючие жидкости, твердые горючие и трудногорючие вещества и материалы (в том числе пыли и волокна), вещества и материалы, способные при взаимодействии с водой, кислородом воздуха или друг с другом взрываться и гореть, при условии, что помещения, в которых они имеются в наличии или обращаются, не относятся к категории А или Б"
+    },
+    {
+      "id": 6,
+      "name": "В4",
+      "minimum_specific_fire_load": 100,
+      "maximum_specific_fore_load": 200,
+      "info": "ГГ, ЛВЖ, ГЖ и трудногорючие жидкости, твердые горючие и трудногорючие вещества и материалы (в том числе пыли и волокна), вещества и материалы, способные при взаимодействии с водой, кислородом воздуха или друг с другом взрываться и гореть, при условии, что помещения, в которых они имеются в наличии или обращаются, не относятся к категории А или Б"
+    },
+    {
+      "id": 7,
+      "name": "Г1",
+      "minimum_specific_fire_load": 0,
+      "maximum_specific_fore_load": 0,
+      "info": "ГГ, ЛВЖ, ГЖ, твердые горючие вещества и материалы, которые сжигаются или утилизируются в процессе контролируемого горения в качестве топлива"
+    },
+    {
+      "id": 8,
+      "name": "Г2",
+      "minimum_specific_fire_load": 0,
+      "maximum_specific_fore_load": 0,
+      "info": "Негорючие вещества и материалы в горячем, раскаленном или расплавленном состоянии, процесс обработки которых сопровождается выделением лучистого тепла, искр и пламени"
+    },
+    {
+      "id": 9,
+      "name": "Д",
+      "minimum_specific_fire_load": 0,
+      "maximum_specific_fore_load": 0,
+      "info": "Негорючие вещества и материалы в холодном состоянии, горючие и трудногорючие вещества и материалы в таком количестве, что удельная пожарная нагрузка на участке их размещения в помещении не превышает 100 МДж/м2, а пожарная нагрузка в пределах помещения – 1000 МДж"
+    }
+  ],
+  "functional_fire_safety_category": [
+    {
+      "id": 1,
+      "name": "Ф1",
+      "info": "здания для постоянного проживания и временного (в том числе круглосуточного) пребывания людей (помещения в этих зданиях, как правило, используют круглосуточно; контингент людей в них может быть различного возраста и физического состояния; для этих зданий характерно наличие спальных помещений)"
+    },
+    {
+      "id": 2,
+      "name": "Ф2",
+      "info": "здания зрелищных и культурно-просветительных учреждений (основные помещения в этих зданиях характеризуются массовым пребыванием посетителей в определенные периоды времени)"
+    },
+    {
+      "id": 3,
+      "name": "Ф3",
+      "info": "здания предприятий по обслуживанию населения (помещения этих предприятий характеризуются большей численностью посетителей, чем обслуживающего персонала)"
+    },
+    {
+      "id": 4,
+      "name": "Ф4",
+      "info": "здания органов управления, учреждений образования, научных и проектных учреждений (помещения в этих зданиях используют в течение суток некоторое время, в них находится, как правило, постоянный, привыкший к местным условиям контингент людей определенного возраста и физического состояния)"
+    },
+    {
+      "id": 5,
+      "name": "Ф5",
+      "info": "здания и помещения производственного и складского назначения (для помещений этого класса характерно постоянное наличие работающих, в том числе круглосуточно)"
+    },
+    {
+      "id": 6,
+      "name": "Ф6",
+      "info": "сооружения гражданской обороны"
+    }
+  ],
+  "functional_fire_safety_subcategory": [
+    {
+      "id": 1,
+      "name": "Ф1.1",
+      "functional_fire_category": 1,
+      "info": "дошкольные учреждения, дома престарелых и инвалидов, больницы, спальные корпуса школ-интернатов и детских учреждений, детские дома, диспансеры"
+    },
+    {
+      "id": 2,
+      "name": "Ф1.2",
+      "functional_fire_category": 1,
+      "info": "гостиницы, общежития, спальные корпуса санаториев и домов отдыха общего типа, кемпингов, мотелей и пансионатов, оздоровительные лагеря, туристические здания"
+    },
+    {
+      "id": 3,
+      "name": "Ф1.3",
+      "functional_fire_category": 1,
+      "info": "многоквартирные жилые дома"
+    },
+    {
+      "id": 4,
+      "name": "Ф1.4",
+      "functional_fire_category": 1,
+      "info": "одноквартирные, в том числе блокированные, жилые дома"
+    },
+    {
+      "id": 5,
+      "name": "Ф2.1",
+      "functional_fire_category": 2,
+      "info": "театры, кинотеатры, концертные залы, клубы, цирки, спортивные сооружения с трибунами и другие учреждения с расчетным числом посадочных мест для посетителей в закрытых помещениях, культовые здания"
+    },
+    {
+      "id": 6,
+      "name": "Ф2.2",
+      "functional_fire_category": 2,
+      "info": "музеи, выставки, танцевальные залы и другие подобные учреждения в закрытых помещениях"
+    },
+    {
+      "id": 7,
+      "name": "Ф2.3",
+      "functional_fire_category": 2,
+      "info": "сооружения, указанные в Ф2.1, на открытом воздухе"
+    },
+    {
+      "id": 8,
+      "name": "Ф2.4",
+      "functional_fire_category": 2,
+      "info": "учреждения, указанные в Ф2.2, на открытом воздухе"
+    },
+    {
+      "id": 9,
+      "name": "Ф3.1",
+      "functional_fire_category": 3,
+      "info": "предприятия торговли, аптеки, почты"
+    },
+    {
+      "id": 10,
+      "name": "Ф3.2",
+      "functional_fire_category": 3,
+      "info": "предприятия общественного питания"
+    },
+    {
+      "id": 11,
+      "name": "Ф3.3",
+      "functional_fire_category": 3,
+      "info": "вокзалы, станции метрополитена"
+    },
+    {
+      "id": 12,
+      "name": "Ф3.4",
+      "functional_fire_category": 3,
+      "info": "поликлиники и амбулатории"
+    },
+    {
+      "id": 13,
+      "name": "Ф3.5",
+      "functional_fire_category": 3,
+      "info": "предприятия бытового и коммунального обслуживания (кроме относящихся к классам Ф1.2, Ф3.6, Ф4.4), сберегательные кассы, ветеринарные лечебницы, таможни (с залами таможенного досмотра), прачечные, ателье по пошиву и ремонту обуви и одежды, химические чистки, парикмахерские и другие подобные, в том числе ритуальные, учреждения, библиотеки"
+    },
+    {
+      "id": 14,
+      "name": "Ф3.6",
+      "functional_fire_category": 3,
+      "info": "физкультурно-оздоровительные комплексы и спортивно-тренировочные учреждения без трибун для зрителей, бани"
+    },
+    {
+      "id": 15,
+      "name": "Ф4.1",
+      "functional_fire_category": 4,
+      "info": "школы и внешкольные учебные заведения, средние специальные учебные заведения, профессионально-технические училища"
+    },
+    {
+      "id": 16,
+      "name": "Ф4.2",
+      "functional_fire_category": 4,
+      "info": "высшие учебные заведения, учреждения повышения квалификации"
+    },
+    {
+      "id": 17,
+      "name": "Ф4.3",
+      "functional_fire_category": 4,
+      "info": "учреждения органов управления, проектно-конструкторские организации, информационные и редакционно-издательские организации, научно-исследовательские организации, банки, суды, центры гигиены, эпидемиологии и общественного здоровья, здания «ЗАГС», конторы, офисы, транспортные агентства, юридические консультации, нотариальные конторы, станции (подстанции) скорой помощи"
+    },
+    {
+      "id": 18,
+      "name": "Ф4.4",
+      "functional_fire_category": 4,
+      "info": "пожарные депо"
+    },
+    {
+      "id": 19,
+      "name": "Ф5.1",
+      "functional_fire_category": 5,
+      "info": "производственные здания, производственные и лабораторные помещения, мастерские"
+    },
+    {
+      "id": 20,
+      "name": "Ф5.2",
+      "functional_fire_category": 5,
+      "info": "складские здания, гаражи-стоянки для автомобилей без технического обслуживания и ремонта, книгохранилища, архивохранилища, здания холодильников, складские помещения"
+    },
+    {
+      "id": 21,
+      "name": "Ф5.3",
+      "functional_fire_category": 5,
+      "info": "животноводческие, звероводческие, птицеводческие и рыбоводческие здания"
+    },
+    {
+      "id": 22,
+      "name": "Ф5.4",
+      "functional_fire_category": 5,
+      "info": "административные и бытовые здания на территории промышленных и сельскохозяй- ственных предприятий"
+    },
+    {
+      "id": 23,
+      "name": "Ф6.1",
+      "functional_fire_category": 1,
+      "info": "сооружения гражданской обороны"
+    }
+  ],
+  "minimum_rei_construction_type": [
+    {
+      "id": 1,
+      "name": "вертикальный элемент"
+    },
+    {
+      "id": 2,
+      "name": "горизонтальный элемент"
+    }
+  ],
+  "substance_type": [
+    {
+      "id": 1,
+      "name": "ГГ",
+      "info": "Горючий газ"
+    },
+    {
+      "id": 2,
+      "name": "ГП",
+      "info": "Горючая пыль"
+    },
+    {
+      "id": 3,
+      "name": "ЛВЖ",
+      "info": "Легковоспламеняющаяся жидкость"
+    },
+    {
+      "id": 4,
+      "name": "ГЖ",
+      "info": "Горючая жидкость"
+    },
+    {
+      "id": 5,
+      "name": "ТГЖ",
+      "info": "Трудногорючая жидкость"
+    },
+    {
+      "id": 6,
+      "name": "ТГВ",
+      "info": "Твёрдое горючее вещество"
+    }
+  ],
+  "user": [
+    {
+      "id": 1,
+      "name": "admin",
+      "password": "admin",
+      "registration_date": "09.07.2017"
+    },
+    {
+      "id": 2,
+      "name": "Noegon",
+      "password": "Chimal666",
+      "registration_date": "17.07.2017"
+    }
+  ],
+  "project": [
+    {
+      "number": "001/2017",
+      "info": "no info",
+      "id": 1,
+      "name": "ОАО \"Речицадрев\"",
+      "user": 2
+    }
+  ],
+  "position": [
+    {
+      "functional_fire_safety_subcategory": 19,
+      "id": 1,
+      "structural_volume": 4900,
+      "name": "Главный производственный корпус",
+      "project": 1,
+      "fire_safety_category": 6,
+      "number": "1",
+      "full_square": 700,
+      "info": "no info",
+      "user": 2,
+      "useful_square": 650,
+      "fire_resistance_rank": 6
+    }
+  ],
+  "room": [
+    {
+      "number": "1",
+      "position": 1,
+      "height": 6,
+      "id": 1,
+      "square": 600,
+      "fire_safety_category": 6,
+      "minimum_rei_construction_type": 1,
+      "name": "Главный производственный цех",
+      "user": 2
+    },
+    {
+      "number": "2",
+      "position": 1,
+      "height": 3,
+      "id": 2,
+      "square": 50,
+      "fire_safety_category": 6,
+      "minimum_rei_construction_type": 1,
+      "name": "Административное помещение",
+      "user": 2
+    }
+  ],
+  "aperture_group": [
+    {
+      "amount": 3,
+      "id": 2,
+      "room": 2,
+      "width": 1.5,
+      "height": 2.5,
+      "user": 2
+    },
+    {
+      "amount": 30,
+      "id": 1,
+      "room": 1,
+      "width": 1.5,
+      "height": 2.5,
+      "user": 2
+    }
+  ],
+  "substance": [
+    {
+      "id": 1,
+      "name": "Дерево сухое (сосна w=12%)",
+      "density": 500,
+      "required_air_amount": 4.6,
+      "heat_of_combusion": 13.8,
+      "flame_speed": 0.067,
+      "burning_rate": 0.0393,
+      "molecular_weight": 0,
+      "splash_point": -273,
+      "carbon_athoms": 0,
+      "hydrogen_athoms": 0,
+      "oxygen_athoms": 0,
+      "galoids_athoms": 0,
+      "user": 1,
+      "substance_type": 6
+    },
+    {
+      "id": 2,
+      "name": "Бумага (книги, журналы)",
+      "density": 1000,
+      "required_air_amount": 4.6,
+      "heat_of_combusion": 13.4,
+      "flame_speed": 0.005,
+      "burning_rate": 0.0393,
+      "molecular_weight": 0,
+      "splash_point": -273,
+      "carbon_athoms": 0,
+      "hydrogen_athoms": 0,
+      "oxygen_athoms": 0,
+      "galoids_athoms": 0,
+      "user": 1,
+      "substance_type": 6
+    },
+    {
+      "id": 3,
+      "name": "Резина",
+      "density": 1500,
+      "required_air_amount": 14.95,
+      "heat_of_combusion": 33.52,
+      "flame_speed": 0.02,
+      "burning_rate": 0.0112,
+      "molecular_weight": 0,
+      "splash_point": -273,
+      "carbon_athoms": 0,
+      "hydrogen_athoms": 0,
+      "oxygen_athoms": 0,
+      "galoids_athoms": 0,
+      "user": 1,
+      "substance_type": 6
+    },
+    {
+      "id": 4,
+      "name": "Полистирол",
+      "density": 1050,
+      "required_air_amount": 14,
+      "heat_of_combusion": 39,
+      "flame_speed": 0.05,
+      "burning_rate": 0.0144,
+      "molecular_weight": 0,
+      "splash_point": -273,
+      "carbon_athoms": 0,
+      "hydrogen_athoms": 0,
+      "oxygen_athoms": 0,
+      "galoids_athoms": 0,
+      "user": 1,
+      "substance_type": 6
+    },
+    {
+      "id": 5,
+      "name": "Бензин",
+      "density": 750,
+      "required_air_amount": 14,
+      "heat_of_combusion": 41.87,
+      "flame_speed": 0.38,
+      "burning_rate": 0.0617,
+      "molecular_weight": 105,
+      "splash_point": -42.8,
+      "carbon_athoms": 8,
+      "hydrogen_athoms": 18,
+      "oxygen_athoms": 0,
+      "galoids_athoms": 0,
+      "user": 1,
+      "substance_type": 3
+    },
+    {
+      "id": 1558851587,
+      "oxygen_athoms": 0,
+      "name": "xxx",
+      "user": 2,
+      "carbon_athoms": 0,
+      "burning_rate": 5,
+      "required_air_amount": 2,
+      "flame_speed": 4,
+      "hydrogen_athoms": 0,
+      "substance_type": 5,
+      "density": 1,
+      "splash_point": -273,
+      "heat_of_combusion": 3,
+      "molecular_weight": 0,
+      "galoids_athoms": 0
+    },
+    {
+      "id": 1168938557,
+      "oxygen_athoms": 0,
+      "name": "test37",
+      "user": 2,
+      "carbon_athoms": 0,
+      "burning_rate": 5,
+      "required_air_amount": 2,
+      "flame_speed": 4,
+      "hydrogen_athoms": 0,
+      "substance_type": 3,
+      "density": 1,
+      "splash_point": 30,
+      "heat_of_combusion": 3,
+      "molecular_weight": 103,
+      "galoids_athoms": 0
+    }
+  ],
+  "substance_pile": [
+    {
+      "room": 1,
+      "medium_pile_height": 1,
+      "id": 3,
+      "max_pile_height": 1,
+      "projection_square": 1,
+      "substance": 4,
+      "user": 2
+    },
+    {
+      "room": 1,
+      "medium_pile_height": 3,
+      "id": 1,
+      "max_pile_height": 3,
+      "projection_square": 100,
+      "substance": 1,
+      "user": 2
+    },
+    {
+      "room": 2,
+      "medium_pile_height": 0.1,
+      "id": 4,
+      "max_pile_height": 0.1,
+      "projection_square": 0.5,
+      "substance": 3,
+      "user": 2
+    },
+    {
+      "room": 1,
+      "medium_pile_height": 0.1,
+      "id": 2,
+      "max_pile_height": 0.1,
+      "projection_square": 5,
+      "substance": 3,
+      "user": 2
+    },
+    {
+      "room": 2,
+      "medium_pile_height": 0.1,
+      "id": 5,
+      "max_pile_height": 0.1,
+      "projection_square": 0.5,
+      "substance": 4,
+      "user": 2
+    }
+  ]
+}
