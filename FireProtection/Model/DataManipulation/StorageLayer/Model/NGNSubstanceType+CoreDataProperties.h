@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSFetchRequest<NGNSubstanceType *> *)fetchRequest;
 
-@property (nullable, nonatomic, copy) NSDecimalNumber *idx;
+@property (nullable, nonatomic, copy) NSNumber *idx;
 @property (nullable, nonatomic, copy) NSString *name;
 @property (nullable, nonatomic, copy) NSString *info;
 @property (nullable, nonatomic, retain) NSSet<NGNSubstance *> *substances;

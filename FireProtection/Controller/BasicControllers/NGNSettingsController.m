@@ -8,6 +8,7 @@
 
 #import "NGNSettingsController.h"
 #import "NGNApplicationEnterExitManager.h"
+#import "NGNApplicationStateManager.h"
 #import "NGNDataBaseManager.h"
 
 @interface NGNSettingsController ()
@@ -16,35 +17,31 @@
 
 @implementation NGNSettingsController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-}
-
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 2;
+    if ([NGNApplicationStateManager sharedInstance].isUserAuthorized) {
+        return 2;
+    }
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 2;
+    if (section == 0) {
+        return 2;
+    }
+    return 3;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 1) {
         switch (indexPath.row) {
-            case 0:
+            case 1:
                 NSLog(@"%@", @"User signed out");
                 [NGNDataBaseManager saveContext];
                 [[NGNApplicationEnterExitManager sharedInstance] launchExitApplicationPreparations];
                 break;
-            case 1:
+            case 2:
                 NSLog(@"%@", @"Application exit");
                 [NGNDataBaseManager saveContext];
                 [[NGNApplicationEnterExitManager sharedInstance] launchExitApplicationPreparations];

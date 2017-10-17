@@ -7,7 +7,10 @@
 //
 
 #import "NGNBasicVocabularyController.h"
+#import "NGNSubstance+CoreDataProperties.h"
 
 @interface NGNSubstanceController : NGNBasicVocabularyController
+
+@property (strong, nonatomic) NSFetchedResultsController<NGNSubstance *> *fetchedResultsController;
 
 @end

@@ -26,7 +26,13 @@
 @property (strong, nonatomic) IBOutlet UITextField *heatOfCombusionTextField;
 @property (strong, nonatomic) IBOutlet UITextField *flameSpeedTextField;
 @property (strong, nonatomic) IBOutlet UITextField *burningRateTextField;
+@property (strong, nonatomic) IBOutlet UITextField *molecularWeightTextField;
+@property (strong, nonatomic) IBOutlet UITextField *splashPointTextField;
+@property (strong, nonatomic) IBOutlet UITextField *carbonAthomsTextField;
+@property (strong, nonatomic) IBOutlet UITextField *oxygenAthomsTextField;
+@property (strong, nonatomic) IBOutlet UITextField *hydrogenAthomsTextField;
 @property (strong, nonatomic) IBOutlet UIPickerView *substanceTypePickerView;
+@property (strong, nonatomic) IBOutlet UITextField *galoidAthomsTextField;
 
 @property (strong, nonatomic) IBOutletCollection(UITextField) NSArray *editableViewsArray;
 
@@ -54,6 +60,12 @@
         self.heatOfCombusionTextField.text = self.substance.heatOfCombusion.stringValue;
         self.flameSpeedTextField.text = self.substance.flameSpeed.stringValue;
         self.burningRateTextField.text = self.substance.burningRate.stringValue;
+        self.molecularWeightTextField.text = self.substance.molecularWeight.stringValue;
+        self.splashPointTextField.text = self.substance.splashPoint.stringValue;
+        self.carbonAthomsTextField.text = self.substance.carbonAthoms.stringValue;
+        self.oxygenAthomsTextField.text = self.substance.oxygenAthoms.stringValue;
+        self.hydrogenAthomsTextField.text = self.substance.hydrogenAthoms.stringValue;
+        self.galoidAthomsTextField.text = self.substance.galoidsAthoms.stringValue;
     } else {
         for (UITextField *textField in self.editableViewsArray) {
             textField.text = @"";
@@ -86,9 +98,12 @@
 }
 
 -(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
     NSUInteger index = [self.substanceTypes indexOfObject:self.substance.substanceType];
     if (self.substance) {
         [self.substanceTypePickerView selectRow:index inComponent:0 animated:YES];
+        [self.tableView reloadData];
     }
 }
 
@@ -99,7 +114,11 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 8;
+    NSInteger selectedIndex = [self.substanceTypePickerView selectedRowInComponent:0];
+    if (selectedIndex == 0 || selectedIndex == 1 || selectedIndex == 2) {
+        return 13;
+    }
+    return 7;
 }
 
 - (IBAction)saveBarButtonTapped:(UIBarButtonItem *)sender {
@@ -119,6 +138,12 @@
                  ((NGNSubstance *)substance).flameSpeed = @([weakSelf.flameSpeedTextField.text doubleValue]);
                  ((NGNSubstance *)substance).burningRate = @([weakSelf.burningRateTextField.text doubleValue]);
                  ((NGNSubstance *)substance).substanceType = currentSubstanceType;
+                 ((NGNSubstance *)substance).molecularWeight = @([weakSelf.molecularWeightTextField.text doubleValue]);
+                 ((NGNSubstance *)substance).splashPoint = @([weakSelf.splashPointTextField.text doubleValue]);
+                 ((NGNSubstance *)substance).carbonAthoms = @([weakSelf.carbonAthomsTextField.text integerValue]);
+                 ((NGNSubstance *)substance).oxygenAthoms = @([weakSelf.oxygenAthomsTextField.text integerValue]);
+                 ((NGNSubstance *)substance).hydrogenAthoms = @([weakSelf.hydrogenAthomsTextField.text integerValue]);
+                 ((NGNSubstance *)substance).galoidsAthoms = @([weakSelf.galoidAthomsTextField.text integerValue]);
                  NSFetchRequest *request = [NGNUser fetchRequest];
                  request.predicate = [NSPredicate predicateWithFormat:@"self.idx == %@",
                                       [NGNApplicationStateManager sharedInstance].currentSessionUserId];
@@ -127,11 +152,9 @@
                  if (!error && result.count > 0) {
                      NGNUser *currentUser = result[0];
                      ((NGNSubstance *)substance).user = currentUser;
-                     //                [currentUser addSubstancesObject:(NGNSubstance *)substance];
                  } else {
                      ((NGNSubstance *)substance).user = nil;
                  }
-//                 [NGNDataBaseManager saveContext];
                  [self.navigationController popViewControllerAnimated:YES];
         }];
     } else {
@@ -143,6 +166,12 @@
             self.substance.flameSpeed = @([self.flameSpeedTextField.text doubleValue]);
             self.substance.burningRate = @([self.burningRateTextField.text doubleValue]);
             self.substance.substanceType = currentSubstanceType;
+            self.substance.molecularWeight = @([self.molecularWeightTextField.text doubleValue]);
+            self.substance.splashPoint = @([self.splashPointTextField.text doubleValue]);
+            self.substance.carbonAthoms = @([self.carbonAthomsTextField.text integerValue]);
+            self.substance.oxygenAthoms = @([self.oxygenAthomsTextField.text integerValue]);
+            self.substance.hydrogenAthoms = @([self.hydrogenAthomsTextField.text integerValue]);
+            self.substance.galoidsAthoms = @([self.galoidAthomsTextField.text integerValue]);
             [NGNDataBaseManager saveContext];
         }
         [self.navigationController popViewControllerAnimated:YES];
@@ -170,8 +199,16 @@
 - (void)pickerView:(UIPickerView *)thePickerView
       didSelectRow:(NSInteger)row
        inComponent:(NSInteger)component {
-//    NGNSubstanceType *currentSubstanceType = self.substanceTypes[row];
-    //Temporary nothing happens
+    if (row != 0 && row != 1 && row != 2) {
+        self.molecularWeightTextField.text = @(0).stringValue;
+        self.splashPointTextField.text = @(-273).stringValue;
+        self.carbonAthomsTextField.text = @(0).stringValue;
+        self.oxygenAthomsTextField.text = @(0).stringValue;
+        self.hydrogenAthomsTextField.text = @(0).stringValue;
+        self.galoidAthomsTextField.text = @(0).stringValue;
+    }
+    
+    [self.tableView reloadData];
 }
 
 @end

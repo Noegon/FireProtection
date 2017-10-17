@@ -58,17 +58,17 @@
 
 - (void)userLoggedIn:(NSNotification *)notification {
     UITabBarItem *rootItem = self.tabBarController.tabBar.items[0];
-    UITabBarItem *menuItem = self.tabBarController.tabBar.items[3];
+//    UITabBarItem *menuItem = self.tabBarController.tabBar.items[3];
     rootItem.enabled = YES;
-    menuItem.enabled = YES;
+//    menuItem.enabled = YES;
     self.tabBarController.selectedIndex = 0;
 }
 
 - (void)userLoggedOut:(NSNotification *)notification {
     UITabBarItem *rootItem = self.tabBarController.tabBar.items[0];
-    UITabBarItem *menuItem = self.tabBarController.tabBar.items[3];
+//    UITabBarItem *menuItem = self.tabBarController.tabBar.items[3];
     rootItem.enabled = NO;
-    menuItem.enabled = NO;
+//    menuItem.enabled = NO;
     self.tabBarController.selectedIndex = 1;
     [[[(UINavigationController *)self.tabBarController.selectedViewController visibleViewController] navigationController] popToRootViewControllerAnimated:YES];
 }

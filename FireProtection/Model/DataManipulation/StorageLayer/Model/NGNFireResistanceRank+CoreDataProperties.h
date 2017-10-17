@@ -17,16 +17,16 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSFetchRequest<NGNFireResistanceRank *> *)fetchRequest;
 
-@property (nullable, nonatomic, copy) NSDecimalNumber *idx;
+@property (nullable, nonatomic, copy) NSNumber *idx;
 @property (nullable, nonatomic, copy) NSString *number;
-@property (nullable, nonatomic, copy) NSDecimalNumber *bearingElementR;
-@property (nullable, nonatomic, copy) NSDecimalNumber *selfBearingElementRE;
-@property (nullable, nonatomic, copy) NSDecimalNumber *outerNonBearingWallE;
-@property (nullable, nonatomic, copy) NSDecimalNumber *floorCeilingREI;
-@property (nullable, nonatomic, copy) NSDecimalNumber *coveringRE;
-@property (nullable, nonatomic, copy) NSDecimalNumber *fermBeanR;
-@property (nullable, nonatomic, copy) NSDecimalNumber *stairWallREI;
-@property (nullable, nonatomic, copy) NSDecimalNumber *stairwayR;
+@property (nullable, nonatomic, copy) NSNumber *bearingElementR;
+@property (nullable, nonatomic, copy) NSNumber *selfBearingElementRE;
+@property (nullable, nonatomic, copy) NSNumber *outerNonBearingWallE;
+@property (nullable, nonatomic, copy) NSNumber *floorCeilingREI;
+@property (nullable, nonatomic, copy) NSNumber *coveringRE;
+@property (nullable, nonatomic, copy) NSNumber *fermBeanR;
+@property (nullable, nonatomic, copy) NSNumber *stairWallREI;
+@property (nullable, nonatomic, copy) NSNumber *stairwayR;
 @property (nullable, nonatomic, retain) NSSet<NGNPosition *> *positions;
 
 @end

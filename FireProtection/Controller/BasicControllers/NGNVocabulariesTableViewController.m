@@ -18,6 +18,7 @@
 @implementation NGNVocabulariesTableViewController
 
 -(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     if ([NGNApplicationStateManager sharedInstance].isUserAuthorized) {
         self.navigationItem.rightBarButtonItem = nil;
     } else {

@@ -17,10 +17,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSFetchRequest<NGNApertureGroup *> *)fetchRequest;
 
-@property (nullable, nonatomic, copy) NSDecimalNumber *idx;
+@property (nullable, nonatomic, copy) NSNumber *idx;
 @property (nullable, nonatomic, copy) NSNumber *height;
 @property (nullable, nonatomic, copy) NSNumber *width;
-@property (nullable, nonatomic, copy) NSDecimalNumber *amount;
+@property (nullable, nonatomic, copy) NSNumber *amount;
 @property (nullable, nonatomic, retain) NGNUser *user;
 @property (nullable, nonatomic, retain) NGNRoom *room;
 

@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSFetchRequest<NGNRoom *> *)fetchRequest;
 
 @property (nullable, nonatomic, copy) NSNumber *height;
-@property (nullable, nonatomic, copy) NSDecimalNumber *idx;
+@property (nullable, nonatomic, copy) NSNumber *idx;
 @property (nullable, nonatomic, copy) NSString *number;
 @property (nullable, nonatomic, copy) NSNumber *square;
 @property (nullable, nonatomic, copy) NSString *name;

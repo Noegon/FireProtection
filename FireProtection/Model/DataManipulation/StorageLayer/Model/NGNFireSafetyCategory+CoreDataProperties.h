@@ -17,8 +17,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSFetchRequest<NGNFireSafetyCategory *> *)fetchRequest;
 
-@property (nullable, nonatomic, copy) NSDecimalNumber *idx;
+@property (nullable, nonatomic, copy) NSNumber *idx;
 @property (nullable, nonatomic, copy) NSString *name;
+@property (nullable, nonatomic, copy) NSNumber *minimumSpecificFireLoad;
+@property (nullable, nonatomic, copy) NSNumber *maximumSpecificFireLoad;
 @property (nullable, nonatomic, copy) NSString *info;
 @property (nullable, nonatomic, retain) NSSet<NGNRoom *> *rooms;
 @property (nullable, nonatomic, retain) NSSet<NGNPosition *> *positions;

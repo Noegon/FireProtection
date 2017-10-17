@@ -17,6 +17,8 @@
 
 @dynamic idx;
 @dynamic name;
+@dynamic minimumSpecificFireLoad;
+@dynamic maximumSpecificFireLoad;
 @dynamic info;
 @dynamic rooms;
 @dynamic positions;
@@ -28,7 +30,10 @@
 + (FEMMapping *)defaultMapping {
     FEMMapping *mapping = [[FEMMapping alloc] initWithEntityName:[self entity].name];
     [mapping addAttributesFromArray:@[@"name", @"info"]];
-    [mapping addAttributesFromDictionary:@{@"idx": @"id",}];
+    [mapping addAttributesFromDictionary:@{@"idx": @"id",
+                                           @"minimumSpecificFireLoad": @"minimum_specific_fire_load",
+                                           @"maximumSpecificFireLoad": @"maximum_specific_fore_load"
+                                           }];
     mapping.primaryKey = @"idx";
     
     return mapping;

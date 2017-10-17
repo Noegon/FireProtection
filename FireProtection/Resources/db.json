@@ -101,46 +101,64 @@
     {
       "id": 1,
       "name": "А",
+      "minimum_specific_fire_load": 0,
+      "maximum_specific_fore_load": 0,
       "info": "Горючие газы (далее – ГГ), легковоспламеняющиеся жидкости (далее – ЛВЖ) с температурой вспышки не более 28 °С в таком количестве, что могут образовывать взрывоопасные парогазовоздушные смеси, при воспламенении которых развивается расчетное избыточное давление взрыва в помещении, превышающее 5 кПа. Вещества и материалы, способные взрываться и гореть при взаимодействии с водой, кислородом воздуха или друг с другом в таком количестве, что расчетное избыточное давление взрыва в помещении превышает 5 кПа"
     },
     {
       "id": 2,
       "name": "Б",
+      "minimum_specific_fire_load": 0,
+      "maximum_specific_fore_load": 0,
       "info": "Горючие пыли или волокна, ЛВЖ с температурой вспышки более 28 °С, горючие жидкости (далее – ГЖ) в таком количестве, что могут образовывать взрывоопасные пыле- или паровоздушные смеси, при воспламенении которых развивается расчетное избыточное давление взрыва в помещении, превышающее 5 кПa"
     },
     {
       "id": 3,
       "name": "В1",
+      "minimum_specific_fire_load": 2201,
+      "maximum_specific_fore_load": 999999999999,
       "info": "ГГ, ЛВЖ, ГЖ и трудногорючие жидкости, твердые горючие и трудногорючие вещества и материалы (в том числе пыли и волокна), вещества и материалы, способные при взаимодействии с водой, кислородом воздуха или друг с другом взрываться и гореть, при условии, что помещения, в которых они имеются в наличии или обращаются, не относятся к категории А или Б"
     },
     {
       "id": 4,
       "name": "В2",
+      "minimum_specific_fire_load": 1401,
+      "maximum_specific_fore_load": 2200,
       "info": "ГГ, ЛВЖ, ГЖ и трудногорючие жидкости, твердые горючие и трудногорючие вещества и материалы (в том числе пыли и волокна), вещества и материалы, способные при взаимодействии с водой, кислородом воздуха или друг с другом взрываться и гореть, при условии, что помещения, в которых они имеются в наличии или обращаются, не относятся к категории А или Б"
     },
     {
       "id": 5,
       "name": "В3",
+      "minimum_specific_fire_load": 201,
+      "maximum_specific_fore_load": 1400,
       "info": "ГГ, ЛВЖ, ГЖ и трудногорючие жидкости, твердые горючие и трудногорючие вещества и материалы (в том числе пыли и волокна), вещества и материалы, способные при взаимодействии с водой, кислородом воздуха или друг с другом взрываться и гореть, при условии, что помещения, в которых они имеются в наличии или обращаются, не относятся к категории А или Б"
     },
     {
       "id": 6,
       "name": "В4",
+      "minimum_specific_fire_load": 100,
+      "maximum_specific_fore_load": 200,
       "info": "ГГ, ЛВЖ, ГЖ и трудногорючие жидкости, твердые горючие и трудногорючие вещества и материалы (в том числе пыли и волокна), вещества и материалы, способные при взаимодействии с водой, кислородом воздуха или друг с другом взрываться и гореть, при условии, что помещения, в которых они имеются в наличии или обращаются, не относятся к категории А или Б"
     },
     {
       "id": 7,
       "name": "Г1",
+      "minimum_specific_fire_load": 0,
+      "maximum_specific_fore_load": 0,
       "info": "ГГ, ЛВЖ, ГЖ, твердые горючие вещества и материалы, которые сжигаются или утилизируются в процессе контролируемого горения в качестве топлива"
     },
     {
       "id": 8,
       "name": "Г2",
+      "minimum_specific_fire_load": 0,
+      "maximum_specific_fore_load": 0,
       "info": "Негорючие вещества и материалы в горячем, раскаленном или расплавленном состоянии, процесс обработки которых сопровождается выделением лучистого тепла, искр и пламени"
     },
     {
       "id": 9,
       "name": "Д",
+      "minimum_specific_fire_load": 0,
+      "maximum_specific_fore_load": 0,
       "info": "Негорючие вещества и материалы в холодном состоянии, горючие и трудногорючие вещества и материалы в таком количестве, что удельная пожарная нагрузка на участке их размещения в помещении не превышает 100 МДж/м2, а пожарная нагрузка в пределах помещения – 1000 МДж"
     }
   ],
@@ -399,17 +417,6 @@
   ],
   "room": [
     {
-      "number": "2",
-      "position": 1,
-      "height": 3,
-      "id": 2,
-      "square": 50,
-      "fire_safety_category": 6,
-      "minimum_rei_construction_type": 1,
-      "name": "Административное помещение",
-      "user": 2
-    },
-    {
       "number": "1",
       "position": 1,
       "height": 6,
@@ -418,6 +425,17 @@
       "fire_safety_category": 6,
       "minimum_rei_construction_type": 1,
       "name": "Главный производственный цех",
+      "user": 2
+    },
+    {
+      "number": "2",
+      "position": 1,
+      "height": 3,
+      "id": 2,
+      "square": 50,
+      "fire_safety_category": 6,
+      "minimum_rei_construction_type": 1,
+      "name": "Административное помещение",
       "user": 2
     }
   ],
@@ -448,6 +466,12 @@
       "heat_of_combusion": 13.8,
       "flame_speed": 0.067,
       "burning_rate": 0.0393,
+      "molecular_weight": 0,
+      "splash_point": -273,
+      "carbon_athoms": 0,
+      "hydrogen_athoms": 0,
+      "oxygen_athoms": 0,
+      "galoids_athoms": 0,
       "user": 1,
       "substance_type": 6
     },
@@ -459,6 +483,12 @@
       "heat_of_combusion": 13.4,
       "flame_speed": 0.005,
       "burning_rate": 0.0393,
+      "molecular_weight": 0,
+      "splash_point": -273,
+      "carbon_athoms": 0,
+      "hydrogen_athoms": 0,
+      "oxygen_athoms": 0,
+      "galoids_athoms": 0,
       "user": 1,
       "substance_type": 6
     },
@@ -470,6 +500,12 @@
       "heat_of_combusion": 33.52,
       "flame_speed": 0.02,
       "burning_rate": 0.0112,
+      "molecular_weight": 0,
+      "splash_point": -273,
+      "carbon_athoms": 0,
+      "hydrogen_athoms": 0,
+      "oxygen_athoms": 0,
+      "galoids_athoms": 0,
       "user": 1,
       "substance_type": 6
     },
@@ -481,6 +517,12 @@
       "heat_of_combusion": 39,
       "flame_speed": 0.05,
       "burning_rate": 0.0144,
+      "molecular_weight": 0,
+      "splash_point": -273,
+      "carbon_athoms": 0,
+      "hydrogen_athoms": 0,
+      "oxygen_athoms": 0,
+      "galoids_athoms": 0,
       "user": 1,
       "substance_type": 6
     },
@@ -492,18 +534,58 @@
       "heat_of_combusion": 41.87,
       "flame_speed": 0.38,
       "burning_rate": 0.0617,
+      "molecular_weight": 105,
+      "splash_point": -42.8,
+      "carbon_athoms": 8,
+      "hydrogen_athoms": 18,
+      "oxygen_athoms": 0,
+      "galoids_athoms": 0,
       "user": 1,
       "substance_type": 3
+    },
+    {
+      "id": 1558851587,
+      "oxygen_athoms": 0,
+      "name": "xxx",
+      "user": 2,
+      "carbon_athoms": 0,
+      "burning_rate": 5,
+      "required_air_amount": 2,
+      "flame_speed": 4,
+      "hydrogen_athoms": 0,
+      "substance_type": 5,
+      "density": 1,
+      "splash_point": -273,
+      "heat_of_combusion": 3,
+      "molecular_weight": 0,
+      "galoids_athoms": 0
+    },
+    {
+      "id": 1168938557,
+      "oxygen_athoms": 0,
+      "name": "test37",
+      "user": 2,
+      "carbon_athoms": 0,
+      "burning_rate": 5,
+      "required_air_amount": 2,
+      "flame_speed": 4,
+      "hydrogen_athoms": 0,
+      "substance_type": 3,
+      "density": 1,
+      "splash_point": 30,
+      "heat_of_combusion": 3,
+      "molecular_weight": 103,
+      "galoids_athoms": 0
     }
   ],
   "substance_pile": [
     {
       "room": 1,
-      "medium_pile_height": 0.1,
-      "id": 2,
-      "max_pile_height": 0.1,
-      "projection_square": 5,
-      "substance": 3,
+      "medium_pile_height": 1,
+      "id": 3,
+      "max_pile_height": 1,
+      "projection_square": 1,
+      "substance": 4,
       "user": 2
     },
     {
@@ -518,15 +600,6 @@
     {
       "room": 2,
       "medium_pile_height": 0.1,
-      "id": 5,
-      "max_pile_height": 0.1,
-      "projection_square": 0.5,
-      "substance": 4,
-      "user": 2
-    },
-    {
-      "room": 2,
-      "medium_pile_height": 0.1,
       "id": 4,
       "max_pile_height": 0.1,
       "projection_square": 0.5,
@@ -535,10 +608,19 @@
     },
     {
       "room": 1,
-      "medium_pile_height": 1,
-      "id": 3,
-      "max_pile_height": 1,
-      "projection_square": 1,
+      "medium_pile_height": 0.1,
+      "id": 2,
+      "max_pile_height": 0.1,
+      "projection_square": 5,
+      "substance": 3,
+      "user": 2
+    },
+    {
+      "room": 2,
+      "medium_pile_height": 0.1,
+      "id": 5,
+      "max_pile_height": 0.1,
+      "projection_square": 0.5,
       "substance": 4,
       "user": 2
     }

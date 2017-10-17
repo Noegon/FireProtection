@@ -17,13 +17,19 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSFetchRequest<NGNSubstance *> *)fetchRequest;
 
-@property (nullable, nonatomic, copy) NSDecimalNumber *idx;
+@property (nullable, nonatomic, copy) NSNumber *idx;
 @property (nullable, nonatomic, copy) NSString *name;
 @property (nullable, nonatomic, copy) NSNumber *density;
 @property (nullable, nonatomic, copy) NSNumber *requiredAirAmount;
 @property (nullable, nonatomic, copy) NSNumber *heatOfCombusion;
 @property (nullable, nonatomic, copy) NSNumber *flameSpeed;
 @property (nullable, nonatomic, copy) NSNumber *burningRate;
+@property (nullable, nonatomic, copy) NSNumber *molecularWeight; //g/mol
+@property (nullable, nonatomic, copy) NSNumber *splashPoint; //deg Cel
+@property (nullable, nonatomic, copy) NSNumber *carbonAthoms;
+@property (nullable, nonatomic, copy) NSNumber *hydrogenAthoms;
+@property (nullable, nonatomic, copy) NSNumber *oxygenAthoms;
+@property (nullable, nonatomic, copy) NSNumber *galoidsAthoms;
 @property (nullable, nonatomic, retain) NGNSubstanceType *substanceType;
 @property (nullable, nonatomic, retain) NGNUser *user;
 @property (nullable, nonatomic, retain) NSSet<NGNSubstancePile *> *substancePiles;

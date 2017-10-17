@@ -20,6 +20,11 @@ static NSString *const kNGNStoryboardSegueFireSafetyCategoryDetail = @"fireSafet
 static NSString *const kNGNStoryboardSegueSubstanceTypeDetail = @"substanceTypeDetailSegue";
 static NSString *const kNGNStoryboardSegueSubstanceDetail = @"substanceDetailSegue";
 static NSString *const kNGNStoryboardSegueAddNewSubstance = @"addNewSubstanceSegue";
+static NSString *const kNGNStoryboardSegueAddNewLocalPile = @"addNewLocalPileSegue";
+static NSString *const kNGNStoryboardSegueLocalPileDetail = @"localPileDetailSegue";
+static NSString *const kNGNStoryboardSegueSelectSubstanceForFireHazardCalculation = @"selectSubstanceForFireHazardCalculationSegue";
+static NSString *const kNGNStoryboardUnwindSeguePilesToFIreHazardCalculation = @"pilesToFIreHazardCalculationUnwindSegue";
+static NSString *const kNGNStoryboardUnwindSeguePileDetailToPilesUnwindSegue = @"pileDetailToPilesUnwindSegue";
 
 #pragma mark - controller id's
 //Main storyboard
@@ -34,6 +39,8 @@ static NSString *const kNGNStoryboardMainSubstanceTypeDetailControllerID = @"sub
 static NSString *const kNGNStoryboardMainSubstanceControllerID = @"substanceControllerID";
 static NSString *const kNGNStoryboardMainSubstanceDetailControllerID = @"substanceDetailControllerID";
 static NSString *const kNGNStoryboardMainSettingsControllerId = @"settingsControllerID";
+static NSString *const kNGNStoryboardMainFireHazardCalculationControllerId = @"fireHazardCalculationControllerID";
+static NSString *const kNGNStoryboardMainLocalSubstanceDetailControllerId = @"localSubstancePileDetailControllerID";
 
 //Authentification storyboard
 

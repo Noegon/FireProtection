@@ -25,7 +25,8 @@ typedef NS_ENUM(NSInteger, NGNPropertiesMeasureUnits) {
     NGNSubstanceAirAmountUnit,
     NGNSubstanceHeatOfCombusionUnit,
     NGNSubstanceFlameSpeedUnit,
-    NGNSubstanceBurningRateUnit
+    NGNSubstanceBurningRateUnit,
+    NGNSubstanceMolecularWeightUnit
 };
 
 static NSString *const NGNStringPropertiesAdoptedNames[] = {
@@ -41,7 +42,8 @@ static NSString *const NGNStringPropertiesMeasureUnits[] = {
     [NGNSubstanceAirAmountUnit] = @"кг/кг",
     [NGNSubstanceHeatOfCombusionUnit] = @"МДж",
     [NGNSubstanceFlameSpeedUnit] = @"м/с",
-    [NGNSubstanceBurningRateUnit] = @"кг/м2*с"
+    [NGNSubstanceBurningRateUnit] = @"кг/м2*с",
+    [NGNSubstanceMolecularWeightUnit] = @"г/моль",
 };
 
 static NSString *const NGNStringPropertiesNames[] = {
@@ -49,7 +51,8 @@ static NSString *const NGNStringPropertiesNames[] = {
     [NGNSubstanceAirAmount] = @"requiredAirAmount",
     [NGNSubstanceHeatOfCombusion] = @"heatOfCombusion",
     [NGNSubstanceFlameSpeed] = @"flameSpeed",
-    [NGNSubstanceBurningRate] = @"burningRate"
+    [NGNSubstanceBurningRate] = @"burningRate",
+    [NGNSubstanceMolecularWeightUnit] = @"molecularWeight"
 };
 
 static NSInteger const kNGNinfoPropertiesAmount = 5;
@@ -67,6 +70,12 @@ static NSInteger const kNGNinfoPropertiesAmount = 5;
 @dynamic heatOfCombusion;
 @dynamic flameSpeed;
 @dynamic burningRate;
+@dynamic molecularWeight;
+@dynamic splashPoint;
+@dynamic carbonAthoms;
+@dynamic hydrogenAthoms;
+@dynamic oxygenAthoms;
+@dynamic galoidsAthoms;
 @dynamic user;
 @dynamic substanceType;
 @dynamic substancePiles;
@@ -109,7 +118,13 @@ static NSInteger const kNGNinfoPropertiesAmount = 5;
                                            @"requiredAirAmount": @"required_air_amount",
                                            @"heatOfCombusion": @"heat_of_combusion",
                                            @"flameSpeed": @"flame_speed",
-                                           @"burningRate": @"burning_rate"
+                                           @"burningRate": @"burning_rate",
+                                           @"molecularWeight": @"molecular_weight",
+                                           @"splashPoint": @"splash_point",
+                                           @"carbonAthoms": @"carbon_athoms",
+                                           @"hydrogenAthoms": @"hydrogen_athoms",
+                                           @"oxygenAthoms": @"oxygen_athoms",
+                                           @"galoidsAthoms": @"galoids_athoms",
                                            }];
     mapping.primaryKey = @"idx";
     

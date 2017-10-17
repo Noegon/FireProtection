@@ -40,10 +40,8 @@ static NSString *const kNGNApplicationNotificationServerReachability = @"serverR
 static NSString *const kNGNApplicationNotificationUserLoggedIn = @"userLoggedIn";
 static NSString *const kNGNApplicationNotificationUserLoggedOut = @"userLoggedOut";
 
-//static NSString *const kNGNControllerNotificationGoodsWasLoaded = @"goodsWasLoaded";
-//static NSString *const kNGNControllerNotificationUserWasLoaded = @"userWasLoaded";
-//static NSString *const kNGNControllerNotificationOrdersWasLoaded = @"ordersWasLoaded";
-//static NSString *const kNGNControllerNotificationGoodsOrdersWasLoaded = @"goodsOrdersWasLoaded";
+static NSString *const kNGNApplicationNotificationSubstanceDidSelected = @"substanceDidSelected";
+static NSString *const kNGNApplicationNotificationPileDidAdded = @"pileDidAdded";
 
 #pragma mark - table cells
 
@@ -54,6 +52,10 @@ static NSString *const kNGNControllerFireSafetySubcategoryCell = @"fireSafetySub
 static NSString *const kNGNControllerSubstanceTypeCell = @"substanceTypeCell";
 static NSString *const kNGNControllerSubstanceCell = @"substanceCell";
 
+//Non vocabularies
+static NSString *const kNGNControllerIdentifierSubstancePileCell = @"substancePileCell";
+static NSString *const kNGNControllerIdentifierSubstanceDetailedCell = @"substanceDetailedCell";
+static NSString *const kNGNControllerIdentifierSubstanceCell = @"substanceCell";
 
 #pragma mark - fonts parameters
 static NSString *const kNGNControllerHelveticaLightFont = @"Helvetica-Light";

@@ -21,17 +21,16 @@
 
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *addButton;
 
-@property (strong, nonatomic) NSFetchedResultsController<NGNSubstance *> *fetchedResultsController;
-
 @end
 
 @implementation NGNSubstanceController
 
 - (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
     if (![NGNApplicationStateManager sharedInstance].isUserAuthorized) {
         self.addButton.enabled = NO;
     }
-//    [self.tableView reloadData];
 }
 
 #pragma mark - Table view data source
@@ -100,44 +99,55 @@
     }
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSDictionary *userInfo = @{@"substance": [self.fetchedResultsController objectAtIndexPath:indexPath]};
+    [[NSNotificationCenter defaultCenter] postNotificationName:kNGNApplicationNotificationSubstanceDidSelected
+                                                        object:nil
+                                                      userInfo:userInfo];
+}
+
 #pragma mark - Fetched results controller
 
 - (NSFetchedResultsController<NGNSubstance *> *)fetchedResultsController {
     
-    NSFetchRequest<NGNSubstance *> *fetchRequest = [NGNSubstance fetchRequest];
-    if ([NGNApplicationStateManager sharedInstance].isUserAuthorized) {
-        fetchRequest.predicate = [NSPredicate predicateWithFormat:@"user.idx = %@ OR user.idx = %@",
-                                  @(1),
-                                  [NGNApplicationStateManager sharedInstance].currentSessionUserId];
-    } else {
-        fetchRequest.predicate = [NSPredicate predicateWithFormat:@"user.idx = %@", @(1)];
-    }
-    
-    // Edit the sort key as appropriate.
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"idx.integerValue" ascending:YES];
-    
-    [fetchRequest setSortDescriptors:@[sortDescriptor]];
-    
-    fetchRequest.fetchBatchSize = 10;
-    
-    // Edit the section name key path and cache name if appropriate.
-    // nil for section name key path means "no sections".
-    NSFetchedResultsController<NGNSubstance *> *aFetchedResultsController =
+    if (!_fetchedResultsController) {
+        NSFetchRequest<NGNSubstance *> *fetchRequest = [NGNSubstance fetchRequest];
+        
+        if ([NGNApplicationStateManager sharedInstance].isUserAuthorized) {
+            
+            fetchRequest.predicate = [NSPredicate predicateWithFormat:@"user.idx = %@ OR user.idx = %@",
+                                      @(1),
+                                      [NGNApplicationStateManager sharedInstance].currentSessionUserId];
+        } else {
+            fetchRequest.predicate = [NSPredicate predicateWithFormat:@"user.idx = %@", @(1)];
+        }
+        
+        // Edit the sort key as appropriate.
+        NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"idx.integerValue" ascending:YES];
+        
+        [fetchRequest setSortDescriptors:@[sortDescriptor]];
+        
+        fetchRequest.fetchBatchSize = 10;
+        
+        // Edit the section name key path and cache name if appropriate.
+        // nil for section name key path means "no sections".
+        NSFetchedResultsController<NGNSubstance *> *aFetchedResultsController =
         [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest
                                             managedObjectContext:[NGNDataBaseManager managedObjectContext]
                                               sectionNameKeyPath:@"user.idx"
                                                        cacheName:nil];
-    
-    aFetchedResultsController.delegate = self;
-    
-    
-    NSError *error = nil;
-    if (![aFetchedResultsController performFetch:&error]) {
-        NSLog(@"Unresolved error %@, %@", error, error.userInfo);
-        abort();
+        
+        NSError *error = nil;
+        if (![aFetchedResultsController performFetch:&error]) {
+            NSLog(@"Unresolved error %@, %@", error, error.userInfo);
+            abort();
+        }
+        
+        _fetchedResultsController = aFetchedResultsController;
     }
     
-    _fetchedResultsController = aFetchedResultsController;
+    _fetchedResultsController.delegate = self;
+    
     return _fetchedResultsController;
 }
 

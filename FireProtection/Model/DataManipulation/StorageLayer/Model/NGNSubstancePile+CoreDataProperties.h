@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSFetchRequest<NGNSubstancePile *> *)fetchRequest;
 
-@property (nullable, nonatomic, copy) NSDecimalNumber *idx;
+@property (nullable, nonatomic, copy) NSNumber *idx;
 @property (nullable, nonatomic, copy) NSNumber *projectionSquare;
 @property (nullable, nonatomic, copy) NSNumber *mediumPileHeight;
 @property (nullable, nonatomic, copy) NSNumber *maxPileHeight;

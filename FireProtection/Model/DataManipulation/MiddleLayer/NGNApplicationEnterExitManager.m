@@ -133,7 +133,7 @@
 - (void)launchAppInAnonimousMode {
     [NGNTabBarManager sharedInstance].tabBarController.selectedIndex = 1;
     [NGNTabBarManager sharedInstance].tabBarController.tabBar.items[0].enabled = NO;
-    [NGNTabBarManager sharedInstance].tabBarController.tabBar.items[3].enabled = NO;
+//    [NGNTabBarManager sharedInstance].tabBarController.tabBar.items[3].enabled = NO;
 }
 
 
