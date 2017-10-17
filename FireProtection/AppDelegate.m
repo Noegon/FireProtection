@@ -7,8 +7,26 @@
 //
 
 #import "AppDelegate.h"
+#import "NGNCoreDataModel.h"
+#import "NGNCommonConstants.h"
+#import "NGNStoryboardConstants.h"
+#import "NGNDataBaseManager.h"
+#import "NGNServerDataLoadManager.h"
+#import "NGNApplicationStateManager.h"
+#import "NGNApplicationEnterExitManager.h"
+#import "NGNTabBarManager.h"
+
+#import "NGNServerLayerServices.h"
+#import "NSManagedObject+NGNCRUDAppendix.h"
+
+#import <CoreData/CoreData.h>
+#import <FastEasyMapping/FastEasyMapping.h>
+#import <SystemConfiguration/SystemConfiguration.h>
 
 @interface AppDelegate ()
+
+@property (nonatomic, strong) NGNApplicationEnterExitManager *startEndManager;
+@property (nonatomic, strong) NGNTabBarManager *tabBarManager;
 
 @end
 
@@ -16,7 +34,46 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+#warning clear user defaults for debug
+//    [self resetDefaults];
+
+#warning delete datasource for debug
+//    NSFileManager *manager = [NSFileManager defaultManager];
+//    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"FireProtection.sqlite"];
+//    [manager removeItemAtURL:storeURL error:nil];
+
+    [NGNDataBaseManager setupCoreDataStackWithStorageName:kNGNApplicationAppName];
+    
+#warning user data loading test
+//    NSDictionary *sessionSavedParams = @{kNGNModelSessionIsUserSessionSaved: @(NO)};
+//    NSData *sessionData = [NSKeyedArchiver archivedDataWithRootObject:sessionSavedParams];
+//    [[NSUserDefaults standardUserDefaults] setObject:sessionData forKey:kNGNModelSessionIsUserSessionSaved];
+//
+//    NSDictionary *authorizedParams = @{kNGNModelSessionIsUserAuthorized: @(NO)};
+//    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:authorizedParams];
+//    [[NSUserDefaults standardUserDefaults] setObject:data forKey:kNGNModelSessionIsUserAuthorized];
+//
+//    NSDictionary *uploadedParams = @{kNGNModelSessionDataUploadedParameter: @(NO)};
+//    NSData *uploadData = [NSKeyedArchiver archivedDataWithRootObject:uploadedParams];
+//    [[NSUserDefaults standardUserDefaults] setObject:uploadData forKey:kNGNModelSessionDataUploadedParameter];
+//
+//    [NGNApplicationStateManager sharedInstance].lastSessionUserId = @(-1);
+//    [NGNApplicationStateManager sharedInstance].currentSessionUserId = @(-1);
+    
+    self.startEndManager = [NGNApplicationEnterExitManager sharedInstance];
+    self.tabBarManager = [NGNTabBarManager sharedInstance];
+    
+    [NGNServerDataLoadManager pingServerWithCompletionHandler:^{}];
+    
+//    [NGNServerDataLoadManager loadCommonDataFromServerWithContext:[NGNDataBaseManager managedObjectContext]];
+    
+//    [NGNServerDataLoadManager loadDataFromServerWithContext:[NGNDataBaseManager managedObjectContext] userId:@(2)];
+    
+//    [NGNServerDataLoadManager deleteDataFromServerWithContext:[NGNDataBaseManager managedObjectContext] userId:@(2)];
+    
+//    [NGNServerDataLoadManager uploadDataToServerWithContext:[NGNDataBaseManager managedObjectContext] userId:@(2)];
+    
     return YES;
 }
 
@@ -30,6 +87,7 @@
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    [self applicationWillTerminate:application];
 }
 
 
@@ -46,53 +104,24 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     // Saves changes in the application's managed object context before the application terminates.
-    [self saveContext];
+    [NGNDataBaseManager saveContext];
+    [[NGNApplicationEnterExitManager sharedInstance] launchExitApplicationPreparations];
 }
 
+#pragma mark - additional helper methods
 
-#pragma mark - Core Data stack
-
-@synthesize persistentContainer = _persistentContainer;
-
-- (NSPersistentContainer *)persistentContainer {
-    // The persistent container for the application. This implementation creates and returns a container, having loaded the store for the application to it.
-    @synchronized (self) {
-        if (_persistentContainer == nil) {
-            _persistentContainer = [[NSPersistentContainer alloc] initWithName:@"FireProtection"];
-            [_persistentContainer loadPersistentStoresWithCompletionHandler:^(NSPersistentStoreDescription *storeDescription, NSError *error) {
-                if (error != nil) {
-                    // Replace this implementation with code to handle the error appropriately.
-                    // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                    
-                    /*
-                     Typical reasons for an error here include:
-                     * The parent directory does not exist, cannot be created, or disallows writing.
-                     * The persistent store is not accessible, due to permissions or data protection when the device is locked.
-                     * The device is out of space.
-                     * The store could not be migrated to the current model version.
-                     Check the error message to determine what the actual problem was.
-                    */
-                    NSLog(@"Unresolved error %@, %@", error, error.userInfo);
-                    abort();
-                }
-            }];
-        }
-    }
-    
-    return _persistentContainer;
+- (NSURL *)applicationDocumentsDirectory {
+    return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory
+                                                   inDomains:NSUserDomainMask] lastObject];
 }
 
-#pragma mark - Core Data Saving support
-
-- (void)saveContext {
-    NSManagedObjectContext *context = self.persistentContainer.viewContext;
-    NSError *error = nil;
-    if ([context hasChanges] && ![context save:&error]) {
-        // Replace this implementation with code to handle the error appropriately.
-        // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-        NSLog(@"Unresolved error %@, %@", error, error.userInfo);
-        abort();
+- (void)resetDefaults {
+    NSUserDefaults * defs = [NSUserDefaults standardUserDefaults];
+    NSDictionary * dict = [defs dictionaryRepresentation];
+    for (id key in dict) {
+        [defs removeObjectForKey:key];
     }
+    [defs synchronize];
 }
 
 @end
