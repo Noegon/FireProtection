@@ -46,7 +46,9 @@
     NGNSubstance *currentSubstance = currentPile.substance;
     cell.textLabel.text = currentSubstance.name;
     double mass = currentSubstance.density.doubleValue * currentPile.pileHeight * currentPile.pileProjectionSquare;
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%.2g kg", mass];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"m = %.2f kg, Q = %.2f MJ",
+                                 mass,
+                                 currentSubstance.heatOfCombusion.doubleValue];
     
     return cell;
 }

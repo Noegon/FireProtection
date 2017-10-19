@@ -417,17 +417,6 @@
   ],
   "room": [
     {
-      "number": "1",
-      "position": 1,
-      "height": 6,
-      "id": 1,
-      "square": 600,
-      "fire_safety_category": 6,
-      "minimum_rei_construction_type": 1,
-      "name": "Главный производственный цех",
-      "user": 2
-    },
-    {
       "number": "2",
       "position": 1,
       "height": 3,
@@ -436,6 +425,17 @@
       "fire_safety_category": 6,
       "minimum_rei_construction_type": 1,
       "name": "Административное помещение",
+      "user": 2
+    },
+    {
+      "number": "1",
+      "position": 1,
+      "height": 6,
+      "id": 1,
+      "square": 600,
+      "fire_safety_category": 6,
+      "minimum_rei_construction_type": 1,
+      "name": "Главный производственный цех",
       "user": 2
     }
   ],
@@ -544,23 +544,6 @@
       "substance_type": 3
     },
     {
-      "id": 1558851587,
-      "oxygen_athoms": 0,
-      "name": "xxx",
-      "user": 2,
-      "carbon_athoms": 0,
-      "burning_rate": 5,
-      "required_air_amount": 2,
-      "flame_speed": 4,
-      "hydrogen_athoms": 0,
-      "substance_type": 5,
-      "density": 1,
-      "splash_point": -273,
-      "heat_of_combusion": 3,
-      "molecular_weight": 0,
-      "galoids_athoms": 0
-    },
-    {
       "id": 1168938557,
       "oxygen_athoms": 0,
       "name": "test37",
@@ -576,9 +559,53 @@
       "heat_of_combusion": 3,
       "molecular_weight": 103,
       "galoids_athoms": 0
+    },
+    {
+      "id": 1558851587,
+      "oxygen_athoms": 0,
+      "name": "xxx",
+      "user": 2,
+      "carbon_athoms": 0,
+      "burning_rate": 5,
+      "required_air_amount": 2,
+      "flame_speed": 4,
+      "hydrogen_athoms": 0,
+      "substance_type": 5,
+      "density": 1,
+      "splash_point": -273,
+      "heat_of_combusion": 3,
+      "molecular_weight": 0,
+      "galoids_athoms": 0
     }
   ],
   "substance_pile": [
+    {
+      "room": 2,
+      "medium_pile_height": 0.1,
+      "id": 5,
+      "max_pile_height": 0.1,
+      "projection_square": 0.5,
+      "substance": 4,
+      "user": 2
+    },
+    {
+      "room": 1,
+      "medium_pile_height": 0.1,
+      "id": 2,
+      "max_pile_height": 0.1,
+      "projection_square": 5,
+      "substance": 3,
+      "user": 2
+    },
+    {
+      "room": 2,
+      "medium_pile_height": 0.1,
+      "id": 4,
+      "max_pile_height": 0.1,
+      "projection_square": 0.5,
+      "substance": 3,
+      "user": 2
+    },
     {
       "room": 1,
       "medium_pile_height": 1,
@@ -595,33 +622,6 @@
       "max_pile_height": 3,
       "projection_square": 100,
       "substance": 1,
-      "user": 2
-    },
-    {
-      "room": 2,
-      "medium_pile_height": 0.1,
-      "id": 4,
-      "max_pile_height": 0.1,
-      "projection_square": 0.5,
-      "substance": 3,
-      "user": 2
-    },
-    {
-      "room": 1,
-      "medium_pile_height": 0.1,
-      "id": 2,
-      "max_pile_height": 0.1,
-      "projection_square": 5,
-      "substance": 3,
-      "user": 2
-    },
-    {
-      "room": 2,
-      "medium_pile_height": 0.1,
-      "id": 5,
-      "max_pile_height": 0.1,
-      "projection_square": 0.5,
-      "substance": 4,
       "user": 2
     }
   ]

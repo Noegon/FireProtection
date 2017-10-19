@@ -108,7 +108,7 @@
 }
 
 #pragma mark - room category calculator delegate
-//Helper to ıperform calculation
+//Helper method to perform calculation
 - (void)performCalculation {
     [self.categoryCalculator calculateFireHazardWithSubtancePiles:self.substancePiles
                                                        roomHeight:self.roomHeightTextField.text.doubleValue
@@ -120,8 +120,8 @@
 didEndCalculationWithCategory:(NGNFireSafetyCategory *)category
           specificFireLoad:(double)specificFireLoad
            overallFireLoad:(double)overallFireLoad {
-    self.specificFireLoadResultTextLabel.text = @(specificFireLoad).stringValue;
-    self.overallFireLoadResultTextLabel.text = @(overallFireLoad).stringValue;
+    self.specificFireLoadResultTextLabel.text = [NSString stringWithFormat:@"%.2f", specificFireLoad];
+    self.overallFireLoadResultTextLabel.text = [NSString stringWithFormat:@"%.2f", overallFireLoad];;
     self.categoryResultTextLabel.text = category.name;
 }
 
