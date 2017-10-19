@@ -27,7 +27,7 @@ NSUInteger const kNGNMaximumRoomAirTemperature = 61; //celsium_degrees
 - (void)calculateFireHazardWithSubtancePiles:(NSArray<NGNLocalSubstancePile *> *)substancePiles
                                                                roomHeight:(double)roomHeight
                                                     floorProjectionSquare:(double)floorProjectionSquare
-                                                          roomProcessType:(NGNRoomProcessSemanticTypes)roomProcessType {
+                                                          roomProcessType:(NGNRoomWayOfFireLoadStoring)roomProcessType {
 
     NSMutableArray *substances = [NSMutableArray new];
     NSMutableArray *pilesHeights = [NSMutableArray new];
@@ -53,7 +53,7 @@ NSUInteger const kNGNMaximumRoomAirTemperature = 61; //celsium_degrees
                   pilesProjectionSquares:(NSArray<NSNumber *> *)pilesProjectionSquares
                               roomHeight:(NSUInteger)roomHeight
                    floorProjectionSquare:(NSUInteger)floorProjectionSquare
-                         roomProcessType:(NGNRoomProcessSemanticTypes)roomProcessType {
+                         roomProcessType:(NGNRoomWayOfFireLoadStoring)roomProcessType {
     
     if (floorProjectionSquare < kNGNMinimalRoomSquare) {
         floorProjectionSquare = kNGNMinimalRoomSquare;
@@ -158,6 +158,21 @@ NSUInteger const kNGNMaximumRoomAirTemperature = 61; //celsium_degrees
         didEndCalculationWithCategory:fireSafetyCategory
                      specificFireLoad:specificTemporaryFireLoad
                       overallFireLoad:overallFireLoad];
+}
+    
+#pragma mark - helper methods
+    
+- (NSString *)stringRoomProcessSemanticType:(NGNRoomWayOfFireLoadStoring)roomWayOfFireLoadStoring {
+    switch (roomWayOfFireLoadStoring) {
+        case NGNSubstancesInStandardConditions:
+        return NSLocalizedString(kNGNLocalizationKeyModelCalculationsFireResistanceRancSubstanceStoringStandard, nil);
+        case NGNSubstancesUsingAsFuel:
+        return NSLocalizedString(kNGNLocalizationKeyModelCalculationsFireResistanceRancSubstanceStoringFuel, nil);
+        case NGNWarmRadiatingWithoutBurning:
+        return NSLocalizedString(kNGNLocalizationKeyModelCalculationsFireResistanceRancSubstanceStoringRadiatingWarmNoFire, nil);
+        case NGNImplementationOfWetProcess:
+        return NSLocalizedString(kNGNLocalizationKeyModelCalculationsFireResistanceRancSubstanceStoringWetProcess, nil);
+    }
 }
 
 @end

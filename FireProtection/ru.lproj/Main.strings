@@ -45,7 +45,7 @@
 "6GT-HW-8wO.text" = "Заголовок";
 
 /* Class = "UILabel"; text = "Substances"; ObjectID = "7OT-zI-ttk"; */
-"7OT-zI-ttk.text" = "Вещества";
+"7OT-zI-ttk.text" = "Горючие вещества";
 
 /* Class = "UILabel"; text = "Exit application"; ObjectID = "7PN-5b-dJi"; */
 "7PN-5b-dJi.text" = "Выход";
@@ -138,7 +138,7 @@
 "JuM-ss-6i1.text" = "Площ. помещения, м²\nSUPERSCRIPT THREE\nUnicode: U+00B3, UTF-8: C2 B3";
 
 /* Class = "UILabel"; text = "Room name"; ObjectID = "KDY-T0-iPB"; */
-"KDY-T0-iPB.text" = "Название помещения";
+"KDY-T0-iPB.text" = "Назв. пом.";
 
 /* Class = "UILabel"; text = "bearing element (R)"; ObjectID = "Lum-sa-fMY"; */
 "Lum-sa-fMY.text" = "несущий элемент (R)";
@@ -180,10 +180,10 @@
 "TV6-LC-JIo.text" = "Name";
 
 /* Class = "UILabel"; text = "Pile square, m²\nSUPERSCRIPT THREE\nUnicode: U+00B3, UTF-8: C2 B3"; ObjectID = "UBD-OR-0qJ"; */
-"UBD-OR-0qJ.text" = "Pile square, m²\nSUPERSCRIPT THREE\nUnicode: U+00B3, UTF-8: C2 B3";
+"UBD-OR-0qJ.text" = "Плош. размещения, м²\nSUPERSCRIPT THREE\nUnicode: U+00B3, UTF-8: C2 B3";
 
 /* Class = "UINavigationItem"; title = "Calculations"; ObjectID = "UE6-li-PXX"; */
-"UE6-li-PXX.title" = "Calculations";
+"UE6-li-PXX.title" = "Вычисления";
 
 /* Class = "UILabel"; text = "Name"; ObjectID = "UMh-ak-vWr"; */
 "UMh-ak-vWr.text" = "Название";
@@ -195,7 +195,7 @@
 "VXa-v5-vXc.text" = "самонесущий элемент (RE)";
 
 /* Class = "UINavigationItem"; title = "Substance types"; ObjectID = "VuL-qv-OZQ"; */
-"VuL-qv-OZQ.title" = "Типы веществ";
+"VuL-qv-OZQ.title" = "Типы горючих веществ";
 
 /* Class = "UILabel"; text = "Д"; ObjectID = "W8Z-FS-q43"; */
 "W8Z-FS-q43.text" = "Д";
@@ -222,7 +222,7 @@
 "ZAb-hD-eU4.title" = "Войти";
 
 /* Class = "UILabel"; text = "Splash point, ºC\nDOT OPERATOR\nUnicode: U+22C5, UTF-8: E2 8B 85s\nSUPERSCRIPT TWO\nUnicode: U+00B2, UTF-8: C2 B2*s"; ObjectID = "ZPk-th-OvY"; */
-"ZPk-th-OvY.text" = "Темп. вспышки, ºC\nDOT OPERATOR\nUnicode: U+22C5, UTF-8: E2 8B 85s\nSUPERSCRIPT TWO\nUnicode: U+00B2, UTF-8: C2 B2*s";
+"ZPk-th-OvY.text" = "Температура вспышки, ºC\nDOT OPERATOR\nUnicode: U+22C5, UTF-8: E2 8B 85s\nSUPERSCRIPT TWO\nUnicode: U+00B2, UTF-8: C2 B2*s";
 
 /* Class = "UINavigationItem"; title = "Fire resistance ranks detail"; ObjectID = "aHO-d6-D9v"; */
 "aHO-d6-D9v.title" = "Категория по сопротивл-ю пламени";
@@ -234,7 +234,7 @@
 "bER-IE-XKg.text" = "минуты";
 
 /* Class = "UINavigationItem"; title = "Select vocabulary"; ObjectID = "dup-h8-jdE"; */
-"dup-h8-jdE.title" = "Select vocabulary";
+"dup-h8-jdE.title" = "Выбор справочника";
 
 /* Class = "UILabel"; text = "number"; ObjectID = "eVA-Pw-wUs"; */
 "eVA-Pw-wUs.text" = "номер категории";
@@ -312,7 +312,7 @@
 "rDL-VK-JGs.text" = "перекрытие (REI)";
 
 /* Class = "UINavigationItem"; title = "Substances"; ObjectID = "rZh-Lw-A25"; */
-"rZh-Lw-A25.title" = "Вещества";
+"rZh-Lw-A25.title" = "Горючие вещества";
 
 /* Class = "UINavigationItem"; title = "Select project"; ObjectID = "rZx-ga-QRs"; */
 "rZx-ga-QRs.title" = "Выбор проекта";
@@ -333,13 +333,13 @@
 "uRv-yM-Aat.text" = "Молярная масса, г/моль\nDOT OPERATOR\nUnicode: U+22C5, UTF-8: E2 8B 85s\nSUPERSCRIPT TWO\nUnicode: U+00B2, UTF-8: C2 B2*s";
 
 /* Class = "UILabel"; text = "Substance types"; ObjectID = "vSl-V1-DZj"; */
-"vSl-V1-DZj.text" = "Substance types";
+"vSl-V1-DZj.text" = "Типы горючих веществ";
 
 /* Class = "UINavigationItem"; title = "Substance detail"; ObjectID = "veU-wd-rno"; */
-"veU-wd-rno.title" = "Substance detail";
+"veU-wd-rno.title" = "Горючее вещество";
 
 /* Class = "UILabel"; text = "covering (E)"; ObjectID = "vnS-wT-Dk8"; */
-"vnS-wT-Dk8.text" = "covering (E)";
+"vnS-wT-Dk8.text" = "покрытие (E)";
 
 /* Class = "UILabel"; text = "Title"; ObjectID = "wBx-6M-o2e"; */
 "wBx-6M-o2e.text" = "Заголовок";

@@ -1,0 +1,35 @@
+/* 
+  Localizable.strings
+  FireProtection
+
+  Created by Alexey Stafeyev on 19.10.17.
+  Copyright © 2017 Alexey Stafeyev. All rights reserved.
+*/
+
+//Button titles
+"button.title.Delete" = "Delete";
+
+//Navigation item titles
+"navigationItem.title.AddSubstance" = "Add substance";
+"navigationItem.title.AddPile" = "Add pile";
+
+//Section header titles
+"sectionHeader.title.CommonSubstances" = "Common substances";
+"sectionHeader.title.UserSubstances" = "User substances";
+
+//Model
+
+//Measure units
+"model.measureUnits.grams" = "g";
+"model.measureUnits.kilograms" = "kg";
+"model.measureUnits.megaJoules" = "MJ";
+"model.measureUnits.meters" = "m";
+"model.measureUnits.mol" = "mol";
+"model.measureUnits.seconds" = "s";
+"model.measureUnits.minutes" = "min";
+
+//Fire resistance rank calculation
+"model.calculations.fireResistanceRank.substanceStoring.standard" = "Standard substance storing";
+"model.calculations.fireResistanceRank.substanceStoring.fuel" = "Substance using as fuel";
+"model.calculations.fireResistanceRank.substanceStoring.radiatingWarmNoFire" = "Radiating warm without fire";
+"model.calculations.fireResistanceRank.substanceStoring.wetProcess" = "Wet processes in room";

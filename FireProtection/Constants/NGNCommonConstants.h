@@ -21,15 +21,6 @@ static NSString *const kNGNApplicationAppName = @"FireProtection";
 static NSString *const kNGNApplicationClassPrefix = @"NGN";
 static NSString *const kNGNApplicationDateFormat = @"dd.MM.yyyy";
 
-#pragma mark - controllersIds
-
-//static NSString *const kNGNControllerRootController = @"rootController";
-//static NSString *const kNGNControllerMenuController = @"menuController";
-//static NSString *const kNGNControllerContentController = @"contentController";
-//static NSString *const kNGNControllerGoodsController = @"goodsController";
-//static NSString *const kNGNControllerCartCapsuleController = @"cartCapsuleController";
-//static NSString *const kNGNControllerOrdersController = @"ordersController";
-
 #pragma mark - notifications
 
 static NSString *const kNGNApplicationNotificationDataWasLoaded = @"dataLoadedFromServerStatus";

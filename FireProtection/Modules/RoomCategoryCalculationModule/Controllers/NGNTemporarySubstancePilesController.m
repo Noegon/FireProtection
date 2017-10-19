@@ -12,10 +12,9 @@
 #import "NGNStoryboardConstants.h"
 #import "NGNCoreDataModel.h"
 #import "NGNLocalSubstancePileDetailController.h"
+#import "NGNLocalizationConstants.h"
 
 @interface NGNTemporarySubstancePilesController ()
-
-@property (strong, nonatomic) id<NSObject> pileDidAddedNotification;
 
 @end
 
@@ -46,9 +45,11 @@
     NGNSubstance *currentSubstance = currentPile.substance;
     cell.textLabel.text = currentSubstance.name;
     double mass = currentSubstance.density.doubleValue * currentPile.pileHeight * currentPile.pileProjectionSquare;
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"m = %.2f kg, Q = %.2f MJ",
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"m = %.2f %@, Q = %.2f %@",
                                  mass,
-                                 currentSubstance.heatOfCombusion.doubleValue];
+                                 NSLocalizedString(kNGNLocalizationKeyModelMeasureUnitsKilorams, nil),
+                                 currentSubstance.heatOfCombusion.doubleValue,
+                                 NSLocalizedString(kNGNLocalizationKeyModelMeasureUnitsMegaJoules, nil)];
     
     return cell;
 }
@@ -61,7 +62,7 @@
     
     UITableViewRowAction *deleteAction =
     [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal
-                                       title:@"Delete"
+                                       title:NSLocalizedString(kNGNLocalizationKeyButtonTitleDelete, nil)
                                      handler:
      ^(UITableViewRowAction *action, NSIndexPath *indexPath) {
          [self tableView:self.tableView commitEditingStyle:UITableViewCellEditingStyleDelete forRowAtIndexPath:indexPath];
@@ -87,7 +88,7 @@
         if ([segue.identifier isEqualToString:kNGNStoryboardSegueLocalPileDetail]) {
             ((NGNLocalSubstancePileDetailController *)dstController).substancePile = self.substancePiles[indexPath.row];
         } else {
-            dstController.navigationItem.title = @"Add pile";
+            dstController.navigationItem.title = NSLocalizedString(kNGNLocalizationKeyNavigationItemTitleAddPile, nil);
             ((NGNLocalSubstancePileDetailController *)dstController).substancePile = nil;
         }
     }

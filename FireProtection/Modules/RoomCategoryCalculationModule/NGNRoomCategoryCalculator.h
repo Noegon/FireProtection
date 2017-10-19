@@ -7,12 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "NGNLocalizationConstants.h"
 
 @class NGNLocalSubstancePile;
 @class NGNFireSafetyCategory;
 @class NGNRoomCategoryCalculator;
 
-typedef NS_ENUM(NSInteger, NGNRoomProcessSemanticTypes) {
+typedef NS_ENUM(NSInteger, NGNRoomWayOfFireLoadStoring) {
     NGNSubstancesInStandardConditions = 0,
     NGNSubstancesUsingAsFuel,
     NGNWarmRadiatingWithoutBurning,
@@ -20,13 +21,6 @@ typedef NS_ENUM(NSInteger, NGNRoomProcessSemanticTypes) {
 };
 
 static NSInteger const kNGNnumberOfRoomProcessSemanticTypes = 4;
-
-static NSString * const NGNStringRoomProcessSemanticType[] = {
-    [NGNSubstancesInStandardConditions] = @"Standard substance storing",
-    [NGNSubstancesUsingAsFuel] = @"Substance using as fuel",
-    [NGNWarmRadiatingWithoutBurning] = @"Radiating warm without fire",
-    [NGNImplementationOfWetProcess] = @"Wet processes in room"
-};
 
 @protocol NGNRoomCategoryCalculatorDelegate <NSObject>
 
@@ -42,10 +36,14 @@ didEndCalculationWithCategory:(NGNFireSafetyCategory *)category
 
 @property (nonatomic, weak) id<NGNRoomCategoryCalculatorDelegate> delegate;
 
+#pragma mark - Fire hazard calculation methods
 //To get result - implement delegate method in current class
 - (void)calculateFireHazardWithSubtancePiles:(NSArray<NGNLocalSubstancePile *> *)substancePiles
                                   roomHeight:(double)roomHeight
                        floorProjectionSquare:(double)floorProjectionSquare
-                             roomProcessType:(NGNRoomProcessSemanticTypes)roomProcessType;
+                             roomProcessType:(NGNRoomWayOfFireLoadStoring)roomProcessType;
+#pragma mark - helper methods
+    
+- (NSString *)stringRoomProcessSemanticType:(NGNRoomWayOfFireLoadStoring)roomWayOfFireLoadStoring;
 
 @end

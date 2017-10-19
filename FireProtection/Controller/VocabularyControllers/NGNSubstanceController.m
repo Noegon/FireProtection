@@ -15,6 +15,7 @@
 #import "NSManagedObject+NGNCRUDAppendix.h"
 
 #import "NGNCommonConstants.h"
+#import "NGNLocalizationConstants.h"
 #import "NGNStoryboardConstants.h"
 
 @interface NGNSubstanceController ()
@@ -48,9 +49,9 @@
 
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     if (section == 0) {
-        return @"Common substances";
+        return NSLocalizedString(kNGNLocalizationKeyTableSectionHeaderTitleCommonSubstance, nil);
     }
-    return @"User substances";
+    return NSLocalizedString(kNGNLocalizationKeyTableSectionHeaderTitleUserSubstance, nil);
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -74,7 +75,7 @@
     
     UITableViewRowAction *deleteAction =
         [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal
-                                           title:@"Delete"
+                                           title:NSLocalizedString(kNGNLocalizationKeyButtonTitleDelete, nil)
                                          handler:
      ^(UITableViewRowAction *action, NSIndexPath *indexPath) {
          
@@ -213,7 +214,8 @@
     }
     if ([segue.identifier isEqualToString:kNGNStoryboardSegueAddNewSubstance]) {
         ((NGNSubstanceDetailController *)destinationController).substance = nil;
-        ((NGNSubstanceDetailController *)destinationController).navigationItem.title = @"Add substance";
+        ((NGNSubstanceDetailController *)destinationController).navigationItem.title =
+            NSLocalizedString(kNGNLocalizationKeyNavigationItemTitleAddSubstance, nil);
     }
 }
 

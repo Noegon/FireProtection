@@ -7,6 +7,7 @@
 //
 
 #import "NGNStoryboardConstants.h"
+#import "NGNLocalizationConstants.h"
 #import "NGNCommonConstants.h"
 #import "NGNLocalSubstancePileDetailController.h"
 #import "NGNCoreDataModel.h"
@@ -65,7 +66,9 @@
 
 - (void)setStoredSubstance:(NGNSubstance *)storedSubstance {
     self.substanceNameTextLabel.text = storedSubstance.name;
-    self.heatOfCombusionTextLabel.text = [NSString stringWithFormat:@"Q = %.2g MJ", storedSubstance.heatOfCombusion.doubleValue];
+    self.heatOfCombusionTextLabel.text = [NSString stringWithFormat:@"Q = %.2g %@",
+                                          storedSubstance.heatOfCombusion.doubleValue,
+                                          NSLocalizedString(kNGNLocalizationKeyModelMeasureUnitsMegaJoules, nil)];
     _storedSubstance = storedSubstance;
 }
 

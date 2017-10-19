@@ -1,0 +1,35 @@
+/* 
+  Localizable.strings
+  FireProtection
+
+  Created by Alexey Stafeyev on 19.10.17.
+  Copyright © 2017 Alexey Stafeyev. All rights reserved.
+*/
+
+//Button titles
+"button.title.Delete" = "Удалить";
+
+//Navigation item titles
+"navigationItem.title.AddSubstance" = "Добавить вещество";
+"navigationItem.title.AddPile" = "Добавить группу вещ-в";
+
+//Section header titles
+"sectionHeader.title.CommonSubstances" = "Общие вещества";
+"sectionHeader.title.UserSubstances" = "Вещества пользователя";
+
+//Model
+
+//Measure units
+"model.measureUnits.grams" = "г";
+"model.measureUnits.kilograms" = "кг";
+"model.measureUnits.megaJoules" = "МДж";
+"model.measureUnits.meters" = "м";
+"model.measureUnits.mol" = "моль";
+"model.measureUnits.seconds" = "с";
+"model.measureUnits.minutes" = "мин";
+
+//Fire resistance rank calculation
+"model.calculations.fireResistanceRank.substanceStoring.standard" = "Обычное размещение";
+"model.calculations.fireResistanceRank.substanceStoring.fuel" = "Использ-е в кач-ве горючего";
+"model.calculations.fireResistanceRank.substanceStoring.radiatingWarmNoFire" = "Выделение тепла без пламени";
+"model.calculations.fireResistanceRank.substanceStoring.wetProcess" = "Мокрый тех. процесс";

@@ -98,7 +98,7 @@
 
 - (NSString *)pickerView:(UIPickerView *)thePickerView
              titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    return NGNStringRoomProcessSemanticType[row];
+    return [self.categoryCalculator stringRoomProcessSemanticType:row];
 }
 
 - (void)pickerView:(UIPickerView *)thePickerView
