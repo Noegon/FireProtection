@@ -1,0 +1,372 @@
+
+/* Class = "UITabBarItem"; title = "About"; ObjectID = "015-F9-8aV"; */
+"015-F9-8aV.title" = "О программе";
+
+/* Class = "UILabel"; text = "Burning rate, kg/m²⋅s\nDOT OPERATOR\nUnicode: U+22C5, UTF-8: E2 8B 85s\nSUPERSCRIPT TWO\nUnicode: U+00B2, UTF-8: C2 B2*s"; ObjectID = "0U8-b4-VWn"; */
+"0U8-b4-VWn.text" = "Скорость выгорания, кг/м²⋅с\nDOT OPERATOR\nUnicode: U+22C5, UTF-8: E2 8B 85s\nSUPERSCRIPT TWO\nUnicode: U+00B2, UTF-8: C2 B2*s";
+
+/* Class = "UILabel"; text = "Carbon athoms\nDOT OPERATOR\nUnicode: U+22C5, UTF-8: E2 8B 85s\nSUPERSCRIPT TWO\nUnicode: U+00B2, UTF-8: C2 B2*s"; ObjectID = "0zT-bu-zEs"; */
+"0zT-bu-zEs.text" = "Атомы углерода\nDOT OPERATOR\nUnicode: U+22C5, UTF-8: E2 8B 85s\nSUPERSCRIPT TWO\nUnicode: U+00B2, UTF-8: C2 B2*s";
+
+/* Class = "UILabel"; text = "Select room semantic type:"; ObjectID = "1N4-1u-3Ks"; */
+"1N4-1u-3Ks.text" = "Выберите способ размещ-я пож. нагр.:";
+
+/* Class = "UINavigationItem"; title = "Piles"; ObjectID = "1lU-Pa-By5"; */
+"1lU-Pa-By5.title" = "Группы материалов";
+
+/* Class = "UILabel"; text = "Calculations"; ObjectID = "2jo-pM-jZS"; */
+"2jo-pM-jZS.text" = "Вычисления";
+
+/* Class = "UITableViewSection"; headerTitle = "Results"; ObjectID = "3bH-Wl-w2F"; */
+"3bH-Wl-w2F.headerTitle" = "Результаты";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "3xP-Ts-pkB"; */
+"3xP-Ts-pkB.text" = "0";
+
+/* Class = "UITextField"; text = "0"; ObjectID = "4a9-GW-rER"; */
+"4a9-GW-rER.text" = "0";
+
+/* Class = "UITextField"; text = "0"; ObjectID = "4r4-iQ-K0g"; */
+"4r4-iQ-K0g.text" = "0";
+
+/* Class = "UILabel"; text = "User settings"; ObjectID = "5Nb-Ps-ieJ"; */
+"5Nb-Ps-ieJ.text" = "Настройки";
+
+/* Class = "UILabel"; text = "Room height, m\nSUPERSCRIPT THREE\nUnicode: U+00B3, UTF-8: C2 B3"; ObjectID = "5Rh-Ze-1G0"; */
+"5Rh-Ze-1G0.text" = "Высота комнаты, м\nSUPERSCRIPT THREE\nUnicode: U+00B3, UTF-8: C2 B3";
+
+/* Class = "UINavigationItem"; title = "Fire safety categories"; ObjectID = "5V0-df-OJR"; */
+"5V0-df-OJR.title" = "Кат. по пож. опасности";
+
+/* Class = "UILabel"; text = "application will be terminated"; ObjectID = "60U-WX-I7c"; */
+"60U-WX-I7c.text" = "application will be terminated";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "6GT-HW-8wO"; */
+"6GT-HW-8wO.text" = "Заголовок";
+
+/* Class = "UILabel"; text = "Substances"; ObjectID = "7OT-zI-ttk"; */
+"7OT-zI-ttk.text" = "Вещества";
+
+/* Class = "UILabel"; text = "Exit application"; ObjectID = "7PN-5b-dJi"; */
+"7PN-5b-dJi.text" = "Выход";
+
+/* Class = "UILabel"; text = "Oxygen athoms\nDOT OPERATOR\nUnicode: U+22C5, UTF-8: E2 8B 85s\nSUPERSCRIPT TWO\nUnicode: U+00B2, UTF-8: C2 B2*s"; ObjectID = "85S-57-uPK"; */
+"85S-57-uPK.text" = "Атомы кислорода\nDOT OPERATOR\nUnicode: U+22C5, UTF-8: E2 8B 85s\nSUPERSCRIPT TWO\nUnicode: U+00B2, UTF-8: C2 B2*s";
+
+/* Class = "UITextField"; placeholder = "name"; ObjectID = "8dw-SF-aJb"; */
+"8dw-SF-aJb.placeholder" = "имя";
+
+/* Class = "UITextField"; text = "room1"; ObjectID = "8dw-SF-aJb"; */
+"8dw-SF-aJb.text" = "помещение1";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "8lc-S5-8ro"; */
+"8lc-S5-8ro.text" = "Имя";
+
+/* Class = "UILabel"; text = "2017, scots inc. All rights reserved"; ObjectID = "9SX-0d-MDj"; */
+"9SX-0d-MDj.text" = "2017, scots inc. All rights reserved";
+
+/* Class = "UILabel"; text = "Category"; ObjectID = "9Sn-Px-KtB"; */
+"9Sn-Px-KtB.text" = "Категория";
+
+/* Class = "UILabel"; text = "Q spec., MJ / m²"; ObjectID = "9d6-KN-mWM"; */
+"9d6-KN-mWM.text" = "Q уд., МДж / м²";
+
+/* Class = "UILabel"; text = "Substance type"; ObjectID = "A6A-bZ-2ba"; */
+"A6A-bZ-2ba.text" = "Тип вещества";
+
+/* Class = "UILabel"; text = "stairway wall (REI)"; ObjectID = "B0a-Rd-d6J"; */
+"B0a-Rd-d6J.text" = "стена ЛК (REI)";
+
+/* Class = "UILabel"; text = "minutes"; ObjectID = "BMB-Zu-v2w"; */
+"BMB-Zu-v2w.text" = "минуты";
+
+/* Class = "UILabel"; text = "Fire safety categories"; ObjectID = "C2o-VI-ATW"; */
+"C2o-VI-ATW.text" = "Категории по пож. опасности";
+
+/* Class = "UITextField"; placeholder = "O"; ObjectID = "C4H-X6-8tV"; */
+"C4H-X6-8tV.placeholder" = "O";
+
+/* Class = "UITextField"; text = "0"; ObjectID = "C4H-X6-8tV"; */
+"C4H-X6-8tV.text" = "0";
+
+/* Class = "UILabel"; text = "Required air amount, m³/m³\nSUPERSCRIPT THREE\nUnicode: U+00B3, UTF-8: C2 B3\nSUPERSCRIPT THREE\nUnicode: U+00B3, UTF-8: C2 B3/m3"; ObjectID = "Cv6-m4-Lit"; */
+"Cv6-m4-Lit.text" = "Потребное кол-во воздуха, м³/м³\nSUPERSCRIPT THREE\nUnicode: U+00B3, UTF-8: C2 B3\nSUPERSCRIPT THREE\nUnicode: U+00B3, UTF-8: C2 B3/m3";
+
+/* Class = "UITableViewSection"; headerTitle = "Necsessary fire resistance REI in minutes"; ObjectID = "FH2-VK-VoM"; */
+"FH2-VK-VoM.headerTitle" = "Необходимое REI в минутах";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "Fc8-zn-psW"; */
+"Fc8-zn-psW.text" = "Имя";
+
+/* Class = "UINavigationItem"; title = "Fire safety category detail"; ObjectID = "G1f-ou-Gd6"; */
+"G1f-ou-Gd6.title" = "Категория по пож. опасности";
+
+/* Class = "UILabel"; text = "minutes"; ObjectID = "GKT-bK-FY2"; */
+"GKT-bK-FY2.text" = "минуты";
+
+/* Class = "UITextField"; placeholder = "mol"; ObjectID = "GYk-Ro-8R6"; */
+"GYk-Ro-8R6.placeholder" = "г/моль";
+
+/* Class = "UITextField"; text = "0"; ObjectID = "GYk-Ro-8R6"; */
+"GYk-Ro-8R6.text" = "0";
+
+/* Class = "UINavigationItem"; title = "Fire resistance ranks"; ObjectID = "H4r-r9-j65"; */
+"H4r-r9-j65.title" = "Категории по сопротивл-ю пламени";
+
+/* Class = "UILabel"; text = "Flame speed, m/s"; ObjectID = "HMy-jY-u7E"; */
+"HMy-jY-u7E.text" = "Скор. распростр. пламени, m/s";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "I2Q-VV-aFf"; */
+"I2Q-VV-aFf.text" = "Имя";
+
+/* Class = "UIBarButtonItem"; title = "Login"; ObjectID = "ILe-hb-MDE"; */
+"ILe-hb-MDE.title" = "Войти";
+
+/* Class = "UILabel"; text = "Placed substance piles"; ObjectID = "JHT-sh-e1b"; */
+"JHT-sh-e1b.text" = "Размещённые группы материалов";
+
+/* Class = "UILabel"; text = "Sign out"; ObjectID = "JLb-J9-ihU"; */
+"JLb-J9-ihU.text" = "Выйти";
+
+/* Class = "UILabel"; text = "Q total, MJ"; ObjectID = "JQT-FH-QFX"; */
+"JQT-FH-QFX.text" = "Q, МДж";
+
+/* Class = "UITabBarItem"; title = "Vocabularies"; ObjectID = "JX7-m1-VcH"; */
+"JX7-m1-VcH.title" = "Справочники";
+
+/* Class = "UILabel"; text = "Room square, m²\nSUPERSCRIPT THREE\nUnicode: U+00B3, UTF-8: C2 B3"; ObjectID = "JuM-ss-6i1"; */
+"JuM-ss-6i1.text" = "Площ. помещения, м²\nSUPERSCRIPT THREE\nUnicode: U+00B3, UTF-8: C2 B3";
+
+/* Class = "UILabel"; text = "Room name"; ObjectID = "KDY-T0-iPB"; */
+"KDY-T0-iPB.text" = "Название помещения";
+
+/* Class = "UILabel"; text = "bearing element (R)"; ObjectID = "Lum-sa-fMY"; */
+"Lum-sa-fMY.text" = "несущий элемент (R)";
+
+/* Class = "UINavigationItem"; title = "Menu"; ObjectID = "MtX-AZ-Uaa"; */
+"MtX-AZ-Uaa.title" = "Меню";
+
+/* Class = "UILabel"; text = "Hydrogen athoms\nDOT OPERATOR\nUnicode: U+22C5, UTF-8: E2 8B 85s\nSUPERSCRIPT TWO\nUnicode: U+00B2, UTF-8: C2 B2*s"; ObjectID = "QRF-Qq-aCy"; */
+"QRF-Qq-aCy.text" = "Атомы водорода\nDOT OPERATOR\nUnicode: U+22C5, UTF-8: E2 8B 85s\nSUPERSCRIPT TWO\nUnicode: U+00B2, UTF-8: C2 B2*s";
+
+/* Class = "UILabel"; text = "minutes"; ObjectID = "QgQ-1w-zul"; */
+"QgQ-1w-zul.text" = "минуты";
+
+/* Class = "UILabel"; text = "stairway (R)"; ObjectID = "RsM-VF-w4J"; */
+"RsM-VF-w4J.text" = "лестничный марш (R)";
+
+/* Class = "UITextField"; placeholder = "H"; ObjectID = "Rxo-3J-D4r"; */
+"Rxo-3J-D4r.placeholder" = "H";
+
+/* Class = "UITextField"; text = "0"; ObjectID = "Rxo-3J-D4r"; */
+"Rxo-3J-D4r.text" = "0";
+
+/* Class = "UITextField"; placeholder = "height"; ObjectID = "SB8-80-84m"; */
+"SB8-80-84m.placeholder" = "высота";
+
+/* Class = "UITextField"; text = "3"; ObjectID = "SB8-80-84m"; */
+"SB8-80-84m.text" = "3";
+
+/* Class = "UITabBarItem"; title = "Menu"; ObjectID = "SX1-3Y-jzx"; */
+"SX1-3Y-jzx.title" = "Меню";
+
+/* Class = "UILabel"; text = "Substance type"; ObjectID = "Soq-MU-N3o"; */
+"Soq-MU-N3o.text" = "Тип вещества";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "T3U-Mm-gm5"; */
+"T3U-Mm-gm5.text" = "Заголовок";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "TV6-LC-JIo"; */
+"TV6-LC-JIo.text" = "Name";
+
+/* Class = "UILabel"; text = "Pile square, m²\nSUPERSCRIPT THREE\nUnicode: U+00B3, UTF-8: C2 B3"; ObjectID = "UBD-OR-0qJ"; */
+"UBD-OR-0qJ.text" = "Pile square, m²\nSUPERSCRIPT THREE\nUnicode: U+00B3, UTF-8: C2 B3";
+
+/* Class = "UINavigationItem"; title = "Calculations"; ObjectID = "UE6-li-PXX"; */
+"UE6-li-PXX.title" = "Calculations";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "UMh-ak-vWr"; */
+"UMh-ak-vWr.text" = "Название";
+
+/* Class = "UILabel"; text = "Density, kg/m³\nSUPERSCRIPT THREE\nUnicode: U+00B3, UTF-8: C2 B3"; ObjectID = "Udd-fS-8My"; */
+"Udd-fS-8My.text" = "Плотность, кг/м³\nSUPERSCRIPT THREE\nUnicode: U+00B3, UTF-8: C2 B3";
+
+/* Class = "UILabel"; text = "self bearing element (RE)"; ObjectID = "VXa-v5-vXc"; */
+"VXa-v5-vXc.text" = "самонесущий элемент (RE)";
+
+/* Class = "UINavigationItem"; title = "Substance types"; ObjectID = "VuL-qv-OZQ"; */
+"VuL-qv-OZQ.title" = "Типы веществ";
+
+/* Class = "UILabel"; text = "Д"; ObjectID = "W8Z-FS-q43"; */
+"W8Z-FS-q43.text" = "Д";
+
+/* Class = "UITextField"; text = "0"; ObjectID = "WtO-Wm-amJ"; */
+"WtO-Wm-amJ.text" = "0";
+
+/* Class = "UILabel"; text = "Result category"; ObjectID = "Ysq-Zf-YFl"; */
+"Ysq-Zf-YFl.text" = "Итоговая категория";
+
+/* Class = "UITextField"; placeholder = "C"; ObjectID = "Yuy-Uy-roB"; */
+"Yuy-Uy-roB.placeholder" = "C";
+
+/* Class = "UITextField"; text = "0"; ObjectID = "Yuy-Uy-roB"; */
+"Yuy-Uy-roB.text" = "0";
+
+/* Class = "UILabel"; text = "Fire resistance ranks"; ObjectID = "YwR-GI-Gp2"; */
+"YwR-GI-Gp2.text" = "Категории по сопротивл-ю пламени";
+
+/* Class = "UITabBarItem"; title = "Projects"; ObjectID = "Z8j-pH-QCI"; */
+"Z8j-pH-QCI.title" = "Проекты";
+
+/* Class = "UIBarButtonItem"; title = "Login"; ObjectID = "ZAb-hD-eU4"; */
+"ZAb-hD-eU4.title" = "Войти";
+
+/* Class = "UILabel"; text = "Splash point, ºC\nDOT OPERATOR\nUnicode: U+22C5, UTF-8: E2 8B 85s\nSUPERSCRIPT TWO\nUnicode: U+00B2, UTF-8: C2 B2*s"; ObjectID = "ZPk-th-OvY"; */
+"ZPk-th-OvY.text" = "Темп. вспышки, ºC\nDOT OPERATOR\nUnicode: U+22C5, UTF-8: E2 8B 85s\nSUPERSCRIPT TWO\nUnicode: U+00B2, UTF-8: C2 B2*s";
+
+/* Class = "UINavigationItem"; title = "Fire resistance ranks detail"; ObjectID = "aHO-d6-D9v"; */
+"aHO-d6-D9v.title" = "Категория по сопротивл-ю пламени";
+
+/* Class = "UILabel"; text = "Heat of combusion, MJ"; ObjectID = "arX-IT-gJw"; */
+"arX-IT-gJw.text" = "Теплота сгорания, МДж";
+
+/* Class = "UILabel"; text = "minutes"; ObjectID = "bER-IE-XKg"; */
+"bER-IE-XKg.text" = "минуты";
+
+/* Class = "UINavigationItem"; title = "Select vocabulary"; ObjectID = "dup-h8-jdE"; */
+"dup-h8-jdE.title" = "Select vocabulary";
+
+/* Class = "UILabel"; text = "number"; ObjectID = "eVA-Pw-wUs"; */
+"eVA-Pw-wUs.text" = "номер категории";
+
+/* Class = "UILabel"; text = "Galoids athoms\nDOT OPERATOR\nUnicode: U+22C5, UTF-8: E2 8B 85s\nSUPERSCRIPT TWO\nUnicode: U+00B2, UTF-8: C2 B2*s"; ObjectID = "eWW-fg-jkP"; */
+"eWW-fg-jkP.text" = "Атомы галогенов\nDOT OPERATOR\nUnicode: U+22C5, UTF-8: E2 8B 85s\nSUPERSCRIPT TWO\nUnicode: U+00B2, UTF-8: C2 B2*s";
+
+/* Class = "UITextField"; text = "0"; ObjectID = "f2a-Nl-ReY"; */
+"f2a-Nl-ReY.text" = "0";
+
+/* Class = "UINavigationItem"; title = "Fire hazard"; ObjectID = "f5Y-OE-S6Q"; */
+"f5Y-OE-S6Q.title" = "Пожарная опасность";
+
+/* Class = "UINavigationItem"; title = "About"; ObjectID = "fGt-DB-iQR"; */
+"fGt-DB-iQR.title" = "О программе";
+
+/* Class = "UILabel"; text = "number"; ObjectID = "fRn-Xh-isk"; */
+"fRn-Xh-isk.text" = "номер категории";
+
+/* Class = "UILabel"; text = "FAQ"; ObjectID = "gi2-fe-c95"; */
+"gi2-fe-c95.text" = "ЧАВо";
+
+/* Class = "UITextField"; placeholder = "square"; ObjectID = "h9h-UE-CJB"; */
+"h9h-UE-CJB.placeholder" = "площадь";
+
+/* Class = "UITextField"; text = "1"; ObjectID = "h9h-UE-CJB"; */
+"h9h-UE-CJB.text" = "1";
+
+/* Class = "UILabel"; text = "minutes"; ObjectID = "i8b-JY-0MX"; */
+"i8b-JY-0MX.text" = "минуты";
+
+/* Class = "UILabel"; text = "Pile height, m\nSUPERSCRIPT THREE\nUnicode: U+00B3, UTF-8: C2 B3"; ObjectID = "j7X-oB-VWw"; */
+"j7X-oB-VWw.text" = "Высота штабеля, м\nSUPERSCRIPT THREE\nUnicode: U+00B3, UTF-8: C2 B3";
+
+/* Class = "UILabel"; text = "Select substance:"; ObjectID = "jC6-7y-olX"; */
+"jC6-7y-olX.text" = "Выберите вещество:";
+
+/* Class = "UILabel"; text = "heat of comb., MJ"; ObjectID = "jO9-rm-KcB"; */
+"jO9-rm-KcB.text" = "теплота сгорания, МДж";
+
+/* Class = "UILabel"; text = "parameters"; ObjectID = "jZT-E9-jjz"; */
+"jZT-E9-jjz.text" = "параметры";
+
+/* Class = "UINavigationItem"; title = "Fire safety category detail"; ObjectID = "jpb-4I-wv8"; */
+"jpb-4I-wv8.title" = "Категория по пож. опасности";
+
+/* Class = "UILabel"; text = "outer non bearing wall (E)"; ObjectID = "kbk-5g-714"; */
+"kbk-5g-714.text" = "наружн. ненесущ. стена (E)";
+
+/* Class = "UILabel"; text = "Fire hazard category calculation"; ObjectID = "kj9-fG-CTL"; */
+"kj9-fG-CTL.text" = "Расчёт кат. пожарн. опасности";
+
+/* Class = "UITextField"; placeholder = "height"; ObjectID = "lhg-Xp-TLi"; */
+"lhg-Xp-TLi.placeholder" = "высота";
+
+/* Class = "UITextField"; text = "1"; ObjectID = "lhg-Xp-TLi"; */
+"lhg-Xp-TLi.text" = "1";
+
+/* Class = "UINavigationItem"; title = "Pile detail"; ObjectID = "mGq-V7-E1o"; */
+"mGq-V7-E1o.title" = "Параметры группы материалов";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "mMc-FF-pJc"; */
+"mMc-FF-pJc.text" = "Заголовок";
+
+/* Class = "UILabel"; text = "minutes"; ObjectID = "mdD-EN-94g"; */
+"mdD-EN-94g.text" = "минуты";
+
+/* Class = "UIBarButtonItem"; title = "Back"; ObjectID = "oSk-8y-wYQ"; */
+"oSk-8y-wYQ.title" = "Назад";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "qea-wI-bjd"; */
+"qea-wI-bjd.text" = "0";
+
+/* Class = "UILabel"; text = "floor ceiling (REI)"; ObjectID = "rDL-VK-JGs"; */
+"rDL-VK-JGs.text" = "перекрытие (REI)";
+
+/* Class = "UINavigationItem"; title = "Substances"; ObjectID = "rZh-Lw-A25"; */
+"rZh-Lw-A25.title" = "Вещества";
+
+/* Class = "UINavigationItem"; title = "Select project"; ObjectID = "rZx-ga-QRs"; */
+"rZx-ga-QRs.title" = "Выбор проекта";
+
+/* Class = "UITextField"; placeholder = "splash"; ObjectID = "slj-uK-W3h"; */
+"slj-uK-W3h.placeholder" = "t вспышки";
+
+/* Class = "UITextField"; text = "0"; ObjectID = "slj-uK-W3h"; */
+"slj-uK-W3h.text" = "0";
+
+/* Class = "UITableViewSection"; headerTitle = "Income data"; ObjectID = "suC-ve-foO"; */
+"suC-ve-foO.headerTitle" = "Входные данные";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "tJu-Mh-ysI"; */
+"tJu-Mh-ysI.text" = "0";
+
+/* Class = "UILabel"; text = "Molecular weight, g/mol\nDOT OPERATOR\nUnicode: U+22C5, UTF-8: E2 8B 85s\nSUPERSCRIPT TWO\nUnicode: U+00B2, UTF-8: C2 B2*s"; ObjectID = "uRv-yM-Aat"; */
+"uRv-yM-Aat.text" = "Молярная масса, г/моль\nDOT OPERATOR\nUnicode: U+22C5, UTF-8: E2 8B 85s\nSUPERSCRIPT TWO\nUnicode: U+00B2, UTF-8: C2 B2*s";
+
+/* Class = "UILabel"; text = "Substance types"; ObjectID = "vSl-V1-DZj"; */
+"vSl-V1-DZj.text" = "Substance types";
+
+/* Class = "UINavigationItem"; title = "Substance detail"; ObjectID = "veU-wd-rno"; */
+"veU-wd-rno.title" = "Substance detail";
+
+/* Class = "UILabel"; text = "covering (E)"; ObjectID = "vnS-wT-Dk8"; */
+"vnS-wT-Dk8.text" = "covering (E)";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "wBx-6M-o2e"; */
+"wBx-6M-o2e.text" = "Заголовок";
+
+/* Class = "UITextField"; placeholder = "galoids"; ObjectID = "wQJ-L2-vfg"; */
+"wQJ-L2-vfg.placeholder" = "галоиды";
+
+/* Class = "UITextField"; text = "0"; ObjectID = "wQJ-L2-vfg"; */
+"wQJ-L2-vfg.text" = "0";
+
+/* Class = "UITextField"; placeholder = "square"; ObjectID = "xIJ-v1-3WB"; */
+"xIJ-v1-3WB.placeholder" = "площадь";
+
+/* Class = "UITextField"; text = "10"; ObjectID = "xIJ-v1-3WB"; */
+"xIJ-v1-3WB.text" = "10";
+
+/* Class = "UITextField"; placeholder = "name"; ObjectID = "xRT-0V-8Wy"; */
+"xRT-0V-8Wy.placeholder" = "наименование";
+
+/* Class = "UILabel"; text = "minutes"; ObjectID = "xhE-rN-Pg4"; */
+"xhE-rN-Pg4.text" = "минуты";
+
+/* Class = "UILabel"; text = "minutes"; ObjectID = "yHw-Vq-uXV"; */
+"yHw-Vq-uXV.text" = "минуты";
+
+/* Class = "UITextField"; text = "0"; ObjectID = "yrp-pp-uV9"; */
+"yrp-pp-uV9.text" = "0";
+
+/* Class = "UILabel"; text = "ferm or bean (R)"; ObjectID = "zIp-k9-Cpu"; */
+"zIp-k9-Cpu.text" = "ферма или балка (R)";

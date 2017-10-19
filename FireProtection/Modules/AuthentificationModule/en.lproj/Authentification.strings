@@ -1,0 +1,60 @@
+
+/* Class = "UILabel"; text = "Password"; ObjectID = "1QC-tQ-1aa"; */
+"1QC-tQ-1aa.text" = "Password";
+
+/* Class = "UIButton"; normalTitle = "Register"; ObjectID = "ERf-mX-b15"; */
+"ERf-mX-b15.normalTitle" = "Register";
+
+/* Class = "UILabel"; text = "Sorry, there is no functionality for that action"; ObjectID = "ElV-2Z-tAh"; */
+"ElV-2Z-tAh.text" = "Sorry, there is no functionality for that action";
+
+/* Class = "UINavigationItem"; title = "Register"; ObjectID = "FQh-Ci-OgL"; */
+"FQh-Ci-OgL.title" = "Register";
+
+/* Class = "UILabel"; text = "Repeat password"; ObjectID = "GK7-WJ-o11"; */
+"GK7-WJ-o11.text" = "Repeat password";
+
+/* Class = "UITextField"; placeholder = "login"; ObjectID = "Lp5-Zk-YnH"; */
+"Lp5-Zk-YnH.placeholder" = "login";
+
+/* Class = "UIBarButtonItem"; title = "Exit login"; ObjectID = "Sde-ho-SQE"; */
+"Sde-ho-SQE.title" = "Exit login";
+
+/* Class = "UILabel"; text = "Login"; ObjectID = "UQ5-gX-Rmk"; */
+"UQ5-gX-Rmk.text" = "Login";
+
+/* Class = "UILabel"; text = "Remember user"; ObjectID = "WaE-nG-sIC"; */
+"WaE-nG-sIC.text" = "Remember user";
+
+/* Class = "UIButton"; normalTitle = "Do not have an account yet?"; ObjectID = "Xwb-24-zis"; */
+"Xwb-24-zis.normalTitle" = "Do not have an account yet?";
+
+/* Class = "UITextField"; placeholder = "password"; ObjectID = "amZ-5D-a6R"; */
+"amZ-5D-a6R.placeholder" = "password";
+
+/* Class = "UIButton"; normalTitle = "Approve"; ObjectID = "c1W-53-tBF"; */
+"c1W-53-tBF.normalTitle" = "Approve";
+
+/* Class = "UITextField"; placeholder = "repeat password"; ObjectID = "c5g-JZ-gh3"; */
+"c5g-JZ-gh3.placeholder" = "repeat password";
+
+/* Class = "UITextField"; placeholder = "login"; ObjectID = "jQk-l0-Zl2"; */
+"jQk-l0-Zl2.placeholder" = "login";
+
+/* Class = "UIButton"; normalTitle = "Forgot your password?"; ObjectID = "kPs-C1-9J7"; */
+"kPs-C1-9J7.normalTitle" = "Forgot your password?";
+
+/* Class = "UITextField"; placeholder = "password"; ObjectID = "oTt-aY-zlr"; */
+"oTt-aY-zlr.placeholder" = "password";
+
+/* Class = "UINavigationItem"; title = "Log in"; ObjectID = "of1-n8-DkY"; */
+"of1-n8-DkY.title" = "Log in";
+
+/* Class = "UINavigationItem"; title = "Restore password"; ObjectID = "qTD-qf-FUa"; */
+"qTD-qf-FUa.title" = "Restore password";
+
+/* Class = "UILabel"; text = "Login"; ObjectID = "t34-l1-aRs"; */
+"t34-l1-aRs.text" = "Login";
+
+/* Class = "UILabel"; text = "Password"; ObjectID = "vRA-Kc-K7B"; */
+"vRA-Kc-K7B.text" = "Password";

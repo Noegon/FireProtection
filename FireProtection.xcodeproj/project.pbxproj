@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4003D8F21F992C48003C6F72 /* Authentification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4003D8F41F992C48003C6F72 /* Authentification.storyboard */; };
 		4004DA1C1F879BD1003BA8C0 /* NGNSettingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4004DA1B1F879BD1003BA8C0 /* NGNSettingsController.m */; };
 		4006F5CA1F9419DE000F371A /* NGNFireHazardCalculationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4006F5C91F9419DE000F371A /* NGNFireHazardCalculationController.m */; };
 		400D97BB1F74694F003C5CCE /* NGNAuthentificationcontrollerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 400D97BA1F74694F003C5CCE /* NGNAuthentificationcontrollerViewController.m */; };
@@ -26,7 +27,6 @@
 		4031244C1F86EE2C00CE3F77 /* NGNFireSafetyCategoryDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4031244B1F86EE2C00CE3F77 /* NGNFireSafetyCategoryDetailController.m */; };
 		404538631F4B9FA600125AC3 /* NGNCommonConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 404538621F4B9FA600125AC3 /* NGNCommonConstants.m */; };
 		405141FC1F961C79001F36BD /* NGNLocalSubstancePileDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 405141FB1F961C79001F36BD /* NGNLocalSubstancePileDetailController.m */; };
-		40863F0B1F752F550032077C /* Authentification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40863F0A1F752F550032077C /* Authentification.storyboard */; };
 		40A618C71F69AAA30075AE38 /* NGNUserAuthentificationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 40A618C61F69AAA30075AE38 /* NGNUserAuthentificationManager.m */; };
 		40A618CB1F69B8FE0075AE38 /* NGNPropertyUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 40A618CA1F69B8FE0075AE38 /* NGNPropertyUtil.m */; };
 		40A9A2FD1F726D7800B3876C /* NGNApplicationStateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 40A9A2FC1F726D7800B3876C /* NGNApplicationStateManager.m */; };
@@ -100,6 +100,13 @@
 
 /* Begin PBXFileReference section */
 		0083F4C360BB0D23DD64D5CA /* Pods-FireProtection.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FireProtection.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FireProtection/Pods-FireProtection.debug.xcconfig"; sourceTree = "<group>"; };
+		4003D8F31F992C48003C6F72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Authentification.storyboard; sourceTree = "<group>"; };
+		4003D8F51F992D72003C6F72 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Authentification.strings; sourceTree = "<group>"; };
+		4003D8F61F992D72003C6F72 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
+		4003D8F71F992D73003C6F72 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		4003D8F91F992DE7003C6F72 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		4003D8FB1F992DEE003C6F72 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		4003D8FD1F9942F6003C6F72 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Authentification.strings; sourceTree = "<group>"; };
 		4004DA1A1F879BD1003BA8C0 /* NGNSettingsController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = NGNSettingsController.h; path = Controller/BasicControllers/NGNSettingsController.h; sourceTree = "<group>"; };
 		4004DA1B1F879BD1003BA8C0 /* NGNSettingsController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = NGNSettingsController.m; path = Controller/BasicControllers/NGNSettingsController.m; sourceTree = "<group>"; };
 		4006F5C81F9419DE000F371A /* NGNFireHazardCalculationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NGNFireHazardCalculationController.h; sourceTree = "<group>"; };
@@ -138,7 +145,6 @@
 		404538621F4B9FA600125AC3 /* NGNCommonConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NGNCommonConstants.m; path = Constants/NGNCommonConstants.m; sourceTree = "<group>"; };
 		405141FA1F961C79001F36BD /* NGNLocalSubstancePileDetailController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NGNLocalSubstancePileDetailController.h; sourceTree = "<group>"; };
 		405141FB1F961C79001F36BD /* NGNLocalSubstancePileDetailController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NGNLocalSubstancePileDetailController.m; sourceTree = "<group>"; };
-		40863F0A1F752F550032077C /* Authentification.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Authentification.storyboard; path = FireProtection/Modules/AuthentificationModule/Authentification.storyboard; sourceTree = SOURCE_ROOT; };
 		40A618C51F69AAA30075AE38 /* NGNUserAuthentificationManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NGNUserAuthentificationManager.h; sourceTree = "<group>"; };
 		40A618C61F69AAA30075AE38 /* NGNUserAuthentificationManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NGNUserAuthentificationManager.m; sourceTree = "<group>"; };
 		40A618C91F69B8FE0075AE38 /* NGNPropertyUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = NGNPropertyUtil.h; path = Utils/NGNPropertyUtil.h; sourceTree = "<group>"; };
@@ -326,7 +332,7 @@
 		400D97B61F7461C1003C5CCE /* AuthentificationModule */ = {
 			isa = PBXGroup;
 			children = (
-				40863F0A1F752F550032077C /* Authentification.storyboard */,
+				4003D8F41F992C48003C6F72 /* Authentification.storyboard */,
 				40A618C51F69AAA30075AE38 /* NGNUserAuthentificationManager.h */,
 				40A618C61F69AAA30075AE38 /* NGNUserAuthentificationManager.m */,
 				400D97B81F746290003C5CCE /* Controllers */,
@@ -762,7 +768,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				40D89EC11F40621800B07AB5 /* LaunchScreen.storyboard in Resources */,
-				40863F0B1F752F550032077C /* Authentification.storyboard in Resources */,
+				4003D8F21F992C48003C6F72 /* Authentification.storyboard in Resources */,
 				40E999F01F61CF3600B6F9F9 /* db.json in Resources */,
 				40D89EBE1F40621800B07AB5 /* Assets.xcassets in Resources */,
 				40D89EB91F40621800B07AB5 /* Main.storyboard in Resources */,
@@ -911,10 +917,23 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		4003D8F41F992C48003C6F72 /* Authentification.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4003D8F31F992C48003C6F72 /* Base */,
+				4003D8F51F992D72003C6F72 /* ru */,
+				4003D8FD1F9942F6003C6F72 /* en */,
+			);
+			name = Authentification.storyboard;
+			path = FireProtection/Modules/AuthentificationModule;
+			sourceTree = SOURCE_ROOT;
+		};
 		40D89EB71F40621800B07AB5 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				40D89EB81F40621800B07AB5 /* Base */,
+				4003D8F61F992D72003C6F72 /* ru */,
+				4003D8F91F992DE7003C6F72 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -923,6 +942,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				40D89EC01F40621800B07AB5 /* Base */,
+				4003D8F71F992D73003C6F72 /* ru */,
+				4003D8FB1F992DEE003C6F72 /* en */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -934,6 +955,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -988,6 +1010,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
