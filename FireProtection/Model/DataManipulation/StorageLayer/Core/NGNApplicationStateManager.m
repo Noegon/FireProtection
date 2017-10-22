@@ -17,8 +17,6 @@ typedef NS_ENUM(NSInteger, NGNApplicationNotificationName) {
     NGNApplicationNotificationServerReachabilityStatus
 };
 
-static const NSUInteger NGNNotificationsCount = 5;
-
 // fine descision for enum and string values binding
 static NSString *const NGNStringApplicationNotificationName[] = {
     [NGNApplicationNotificationCommonDataWasLoadedStatus] = kNGNApplicationNotificationCommonDataWasLoaded,

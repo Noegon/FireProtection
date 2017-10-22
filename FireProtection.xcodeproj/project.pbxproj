@@ -43,7 +43,6 @@
 		40D03F0A1F7AF2C600271DC5 /* NGNStoryboardConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 40D03F091F7AF2C600271DC5 /* NGNStoryboardConstants.m */; };
 		40D89EB01F40621800B07AB5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 40D89EAF1F40621800B07AB5 /* main.m */; };
 		40D89EB31F40621800B07AB5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 40D89EB21F40621800B07AB5 /* AppDelegate.m */; };
-		40D89EB61F40621800B07AB5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40D89EB51F40621800B07AB5 /* ViewController.m */; };
 		40D89EB91F40621800B07AB5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40D89EB71F40621800B07AB5 /* Main.storyboard */; };
 		40D89EBE1F40621800B07AB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40D89EBD1F40621800B07AB5 /* Assets.xcassets */; };
 		40D89EC11F40621800B07AB5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40D89EBF1F40621800B07AB5 /* LaunchScreen.storyboard */; };
@@ -107,7 +106,6 @@
 		4003D8F51F992D72003C6F72 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Authentification.strings; sourceTree = "<group>"; };
 		4003D8F61F992D72003C6F72 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
 		4003D8F71F992D73003C6F72 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		4003D8F91F992DE7003C6F72 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		4003D8FB1F992DEE003C6F72 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		4003D8FD1F9942F6003C6F72 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Authentification.strings; sourceTree = "<group>"; };
 		4003D9011F99480D003C6F72 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -165,6 +163,7 @@
 		40ABBA631F95539900DC2D9D /* NGNTemporarySubstancePilesController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NGNTemporarySubstancePilesController.m; sourceTree = "<group>"; };
 		40C21C3C1F9CDA2400C0D3D3 /* NGNBasicTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = NGNBasicTableViewController.h; path = Controller/NGNBasicTableViewController.h; sourceTree = "<group>"; };
 		40C21C3D1F9CDA2400C0D3D3 /* NGNBasicTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = NGNBasicTableViewController.m; path = Controller/NGNBasicTableViewController.m; sourceTree = "<group>"; };
+		40C21C421F9CFEFB00C0D3D3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		40C458451F845196004C0709 /* NGNApplicationEnterExitManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NGNApplicationEnterExitManager.h; sourceTree = "<group>"; };
 		40C458461F845196004C0709 /* NGNApplicationEnterExitManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NGNApplicationEnterExitManager.m; sourceTree = "<group>"; };
 		40C458491F856985004C0709 /* NGNTabBarManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NGNTabBarManager.h; sourceTree = "<group>"; };
@@ -179,8 +178,6 @@
 		40D89EAF1F40621800B07AB5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		40D89EB11F40621800B07AB5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		40D89EB21F40621800B07AB5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		40D89EB41F40621800B07AB5 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		40D89EB51F40621800B07AB5 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		40D89EB81F40621800B07AB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		40D89EBD1F40621800B07AB5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		40D89EC01F40621800B07AB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -503,8 +500,6 @@
 				40D89EC81F40672500B07AB5 /* View */,
 				40D89EB11F40621800B07AB5 /* AppDelegate.h */,
 				40D89EB21F40621800B07AB5 /* AppDelegate.m */,
-				40D89EB41F40621800B07AB5 /* ViewController.h */,
-				40D89EB51F40621800B07AB5 /* ViewController.m */,
 				40D89EAE1F40621800B07AB5 /* Supporting Files */,
 			);
 			path = FireProtection;
@@ -894,7 +889,6 @@
 				40E999EB1F5F405600B6F9F9 /* NGNReachability.m in Sources */,
 				40E99AB81F699B0800B6F9F9 /* NGNFunctionalFireSafetySubcategoryService.m in Sources */,
 				40E99A8C1F61EFAD00B6F9F9 /* NGNFunctionalFireSafetyCategory+CoreDataProperties.m in Sources */,
-				40D89EB61F40621800B07AB5 /* ViewController.m in Sources */,
 				40E99AA91F69970C00B6F9F9 /* NGNSubstanceService.m in Sources */,
 				403124421F86C27500CE3F77 /* NGNSubstanceTypeController.m in Sources */,
 				404538631F4B9FA600125AC3 /* NGNCommonConstants.m in Sources */,
@@ -959,7 +953,7 @@
 			children = (
 				40D89EB81F40621800B07AB5 /* Base */,
 				4003D8F61F992D72003C6F72 /* ru */,
-				4003D8F91F992DE7003C6F72 /* en */,
+				40C21C421F9CFEFB00C0D3D3 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

@@ -26,13 +26,34 @@
 "model.measureUnits.grams" = "g";
 "model.measureUnits.kilograms" = "kg";
 "model.measureUnits.megaJoules" = "MJ";
+"model.measureUnits.watts" = "Wt";
+"model.measureUnits.kilowatts" = "kWt";
+"model.measureUnits.megawatts" = "MWt";
 "model.measureUnits.meters" = "m";
+"model.measureUnits.meters.square" = "m2";
+"model.measureUnits.meters.cubic" = "m3";
 "model.measureUnits.mol" = "mol";
 "model.measureUnits.seconds" = "s";
 "model.measureUnits.minutes" = "min";
+"model.measureUnits.celsiumDegrees" = "deg. C";
 
 //Fire resistance rank calculation
 "model.calculations.fireResistanceRank.substanceStoring.standard" = "Standard substance storing";
 "model.calculations.fireResistanceRank.substanceStoring.fuel" = "Substance using as fuel";
 "model.calculations.fireResistanceRank.substanceStoring.radiatingWarmNoFire" = "Radiating warm without fire";
 "model.calculations.fireResistanceRank.substanceStoring.wetProcess" = "Wet processes in room";
+
+//CoreData entities
+//Substances properties names
+"model.coredata.substance.property.name.substanceDensity" = "Density";
+"model.coredata.substance.property.name.substanceAirAmount" = "Air amount";
+"model.coredata.substance.property.name.substanceHeatOfCombusion" = "Heat of combusion";
+"model.coredata.substance.property.name.substanceCriticalRadiationDensity" = "Critical radiation density";
+"model.coredata.substance.property.name.substanceFlameSpeed" = "Flame speed";
+"model.coredata.substance.property.name.substanceBurningRate" = "Burning rate";
+"model.coredata.substance.property.name.substanceMolecularWeight" = "Molecular weight";
+"model.coredata.substance.property.name.substanceSplashPoint" = "Splash point";
+"model.coredata.substance.property.name.carbonAthoms" = "Carbon athoms amount";
+"model.coredata.substance.property.name.hydrogenAthoms" = "Hydrogen athoms amount";
+"model.coredata.substance.property.name.oxygenAthoms" = "Oxygen athoms amount";
+"model.coredata.substance.property.name.galoidsAthoms" = "Galoids athoms amount";

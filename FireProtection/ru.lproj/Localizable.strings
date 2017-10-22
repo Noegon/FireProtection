@@ -26,13 +26,34 @@
 "model.measureUnits.grams" = "г";
 "model.measureUnits.kilograms" = "кг";
 "model.measureUnits.megaJoules" = "МДж";
+"model.measureUnits.watts" = "Вт";
+"model.measureUnits.kilowatts" = "кВт";
+"model.measureUnits.megawatts" = "МВт";
+"model.measureUnits.meters.square" = "м2";
+"model.measureUnits.meters.cubic" = "м3";
 "model.measureUnits.meters" = "м";
 "model.measureUnits.mol" = "моль";
 "model.measureUnits.seconds" = "с";
 "model.measureUnits.minutes" = "мин";
+"model.measureUnits.celsiumDegrees" = "град. C";
 
 //Fire resistance rank calculation
 "model.calculations.fireResistanceRank.substanceStoring.standard" = "Обычное размещение";
 "model.calculations.fireResistanceRank.substanceStoring.fuel" = "Использ-е в кач-ве горючего";
 "model.calculations.fireResistanceRank.substanceStoring.radiatingWarmNoFire" = "Выделение тепла без пламени";
 "model.calculations.fireResistanceRank.substanceStoring.wetProcess" = "Мокрый тех. процесс";
+
+//CoreData entities
+//Substances properties names
+"model.coredata.substance.property.name.substanceDensity" = "Плотность";
+"model.coredata.substance.property.name.substanceAirAmount" = "Количество воздуха";
+"model.coredata.substance.property.name.substanceHeatOfCombusion" = "Теплота сгорания";
+"model.coredata.substance.property.name.substanceCriticalRadiationDensity" = "Критическая плотность теплового потока";
+"model.coredata.substance.property.name.substanceFlameSpeed" = "Скорость распространения пламени";
+"model.coredata.substance.property.name.substanceBurningRate" = "Скорость выгорания";
+"model.coredata.substance.property.name.substanceMolecularWeight" = "Молярная масса";
+"model.coredata.substance.property.name.substanceSplashPoint" = "Температура вспышки";
+"model.coredata.substance.property.name.carbonAthoms" = "Число атомов углерода";
+"model.coredata.substance.property.name.hydrogenAthoms" = "Число атомов водорода";
+"model.coredata.substance.property.name.oxygenAthoms" = "Число атомов кислорода";
+"model.coredata.substance.property.name.galoidsAthoms" = "Число атомов галоидов";

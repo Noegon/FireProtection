@@ -2,6 +2,9 @@
 /* Class = "UITabBarItem"; title = "About"; ObjectID = "015-F9-8aV"; */
 "015-F9-8aV.title" = "About";
 
+/* Class = "UILabel"; text = "Cr. radiation density, kWt/m²\nSUPERSCRIPT THREE\nUnicode: U+00B3, UTF-8: C2 B3"; ObjectID = "0R0-5v-3p6"; */
+"0R0-5v-3p6.text" = "Cr. radiation density, kWt/m²\nSUPERSCRIPT THREE\nUnicode: U+00B3, UTF-8: C2 B3";
+
 /* Class = "UILabel"; text = "Burning rate, kg/m²⋅s\nDOT OPERATOR\nUnicode: U+22C5, UTF-8: E2 8B 85s\nSUPERSCRIPT TWO\nUnicode: U+00B2, UTF-8: C2 B2*s"; ObjectID = "0U8-b4-VWn"; */
 "0U8-b4-VWn.text" = "Burning rate, kg/m²⋅s\nDOT OPERATOR\nUnicode: U+22C5, UTF-8: E2 8B 85s\nSUPERSCRIPT TWO\nUnicode: U+00B2, UTF-8: C2 B2*s";
 
@@ -121,6 +124,12 @@
 
 /* Class = "UIBarButtonItem"; title = "Login"; ObjectID = "ILe-hb-MDE"; */
 "ILe-hb-MDE.title" = "Login";
+
+/* Class = "UITextField"; placeholder = "cr. rad."; ObjectID = "IY6-K8-hfW"; */
+"IY6-K8-hfW.placeholder" = "cr. rad.";
+
+/* Class = "UITextField"; text = "0"; ObjectID = "IY6-K8-hfW"; */
+"IY6-K8-hfW.text" = "0";
 
 /* Class = "UILabel"; text = "Placed substance piles"; ObjectID = "JHT-sh-e1b"; */
 "JHT-sh-e1b.text" = "Placed substance piles";
