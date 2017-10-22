@@ -26,6 +26,7 @@
 @property (strong, nonatomic) IBOutlet UITextField *heatOfCombusionTextField;
 @property (strong, nonatomic) IBOutlet UITextField *flameSpeedTextField;
 @property (strong, nonatomic) IBOutlet UITextField *burningRateTextField;
+@property (strong, nonatomic) IBOutlet UITextField *criticalRadiationDensityTextField;
 @property (strong, nonatomic) IBOutlet UITextField *molecularWeightTextField;
 @property (strong, nonatomic) IBOutlet UITextField *splashPointTextField;
 @property (strong, nonatomic) IBOutlet UITextField *carbonAthomsTextField;
@@ -60,6 +61,7 @@
         self.heatOfCombusionTextField.text = self.substance.heatOfCombusion.stringValue;
         self.flameSpeedTextField.text = self.substance.flameSpeed.stringValue;
         self.burningRateTextField.text = self.substance.burningRate.stringValue;
+        self.criticalRadiationDensityTextField.text = self.substance.criticalRadiationDensity.stringValue;
         self.molecularWeightTextField.text = self.substance.molecularWeight.stringValue;
         self.splashPointTextField.text = self.substance.splashPoint.stringValue;
         self.carbonAthomsTextField.text = self.substance.carbonAthoms.stringValue;
@@ -130,20 +132,22 @@
             [NGNSubstance ngn_createEntityInManagedObjectContext:[NGNDataBaseManager managedObjectContext]
                                            fieldscompletionBlock:
              ^(NSManagedObject *substance) {
-                 ((NGNSubstance *)substance).idx = (NSDecimalNumber *)@(foo4random());
-                 ((NGNSubstance *)substance).name = weakSelf.nameTextField.text;
-                 ((NGNSubstance *)substance).density = @([weakSelf.densityTextField.text doubleValue]);
-                 ((NGNSubstance *)substance).requiredAirAmount = @([weakSelf.requiredAirAmountTextField.text doubleValue]);
-                 ((NGNSubstance *)substance).heatOfCombusion = @([weakSelf.heatOfCombusionTextField.text doubleValue]);
-                 ((NGNSubstance *)substance).flameSpeed = @([weakSelf.flameSpeedTextField.text doubleValue]);
-                 ((NGNSubstance *)substance).burningRate = @([weakSelf.burningRateTextField.text doubleValue]);
-                 ((NGNSubstance *)substance).substanceType = currentSubstanceType;
-                 ((NGNSubstance *)substance).molecularWeight = @([weakSelf.molecularWeightTextField.text doubleValue]);
-                 ((NGNSubstance *)substance).splashPoint = @([weakSelf.splashPointTextField.text doubleValue]);
-                 ((NGNSubstance *)substance).carbonAthoms = @([weakSelf.carbonAthomsTextField.text integerValue]);
-                 ((NGNSubstance *)substance).oxygenAthoms = @([weakSelf.oxygenAthomsTextField.text integerValue]);
-                 ((NGNSubstance *)substance).hydrogenAthoms = @([weakSelf.hydrogenAthomsTextField.text integerValue]);
-                 ((NGNSubstance *)substance).galoidsAthoms = @([weakSelf.galoidAthomsTextField.text integerValue]);
+                 NGNSubstance *currentSubstance = (NGNSubstance *)substance;
+                 currentSubstance.idx = (NSDecimalNumber *)@(foo4random());
+                 currentSubstance.name = weakSelf.nameTextField.text;
+                 currentSubstance.density = @([weakSelf.densityTextField.text doubleValue]);
+                 currentSubstance.requiredAirAmount = @([weakSelf.requiredAirAmountTextField.text doubleValue]);
+                 currentSubstance.heatOfCombusion = @([weakSelf.heatOfCombusionTextField.text doubleValue]);
+                 currentSubstance.criticalRadiationDensity = @([weakSelf.criticalRadiationDensityTextField.text doubleValue]);
+                 currentSubstance.flameSpeed = @([weakSelf.flameSpeedTextField.text doubleValue]);
+                 currentSubstance.burningRate = @([weakSelf.burningRateTextField.text doubleValue]);
+                 currentSubstance.substanceType = currentSubstanceType;
+                 currentSubstance.molecularWeight = @([weakSelf.molecularWeightTextField.text doubleValue]);
+                 currentSubstance.splashPoint = @([weakSelf.splashPointTextField.text doubleValue]);
+                 currentSubstance.carbonAthoms = @([weakSelf.carbonAthomsTextField.text integerValue]);
+                 currentSubstance.oxygenAthoms = @([weakSelf.oxygenAthomsTextField.text integerValue]);
+                 currentSubstance.hydrogenAthoms = @([weakSelf.hydrogenAthomsTextField.text integerValue]);
+                 currentSubstance.galoidsAthoms = @([weakSelf.galoidAthomsTextField.text integerValue]);
                  NSFetchRequest *request = [NGNUser fetchRequest];
                  request.predicate = [NSPredicate predicateWithFormat:@"self.idx == %@",
                                       [NGNApplicationStateManager sharedInstance].currentSessionUserId];
@@ -151,9 +155,9 @@
                  NSArray *result = [[NGNDataBaseManager managedObjectContext] executeFetchRequest:request error:&error];
                  if (!error && result.count > 0) {
                      NGNUser *currentUser = result[0];
-                     ((NGNSubstance *)substance).user = currentUser;
+                     currentSubstance.user = currentUser;
                  } else {
-                     ((NGNSubstance *)substance).user = nil;
+                     currentSubstance.user = nil;
                  }
                  [self.navigationController popViewControllerAnimated:YES];
         }];
@@ -163,6 +167,7 @@
             self.substance.density = @([self.densityTextField.text doubleValue]);
             self.substance.requiredAirAmount = @([self.requiredAirAmountTextField.text doubleValue]);
             self.substance.heatOfCombusion = @([self.heatOfCombusionTextField.text doubleValue]);
+            self.substance.criticalRadiationDensity = @([self.criticalRadiationDensityTextField.text doubleValue]);
             self.substance.flameSpeed = @([self.flameSpeedTextField.text doubleValue]);
             self.substance.burningRate = @([self.burningRateTextField.text doubleValue]);
             self.substance.substanceType = currentSubstanceType;

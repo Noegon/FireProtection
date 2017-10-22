@@ -1,0 +1,60 @@
+
+/* Class = "UILabel"; text = "Password"; ObjectID = "1QC-tQ-1aa"; */
+"1QC-tQ-1aa.text" = "Пароль";
+
+/* Class = "UIButton"; normalTitle = "Register"; ObjectID = "ERf-mX-b15"; */
+"ERf-mX-b15.normalTitle" = "Регистрация";
+
+/* Class = "UILabel"; text = "Sorry, there is no functionality for that action"; ObjectID = "ElV-2Z-tAh"; */
+"ElV-2Z-tAh.text" = "Извините, ещё не реализовано";
+
+/* Class = "UINavigationItem"; title = "Register"; ObjectID = "FQh-Ci-OgL"; */
+"FQh-Ci-OgL.title" = "Регистрация";
+
+/* Class = "UILabel"; text = "Repeat password"; ObjectID = "GK7-WJ-o11"; */
+"GK7-WJ-o11.text" = "Повторить пароль";
+
+/* Class = "UITextField"; placeholder = "login"; ObjectID = "Lp5-Zk-YnH"; */
+"Lp5-Zk-YnH.placeholder" = "имя";
+
+/* Class = "UIBarButtonItem"; title = "Exit login"; ObjectID = "Sde-ho-SQE"; */
+"Sde-ho-SQE.title" = "Завершить";
+
+/* Class = "UILabel"; text = "Login"; ObjectID = "UQ5-gX-Rmk"; */
+"UQ5-gX-Rmk.text" = "Имя";
+
+/* Class = "UILabel"; text = "Remember user"; ObjectID = "WaE-nG-sIC"; */
+"WaE-nG-sIC.text" = "Запомнить";
+
+/* Class = "UIButton"; normalTitle = "Do not have an account yet?"; ObjectID = "Xwb-24-zis"; */
+"Xwb-24-zis.normalTitle" = "Нет аккаунта?";
+
+/* Class = "UITextField"; placeholder = "password"; ObjectID = "amZ-5D-a6R"; */
+"amZ-5D-a6R.placeholder" = "пароль";
+
+/* Class = "UIButton"; normalTitle = "Approve"; ObjectID = "c1W-53-tBF"; */
+"c1W-53-tBF.normalTitle" = "Подтвердить";
+
+/* Class = "UITextField"; placeholder = "repeat password"; ObjectID = "c5g-JZ-gh3"; */
+"c5g-JZ-gh3.placeholder" = "повторить пароль";
+
+/* Class = "UITextField"; placeholder = "login"; ObjectID = "jQk-l0-Zl2"; */
+"jQk-l0-Zl2.placeholder" = "имя";
+
+/* Class = "UIButton"; normalTitle = "Forgot your password?"; ObjectID = "kPs-C1-9J7"; */
+"kPs-C1-9J7.normalTitle" = "Забыли пароль?";
+
+/* Class = "UITextField"; placeholder = "password"; ObjectID = "oTt-aY-zlr"; */
+"oTt-aY-zlr.placeholder" = "пароль";
+
+/* Class = "UINavigationItem"; title = "Log in"; ObjectID = "of1-n8-DkY"; */
+"of1-n8-DkY.title" = "Войти";
+
+/* Class = "UINavigationItem"; title = "Restore password"; ObjectID = "qTD-qf-FUa"; */
+"qTD-qf-FUa.title" = "Восстановить пароль";
+
+/* Class = "UILabel"; text = "Login"; ObjectID = "t34-l1-aRs"; */
+"t34-l1-aRs.text" = "Имя";
+
+/* Class = "UILabel"; text = "Password"; ObjectID = "vRA-Kc-K7B"; */
+"vRA-Kc-K7B.text" = "Пароль";

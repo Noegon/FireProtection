@@ -285,7 +285,7 @@
                                                     </constraints>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                    <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                                    <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -322,7 +322,7 @@ Unicode: U+00B3, UTF-8: C2 B3</string>
                                                     </constraints>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                    <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                     <connections>
                                                         <action selector="roomSquareDidChanged:" destination="S8y-4I-po4" eventType="editingChanged" id="nhf-UB-oTr"/>
                                                     </connections>
@@ -362,7 +362,7 @@ Unicode: U+00B3, UTF-8: C2 B3</string>
                                                     </constraints>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                    <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                     <connections>
                                                         <action selector="roomHeightValueDidChanged:" destination="S8y-4I-po4" eventType="editingChanged" id="FwX-rv-W8R"/>
                                                     </connections>
@@ -508,14 +508,14 @@ Unicode: U+00B3, UTF-8: C2 B3</string>
                                                     <rect key="frame" x="16" y="10" width="135.5" height="24"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Д" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="W8Z-FS-q43">
                                                     <rect key="frame" x="345" y="10" width="15" height="24"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -531,6 +531,7 @@ Unicode: U+00B3, UTF-8: C2 B3</string>
                     </tableView>
                     <navigationItem key="navigationItem" title="Fire hazard" id="f5Y-OE-S6Q"/>
                     <connections>
+                        <outlet property="categoryResultDescribeTextLabel" destination="Ysq-Zf-YFl" id="gEu-xn-hAR"/>
                         <outlet property="categoryResultTextLabel" destination="W8Z-FS-q43" id="HP8-OW-bnu"/>
                         <outlet property="overallFireLoadResultTextLabel" destination="qea-wI-bjd" id="BTD-Fh-J4e"/>
                         <outlet property="placedSubstancePilesTextLabel" destination="3xP-Ts-pkB" id="apg-JS-1nt"/>
@@ -554,7 +555,7 @@ Unicode: U+00B3, UTF-8: C2 B3</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="substancePileCell" textLabel="8lc-S5-8ro" detailTextLabel="jZT-E9-jjz" style="IBUITableViewCellStyleValue1" id="n7P-mM-p3A">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="substancePileCell" textLabel="8lc-S5-8ro" detailTextLabel="jZT-E9-jjz" style="IBUITableViewCellStyleSubtitle" id="n7P-mM-p3A">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="n7P-mM-p3A" id="7FX-SN-N9L">
@@ -562,16 +563,16 @@ Unicode: U+00B3, UTF-8: C2 B3</string>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8lc-S5-8ro">
-                                            <rect key="frame" x="16" y="10" width="51.5" height="24"/>
+                                            <rect key="frame" x="16" y="3" width="51.5" height="24"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="mass" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jZT-E9-jjz">
-                                            <rect key="frame" x="293.5" y="10" width="46.5" height="24"/>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="parameters" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jZT-E9-jjz">
+                                            <rect key="frame" x="16" y="27" width="64.5" height="14.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -603,7 +604,7 @@ Unicode: U+00B3, UTF-8: C2 B3</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zR8-vU-eik" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="yBs-se-CH1" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="5471" y="2116"/>
+            <point key="canvasLocation" x="5469.6000000000004" y="2115.2923538230884"/>
         </scene>
         <!--Pile detail-->
         <scene sceneID="mX6-G3-ET9">
@@ -640,7 +641,7 @@ Unicode: U+00B3, UTF-8: C2 B3</string>
                                                     </constraints>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                    <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -677,7 +678,7 @@ Unicode: U+00B3, UTF-8: C2 B3</string>
                                                     </constraints>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                    <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -707,7 +708,7 @@ Unicode: U+00B3, UTF-8: C2 B3</string>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="substanceDetailedCell" textLabel="UMh-ak-vWr" detailTextLabel="jO9-rm-KcB" style="IBUITableViewCellStyleValue1" id="OUV-Tg-VKd">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="substanceDetailedCell" textLabel="UMh-ak-vWr" detailTextLabel="jO9-rm-KcB" style="IBUITableViewCellStyleSubtitle" id="OUV-Tg-VKd">
                                         <rect key="frame" x="0.0" y="132" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OUV-Tg-VKd" id="fhf-ao-b3a">
@@ -715,16 +716,16 @@ Unicode: U+00B3, UTF-8: C2 B3</string>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UMh-ak-vWr">
-                                                    <rect key="frame" x="16" y="10" width="51.5" height="24"/>
+                                                    <rect key="frame" x="16" y="3" width="51.5" height="24"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="heat of comb., MJ" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jO9-rm-KcB">
-                                                    <rect key="frame" x="184.5" y="10" width="155.5" height="24"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="heat of comb., MJ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jO9-rm-KcB">
+                                                    <rect key="frame" x="16" y="27" width="102.5" height="14.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -1094,7 +1095,7 @@ Unicode: U+00B3, UTF-8: C2 B3</string>
                                                     </constraints>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                    <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                                    <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -1131,7 +1132,7 @@ Unicode: U+00B3, UTF-8: C2 B3</string>
                                                     </constraints>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                    <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -1170,7 +1171,7 @@ Unicode: U+00B3, UTF-8: C2 B3/m3</string>
                                                     </constraints>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                    <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -1204,7 +1205,7 @@ Unicode: U+00B3, UTF-8: C2 B3/m3</string>
                                                     </constraints>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                    <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -1238,7 +1239,7 @@ Unicode: U+00B3, UTF-8: C2 B3/m3</string>
                                                     </constraints>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                    <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -1277,7 +1278,7 @@ Unicode: U+00B2, UTF-8: C2 B2*s</string>
                                                     </constraints>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                    <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -1290,8 +1291,45 @@ Unicode: U+00B2, UTF-8: C2 B2*s</string>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="44" id="Z7E-5c-Vpb">
+                                        <rect key="frame" x="0.0" y="264" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Z7E-5c-Vpb" id="o6a-2L-NaV">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0R0-5v-3p6">
+                                                    <rect key="frame" x="16" y="0.0" width="249" height="43.5"/>
+                                                    <string key="text">Cr. radiation density, kWt/m²
+SUPERSCRIPT THREE
+Unicode: U+00B3, UTF-8: C2 B3</string>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" placeholder="cr. rad." textAlignment="right" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="IY6-K8-hfW">
+                                                    <rect key="frame" x="265" y="6" width="100" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="UXI-Kf-nuj"/>
+                                                        <constraint firstAttribute="width" constant="100" id="VfA-3d-RaA"/>
+                                                    </constraints>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="IY6-K8-hfW" firstAttribute="centerY" secondItem="o6a-2L-NaV" secondAttribute="centerY" id="6rx-Wb-l91"/>
+                                                <constraint firstAttribute="trailing" secondItem="IY6-K8-hfW" secondAttribute="trailing" constant="10" id="Cew-O0-c3f"/>
+                                                <constraint firstItem="0R0-5v-3p6" firstAttribute="leading" secondItem="o6a-2L-NaV" secondAttribute="leading" constant="16" id="L5N-cd-fiw"/>
+                                                <constraint firstAttribute="bottom" secondItem="0R0-5v-3p6" secondAttribute="bottom" id="VrM-yc-6Ye"/>
+                                                <constraint firstItem="IY6-K8-hfW" firstAttribute="leading" secondItem="0R0-5v-3p6" secondAttribute="trailing" id="aji-rA-h68"/>
+                                                <constraint firstItem="0R0-5v-3p6" firstAttribute="top" secondItem="o6a-2L-NaV" secondAttribute="top" id="l82-g1-50x"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="120" id="Md6-TU-nfP">
-                                        <rect key="frame" x="0.0" y="264" width="375" height="120"/>
+                                        <rect key="frame" x="0.0" y="308" width="375" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Md6-TU-nfP" id="eih-BD-EvW">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
@@ -1328,7 +1366,7 @@ Unicode: U+00B2, UTF-8: C2 B2*s</string>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="44" id="32O-Qp-fqB">
-                                        <rect key="frame" x="0.0" y="384" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="428" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="32O-Qp-fqB" id="mOi-bW-aQ1">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -1353,7 +1391,7 @@ Unicode: U+00B2, UTF-8: C2 B2*s</string>
                                                     </constraints>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                    <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -1367,7 +1405,7 @@ Unicode: U+00B2, UTF-8: C2 B2*s</string>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="44" id="3fq-TJ-orG">
-                                        <rect key="frame" x="0.0" y="428" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="472" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3fq-TJ-orG" id="maw-RB-tbH">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -1392,7 +1430,7 @@ Unicode: U+00B2, UTF-8: C2 B2*s</string>
                                                     </constraints>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                    <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -1406,7 +1444,7 @@ Unicode: U+00B2, UTF-8: C2 B2*s</string>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="44" id="RyG-Ho-wER">
-                                        <rect key="frame" x="0.0" y="472" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="516" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RyG-Ho-wER" id="wY9-3s-s1S">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -1431,7 +1469,7 @@ Unicode: U+00B2, UTF-8: C2 B2*s</string>
                                                     </constraints>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                    <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -1445,7 +1483,7 @@ Unicode: U+00B2, UTF-8: C2 B2*s</string>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="44" id="gxq-Qy-4Te">
-                                        <rect key="frame" x="0.0" y="516" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="560" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gxq-Qy-4Te" id="Ufy-5k-srh">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -1470,7 +1508,7 @@ Unicode: U+00B2, UTF-8: C2 B2*s</string>
                                                     </constraints>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                    <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -1484,7 +1522,7 @@ Unicode: U+00B2, UTF-8: C2 B2*s</string>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="44" id="vTu-7c-4tP">
-                                        <rect key="frame" x="0.0" y="560" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="604" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vTu-7c-4tP" id="In8-AS-oAw">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -1509,7 +1547,7 @@ Unicode: U+00B2, UTF-8: C2 B2*s</string>
                                                     </constraints>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                    <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -1523,7 +1561,7 @@ Unicode: U+00B2, UTF-8: C2 B2*s</string>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="44" id="OuS-Op-SQj">
-                                        <rect key="frame" x="0.0" y="604" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="648" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OuS-Op-SQj" id="ZCB-6A-cJx">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -1548,7 +1586,7 @@ Unicode: U+00B2, UTF-8: C2 B2*s</string>
                                                     </constraints>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                    <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -1580,6 +1618,7 @@ Unicode: U+00B2, UTF-8: C2 B2*s</string>
                     <connections>
                         <outlet property="burningRateTextField" destination="yrp-pp-uV9" id="g2W-Zd-NAg"/>
                         <outlet property="carbonAthomsTextField" destination="Yuy-Uy-roB" id="QFV-rk-SEP"/>
+                        <outlet property="criticalRadiationDensityTextField" destination="IY6-K8-hfW" id="2Wo-Xn-dxV"/>
                         <outlet property="densityTextField" destination="f2a-Nl-ReY" id="96Y-Qo-ckd"/>
                         <outlet property="flameSpeedTextField" destination="4a9-GW-rER" id="cc3-8c-j4P"/>
                         <outlet property="galoidAthomsTextField" destination="wQJ-L2-vfg" id="IRm-Fr-pcx"/>
@@ -1598,6 +1637,12 @@ Unicode: U+00B2, UTF-8: C2 B2*s</string>
                         <outletCollection property="editableViewsArray" destination="WtO-Wm-amJ" id="kix-kb-3qg"/>
                         <outletCollection property="editableViewsArray" destination="4a9-GW-rER" id="whC-9J-uaU"/>
                         <outletCollection property="editableViewsArray" destination="yrp-pp-uV9" id="cj7-OI-VxV"/>
+                        <outletCollection property="editableViewsArray" destination="GYk-Ro-8R6" id="oRp-og-pju"/>
+                        <outletCollection property="editableViewsArray" destination="slj-uK-W3h" id="JTS-ga-Icb"/>
+                        <outletCollection property="editableViewsArray" destination="Yuy-Uy-roB" id="ehd-X2-xdm"/>
+                        <outletCollection property="editableViewsArray" destination="C4H-X6-8tV" id="omz-gB-eO3"/>
+                        <outletCollection property="editableViewsArray" destination="Rxo-3J-D4r" id="DtH-ES-Gbk"/>
+                        <outletCollection property="editableViewsArray" destination="wQJ-L2-vfg" id="nHL-rx-N2h"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jZf-3o-k7y" userLabel="First Responder" sceneMemberID="firstResponder"/>

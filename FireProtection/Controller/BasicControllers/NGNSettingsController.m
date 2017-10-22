@@ -10,13 +10,47 @@
 #import "NGNApplicationEnterExitManager.h"
 #import "NGNApplicationStateManager.h"
 #import "NGNDataBaseManager.h"
+#import "NGNCommonConstants.h"
+
+//static NSString *const kNGNApplicationNotificationUserLoggedIn = @"userLoggedIn";
+//static NSString *const kNGNApplicationNotificationUserLoggedOut = @"userLoggedOut";
 
 @interface NGNSettingsController ()
+    
+@property (strong, nonatomic) id<NSObject> userDidLoggedInNotification;
+@property (strong, nonatomic) id<NSObject> userDidLoggedOutNotification;
 
 @end
 
 @implementation NGNSettingsController
 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    self.userDidLoggedInNotification =
+        [[NSNotificationCenter defaultCenter] addObserverForName:kNGNApplicationNotificationUserLoggedIn
+                                                          object:nil
+                                                           queue:[NSOperationQueue mainQueue]
+                                                      usingBlock:
+     ^(NSNotification * _Nonnull note) {
+         [self.tableView reloadData];
+     }];
+    
+    self.userDidLoggedOutNotification =
+        [[NSNotificationCenter defaultCenter] addObserverForName:kNGNApplicationNotificationUserLoggedOut
+                                                          object:nil
+                                                           queue:[NSOperationQueue mainQueue]
+                                                      usingBlock:
+     ^(NSNotification * _Nonnull note) {
+         [self.tableView reloadData];
+     }];
+}
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:_userDidLoggedInNotification];
+    [[NSNotificationCenter defaultCenter] removeObserver:_userDidLoggedOutNotification];
+}
+    
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -53,15 +87,5 @@
         }
     }
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
