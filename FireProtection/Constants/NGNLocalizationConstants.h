@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+/* Labels */
+static NSString *const kNGNLocalizationKeyLabelTitleError = @"label.title.error";
+
 /* Button titles */
 static NSString *const kNGNLocalizationKeyButtonTitleDelete = @"button.title.Delete";
 

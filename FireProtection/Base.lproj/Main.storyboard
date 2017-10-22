@@ -285,7 +285,7 @@
                                                     </constraints>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                    <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                                    <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -322,7 +322,7 @@ Unicode: U+00B3, UTF-8: C2 B3</string>
                                                     </constraints>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                    <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                     <connections>
                                                         <action selector="roomSquareDidChanged:" destination="S8y-4I-po4" eventType="editingChanged" id="nhf-UB-oTr"/>
                                                     </connections>
@@ -362,7 +362,7 @@ Unicode: U+00B3, UTF-8: C2 B3</string>
                                                     </constraints>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                    <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                     <connections>
                                                         <action selector="roomHeightValueDidChanged:" destination="S8y-4I-po4" eventType="editingChanged" id="FwX-rv-W8R"/>
                                                     </connections>
@@ -531,6 +531,7 @@ Unicode: U+00B3, UTF-8: C2 B3</string>
                     </tableView>
                     <navigationItem key="navigationItem" title="Fire hazard" id="f5Y-OE-S6Q"/>
                     <connections>
+                        <outlet property="categoryResultDescribeTextLabel" destination="Ysq-Zf-YFl" id="gEu-xn-hAR"/>
                         <outlet property="categoryResultTextLabel" destination="W8Z-FS-q43" id="HP8-OW-bnu"/>
                         <outlet property="overallFireLoadResultTextLabel" destination="qea-wI-bjd" id="BTD-Fh-J4e"/>
                         <outlet property="placedSubstancePilesTextLabel" destination="3xP-Ts-pkB" id="apg-JS-1nt"/>
@@ -640,7 +641,7 @@ Unicode: U+00B3, UTF-8: C2 B3</string>
                                                     </constraints>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                    <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -677,7 +678,7 @@ Unicode: U+00B3, UTF-8: C2 B3</string>
                                                     </constraints>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                    <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -1094,7 +1095,7 @@ Unicode: U+00B3, UTF-8: C2 B3</string>
                                                     </constraints>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                    <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                                    <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -1131,7 +1132,7 @@ Unicode: U+00B3, UTF-8: C2 B3</string>
                                                     </constraints>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                    <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -1170,7 +1171,7 @@ Unicode: U+00B3, UTF-8: C2 B3/m3</string>
                                                     </constraints>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                    <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -1204,7 +1205,7 @@ Unicode: U+00B3, UTF-8: C2 B3/m3</string>
                                                     </constraints>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                    <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -1238,7 +1239,7 @@ Unicode: U+00B3, UTF-8: C2 B3/m3</string>
                                                     </constraints>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                    <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -1277,7 +1278,7 @@ Unicode: U+00B2, UTF-8: C2 B2*s</string>
                                                     </constraints>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                    <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -1353,7 +1354,7 @@ Unicode: U+00B2, UTF-8: C2 B2*s</string>
                                                     </constraints>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                    <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -1392,7 +1393,7 @@ Unicode: U+00B2, UTF-8: C2 B2*s</string>
                                                     </constraints>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                    <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -1431,7 +1432,7 @@ Unicode: U+00B2, UTF-8: C2 B2*s</string>
                                                     </constraints>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                    <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -1470,7 +1471,7 @@ Unicode: U+00B2, UTF-8: C2 B2*s</string>
                                                     </constraints>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                    <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -1509,7 +1510,7 @@ Unicode: U+00B2, UTF-8: C2 B2*s</string>
                                                     </constraints>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                    <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -1548,7 +1549,7 @@ Unicode: U+00B2, UTF-8: C2 B2*s</string>
                                                     </constraints>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                    <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -1598,6 +1599,12 @@ Unicode: U+00B2, UTF-8: C2 B2*s</string>
                         <outletCollection property="editableViewsArray" destination="WtO-Wm-amJ" id="kix-kb-3qg"/>
                         <outletCollection property="editableViewsArray" destination="4a9-GW-rER" id="whC-9J-uaU"/>
                         <outletCollection property="editableViewsArray" destination="yrp-pp-uV9" id="cj7-OI-VxV"/>
+                        <outletCollection property="editableViewsArray" destination="GYk-Ro-8R6" id="oRp-og-pju"/>
+                        <outletCollection property="editableViewsArray" destination="slj-uK-W3h" id="JTS-ga-Icb"/>
+                        <outletCollection property="editableViewsArray" destination="Yuy-Uy-roB" id="ehd-X2-xdm"/>
+                        <outletCollection property="editableViewsArray" destination="C4H-X6-8tV" id="omz-gB-eO3"/>
+                        <outletCollection property="editableViewsArray" destination="Rxo-3J-D4r" id="DtH-ES-Gbk"/>
+                        <outletCollection property="editableViewsArray" destination="wQJ-L2-vfg" id="nHL-rx-N2h"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jZf-3o-k7y" userLabel="First Responder" sceneMemberID="firstResponder"/>

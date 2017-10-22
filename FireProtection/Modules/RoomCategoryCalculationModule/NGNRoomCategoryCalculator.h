@@ -25,8 +25,8 @@ static NSInteger const kNGNnumberOfRoomProcessSemanticTypes = 4;
 @protocol NGNRoomCategoryCalculatorDelegate <NSObject>
 
 @optional
-- (void)categoryCalculator:(NGNRoomCategoryCalculator *)calculator
-didEndCalculationWithCategory:(NGNFireSafetyCategory *)category
+- (void)categoryCalculator:(NGNRoomCategoryCalculator * _Nonnull)calculator
+didEndCalculationWithCategory:(NGNFireSafetyCategory * _Nullable)category
           specificFireLoad:(double)specificFireLoad
            overallFireLoad:(double)overallFireLoad;
 
@@ -34,16 +34,16 @@ didEndCalculationWithCategory:(NGNFireSafetyCategory *)category
 
 @interface NGNRoomCategoryCalculator: NSObject
 
-@property (nonatomic, weak) id<NGNRoomCategoryCalculatorDelegate> delegate;
+@property (nonatomic, weak) _Nullable id <NGNRoomCategoryCalculatorDelegate> delegate;
 
 #pragma mark - Fire hazard calculation methods
 //To get result - implement delegate method in current class
-- (void)calculateFireHazardWithSubtancePiles:(NSArray<NGNLocalSubstancePile *> *)substancePiles
+- (void)calculateFireHazardWithSubtancePiles:(NSArray<NGNLocalSubstancePile *> * _Nonnull)substancePiles
                                   roomHeight:(double)roomHeight
                        floorProjectionSquare:(double)floorProjectionSquare
                              roomProcessType:(NGNRoomWayOfFireLoadStoring)roomProcessType;
 #pragma mark - helper methods
     
-- (NSString *)stringRoomProcessSemanticType:(NGNRoomWayOfFireLoadStoring)roomWayOfFireLoadStoring;
+- (NSString * _Nonnull)stringRoomProcessSemanticType:(NGNRoomWayOfFireLoadStoring)roomWayOfFireLoadStoring;
 
 @end

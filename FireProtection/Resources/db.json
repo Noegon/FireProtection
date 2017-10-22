@@ -417,17 +417,6 @@
   ],
   "room": [
     {
-      "number": "2",
-      "position": 1,
-      "height": 3,
-      "id": 2,
-      "square": 50,
-      "fire_safety_category": 6,
-      "minimum_rei_construction_type": 1,
-      "name": "Административное помещение",
-      "user": 2
-    },
-    {
       "number": "1",
       "position": 1,
       "height": 6,
@@ -437,21 +426,32 @@
       "minimum_rei_construction_type": 1,
       "name": "Главный производственный цех",
       "user": 2
+    },
+    {
+      "number": "2",
+      "position": 1,
+      "height": 3,
+      "id": 2,
+      "square": 50,
+      "fire_safety_category": 6,
+      "minimum_rei_construction_type": 1,
+      "name": "Административное помещение",
+      "user": 2
     }
   ],
   "aperture_group": [
     {
-      "amount": 3,
-      "id": 2,
-      "room": 2,
+      "amount": 30,
+      "id": 1,
+      "room": 1,
       "width": 1.5,
       "height": 2.5,
       "user": 2
     },
     {
-      "amount": 30,
-      "id": 1,
-      "room": 1,
+      "amount": 3,
+      "id": 2,
+      "room": 2,
       "width": 1.5,
       "height": 2.5,
       "user": 2
@@ -544,9 +544,26 @@
       "substance_type": 3
     },
     {
+      "id": 1558851587,
+      "oxygen_athoms": 0,
+      "name": "Oil",
+      "user": 2,
+      "carbon_athoms": 0,
+      "burning_rate": 5,
+      "required_air_amount": 2,
+      "flame_speed": 4,
+      "hydrogen_athoms": 0,
+      "substance_type": 5,
+      "density": 1,
+      "splash_point": -273,
+      "heat_of_combusion": 3,
+      "molecular_weight": 0,
+      "galoids_athoms": 0
+    },
+    {
       "id": 1168938557,
       "oxygen_athoms": 0,
-      "name": "test37",
+      "name": "Kerosene",
       "user": 2,
       "carbon_athoms": 0,
       "burning_rate": 5,
@@ -561,24 +578,42 @@
       "galoids_athoms": 0
     },
     {
-      "id": 1558851587,
-      "oxygen_athoms": 0,
-      "name": "xxx",
+      "id": 170772082,
+      "oxygen_athoms": 2,
+      "name": "Gunpowder",
       "user": 2,
-      "carbon_athoms": 0,
-      "burning_rate": 5,
-      "required_air_amount": 2,
-      "flame_speed": 4,
-      "hydrogen_athoms": 0,
-      "substance_type": 5,
-      "density": 1,
-      "splash_point": -273,
-      "heat_of_combusion": 3,
-      "molecular_weight": 0,
+      "carbon_athoms": 5,
+      "burning_rate": 25,
+      "required_air_amount": 10,
+      "flame_speed": 15,
+      "hydrogen_athoms": 3,
+      "substance_type": 2,
+      "density": 1500,
+      "splash_point": -50,
+      "heat_of_combusion": 40,
+      "molecular_weight": 45,
       "galoids_athoms": 0
     }
   ],
   "substance_pile": [
+    {
+      "room": 1,
+      "medium_pile_height": 1,
+      "id": 3,
+      "max_pile_height": 1,
+      "projection_square": 1,
+      "substance": 4,
+      "user": 2
+    },
+    {
+      "room": 1,
+      "medium_pile_height": 3,
+      "id": 1,
+      "max_pile_height": 3,
+      "projection_square": 100,
+      "substance": 1,
+      "user": 2
+    },
     {
       "room": 2,
       "medium_pile_height": 0.1,
@@ -604,24 +639,6 @@
       "max_pile_height": 0.1,
       "projection_square": 0.5,
       "substance": 3,
-      "user": 2
-    },
-    {
-      "room": 1,
-      "medium_pile_height": 1,
-      "id": 3,
-      "max_pile_height": 1,
-      "projection_square": 1,
-      "substance": 4,
-      "user": 2
-    },
-    {
-      "room": 1,
-      "medium_pile_height": 3,
-      "id": 1,
-      "max_pile_height": 3,
-      "projection_square": 100,
-      "substance": 1,
       "user": 2
     }
   ]

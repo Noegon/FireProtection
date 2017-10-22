@@ -6,6 +6,9 @@
   Copyright © 2017 Alexey Stafeyev. All rights reserved.
 */
 
+//Labels
+"label.title.error" = "Ошибка!";
+
 //Button titles
 "button.title.Delete" = "Удалить";
 

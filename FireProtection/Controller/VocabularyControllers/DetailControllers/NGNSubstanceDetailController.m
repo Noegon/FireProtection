@@ -41,7 +41,6 @@
 
 - (IBAction)saveBarButtonTapped:(UIBarButtonItem *)sender;
 
-
 @end
 
 @implementation NGNSubstanceDetailController
@@ -52,6 +51,19 @@
     BOOL isEditable = !self.substance ||
     ([NGNApplicationStateManager sharedInstance].isUserAuthorized &&
     [NGNApplicationStateManager sharedInstance].currentSessionUserId.integerValue == self.substance.user.idx.integerValue);
+    
+    UIButton *minusButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0,
+                                                                       self.view.frame.size.width,
+                                                                       44)];
+    
+    minusButton.backgroundColor = [UIColor colorWithRed:0 green:0.597 blue:0.965 alpha:1];
+    [minusButton setTitle:@"-" forState:UIControlStateNormal];
+    minusButton.titleLabel.textColor = UIColor.whiteColor;
+    self.splashPointTextField.inputAccessoryView = minusButton;
+    
+    UITapGestureRecognizer *minusButtonTapRecognizer =
+        [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(toggleSplashPointNegativeValue:)];
+    [minusButton addGestureRecognizer:minusButtonTapRecognizer];
     
     if (self.substance) {
         self.nameTextField.text = self.substance.name;
@@ -209,6 +221,12 @@
     }
     
     [self.tableView reloadData];
+}
+
+#pragma mark - additional methods
+
+- (void)toggleSplashPointNegativeValue:(UIGestureRecognizer *)recognizer {
+    self.splashPointTextField.text = [NSString stringWithFormat:@"%.2g", -1 * self.splashPointTextField.text.doubleValue];
 }
 
 @end

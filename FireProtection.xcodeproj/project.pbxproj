@@ -35,6 +35,7 @@
 		40A9A36B1F74063200B3876C /* FireProtection.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 40A9A3691F74063100B3876C /* FireProtection.xcdatamodeld */; };
 		40ABBA611F953CB000DC2D9D /* NGNLocalSubstancePile.m in Sources */ = {isa = PBXBuildFile; fileRef = 40ABBA601F953CB000DC2D9D /* NGNLocalSubstancePile.m */; };
 		40ABBA641F95539900DC2D9D /* NGNTemporarySubstancePilesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40ABBA631F95539900DC2D9D /* NGNTemporarySubstancePilesController.m */; };
+		40C21C3E1F9CDA2400C0D3D3 /* NGNBasicTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40C21C3D1F9CDA2400C0D3D3 /* NGNBasicTableViewController.m */; };
 		40C458471F845196004C0709 /* NGNApplicationEnterExitManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 40C458461F845196004C0709 /* NGNApplicationEnterExitManager.m */; };
 		40C4584B1F856985004C0709 /* NGNTabBarManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 40C4584A1F856985004C0709 /* NGNTabBarManager.m */; };
 		40C4584E1F856CD4004C0709 /* NGNTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40C4584D1F856CD4004C0709 /* NGNTabBarController.m */; };
@@ -162,6 +163,8 @@
 		40ABBA601F953CB000DC2D9D /* NGNLocalSubstancePile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = NGNLocalSubstancePile.m; path = FireProtection/Modules/RoomCategoryCalculationModule/NGNLocalSubstancePile.m; sourceTree = SOURCE_ROOT; };
 		40ABBA621F95539900DC2D9D /* NGNTemporarySubstancePilesController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NGNTemporarySubstancePilesController.h; sourceTree = "<group>"; };
 		40ABBA631F95539900DC2D9D /* NGNTemporarySubstancePilesController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NGNTemporarySubstancePilesController.m; sourceTree = "<group>"; };
+		40C21C3C1F9CDA2400C0D3D3 /* NGNBasicTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = NGNBasicTableViewController.h; path = Controller/NGNBasicTableViewController.h; sourceTree = "<group>"; };
+		40C21C3D1F9CDA2400C0D3D3 /* NGNBasicTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = NGNBasicTableViewController.m; path = Controller/NGNBasicTableViewController.m; sourceTree = "<group>"; };
 		40C458451F845196004C0709 /* NGNApplicationEnterExitManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NGNApplicationEnterExitManager.h; sourceTree = "<group>"; };
 		40C458461F845196004C0709 /* NGNApplicationEnterExitManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NGNApplicationEnterExitManager.m; sourceTree = "<group>"; };
 		40C458491F856985004C0709 /* NGNTabBarManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NGNTabBarManager.h; sourceTree = "<group>"; };
@@ -539,6 +542,8 @@
 		40D89ECA1F40673000B07AB5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				40C21C3C1F9CDA2400C0D3D3 /* NGNBasicTableViewController.h */,
+				40C21C3D1F9CDA2400C0D3D3 /* NGNBasicTableViewController.m */,
 				403124351F86AD0D00CE3F77 /* VocabularyControllers */,
 				4017773A1F76E3A10061BEEF /* BasicControllers */,
 			);
@@ -842,6 +847,7 @@
 			files = (
 				40E99A9D1F6729D600B6F9F9 /* NGNPositionService.m in Sources */,
 				40E99A8B1F61EFAD00B6F9F9 /* NGNFunctionalFireSafetyCategory+CoreDataClass.m in Sources */,
+				40C21C3E1F9CDA2400C0D3D3 /* NGNBasicTableViewController.m in Sources */,
 				40E99A811F61EFAD00B6F9F9 /* NGNSubstancePile+CoreDataClass.m in Sources */,
 				40E99A991F6724A200B6F9F9 /* NGNUserService.m in Sources */,
 				40E999DE1F5F26A500B6F9F9 /* NGNCoreDataEntitiesConstants.m in Sources */,

@@ -62,6 +62,7 @@ NSUInteger const kNGNMaximumRoomAirTemperature = 61; //celsium_degrees
     NGNFireSafetyCategory *fireSafetyCategory = nil;
     double specificTemporaryFireLoad = 0;
     double overallFireLoad = 0;
+    double overAllPilesVolume = 0;
     
     NSFetchRequest *request = [NGNFireSafetyCategory fetchRequest];
     
@@ -95,62 +96,67 @@ NSUInteger const kNGNMaximumRoomAirTemperature = 61; //celsium_degrees
             
             NSInteger index = 0;
             for (NGNSubstance *substance in substances) {
+                overAllPilesVolume += pilesHeights[index].doubleValue * pilesProjectionSquares[index].doubleValue;
+                
                 overallFireLoad += (substance.heatOfCombusion.doubleValue *
                                     pilesHeights[index].doubleValue *
                                     substance.density.doubleValue *
                                     pilesProjectionSquares[index].doubleValue);
                 index += 1;
             }
-            specificTemporaryFireLoad = overallFireLoad / floorProjectionSquare;
             
-            NSPredicate *predicate =
-            [NSPredicate predicateWithBlock:
-             ^BOOL(NGNFireSafetyCategory *fireSafetyCategory, NSDictionary<NSString *,id> * _Nullable bindings) {
-                 return (fireSafetyCategory.minimumSpecificFireLoad.integerValue != 0 &&
-                         fireSafetyCategory.maximumSpecificFireLoad.integerValue != 0 &&
-                         fireSafetyCategory.minimumSpecificFireLoad.integerValue <= specificTemporaryFireLoad &&
-                         fireSafetyCategory.maximumSpecificFireLoad.integerValue >= specificTemporaryFireLoad);
-            }];
-            
-            NSArray *result = [validCategories filteredArrayUsingPredicate:predicate];
-            
-            if (result.count != 0) {
-                fireSafetyCategory = [validCategories filteredArrayUsingPredicate:predicate][0];
-            } else {
-                NSString *category = [NSString stringWithUTF8String:"Д"];
-                fireSafetyCategory = [validCategories filteredArrayUsingPredicate:
-                                      [NSPredicate predicateWithFormat:@"self.name == %@", category]][0];
-            }
-            
-            NSUInteger gtCoefficient = 0;
-            NSString *finalCategoryName = @"";
-            if ([fireSafetyCategory.name isEqualToString:@"В2"] ||
-                [fireSafetyCategory.name isEqualToString:@"В3"]) {
+            //Check if room volume less than fire load materials volume
+            if ((roomHeight * floorProjectionSquare) > overAllPilesVolume) {
+                specificTemporaryFireLoad = overallFireLoad / floorProjectionSquare;
                 
-                double finalSpecificTemporaryFireLoad = 0;
+                NSPredicate *predicate =
+                [NSPredicate predicateWithBlock:
+                 ^BOOL(NGNFireSafetyCategory *fireSafetyCategory, NSDictionary<NSString *,id> * _Nullable bindings) {
+                     return (fireSafetyCategory.minimumSpecificFireLoad.integerValue != 0 &&
+                             fireSafetyCategory.maximumSpecificFireLoad.integerValue != 0 &&
+                             fireSafetyCategory.minimumSpecificFireLoad.integerValue <= specificTemporaryFireLoad &&
+                             fireSafetyCategory.maximumSpecificFireLoad.integerValue >= specificTemporaryFireLoad);
+                 }];
                 
-                if ([fireSafetyCategory.name isEqualToString:@"В2"]) {
-                    gtCoefficient = 2200;
-                    finalSpecificTemporaryFireLoad = 0.64 * gtCoefficient * pow(roomHeight, 2);
-                    if (specificTemporaryFireLoad >= finalSpecificTemporaryFireLoad) {
-                        finalCategoryName = @"В1";
-                    }
+                NSArray *result = [validCategories filteredArrayUsingPredicate:predicate];
+                
+                if (result.count != 0) {
+                    fireSafetyCategory = [validCategories filteredArrayUsingPredicate:predicate][0];
                 } else {
-                    gtCoefficient = 1400;
-                    finalSpecificTemporaryFireLoad = 0.64 * gtCoefficient * pow(roomHeight, 2);
-                    if (specificTemporaryFireLoad >= finalSpecificTemporaryFireLoad) {
-                        finalCategoryName = @"В2";
-                    }
+                    NSString *category = [NSString stringWithUTF8String:"Д"];
+                    fireSafetyCategory = [validCategories filteredArrayUsingPredicate:
+                                          [NSPredicate predicateWithFormat:@"self.name == %@", category]][0];
                 }
                 
-                if (![finalCategoryName isEqualToString:@""]) {
-                    NGNFireSafetyCategory *secondIterationCategory =
-                    [validCategories filteredArrayUsingPredicate:
-                     [NSPredicate predicateWithFormat:@"self.name == %@", finalCategoryName]][0];
-                    fireSafetyCategory = secondIterationCategory;
+                NSUInteger gtCoefficient = 0;
+                NSString *finalCategoryName = @"";
+                if ([fireSafetyCategory.name isEqualToString:@"В2"] ||
+                    [fireSafetyCategory.name isEqualToString:@"В3"]) {
+                    
+                    double finalSpecificTemporaryFireLoad = 0;
+                    
+                    if ([fireSafetyCategory.name isEqualToString:@"В2"]) {
+                        gtCoefficient = 2200;
+                        finalSpecificTemporaryFireLoad = 0.64 * gtCoefficient * pow(roomHeight, 2);
+                        if (specificTemporaryFireLoad >= finalSpecificTemporaryFireLoad) {
+                            finalCategoryName = @"В1";
+                        }
+                    } else {
+                        gtCoefficient = 1400;
+                        finalSpecificTemporaryFireLoad = 0.64 * gtCoefficient * pow(roomHeight, 2);
+                        if (specificTemporaryFireLoad >= finalSpecificTemporaryFireLoad) {
+                            finalCategoryName = @"В2";
+                        }
+                    }
+                    
+                    if (![finalCategoryName isEqualToString:@""]) {
+                        NGNFireSafetyCategory *secondIterationCategory =
+                        [validCategories filteredArrayUsingPredicate:
+                         [NSPredicate predicateWithFormat:@"self.name == %@", finalCategoryName]][0];
+                        fireSafetyCategory = secondIterationCategory;
+                    }
                 }
             }
-            
         }
     }
     

@@ -26,6 +26,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *specificFireLoadResultTextLabel;
 @property (strong, nonatomic) IBOutlet UILabel *overallFireLoadResultTextLabel;
 @property (strong, nonatomic) IBOutlet UILabel *categoryResultTextLabel;
+@property (strong, nonatomic) IBOutlet UILabel *categoryResultDescribeTextLabel;
 
 - (IBAction)roomSquareDidChanged:(UITextField *)sender;
 - (IBAction)roomHeightValueDidChanged:(UITextField *)sender;
@@ -121,8 +122,16 @@ didEndCalculationWithCategory:(NGNFireSafetyCategory *)category
           specificFireLoad:(double)specificFireLoad
            overallFireLoad:(double)overallFireLoad {
     self.specificFireLoadResultTextLabel.text = [NSString stringWithFormat:@"%.2f", specificFireLoad];
-    self.overallFireLoadResultTextLabel.text = [NSString stringWithFormat:@"%.2f", overallFireLoad];;
-    self.categoryResultTextLabel.text = category.name;
+    self.overallFireLoadResultTextLabel.text = [NSString stringWithFormat:@"%.2f", overallFireLoad];
+    if (!category) {
+        self.categoryResultTextLabel.text = NSLocalizedString(kNGNLocalizationKeyLabelTitleError, nil);
+        self.categoryResultTextLabel.textColor = UIColor.redColor;
+        self.categoryResultDescribeTextLabel.textColor = UIColor.redColor;
+    } else {
+        self.categoryResultTextLabel.text = category.name;
+        self.categoryResultTextLabel.textColor = UIColor.greenColor;
+        self.categoryResultDescribeTextLabel.textColor = UIColor.greenColor;
+    }
 }
 
 @end
