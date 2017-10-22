@@ -22,6 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, copy) NSNumber *density;
 @property (nullable, nonatomic, copy) NSNumber *requiredAirAmount;
 @property (nullable, nonatomic, copy) NSNumber *heatOfCombusion;
+@property (nullable, nonatomic, copy) NSNumber *criticalRadiationDensity;
 @property (nullable, nonatomic, copy) NSNumber *flameSpeed;
 @property (nullable, nonatomic, copy) NSNumber *burningRate;
 @property (nullable, nonatomic, copy) NSNumber *molecularWeight; //g/mol

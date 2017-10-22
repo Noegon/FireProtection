@@ -7,6 +7,7 @@
 //
 
 #import "NGNStoryboardConstants.h"
+#import "NGNLocalizationConstants.h"
 #import "NGNCommonConstants.h"
 #import "NGNLocalSubstancePileDetailController.h"
 #import "NGNCoreDataModel.h"
@@ -65,7 +66,9 @@
 
 - (void)setStoredSubstance:(NGNSubstance *)storedSubstance {
     self.substanceNameTextLabel.text = storedSubstance.name;
-    self.heatOfCombusionTextLabel.text = [NSString stringWithFormat:@"%.2g MJ", storedSubstance.heatOfCombusion.doubleValue];
+    self.heatOfCombusionTextLabel.text = [NSString stringWithFormat:@"Q = %.2g %@",
+                                          storedSubstance.heatOfCombusion.doubleValue,
+                                          NSLocalizedString(kNGNLocalizationKeyModelMeasureUnitsMegaJoules, nil)];
     _storedSubstance = storedSubstance;
 }
 
@@ -90,11 +93,13 @@
         
         if ([NGNApplicationStateManager sharedInstance].isUserAuthorized) {
             
-            fetchRequest.predicate = [NSPredicate predicateWithFormat:@"user.idx = %@ OR user.idx = %@",
+            fetchRequest.predicate = [NSPredicate predicateWithFormat:
+                                      @"(user.idx = %@ OR user.idx = %@) AND (substanceType.idx != 1) AND (substanceType.idx != 2) AND (substanceType.idx != 3)",
                                       @(1),
                                       [NGNApplicationStateManager sharedInstance].currentSessionUserId];
         } else {
-            fetchRequest.predicate = [NSPredicate predicateWithFormat:@"user.idx = %@", @(1)];
+            fetchRequest.predicate = [NSPredicate predicateWithFormat:
+                                      @"(user.idx = %@) AND (substanceType.idx != 1) AND (substanceType.idx != 2) AND (substanceType.idx != 3)", @(1)];
         }
         
         // Edit the sort key as appropriate.

@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NGNFireHazardCalculationController : UITableViewController
+#import "NGNBasicTableViewController.h"
+
+@interface NGNFireHazardCalculationController : NGNBasicTableViewController
 
 @end

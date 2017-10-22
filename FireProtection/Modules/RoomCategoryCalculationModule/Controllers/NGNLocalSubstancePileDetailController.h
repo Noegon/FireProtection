@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+#import "NGNBasicTableViewController.h"
+
 @class NGNLocalSubstancePile;
 @class NGNSubstance;
 
-@interface NGNLocalSubstancePileDetailController : UITableViewController
+@interface NGNLocalSubstancePileDetailController : NGNBasicTableViewController
 
 @property (strong, nonatomic) IBOutlet UITextField *pileHeightTextField;
 @property (strong, nonatomic) IBOutlet UITextField *pileSquareTextField;

@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
 
-@interface NGNBasicVocabularyController : UITableViewController <NSFetchedResultsControllerDelegate,
+#import "NGNBasicTableViewController.h"
+
+@interface NGNBasicVocabularyController : NGNBasicTableViewController <NSFetchedResultsControllerDelegate,
                                                        UITableViewDelegate>
 
 @property (strong, nonatomic) id<NSObject> commonDataWasLoadedNotification;

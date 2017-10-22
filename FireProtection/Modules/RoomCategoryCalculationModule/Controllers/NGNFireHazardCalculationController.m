@@ -26,6 +26,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *specificFireLoadResultTextLabel;
 @property (strong, nonatomic) IBOutlet UILabel *overallFireLoadResultTextLabel;
 @property (strong, nonatomic) IBOutlet UILabel *categoryResultTextLabel;
+@property (strong, nonatomic) IBOutlet UILabel *categoryResultDescribeTextLabel;
 
 - (IBAction)roomSquareDidChanged:(UITextField *)sender;
 - (IBAction)roomHeightValueDidChanged:(UITextField *)sender;
@@ -98,7 +99,7 @@
 
 - (NSString *)pickerView:(UIPickerView *)thePickerView
              titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    return NGNStringRoomProcessSemanticType[row];
+    return [self.categoryCalculator stringRoomProcessSemanticType:row];
 }
 
 - (void)pickerView:(UIPickerView *)thePickerView
@@ -108,7 +109,7 @@
 }
 
 #pragma mark - room category calculator delegate
-//Helper to ıperform calculation
+//Helper method to perform calculation
 - (void)performCalculation {
     [self.categoryCalculator calculateFireHazardWithSubtancePiles:self.substancePiles
                                                        roomHeight:self.roomHeightTextField.text.doubleValue
@@ -120,9 +121,17 @@
 didEndCalculationWithCategory:(NGNFireSafetyCategory *)category
           specificFireLoad:(double)specificFireLoad
            overallFireLoad:(double)overallFireLoad {
-    self.specificFireLoadResultTextLabel.text = @(specificFireLoad).stringValue;
-    self.overallFireLoadResultTextLabel.text = @(overallFireLoad).stringValue;
-    self.categoryResultTextLabel.text = category.name;
+    self.specificFireLoadResultTextLabel.text = [NSString stringWithFormat:@"%.2f", specificFireLoad];
+    self.overallFireLoadResultTextLabel.text = [NSString stringWithFormat:@"%.2f", overallFireLoad];
+    if (!category) {
+        self.categoryResultTextLabel.text = NSLocalizedString(kNGNLocalizationKeyLabelTitleError, nil);
+        self.categoryResultTextLabel.textColor = UIColor.redColor;
+        self.categoryResultDescribeTextLabel.textColor = UIColor.redColor;
+    } else {
+        self.categoryResultTextLabel.text = category.name;
+        self.categoryResultTextLabel.textColor = UIColor.greenColor;
+        self.categoryResultDescribeTextLabel.textColor = UIColor.greenColor;
+    }
 }
 
 @end

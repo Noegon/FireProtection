@@ -7,12 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "NGNLocalizationConstants.h"
 
 @class NGNLocalSubstancePile;
 @class NGNFireSafetyCategory;
 @class NGNRoomCategoryCalculator;
 
-typedef NS_ENUM(NSInteger, NGNRoomProcessSemanticTypes) {
+typedef NS_ENUM(NSInteger, NGNRoomWayOfFireLoadStoring) {
     NGNSubstancesInStandardConditions = 0,
     NGNSubstancesUsingAsFuel,
     NGNWarmRadiatingWithoutBurning,
@@ -21,18 +22,11 @@ typedef NS_ENUM(NSInteger, NGNRoomProcessSemanticTypes) {
 
 static NSInteger const kNGNnumberOfRoomProcessSemanticTypes = 4;
 
-static NSString * const NGNStringRoomProcessSemanticType[] = {
-    [NGNSubstancesInStandardConditions] = @"Standard substance storing",
-    [NGNSubstancesUsingAsFuel] = @"Substance using as fuel",
-    [NGNWarmRadiatingWithoutBurning] = @"Radiating warm without fire",
-    [NGNImplementationOfWetProcess] = @"Wet processes in room"
-};
-
 @protocol NGNRoomCategoryCalculatorDelegate <NSObject>
 
 @optional
-- (void)categoryCalculator:(NGNRoomCategoryCalculator *)calculator
-didEndCalculationWithCategory:(NGNFireSafetyCategory *)category
+- (void)categoryCalculator:(NGNRoomCategoryCalculator * _Nonnull)calculator
+didEndCalculationWithCategory:(NGNFireSafetyCategory * _Nullable)category
           specificFireLoad:(double)specificFireLoad
            overallFireLoad:(double)overallFireLoad;
 
@@ -40,12 +34,16 @@ didEndCalculationWithCategory:(NGNFireSafetyCategory *)category
 
 @interface NGNRoomCategoryCalculator: NSObject
 
-@property (nonatomic, weak) id<NGNRoomCategoryCalculatorDelegate> delegate;
+@property (nonatomic, weak) _Nullable id <NGNRoomCategoryCalculatorDelegate> delegate;
 
+#pragma mark - Fire hazard calculation methods
 //To get result - implement delegate method in current class
-- (void)calculateFireHazardWithSubtancePiles:(NSArray<NGNLocalSubstancePile *> *)substancePiles
+- (void)calculateFireHazardWithSubtancePiles:(NSArray<NGNLocalSubstancePile *> * _Nonnull)substancePiles
                                   roomHeight:(double)roomHeight
                        floorProjectionSquare:(double)floorProjectionSquare
-                             roomProcessType:(NGNRoomProcessSemanticTypes)roomProcessType;
+                             roomProcessType:(NGNRoomWayOfFireLoadStoring)roomProcessType;
+#pragma mark - helper methods
+    
+- (NSString * _Nonnull)stringRoomProcessSemanticType:(NGNRoomWayOfFireLoadStoring)roomWayOfFireLoadStoring;
 
 @end
