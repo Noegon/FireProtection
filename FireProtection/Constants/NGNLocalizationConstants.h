@@ -76,6 +76,10 @@ static NSString *const kNGNLocalizationKeyModelSubstanceOxygenAthoms =
 static NSString *const kNGNLocalizationKeyModelSubstanceGaloidsAthoms =
     @"model.coredata.substance.property.name.galoidsAthoms";
 
+#pragma mark - UI
+
+static NSString *const kNGNLocalizationKeyUITextAbout = @"ui.text.about";
+
 @interface NGNLocalizationConstants : NSObject
 
 @end
