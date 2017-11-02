@@ -29,6 +29,7 @@
 		4031244C1F86EE2C00CE3F77 /* NGNFireSafetyCategoryDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4031244B1F86EE2C00CE3F77 /* NGNFireSafetyCategoryDetailController.m */; };
 		404538631F4B9FA600125AC3 /* NGNCommonConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 404538621F4B9FA600125AC3 /* NGNCommonConstants.m */; };
 		405141FC1F961C79001F36BD /* NGNLocalSubstancePileDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 405141FB1F961C79001F36BD /* NGNLocalSubstancePileDetailController.m */; };
+		4065F87B1FAA80350039F920 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4065F87A1FAA80340039F920 /* Assets.xcassets */; };
 		40A618C71F69AAA30075AE38 /* NGNUserAuthentificationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 40A618C61F69AAA30075AE38 /* NGNUserAuthentificationManager.m */; };
 		40A618CB1F69B8FE0075AE38 /* NGNPropertyUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 40A618CA1F69B8FE0075AE38 /* NGNPropertyUtil.m */; };
 		40A9A2FD1F726D7800B3876C /* NGNApplicationStateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 40A9A2FC1F726D7800B3876C /* NGNApplicationStateManager.m */; };
@@ -44,7 +45,6 @@
 		40D89EB01F40621800B07AB5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 40D89EAF1F40621800B07AB5 /* main.m */; };
 		40D89EB31F40621800B07AB5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 40D89EB21F40621800B07AB5 /* AppDelegate.m */; };
 		40D89EB91F40621800B07AB5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40D89EB71F40621800B07AB5 /* Main.storyboard */; };
-		40D89EBE1F40621800B07AB5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40D89EBD1F40621800B07AB5 /* Assets.xcassets */; };
 		40D89EC11F40621800B07AB5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40D89EBF1F40621800B07AB5 /* LaunchScreen.storyboard */; };
 		40E999D51F5F25EC00B6F9F9 /* NGNDataBaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E999D31F5F25EC00B6F9F9 /* NGNDataBaseManager.m */; };
 		40E999D81F5F261B00B6F9F9 /* NSManagedObject+NGNCRUDAppendix.m in Sources */ = {isa = PBXBuildFile; fileRef = 40E999D71F5F261B00B6F9F9 /* NSManagedObject+NGNCRUDAppendix.m */; };
@@ -150,6 +150,7 @@
 		404538621F4B9FA600125AC3 /* NGNCommonConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NGNCommonConstants.m; path = Constants/NGNCommonConstants.m; sourceTree = "<group>"; };
 		405141FA1F961C79001F36BD /* NGNLocalSubstancePileDetailController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NGNLocalSubstancePileDetailController.h; sourceTree = "<group>"; };
 		405141FB1F961C79001F36BD /* NGNLocalSubstancePileDetailController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NGNLocalSubstancePileDetailController.m; sourceTree = "<group>"; };
+		4065F87A1FAA80340039F920 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		40A618C51F69AAA30075AE38 /* NGNUserAuthentificationManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NGNUserAuthentificationManager.h; sourceTree = "<group>"; };
 		40A618C61F69AAA30075AE38 /* NGNUserAuthentificationManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NGNUserAuthentificationManager.m; sourceTree = "<group>"; };
 		40A618C91F69B8FE0075AE38 /* NGNPropertyUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = NGNPropertyUtil.h; path = Utils/NGNPropertyUtil.h; sourceTree = "<group>"; };
@@ -179,7 +180,6 @@
 		40D89EB11F40621800B07AB5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		40D89EB21F40621800B07AB5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		40D89EB81F40621800B07AB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		40D89EBD1F40621800B07AB5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		40D89EC01F40621800B07AB5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		40D89EC21F40621800B07AB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		40E999D21F5F184200B6F9F9 /* NGNCoreDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NGNCoreDataModel.h; sourceTree = "<group>"; };
@@ -508,9 +508,9 @@
 		40D89EAE1F40621800B07AB5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4065F87A1FAA80340039F920 /* Assets.xcassets */,
 				40A9A3691F74063100B3876C /* FireProtection.xcdatamodeld */,
 				40D89EB71F40621800B07AB5 /* Main.storyboard */,
-				40D89EBD1F40621800B07AB5 /* Assets.xcassets */,
 				40D89EBF1F40621800B07AB5 /* LaunchScreen.storyboard */,
 				40D89EC21F40621800B07AB5 /* Info.plist */,
 				40D89EAF1F40621800B07AB5 /* main.m */,
@@ -780,7 +780,7 @@
 				4003D9001F99480D003C6F72 /* Localizable.strings in Resources */,
 				4003D8F21F992C48003C6F72 /* Authentification.storyboard in Resources */,
 				40E999F01F61CF3600B6F9F9 /* db.json in Resources */,
-				40D89EBE1F40621800B07AB5 /* Assets.xcassets in Resources */,
+				4065F87B1FAA80350039F920 /* Assets.xcassets in Resources */,
 				40D89EB91F40621800B07AB5 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1080,6 +1080,7 @@
 			baseConfigurationReference = 0083F4C360BB0D23DD64D5CA /* Pods-FireProtection.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
 				DEVELOPMENT_TEAM = 9M22BH66EU;
 				INFOPLIST_FILE = FireProtection/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -1094,6 +1095,7 @@
 			baseConfigurationReference = 4B75DF3CDA3D549079226694 /* Pods-FireProtection.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
 				DEVELOPMENT_TEAM = 9M22BH66EU;
 				INFOPLIST_FILE = FireProtection/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
