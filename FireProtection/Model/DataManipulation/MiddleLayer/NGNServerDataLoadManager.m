@@ -465,45 +465,45 @@ typedef void (^ServerTaskCompletionBlock)(dispatch_group_t group,
 }
 
 + (BOOL)checkServerStatusWithHostName:(NSString *)hostName {
-    NGNReachability* hostReachable = [NGNReachability reachabilityWithHostName:hostName];
-    // called after network status changes
-    NetworkStatus hostStatus = [hostReachable currentReachabilityStatus];
-    switch (hostStatus) {
-        case NotReachable: {
-            NSLog(@"A gateway to the host server is down.");
-            return NO;
-        }
-        case ReachableViaWiFi: {
-            NSLog(@"A gateway to the host server is working via WIFI.");
-            return YES;
-        }
-        case ReachableViaWWAN: {
-            NSLog(@"A gateway to the host server is working via WWAN.");
-            return YES;
-        }
-    }
+//    NGNReachability* hostReachable = [NGNReachability reachabilityWithHostName:hostName];
+//    // called after network status changes
+//    NetworkStatus hostStatus = [hostReachable currentReachabilityStatus];
+//    switch (hostStatus) {
+//        case NotReachable: {
+//            NSLog(@"A gateway to the host server is down.");
+//            return NO;
+//        }
+//        case ReachableViaWiFi: {
+//            NSLog(@"A gateway to the host server is working via WIFI.");
+//            return YES;
+//        }
+//        case ReachableViaWWAN: {
+//            NSLog(@"A gateway to the host server is working via WWAN.");
+//            return YES;
+//        }
+//    }
     return YES;
 }
 
 + (BOOL)checkInternetStatus {
-    NGNReachability* internetReachable = [NGNReachability reachabilityForInternetConnection];
-    // called after network status changes
-    NetworkStatus internetStatus = [internetReachable currentReachabilityStatus];
-    switch (internetStatus)
-    {
-        case NotReachable: {
-            NSLog(@"The internet is down.");
-            return NO;
-        }
-        case ReachableViaWiFi: {
-            NSLog(@"The internet is working via WIFI.");
-            return YES;
-        }
-        case ReachableViaWWAN: {
-            NSLog(@"The internet is working via WWAN.");
-            return YES;
-        }
-    }
+//    NGNReachability* internetReachable = [NGNReachability reachabilityForInternetConnection];
+//    // called after network status changes
+//    NetworkStatus internetStatus = [internetReachable currentReachabilityStatus];
+//    switch (internetStatus)
+//    {
+//        case NotReachable: {
+//            NSLog(@"The internet is down.");
+//            return NO;
+//        }
+//        case ReachableViaWiFi: {
+//            NSLog(@"The internet is working via WIFI.");
+//            return YES;
+//        }
+//        case ReachableViaWWAN: {
+//            NSLog(@"The internet is working via WWAN.");
+//            return YES;
+//        }
+//    }
     return YES;
 }
 

@@ -2,17 +2,17 @@
 /* Class = "UITabBarItem"; title = "About"; ObjectID = "015-F9-8aV"; */
 "015-F9-8aV.title" = "О программе";
 
-/* Class = "UILabel"; text = "Cr. radiation density, kWt/m²\nSUPERSCRIPT THREE\nUnicode: U+00B3, UTF-8: C2 B3"; ObjectID = "0R0-5v-3p6"; */
-"0R0-5v-3p6.text" = "Кр. плотн. тепл. потока, кВт/м²\nSUPERSCRIPT THREE\nUnicode: U+00B3, UTF-8: C2 B3";
+/* Class = "UILabel"; text = "Cr. radiation density, kWt/m²"; */
+"0R0-5v-3p6.text" = "Кр. плотн. тепл. потока, кВт/м²";
 
 /* Class = "UITextField"; placeholder = "cr. rad."; ObjectID = "IY6-K8-hfW"; */
 "IY6-K8-hfW.placeholder" = "кр. изл.";
 
-/* Class = "UILabel"; text = "Burning rate, kg/m²⋅s\nDOT OPERATOR\nUnicode: U+22C5, UTF-8: E2 8B 85s\nSUPERSCRIPT TWO\nUnicode: U+00B2, UTF-8: C2 B2*s"; ObjectID = "0U8-b4-VWn"; */
-"0U8-b4-VWn.text" = "Скорость выгорания, кг/м²⋅с\nDOT OPERATOR\nUnicode: U+22C5, UTF-8: E2 8B 85s\nSUPERSCRIPT TWO\nUnicode: U+00B2, UTF-8: C2 B2*s";
+/* Class = "UILabel"; text = "Burning rate, kg/m²⋅s"; ObjectID = "0U8-b4-VWn"; */
+"0U8-b4-VWn.text" = "Скорость выгорания, кг/м²⋅с";
 
-/* Class = "UILabel"; text = "Carbon athoms\nDOT OPERATOR\nUnicode: U+22C5, UTF-8: E2 8B 85s\nSUPERSCRIPT TWO\nUnicode: U+00B2, UTF-8: C2 B2*s"; ObjectID = "0zT-bu-zEs"; */
-"0zT-bu-zEs.text" = "Атомы углерода\nDOT OPERATOR\nUnicode: U+22C5, UTF-8: E2 8B 85s\nSUPERSCRIPT TWO\nUnicode: U+00B2, UTF-8: C2 B2*s";
+/* Class = "UILabel"; text = "Carbon athoms"; ObjectID = "0zT-bu-zEs"; */
+"0zT-bu-zEs.text" = "Атомы углерода";
 
 /* Class = "UILabel"; text = "Select room semantic type:"; ObjectID = "1N4-1u-3Ks"; */
 "1N4-1u-3Ks.text" = "Выберите способ размещ-я пож. нагр.:";
@@ -38,8 +38,8 @@
 /* Class = "UILabel"; text = "User settings"; ObjectID = "5Nb-Ps-ieJ"; */
 "5Nb-Ps-ieJ.text" = "Настройки";
 
-/* Class = "UILabel"; text = "Room height, m\nSUPERSCRIPT THREE\nUnicode: U+00B3, UTF-8: C2 B3"; ObjectID = "5Rh-Ze-1G0"; */
-"5Rh-Ze-1G0.text" = "Высота комнаты, м\nSUPERSCRIPT THREE\nUnicode: U+00B3, UTF-8: C2 B3";
+/* Class = "UILabel"; text = "Room height, m"; ObjectID = "5Rh-Ze-1G0"; */
+"5Rh-Ze-1G0.text" = "Высота комнаты, м";
 
 /* Class = "UINavigationItem"; title = "Fire safety categories"; ObjectID = "5V0-df-OJR"; */
 "5V0-df-OJR.title" = "Кат. по пож. опасности";
@@ -56,8 +56,8 @@
 /* Class = "UILabel"; text = "Exit application"; ObjectID = "7PN-5b-dJi"; */
 "7PN-5b-dJi.text" = "Выход";
 
-/* Class = "UILabel"; text = "Oxygen athoms\nDOT OPERATOR\nUnicode: U+22C5, UTF-8: E2 8B 85s\nSUPERSCRIPT TWO\nUnicode: U+00B2, UTF-8: C2 B2*s"; ObjectID = "85S-57-uPK"; */
-"85S-57-uPK.text" = "Атомы кислорода\nDOT OPERATOR\nUnicode: U+22C5, UTF-8: E2 8B 85s\nSUPERSCRIPT TWO\nUnicode: U+00B2, UTF-8: C2 B2*s";
+/* Class = "UILabel"; text = "Oxygen athoms"; ObjectID = "85S-57-uPK"; */
+"85S-57-uPK.text" = "Атомы кислорода";
 
 /* Class = "UITextField"; placeholder = "name"; ObjectID = "8dw-SF-aJb"; */
 "8dw-SF-aJb.placeholder" = "имя";
@@ -95,8 +95,8 @@
 /* Class = "UITextField"; text = "0"; ObjectID = "C4H-X6-8tV"; */
 "C4H-X6-8tV.text" = "0";
 
-/* Class = "UILabel"; text = "Required air amount, m³/m³\nSUPERSCRIPT THREE\nUnicode: U+00B3, UTF-8: C2 B3\nSUPERSCRIPT THREE\nUnicode: U+00B3, UTF-8: C2 B3/m3"; ObjectID = "Cv6-m4-Lit"; */
-"Cv6-m4-Lit.text" = "Потребное кол-во воздуха, м³/м³\nSUPERSCRIPT THREE\nUnicode: U+00B3, UTF-8: C2 B3\nSUPERSCRIPT THREE\nUnicode: U+00B3, UTF-8: C2 B3/m3";
+/* Class = "UILabel"; text = "Required air amount, m³/m³"; ObjectID = "Cv6-m4-Lit"; */
+"Cv6-m4-Lit.text" = "Потребное кол-во воздуха, м³/м³";
 
 /* Class = "UITableViewSection"; headerTitle = "Necsessary fire resistance REI in minutes"; ObjectID = "FH2-VK-VoM"; */
 "FH2-VK-VoM.headerTitle" = "Необходимое REI в минутах";
@@ -120,7 +120,7 @@
 "H4r-r9-j65.title" = "Категории по сопротивл-ю пламени";
 
 /* Class = "UILabel"; text = "Flame speed, m/s"; ObjectID = "HMy-jY-u7E"; */
-"HMy-jY-u7E.text" = "Скор. распростр. пламени, m/s";
+"HMy-jY-u7E.text" = "Скор. распростр. пламени, м/с";
 
 /* Class = "UILabel"; text = "Name"; ObjectID = "I2Q-VV-aFf"; */
 "I2Q-VV-aFf.text" = "Имя";
@@ -140,8 +140,8 @@
 /* Class = "UITabBarItem"; title = "Vocabularies"; ObjectID = "JX7-m1-VcH"; */
 "JX7-m1-VcH.title" = "Справочники";
 
-/* Class = "UILabel"; text = "Room square, m²\nSUPERSCRIPT THREE\nUnicode: U+00B3, UTF-8: C2 B3"; ObjectID = "JuM-ss-6i1"; */
-"JuM-ss-6i1.text" = "Площ. помещения, м²\nSUPERSCRIPT THREE\nUnicode: U+00B3, UTF-8: C2 B3";
+/* Class = "UILabel"; text = "Room square, m²"; ObjectID = "JuM-ss-6i1"; */
+"JuM-ss-6i1.text" = "Площ. помещения, м²";
 
 /* Class = "UILabel"; text = "Room name"; ObjectID = "KDY-T0-iPB"; */
 "KDY-T0-iPB.text" = "Назв. пом.";
@@ -152,8 +152,8 @@
 /* Class = "UINavigationItem"; title = "Menu"; ObjectID = "MtX-AZ-Uaa"; */
 "MtX-AZ-Uaa.title" = "Меню";
 
-/* Class = "UILabel"; text = "Hydrogen athoms\nDOT OPERATOR\nUnicode: U+22C5, UTF-8: E2 8B 85s\nSUPERSCRIPT TWO\nUnicode: U+00B2, UTF-8: C2 B2*s"; ObjectID = "QRF-Qq-aCy"; */
-"QRF-Qq-aCy.text" = "Атомы водорода\nDOT OPERATOR\nUnicode: U+22C5, UTF-8: E2 8B 85s\nSUPERSCRIPT TWO\nUnicode: U+00B2, UTF-8: C2 B2*s";
+/* Class = "UILabel"; text = "Hydrogen athoms"; ObjectID = "QRF-Qq-aCy"; */
+"QRF-Qq-aCy.text" = "Атомы водорода";
 
 /* Class = "UILabel"; text = "minutes"; ObjectID = "QgQ-1w-zul"; */
 "QgQ-1w-zul.text" = "минуты";
@@ -185,8 +185,8 @@
 /* Class = "UILabel"; text = "Name"; ObjectID = "TV6-LC-JIo"; */
 "TV6-LC-JIo.text" = "Name";
 
-/* Class = "UILabel"; text = "Pile square, m²\nSUPERSCRIPT THREE\nUnicode: U+00B3, UTF-8: C2 B3"; ObjectID = "UBD-OR-0qJ"; */
-"UBD-OR-0qJ.text" = "Плош. размещения, м²\nSUPERSCRIPT THREE\nUnicode: U+00B3, UTF-8: C2 B3";
+/* Class = "UILabel"; text = "Pile square, m²"; ObjectID = "UBD-OR-0qJ"; */
+"UBD-OR-0qJ.text" = "Плош. размещения, м²";
 
 /* Class = "UINavigationItem"; title = "Calculations"; ObjectID = "UE6-li-PXX"; */
 "UE6-li-PXX.title" = "Вычисления";
@@ -194,8 +194,8 @@
 /* Class = "UILabel"; text = "Name"; ObjectID = "UMh-ak-vWr"; */
 "UMh-ak-vWr.text" = "Название";
 
-/* Class = "UILabel"; text = "Density, kg/m³\nSUPERSCRIPT THREE\nUnicode: U+00B3, UTF-8: C2 B3"; ObjectID = "Udd-fS-8My"; */
-"Udd-fS-8My.text" = "Плотность, кг/м³\nSUPERSCRIPT THREE\nUnicode: U+00B3, UTF-8: C2 B3";
+/* Class = "UILabel"; text = "Density, kg/m³"; ObjectID = "Udd-fS-8My"; */
+"Udd-fS-8My.text" = "Плотность, кг/м³";
 
 /* Class = "UILabel"; text = "self bearing element (RE)"; ObjectID = "VXa-v5-vXc"; */
 "VXa-v5-vXc.text" = "самонесущий элемент (RE)";
@@ -227,8 +227,8 @@
 /* Class = "UIBarButtonItem"; title = "Login"; ObjectID = "ZAb-hD-eU4"; */
 "ZAb-hD-eU4.title" = "Войти";
 
-/* Class = "UILabel"; text = "Splash point, ºC\nDOT OPERATOR\nUnicode: U+22C5, UTF-8: E2 8B 85s\nSUPERSCRIPT TWO\nUnicode: U+00B2, UTF-8: C2 B2*s"; ObjectID = "ZPk-th-OvY"; */
-"ZPk-th-OvY.text" = "Температура вспышки, ºC\nDOT OPERATOR\nUnicode: U+22C5, UTF-8: E2 8B 85s\nSUPERSCRIPT TWO\nUnicode: U+00B2, UTF-8: C2 B2*s";
+/* Class = "UILabel"; text = "Splash point, ºC"; ObjectID = "ZPk-th-OvY"; */
+"ZPk-th-OvY.text" = "Температура вспышки, ºC";
 
 /* Class = "UINavigationItem"; title = "Fire resistance ranks detail"; ObjectID = "aHO-d6-D9v"; */
 "aHO-d6-D9v.title" = "Категория по сопротивл-ю пламени";
@@ -245,8 +245,8 @@
 /* Class = "UILabel"; text = "number"; ObjectID = "eVA-Pw-wUs"; */
 "eVA-Pw-wUs.text" = "номер категории";
 
-/* Class = "UILabel"; text = "Galoids athoms\nDOT OPERATOR\nUnicode: U+22C5, UTF-8: E2 8B 85s\nSUPERSCRIPT TWO\nUnicode: U+00B2, UTF-8: C2 B2*s"; ObjectID = "eWW-fg-jkP"; */
-"eWW-fg-jkP.text" = "Атомы галогенов\nDOT OPERATOR\nUnicode: U+22C5, UTF-8: E2 8B 85s\nSUPERSCRIPT TWO\nUnicode: U+00B2, UTF-8: C2 B2*s";
+/* Class = "UILabel"; text = "Galoids athoms"; ObjectID = "eWW-fg-jkP"; */
+"eWW-fg-jkP.text" = "Атомы галогенов";
 
 /* Class = "UITextField"; text = "0"; ObjectID = "f2a-Nl-ReY"; */
 "f2a-Nl-ReY.text" = "0";
@@ -272,8 +272,8 @@
 /* Class = "UILabel"; text = "minutes"; ObjectID = "i8b-JY-0MX"; */
 "i8b-JY-0MX.text" = "минуты";
 
-/* Class = "UILabel"; text = "Pile height, m\nSUPERSCRIPT THREE\nUnicode: U+00B3, UTF-8: C2 B3"; ObjectID = "j7X-oB-VWw"; */
-"j7X-oB-VWw.text" = "Высота штабеля, м\nSUPERSCRIPT THREE\nUnicode: U+00B3, UTF-8: C2 B3";
+/* Class = "UILabel"; text = "Pile height, m"; ObjectID = "j7X-oB-VWw"; */
+"j7X-oB-VWw.text" = "Высота штабеля, м";
 
 /* Class = "UILabel"; text = "Select substance:"; ObjectID = "jC6-7y-olX"; */
 "jC6-7y-olX.text" = "Выберите вещество:";
@@ -335,8 +335,8 @@
 /* Class = "UILabel"; text = "0"; ObjectID = "tJu-Mh-ysI"; */
 "tJu-Mh-ysI.text" = "0";
 
-/* Class = "UILabel"; text = "Molecular weight, g/mol\nDOT OPERATOR\nUnicode: U+22C5, UTF-8: E2 8B 85s\nSUPERSCRIPT TWO\nUnicode: U+00B2, UTF-8: C2 B2*s"; ObjectID = "uRv-yM-Aat"; */
-"uRv-yM-Aat.text" = "Молярная масса, г/моль\nDOT OPERATOR\nUnicode: U+22C5, UTF-8: E2 8B 85s\nSUPERSCRIPT TWO\nUnicode: U+00B2, UTF-8: C2 B2*s";
+/* Class = "UILabel"; text = "Molecular weight, g/mol"; ObjectID = "uRv-yM-Aat"; */
+"uRv-yM-Aat.text" = "Молярная масса, г/моль";
 
 /* Class = "UILabel"; text = "Substance types"; ObjectID = "vSl-V1-DZj"; */
 "vSl-V1-DZj.text" = "Типы горючих веществ";
