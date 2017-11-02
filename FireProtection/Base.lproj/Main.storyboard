@@ -36,12 +36,30 @@
                                 <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="omf-Nq-Efy">
+                                <rect key="frame" x="5" y="74" width="365" height="514"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</string>
+                                        <attributes>
+                                            <font key="NSFont" size="17" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacingBefore="5" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="9SX-0d-MDj" firstAttribute="leading" secondItem="DaW-dK-M3m" secondAttribute="leading" id="PmI-EA-LDN"/>
+                            <constraint firstItem="9SX-0d-MDj" firstAttribute="top" secondItem="omf-Nq-Efy" secondAttribute="bottom" id="RVB-Kf-nUG"/>
+                            <constraint firstItem="omf-Nq-Efy" firstAttribute="leading" secondItem="DaW-dK-M3m" secondAttribute="leading" constant="5" id="Z4T-fF-E2o"/>
+                            <constraint firstAttribute="trailing" secondItem="omf-Nq-Efy" secondAttribute="trailing" constant="5" id="ZBG-Bc-LJf"/>
                             <constraint firstAttribute="trailing" secondItem="9SX-0d-MDj" secondAttribute="trailing" id="arX-zT-NWB"/>
                             <constraint firstItem="G7l-qt-yjn" firstAttribute="top" secondItem="9SX-0d-MDj" secondAttribute="bottom" id="hzT-Rl-zgs"/>
+                            <constraint firstItem="omf-Nq-Efy" firstAttribute="top" secondItem="1RM-LO-mTL" secondAttribute="bottom" constant="10" id="u9y-AH-3ZJ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="About" id="fGt-DB-iQR">
@@ -52,12 +70,13 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="infoTextView" destination="omf-Nq-Efy" id="n8I-Vc-qw9"/>
                         <outlet property="loginButton" destination="ZAb-hD-eU4" id="A1D-rp-mgS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="50a-vI-keT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2414" y="1089"/>
+            <point key="canvasLocation" x="2413.5999999999999" y="1088.9055472263869"/>
         </scene>
         <!--Menu-->
         <scene sceneID="8KI-jt-srO">

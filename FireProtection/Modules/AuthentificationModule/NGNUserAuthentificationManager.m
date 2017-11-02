@@ -12,6 +12,7 @@
 #import "NGNApplicationEnterExitManager.h"
 
 #import "NGNServerDataLoadManager.h"
+#import "NSManagedObject+NGNCRUDAppendix.h"
 #import "NGNServerLayerServices.h"
 #import "NGNCoreDataModel.h"
 #import "NGNDataBaseManager.h"
@@ -260,6 +261,70 @@
     if (completionHandler) {
         completionHandler();
     }
+}
+
+- (void)registerUserWithCompletionHandler:(void (^)(BOOL registered))completionHandler {
+    dispatch_group_t group = dispatch_group_create();
+    
+    __block BOOL registrationSuccessful = YES;
+    
+    __block __weak NGNUserAuthentificationManager *weakSelf = self;
+    
+    NGNUserService *userService = [NGNUserService new];
+    
+//    dispatch_group_enter(group2);
+    [userService fetchEntitiesWithAdditionalParameters:@{@"name": weakSelf.login}
+                                       completionBlock:
+     ^(NSArray *entities, NSError *error) {
+         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+             
+             if (entities.count != 0 || error) {
+                 registrationSuccessful = NO;
+             } else {
+                 
+                 dispatch_group_enter(group);
+                 
+                 NGNUser *user =
+                 [NGNUser ngn_createEntityInManagedObjectContext:NGNDataBaseManager.managedObjectContext
+                                           fieldscompletionBlock:
+                  ^(NSManagedObject *object) {
+                      ((NGNUser *)object).idx = @(foo4random());
+                      ((NGNUser *)object).name = weakSelf.login;
+                      ((NGNUser *)object).registrationDate = [NSDate date];
+                      NSLog(@"%@", @"User created");
+                      dispatch_group_leave(group);
+                  }];
+                 dispatch_group_wait(group, DISPATCH_TIME_FOREVER);
+                 
+                 FEMMapping *userMapping = [NGNUser defaultMapping];
+                 
+                 NSMutableDictionary *newUser = [[FEMSerializer serializeObject:user usingMapping:userMapping] mutableCopy];
+                 newUser[@"password"] = weakSelf.primaryPassword;
+                 
+                 
+                 dispatch_group_enter(group);
+                 [userService addEntity:newUser completionBlock:
+                  ^(NSDictionary * _Nullable entity, NSError * _Nonnull error) {
+                      NSLog(@"%@", @"User added into to server");
+                      dispatch_group_leave(group);
+                  }];
+                 dispatch_group_wait(group, DISPATCH_TIME_FOREVER);
+             }
+             
+             dispatch_group_enter(group);
+             dispatch_async(dispatch_get_main_queue(), ^{
+                 if (completionHandler) {
+                     NSLog(@"%@", @"Perform completion handler");
+                     completionHandler(registrationSuccessful);
+                     dispatch_group_leave(group);
+                 }
+             });
+             
+             dispatch_group_wait(group, DISPATCH_TIME_FOREVER);
+             
+         });
+     }];
+    
 }
 
 @end

@@ -41,4 +41,6 @@
 
 - (void)logOutUserWithCompletionHandler:(void (^)(void))completionHandler;
 
+- (void)registerUserWithCompletionHandler:(void (^)(BOOL registered))completionHandler;
+
 @end

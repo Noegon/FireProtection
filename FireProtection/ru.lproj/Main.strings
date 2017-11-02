@@ -45,7 +45,7 @@
 "5V0-df-OJR.title" = "Кат. по пож. опасности";
 
 /* Class = "UILabel"; text = "application will be terminated"; ObjectID = "60U-WX-I7c"; */
-"60U-WX-I7c.text" = "application will be terminated";
+"60U-WX-I7c.text" = "Приложение будет закрыто";
 
 /* Class = "UILabel"; text = "Title"; ObjectID = "6GT-HW-8wO"; */
 "6GT-HW-8wO.text" = "Заголовок";

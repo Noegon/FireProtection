@@ -57,3 +57,6 @@
 "model.coredata.substance.property.name.hydrogenAthoms" = "Hydrogen athoms amount";
 "model.coredata.substance.property.name.oxygenAthoms" = "Oxygen athoms amount";
 "model.coredata.substance.property.name.galoidsAthoms" = "Galoids athoms amount";
+
+//UI
+"ui.text.about" = "unavialable in english version. Will be improved in future versions";

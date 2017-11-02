@@ -8,16 +8,24 @@
 
 #import "NGNAboutViewController.h"
 #import "NGNApplicationStateManager.h"
+#import "NGNLocalizationConstants.h"
 
 @interface NGNAboutViewController ()
 
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *loginButton;
+@property (strong, nonatomic) IBOutlet UITextView *infoTextView;
 
 @end
 
 @implementation NGNAboutViewController
 
--(void)viewWillAppear:(BOOL)animated {
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    self.infoTextView.text = NSLocalizedString(kNGNLocalizationKeyUITextAbout, nil);
+}
+
+- (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
     if ([NGNApplicationStateManager sharedInstance].isUserAuthorized) {
