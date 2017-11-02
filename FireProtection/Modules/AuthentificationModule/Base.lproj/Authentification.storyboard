@@ -72,7 +72,10 @@
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qOo-UN-AWI">
                                         <rect key="frame" x="191" y="169" width="51" height="31"/>
                                         <color key="onTintColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <color key="thumbTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="thumbTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="switchValueChanged:" destination="lDc-dn-h4R" eventType="valueChanged" id="gCQ-pg-FPl"/>
+                                        </connections>
                                     </switch>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -226,10 +229,10 @@
                                             <constraint firstAttribute="height" constant="40" id="R1b-d5-VhE"/>
                                         </constraints>
                                         <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
                                         <connections>
-                                            <action selector="passwordValueChanged:" destination="ppy-c6-QNu" eventType="valueChanged" id="UoQ-9b-I98"/>
+                                            <action selector="passwordValueChanged:" destination="ppy-c6-QNu" eventType="editingChanged" id="BtU-hu-RHN"/>
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="login" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jQk-l0-Zl2">
@@ -239,8 +242,11 @@
                                             <constraint firstAttribute="height" constant="40" id="50z-nt-IW1"/>
                                         </constraints>
                                         <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="loginTextFieldChanged:" destination="ppy-c6-QNu" eventType="editingChanged" id="aQt-eQ-TXs"/>
+                                        </connections>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UQ5-gX-Rmk">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="40"/>
@@ -269,17 +275,17 @@
                                         <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="repeat password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c5g-JZ-gh3">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="repeat password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="c5g-JZ-gh3">
                                         <rect key="frame" x="0.0" y="200" width="240" height="40"/>
                                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="xMu-4t-VE5"/>
                                         </constraints>
                                         <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
                                         <connections>
-                                            <action selector="repeatPasswordValueChanged:" destination="ppy-c6-QNu" eventType="valueChanged" id="3W8-zI-7cY"/>
+                                            <action selector="repeatPasswordValueChanged:" destination="ppy-c6-QNu" eventType="editingChanged" id="3u9-4g-zbY"/>
                                         </connections>
                                     </textField>
                                 </subviews>
@@ -343,6 +349,7 @@
                     <connections>
                         <outlet property="loginTextField" destination="jQk-l0-Zl2" id="26l-km-6dR"/>
                         <outlet property="passwordTextField" destination="oTt-aY-zlr" id="wY6-dt-PhC"/>
+                        <outlet property="registerButton" destination="ERf-mX-b15" id="NTm-ef-RWH"/>
                         <outlet property="repeatPasswordTextField" destination="c5g-JZ-gh3" id="2vT-bD-r8y"/>
                     </connections>
                 </viewController>

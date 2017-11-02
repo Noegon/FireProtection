@@ -87,6 +87,7 @@
     <entity name="NGNSubstance" representedClassName="NGNSubstance" syncable="YES">
         <attribute name="burningRate" optional="YES" attributeType="Double" minValueString="0" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="carbonAthoms" optional="YES" attributeType="Integer 16" minValueString="0" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="criticalRadiationDensity" optional="YES" attributeType="Double" minValueString="0" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="density" optional="YES" attributeType="Double" minValueString="0" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="flameSpeed" optional="YES" attributeType="Double" minValueString="0" defaultValueString="0.0" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="galoidsAthoms" optional="YES" attributeType="Integer 16" minValueString="0" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
@@ -138,7 +139,7 @@
         <element name="NGNPosition" positionX="-146" positionY="201" width="128" height="240"/>
         <element name="NGNProject" positionX="250" positionY="18" width="128" height="135"/>
         <element name="NGNRoom" positionX="126" positionY="-261" width="128" height="210"/>
-        <element name="NGNSubstance" positionX="-569" positionY="-186" width="128" height="285"/>
+        <element name="NGNSubstance" positionX="-569" positionY="-186" width="128" height="300"/>
         <element name="NGNSubstancePile" positionX="-117" positionY="-60" width="128" height="150"/>
         <element name="NGNSubstanceType" positionX="-288" positionY="99" width="128" height="105"/>
         <element name="NGNUser" positionX="-333" positionY="-261" width="128" height="180"/>
