@@ -23,6 +23,7 @@
 - (IBAction)registerButtonTapped:(UIButton *)sender;
 - (IBAction)approveButtonTapped:(UIButton *)sender;
 - (IBAction)exitLoginButtonTapped:(UIBarButtonItem *)sender;
+- (IBAction)switchValueChanged:(UISwitch *)sender;
 
 @end
 
@@ -32,6 +33,11 @@
     [super viewDidLoad];
     
     self.manager = [NGNUserAuthentificationManager sharedInstance];
+    [self.rememberUserSessionSwitch setTintColor:UIColor.grayColor];
+    self.rememberUserSessionSwitch.backgroundColor = UIColor.grayColor;
+    self.rememberUserSessionSwitch.layer.cornerRadius = 16;
+    
+    [self.loginTextField becomeFirstResponder];
 }
 
 #pragma mark - Navigation
@@ -66,6 +72,13 @@
 
 - (IBAction)exitLoginButtonTapped:(UIBarButtonItem *)sender {
     [self dismissViewControllerAnimated:YES completion:^{}];
+}
+
+- (IBAction)switchValueChanged:(UISwitch *)sender {
+    if (!sender.isOn) {
+        sender.backgroundColor = UIColor.grayColor;
+        sender.layer.cornerRadius = 16;
+    }
 }
 
 @end
