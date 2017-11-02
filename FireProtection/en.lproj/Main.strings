@@ -2,14 +2,14 @@
 /* Class = "UITabBarItem"; title = "About"; ObjectID = "015-F9-8aV"; */
 "015-F9-8aV.title" = "About";
 
-/* Class = "UILabel"; text = "Cr. radiation density, kWt/m²\nSUPERSCRIPT THREE\nUnicode: U+00B3, UTF-8: C2 B3"; ObjectID = "0R0-5v-3p6"; */
-"0R0-5v-3p6.text" = "Cr. radiation density, kWt/m²\nSUPERSCRIPT THREE\nUnicode: U+00B3, UTF-8: C2 B3";
+/* Class = "UILabel"; text = "Cr. radiation density, kWt/m²"; ObjectID = "0R0-5v-3p6"; */
+"0R0-5v-3p6.text" = "Cr. radiation density, kWt/m²";
 
-/* Class = "UILabel"; text = "Burning rate, kg/m²⋅s\nDOT OPERATOR\nUnicode: U+22C5, UTF-8: E2 8B 85s\nSUPERSCRIPT TWO\nUnicode: U+00B2, UTF-8: C2 B2*s"; ObjectID = "0U8-b4-VWn"; */
-"0U8-b4-VWn.text" = "Burning rate, kg/m²⋅s\nDOT OPERATOR\nUnicode: U+22C5, UTF-8: E2 8B 85s\nSUPERSCRIPT TWO\nUnicode: U+00B2, UTF-8: C2 B2*s";
+/* Class = "UILabel"; text = "Burning rate, kg/m²⋅s"; ObjectID = "0U8-b4-VWn"; */
+"0U8-b4-VWn.text" = "Burning rate, kg/m²⋅s";
 
-/* Class = "UILabel"; text = "Carbon athoms\nDOT OPERATOR\nUnicode: U+22C5, UTF-8: E2 8B 85s\nSUPERSCRIPT TWO\nUnicode: U+00B2, UTF-8: C2 B2*s"; ObjectID = "0zT-bu-zEs"; */
-"0zT-bu-zEs.text" = "Carbon athoms\nDOT OPERATOR\nUnicode: U+22C5, UTF-8: E2 8B 85s\nSUPERSCRIPT TWO\nUnicode: U+00B2, UTF-8: C2 B2*s";
+/* Class = "UILabel"; text = "Carbon athoms"; ObjectID = "0zT-bu-zEs"; */
+"0zT-bu-zEs.text" = "Carbon athoms";
 
 /* Class = "UILabel"; text = "Select room semantic type:"; ObjectID = "1N4-1u-3Ks"; */
 "1N4-1u-3Ks.text" = "Select room semantic type:";
@@ -35,8 +35,8 @@
 /* Class = "UILabel"; text = "User settings"; ObjectID = "5Nb-Ps-ieJ"; */
 "5Nb-Ps-ieJ.text" = "User settings";
 
-/* Class = "UILabel"; text = "Room height, m\nSUPERSCRIPT THREE\nUnicode: U+00B3, UTF-8: C2 B3"; ObjectID = "5Rh-Ze-1G0"; */
-"5Rh-Ze-1G0.text" = "Room height, m\nSUPERSCRIPT THREE\nUnicode: U+00B3, UTF-8: C2 B3";
+/* Class = "UILabel"; text = "Room height, m"; */
+"5Rh-Ze-1G0.text" = "Room height, m";
 
 /* Class = "UINavigationItem"; title = "Fire safety categories"; ObjectID = "5V0-df-OJR"; */
 "5V0-df-OJR.title" = "Fire safety categories";
@@ -53,8 +53,8 @@
 /* Class = "UILabel"; text = "Exit application"; ObjectID = "7PN-5b-dJi"; */
 "7PN-5b-dJi.text" = "Exit application";
 
-/* Class = "UILabel"; text = "Oxygen athoms\nDOT OPERATOR\nUnicode: U+22C5, UTF-8: E2 8B 85s\nSUPERSCRIPT TWO\nUnicode: U+00B2, UTF-8: C2 B2*s"; ObjectID = "85S-57-uPK"; */
-"85S-57-uPK.text" = "Oxygen athoms\nDOT OPERATOR\nUnicode: U+22C5, UTF-8: E2 8B 85s\nSUPERSCRIPT TWO\nUnicode: U+00B2, UTF-8: C2 B2*s";
+/* Class = "UILabel"; text = "Oxygen athoms"; ObjectID = "85S-57-uPK"; */
+"85S-57-uPK.text" = "Oxygen athoms";
 
 /* Class = "UITextField"; placeholder = "name"; ObjectID = "8dw-SF-aJb"; */
 "8dw-SF-aJb.placeholder" = "name";
@@ -92,8 +92,8 @@
 /* Class = "UITextField"; text = "0"; ObjectID = "C4H-X6-8tV"; */
 "C4H-X6-8tV.text" = "0";
 
-/* Class = "UILabel"; text = "Required air amount, m³/m³\nSUPERSCRIPT THREE\nUnicode: U+00B3, UTF-8: C2 B3\nSUPERSCRIPT THREE\nUnicode: U+00B3, UTF-8: C2 B3/m3"; ObjectID = "Cv6-m4-Lit"; */
-"Cv6-m4-Lit.text" = "Required air amount, m³/m³\nSUPERSCRIPT THREE\nUnicode: U+00B3, UTF-8: C2 B3\nSUPERSCRIPT THREE\nUnicode: U+00B3, UTF-8: C2 B3/m3";
+/* Class = "UILabel"; text = "Required air amount, m³/m³"; ObjectID = "Cv6-m4-Lit"; */
+"Cv6-m4-Lit.text" = "Required air amount, m³/m³";
 
 /* Class = "UITableViewSection"; headerTitle = "Necsessary fire resistance REI in minutes"; ObjectID = "FH2-VK-VoM"; */
 "FH2-VK-VoM.headerTitle" = "Necsessary fire resistance REI in minutes";
@@ -143,8 +143,8 @@
 /* Class = "UITabBarItem"; title = "Vocabularies"; ObjectID = "JX7-m1-VcH"; */
 "JX7-m1-VcH.title" = "Vocabularies";
 
-/* Class = "UILabel"; text = "Room square, m²\nSUPERSCRIPT THREE\nUnicode: U+00B3, UTF-8: C2 B3"; ObjectID = "JuM-ss-6i1"; */
-"JuM-ss-6i1.text" = "Room square, m²\nSUPERSCRIPT THREE\nUnicode: U+00B3, UTF-8: C2 B3";
+/* Class = "UILabel"; text = "Room square, m²"; ObjectID = "JuM-ss-6i1"; */
+"JuM-ss-6i1.text" = "Room square, m²";
 
 /* Class = "UILabel"; text = "Room name"; ObjectID = "KDY-T0-iPB"; */
 "KDY-T0-iPB.text" = "Room name";
@@ -155,8 +155,8 @@
 /* Class = "UINavigationItem"; title = "Menu"; ObjectID = "MtX-AZ-Uaa"; */
 "MtX-AZ-Uaa.title" = "Menu";
 
-/* Class = "UILabel"; text = "Hydrogen athoms\nDOT OPERATOR\nUnicode: U+22C5, UTF-8: E2 8B 85s\nSUPERSCRIPT TWO\nUnicode: U+00B2, UTF-8: C2 B2*s"; ObjectID = "QRF-Qq-aCy"; */
-"QRF-Qq-aCy.text" = "Hydrogen athoms\nDOT OPERATOR\nUnicode: U+22C5, UTF-8: E2 8B 85s\nSUPERSCRIPT TWO\nUnicode: U+00B2, UTF-8: C2 B2*s";
+/* Class = "UILabel"; text = "Hydrogen athoms"; ObjectID = "QRF-Qq-aCy"; */
+"QRF-Qq-aCy.text" = "Hydrogen athoms";
 
 /* Class = "UILabel"; text = "minutes"; ObjectID = "QgQ-1w-zul"; */
 "QgQ-1w-zul.text" = "minutes";
@@ -188,8 +188,8 @@
 /* Class = "UILabel"; text = "Name"; ObjectID = "TV6-LC-JIo"; */
 "TV6-LC-JIo.text" = "Name";
 
-/* Class = "UILabel"; text = "Pile square, m²\nSUPERSCRIPT THREE\nUnicode: U+00B3, UTF-8: C2 B3"; ObjectID = "UBD-OR-0qJ"; */
-"UBD-OR-0qJ.text" = "Pile square, m²\nSUPERSCRIPT THREE\nUnicode: U+00B3, UTF-8: C2 B3";
+/* Class = "UILabel"; text = "Pile square, m²"; ObjectID = "UBD-OR-0qJ"; */
+"UBD-OR-0qJ.text" = "Pile square, m²";
 
 /* Class = "UINavigationItem"; title = "Calculations"; ObjectID = "UE6-li-PXX"; */
 "UE6-li-PXX.title" = "Calculations";
@@ -197,8 +197,8 @@
 /* Class = "UILabel"; text = "Name"; ObjectID = "UMh-ak-vWr"; */
 "UMh-ak-vWr.text" = "Name";
 
-/* Class = "UILabel"; text = "Density, kg/m³\nSUPERSCRIPT THREE\nUnicode: U+00B3, UTF-8: C2 B3"; ObjectID = "Udd-fS-8My"; */
-"Udd-fS-8My.text" = "Density, kg/m³\nSUPERSCRIPT THREE\nUnicode: U+00B3, UTF-8: C2 B3";
+/* Class = "UILabel"; text = "Density, kg/m³"; ObjectID = "Udd-fS-8My"; */
+"Udd-fS-8My.text" = "Density, kg/m³";
 
 /* Class = "UILabel"; text = "self bearing element (RE)"; ObjectID = "VXa-v5-vXc"; */
 "VXa-v5-vXc.text" = "self bearing element (RE)";
@@ -230,8 +230,8 @@
 /* Class = "UIBarButtonItem"; title = "Login"; ObjectID = "ZAb-hD-eU4"; */
 "ZAb-hD-eU4.title" = "Login";
 
-/* Class = "UILabel"; text = "Splash point, ºC\nDOT OPERATOR\nUnicode: U+22C5, UTF-8: E2 8B 85s\nSUPERSCRIPT TWO\nUnicode: U+00B2, UTF-8: C2 B2*s"; ObjectID = "ZPk-th-OvY"; */
-"ZPk-th-OvY.text" = "Splash point, ºC\nDOT OPERATOR\nUnicode: U+22C5, UTF-8: E2 8B 85s\nSUPERSCRIPT TWO\nUnicode: U+00B2, UTF-8: C2 B2*s";
+/* Class = "UILabel"; text = "Splash point, ºC"; ObjectID = "ZPk-th-OvY"; */
+"ZPk-th-OvY.text" = "Splash point, ºC";
 
 /* Class = "UINavigationItem"; title = "Fire resistance ranks detail"; ObjectID = "aHO-d6-D9v"; */
 "aHO-d6-D9v.title" = "Fire resistance ranks detail";
@@ -248,8 +248,8 @@
 /* Class = "UILabel"; text = "number"; ObjectID = "eVA-Pw-wUs"; */
 "eVA-Pw-wUs.text" = "number";
 
-/* Class = "UILabel"; text = "Galoids athoms\nDOT OPERATOR\nUnicode: U+22C5, UTF-8: E2 8B 85s\nSUPERSCRIPT TWO\nUnicode: U+00B2, UTF-8: C2 B2*s"; ObjectID = "eWW-fg-jkP"; */
-"eWW-fg-jkP.text" = "Galoids athoms\nDOT OPERATOR\nUnicode: U+22C5, UTF-8: E2 8B 85s\nSUPERSCRIPT TWO\nUnicode: U+00B2, UTF-8: C2 B2*s";
+/* Class = "UILabel"; text = "Galoids athoms"; ObjectID = "eWW-fg-jkP"; */
+"eWW-fg-jkP.text" = "Galoids athoms";
 
 /* Class = "UITextField"; text = "0"; ObjectID = "f2a-Nl-ReY"; */
 "f2a-Nl-ReY.text" = "0";
@@ -275,8 +275,8 @@
 /* Class = "UILabel"; text = "minutes"; ObjectID = "i8b-JY-0MX"; */
 "i8b-JY-0MX.text" = "minutes";
 
-/* Class = "UILabel"; text = "Pile height, m\nSUPERSCRIPT THREE\nUnicode: U+00B3, UTF-8: C2 B3"; ObjectID = "j7X-oB-VWw"; */
-"j7X-oB-VWw.text" = "Pile height, m\nSUPERSCRIPT THREE\nUnicode: U+00B3, UTF-8: C2 B3";
+/* Class = "UILabel"; text = "Pile height, m"; ObjectID = "j7X-oB-VWw"; */
+"j7X-oB-VWw.text" = "Pile height, m";
 
 /* Class = "UILabel"; text = "Select substance:"; ObjectID = "jC6-7y-olX"; */
 "jC6-7y-olX.text" = "Select substance:";
@@ -338,8 +338,8 @@
 /* Class = "UILabel"; text = "0"; ObjectID = "tJu-Mh-ysI"; */
 "tJu-Mh-ysI.text" = "0";
 
-/* Class = "UILabel"; text = "Molecular weight, g/mol\nDOT OPERATOR\nUnicode: U+22C5, UTF-8: E2 8B 85s\nSUPERSCRIPT TWO\nUnicode: U+00B2, UTF-8: C2 B2*s"; ObjectID = "uRv-yM-Aat"; */
-"uRv-yM-Aat.text" = "Molecular weight, g/mol\nDOT OPERATOR\nUnicode: U+22C5, UTF-8: E2 8B 85s\nSUPERSCRIPT TWO\nUnicode: U+00B2, UTF-8: C2 B2*s";
+/* Class = "UILabel"; text = "Molecular weight, g/mol"; ObjectID = "uRv-yM-Aat"; */
+"uRv-yM-Aat.text" = "Molecular weight, g/mol";
 
 /* Class = "UILabel"; text = "Substance types"; ObjectID = "vSl-V1-DZj"; */
 "vSl-V1-DZj.text" = "Substance types";
